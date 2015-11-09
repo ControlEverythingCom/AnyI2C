@@ -1,0 +1,153 @@
+﻿<DeviceConfig>
+	<Type>I2CDIO8</Type>
+	<path>I2CDIO8.xml</path>
+	<Name>I2CDIO8</Name>
+	<Manufactory></Manufactory>
+	<Address>32</Address>
+	<AddressCollection>
+		<Address>32</Address>
+		<Address>33</Address>
+		<Address>34</Address>
+	</AddressCollection>
+	<Commands>
+		<Name>Init</Name>
+		<Description>Initial device</Description>
+		<DeviceCommand>
+			<Name>Init</Name>
+			<Description>Init Device as Output</Description>
+			<Data>
+				<Value>0</Value>
+				<Value>0</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>Output</Name>
+			<Description>Output</Description>
+			<DeviceCommand>
+				<Name>High O1</Name>
+				<Description>Turn Output 1 high</Description>
+				<Data>
+					<Value>9</Value>
+					<Value>1</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>High O2</Name>
+				<Description>Turn Output 2 high</Description>
+				<Data>
+					<Value>9</Value>
+					<Value>2</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>High O3</Name>
+				<Description>Turn Output 3 high</Description>
+				<Data>
+					<Value>9</Value>
+					<Value>4</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>High O4</Name>
+				<Description>Turn Output 4 high</Description>
+				<Data>
+					<Value>9</Value>
+					<Value>8</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>High O5</Name>
+				<Description>Turn Output 5 high</Description>
+				<Data>
+					<Value>9</Value>
+					<Value>16</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>High O6</Name>
+				<Description>Turn Output 6 high</Description>
+				<Data>
+					<Value>9</Value>
+					<Value>32</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>High O7</Name>
+				<Description>Turn Output 7 high</Description>
+				<Data>
+					<Value>9</Value>
+					<Value>64</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>High O8</Name>
+				<Description>Turn Output 8 high</Description>
+				<Data>
+					<Value>9</Value>
+					<Value>128</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>High OAll</Name>
+				<Description>Turn All Outputs high</Description>
+				<Data>
+					<Value>9</Value>
+					<Value>255</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>Low OAll</Name>
+				<Description>Turn All Outputs Low</Description>
+				<Data>
+					<Value>9</Value>
+					<Value>0</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>
+			</DeviceCommand>
+		</DeviceCommandsGroup>
+		
+		<DeviceCommandsGroup>
+			<Name>Input</Name>
+			<Description>Input</Description>
+			<DeviceCommand>
+				<Name>Init</Name>
+				<Description>Init Device as Input</Description>
+				<Data>
+					<Value>0</Value>
+					<Value>255</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>Read all 8 input</Name>
+				<Description>Read all 8 input</Description>
+				<Data>
+					<Value>9</Value>
+				</Data>
+				<ReadDataLength>1</ReadDataLength>
+			</DeviceCommand>
+		</DeviceCommandsGroup>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>I2CDIO8.dll</GUIPath>
+				<TypeName>I2CDIO8.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>
+		
+
+	</Commands>
+</DeviceConfig>

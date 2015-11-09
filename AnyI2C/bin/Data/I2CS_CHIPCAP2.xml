@@ -1,0 +1,63 @@
+﻿<DeviceConfig>
+	<Type>Humidty Sensor</Type>
+	<path>I2CS_CHIPCAP2.xml</path>
+	<Name>I2CS_CHIPCAP2</Name>
+	<Manufactory>GE</Manufactory>
+	<Address>40</Address>
+	<AddressCollection>
+		<Address>40</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommandsGroup>
+			<Name>setup device</Name>
+			<Description>setup devices</Description>
+			<DeviceCommand>
+				<Name>start command mode</Name>
+				<Description>start command mode</Description>
+				<Data>
+					<Value>160</Value>
+					<Value>0</Value>
+					<Value>0</Value>
+				</Data>
+				<ReadDataLength>4</ReadDataLength>				
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>set alarm high value</Name>
+				<Description>set alarm high value</Description>
+				<Data>
+					<Value>160</Value>
+					<Value>63</Value>
+					<Value>255</Value>
+				</Data>
+				<ReadDataLength>4</ReadDataLength>				
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>start normal mode</Name>
+				<Description>start normal mode</Description>
+				<Data>
+					<Value>128</Value>
+					<Value>0</Value>
+					<Value>0</Value>
+				</Data>
+				<ReadDataLength>4</ReadDataLength>				
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>Read Sensor</Name>
+				<Description>Read Sensor</Description>
+				<Data>
+				</Data>
+				<ReadDataLength>4</ReadDataLength>				
+			</DeviceCommand>
+		</DeviceCommandsGroup>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>CHIPCAP2_I2CS.dll</GUIPath>
+				<TypeName>CHIPCAP2_I2CS.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>
