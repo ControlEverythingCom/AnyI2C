@@ -1,0 +1,46 @@
+﻿<DeviceConfig>
+	<Type>Temperature Sensor</Type>
+	<path>I2CS_TCN75A.xml</path>
+	<Name>I2CS_TCN75A</Name>
+	<Manufactory>Microchip</Manufactory>
+	<Address>72</Address>
+	<AddressCollection>
+		<Address>72</Address>
+		<Address>73</Address>
+		<Address>74</Address>
+		<Address>75</Address>
+		<Address>76</Address>
+		<Address>77</Address>
+		<Address>78</Address>
+		<Address>79</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Set resolution</Name>
+			<Description>Set resolution</Description>
+			<Data>
+					<Value>01</Value>
+					<Value>96</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Sensor</Name>
+			<Description>Read Sensor</Description>
+			<Data>
+					<Value>0</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>TCN75A_I2CS.dll</GUIPath>
+				<TypeName>TCN75A_I2CS.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>
