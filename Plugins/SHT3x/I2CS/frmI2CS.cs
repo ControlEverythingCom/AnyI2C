@@ -9,7 +9,7 @@ using System.Text;
 using System.Windows.Forms;
 using AnyI2C;
 
-namespace ST3x_I2CS
+namespace SHT3x_I2CS
 {
     public partial class frmI2CS : Form
     {

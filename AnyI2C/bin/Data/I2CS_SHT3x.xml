@@ -1,7 +1,7 @@
 ﻿<DeviceConfig>
-	<Type>Humidty Sensor</Type>
-	<path>I2CS_ST3x.xml</path>
-	<Name>I2CS_ST3x</Name>
+	<Type>Humidity Sensor</Type>
+	<path>I2CS_SHT3x.xml</path>
+	<Name>I2CS_SHT3x</Name>
 	<Manufactory>Sensirion</Manufactory>
 	<Address>68</Address>
 	<AddressCollection>
@@ -10,8 +10,8 @@
 	</AddressCollection>
 	<Commands>
 		<DeviceCommand>
-			<Name>Read Humidty and Temperature</Name>
-			<Description>Read Humidty and Temperature</Description>
+			<Name>Read Humidity and Temperature</Name>
+			<Description>Read Humidity and Temperature</Description>
 			<Data>
 				<Value>39</Value>
 				<Value>55</Value>
@@ -24,8 +24,8 @@
 			<DeviceGUICommand>
 				<Name>GUI</Name>
 				<Description>GUI</Description>
-				<GUIPath>ST3x_I2CS.dll</GUIPath>
-				<TypeName>ST3x_I2CS.MyGUI</TypeName>
+				<GUIPath>SHT3x_I2CS.dll</GUIPath>
+				<TypeName>SHT3x_I2CS.MyGUI</TypeName>
 			</DeviceGUICommand>
 		</DeviceCommandsGroup>		
 	</Commands>

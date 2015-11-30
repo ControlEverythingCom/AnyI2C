@@ -27,6 +27,7 @@ namespace AnyI2cLib
             Component.UsingComPort = true;
             Component.OpenPort();
             return Component.IsOpen;
+
         }
 
         public void Close()

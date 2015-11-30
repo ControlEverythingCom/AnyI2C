@@ -1,4 +1,4 @@
-﻿namespace ST3x_I2CS
+﻿namespace SHT3x_I2CS
 {
     partial class frmI2CS
     {
@@ -156,7 +156,7 @@
             this.Controls.Add(this._ERROR);
             this.Controls.Add(this.btnReadCh0);
             this.Name = "frmI2CS";
-            this.Text = "ST3x Control Panel";
+            this.Text = "SHT3x Control Panel";
             this.Load += new System.EventHandler(this.frmADC081C_Load);
             this.GroupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numAddress)).EndInit();
