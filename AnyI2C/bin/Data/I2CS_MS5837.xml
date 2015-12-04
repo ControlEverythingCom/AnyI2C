@@ -14,7 +14,7 @@
 			<Data>
 				<Value>30</Value>
 			</Data>
-			<ReadDataLength>40</ReadDataLength>				
+			<ReadDataLength>0</ReadDataLength>				
 		</DeviceCommand>
 		<DeviceCommand>
 			<Name>Init a pressure conversion(OSR=4096, typ=D1)</Name>
