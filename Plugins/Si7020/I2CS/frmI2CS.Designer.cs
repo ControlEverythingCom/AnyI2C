@@ -1,4 +1,4 @@
-﻿namespace Si7006_I2CS
+﻿namespace Si7020_I2CS
 {
     partial class frmI2CS
     {
@@ -156,7 +156,7 @@
             this.Controls.Add(this._ERROR);
             this.Controls.Add(this.btnReadCh0);
             this.Name = "frmI2CS";
-            this.Text = "Si7006 Control Panel";
+            this.Text = "Si7020 Control Panel";
             this.Load += new System.EventHandler(this.frmADC081C_Load);
             this.GroupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numAddress)).EndInit();
