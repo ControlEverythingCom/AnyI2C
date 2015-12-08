@@ -1,7 +1,7 @@
 ﻿<DeviceConfig>
 	<Type>Humidity and Temperature Sensor</Type>
 	<path>I2CS_Si7020.xml</path>
-	<Name>I2CS_Si7020</Name>
+	<Name>I2CS_Si7020/Si7021</Name>
 	<Manufactory>Silicon Labs</Manufactory>
 	<Address>64</Address>
 	<AddressCollection>
