@@ -1,7 +1,8 @@
 ﻿<DeviceConfig>
-	<Type>Pressure Sensor</Type>
+	<Type>Pressure Temperature Humidity Sensor</Type>
 	<path>I2CS_MS8607_PH.xml</path>
 	<Name>I2CS_MS8607_PH</Name>
+	<GeneralCall>false</GeneralCall>	
 	<Manufactory>MEAS</Manufactory>
 	<Address>64</Address>
 	<AddressCollection>

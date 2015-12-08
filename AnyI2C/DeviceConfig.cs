@@ -116,6 +116,7 @@ namespace AnyI2C
         public string path;
         public string Name;
         public string Manufactory;
+        public bool GeneralCall = true; // if support general call
         public byte Address;
         [XmlArrayItem("Address") ]
         public byte[] AddressCollection;
@@ -131,9 +132,11 @@ namespace AnyI2C
                 path = filename;
                 Name = temp.Name;
                 Manufactory = temp.Manufactory;
+                GeneralCall = temp.GeneralCall;
                 Address = temp.Address;
                 AddressCollection = temp.AddressCollection;
                 Commands = temp.Commands;
+
                 reader.Close();
             }
             catch (Exception e)

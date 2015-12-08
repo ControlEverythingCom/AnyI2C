@@ -475,6 +475,7 @@ namespace AnyI2C
             if (mDevices.Devices.Length > 0)
             {
                 FillCommandsTree(mDevices.Devices[0]);
+                FillProperties(mDevices.Devices[0]);
             }
         }
 
@@ -496,6 +497,24 @@ namespace AnyI2C
                 }
             }
             ctlI2CAddress1.Addr7 = dev.Address;
+        }
+
+        /// <summary>
+        /// fill device's properties
+        /// </summary>
+        /// <param name="dev"></param>
+        private void FillProperties(DeviceConfig dev)
+        {
+            lbManufactory.Text = string.Format("Manufactory: {0} ", dev.Manufactory);
+            lbType.Text = string.Format("Device Type: {0} ", dev.Type);
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < dev.AddressCollection.Length; i++)
+            {
+                sb.AppendFormat("{0} (0x{0:X2})  ", dev.AddressCollection[i]);
+            }
+            lbAddress.Text = string.Format("Address Collection: {0} ", sb.ToString());
+            lbGeneralCall.Text = dev.GeneralCall ? "Support General Call" : "Do NOT support General Call";
+            lbGeneralCall.ForeColor = dev.GeneralCall ? Color.Black : Color.Red;
         }
 
         /// <summary>
@@ -537,6 +556,7 @@ namespace AnyI2C
             {
                 DeviceConfig dev = (DeviceConfig)(mDevices.Devices[id]);
                 FillCommandsTree(dev);
+                FillProperties(dev);
             }
         }
 
@@ -672,10 +692,12 @@ namespace AnyI2C
         private void btnTest_Click(object sender, EventArgs e)
         {
             //I2CBridgeX [] bridgeX = I2CBridgeX.EnumBridge();
-            mBridge.Write((byte)numPort.Value, (byte)ctlI2CAddress1.Addr7, 10, 12);
-            mBridge.Write((byte)numPort.Value, (byte)ctlI2CAddress1.Addr7, 10);
-            byte[] data = mBridge.ReadData((byte)numPort.Value, (byte)ctlI2CAddress1.Addr7, 1);
-
+            //mBridge.Write((byte)numPort.Value, (byte)ctlI2CAddress1.Addr7, 10, 12);
+            //mBridge.Write((byte)numPort.Value, (byte)ctlI2CAddress1.Addr7, 10);
+            //byte[] data = mBridge.ReadData((byte)numPort.Value, (byte)ctlI2CAddress1.Addr7, 1);
+            //FillCommandsTree(mDevices.Devices[0]);
+            //FillProperties(mDevices.Devices[0]);
+            mDevices.Devices[0].Save("test.xml");
         }
 
     }

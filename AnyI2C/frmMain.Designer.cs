@@ -54,6 +54,10 @@
             this.btnTest = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.numPort = new System.Windows.Forms.NumericUpDown();
+            this.lbManufactory = new System.Windows.Forms.Label();
+            this.lbType = new System.Windows.Forms.Label();
+            this.lbAddress = new System.Windows.Forms.Label();
+            this.lbGeneralCall = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numReadLength)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPort)).BeginInit();
             this.SuspendLayout();
@@ -101,9 +105,9 @@
             // 
             // tvCommands
             // 
-            this.tvCommands.Location = new System.Drawing.Point(14, 365);
+            this.tvCommands.Location = new System.Drawing.Point(14, 352);
             this.tvCommands.Name = "tvCommands";
-            this.tvCommands.Size = new System.Drawing.Size(437, 366);
+            this.tvCommands.Size = new System.Drawing.Size(437, 308);
             this.tvCommands.TabIndex = 10;
             this.tvCommands.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvCommands_AfterSelect);
             this.tvCommands.DoubleClick += new System.EventHandler(this.tvCommands_DoubleClick);
@@ -212,7 +216,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 349);
+            this.label2.Location = new System.Drawing.Point(16, 336);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 13);
             this.label2.TabIndex = 38;
@@ -319,9 +323,49 @@
             this.numPort.Size = new System.Drawing.Size(49, 20);
             this.numPort.TabIndex = 41;
             // 
+            // lbManufactory
+            // 
+            this.lbManufactory.AutoSize = true;
+            this.lbManufactory.Location = new System.Drawing.Point(19, 668);
+            this.lbManufactory.Name = "lbManufactory";
+            this.lbManufactory.Size = new System.Drawing.Size(66, 13);
+            this.lbManufactory.TabIndex = 42;
+            this.lbManufactory.Text = "Manufactory";
+            // 
+            // lbType
+            // 
+            this.lbType.AutoSize = true;
+            this.lbType.Location = new System.Drawing.Point(19, 684);
+            this.lbType.Name = "lbType";
+            this.lbType.Size = new System.Drawing.Size(31, 13);
+            this.lbType.TabIndex = 42;
+            this.lbType.Text = "Type";
+            // 
+            // lbAddress
+            // 
+            this.lbAddress.AutoSize = true;
+            this.lbAddress.Location = new System.Drawing.Point(19, 703);
+            this.lbAddress.Name = "lbAddress";
+            this.lbAddress.Size = new System.Drawing.Size(45, 13);
+            this.lbAddress.TabIndex = 42;
+            this.lbAddress.Text = "Address";
+            // 
+            // lbGeneralCall
+            // 
+            this.lbGeneralCall.AutoSize = true;
+            this.lbGeneralCall.Location = new System.Drawing.Point(282, 684);
+            this.lbGeneralCall.Name = "lbGeneralCall";
+            this.lbGeneralCall.Size = new System.Drawing.Size(104, 13);
+            this.lbGeneralCall.TabIndex = 43;
+            this.lbGeneralCall.Text = "Support General Call";
+            // 
             // frmMain
             // 
             this.ClientSize = new System.Drawing.Size(923, 779);
+            this.Controls.Add(this.lbGeneralCall);
+            this.Controls.Add(this.lbAddress);
+            this.Controls.Add(this.lbType);
+            this.Controls.Add(this.lbManufactory);
             this.Controls.Add(this.numPort);
             this.Controls.Add(this.btnTest);
             this.Controls.Add(this.btnLoad);
@@ -389,6 +433,10 @@
         private System.Windows.Forms.Button btnTest;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.NumericUpDown numPort;
+        private System.Windows.Forms.Label lbManufactory;
+        private System.Windows.Forms.Label lbType;
+        private System.Windows.Forms.Label lbAddress;
+        private System.Windows.Forms.Label lbGeneralCall;
     }
 }
 
