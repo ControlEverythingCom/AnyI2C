@@ -1,0 +1,30 @@
+﻿<DeviceConfig>
+	<Type>Temperature Sensor</Type>
+	<path>I2CS_STS21.xml</path>
+	<Name>I2CS_STS21</Name>
+	<Manufactory>The Sensor Company</Manufactory>
+	<Address>72</Address>
+	<AddressCollection>
+		<Address>72</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Read Temperature</Name>
+			<Description>Read Temperature</Description>
+			<Data>
+				<Value>243</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>STS21_I2CS.dll</GUIPath>
+				<TypeName>STS21_I2CS.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>

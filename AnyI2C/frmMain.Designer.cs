@@ -343,10 +343,9 @@
             // 
             // lbAddress
             // 
-            this.lbAddress.AutoSize = true;
             this.lbAddress.Location = new System.Drawing.Point(19, 703);
             this.lbAddress.Name = "lbAddress";
-            this.lbAddress.Size = new System.Drawing.Size(45, 13);
+            this.lbAddress.Size = new System.Drawing.Size(433, 31);
             this.lbAddress.TabIndex = 42;
             this.lbAddress.Text = "Address";
             // 

@@ -3,6 +3,7 @@
 	<path>I2CS_MS5837.xml</path>
 	<Name>I2CS_MS5837</Name>
 	<Manufactory>Sensor Solutions</Manufactory>
+	<GeneralCall>false</GeneralCall>	
 	<Address>118</Address>
 	<AddressCollection>
 		<Address>118</Address>
