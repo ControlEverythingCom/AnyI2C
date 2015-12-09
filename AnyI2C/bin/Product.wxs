@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="AA1028E7-8E62-485D-94B7-EDB4AF6ACA6D" Name="AnyI2C" Language="1033" Version="1.0" Manufacturer="Control Everything" UpgradeCode="A99DCE60-3D32-4C80-8164-B38AFB59319D">
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+    <Media Id="1" Cabinet="AnyI2C.cab" EmbedCab="yes" DiskPrompt="CD-ROM #1" />
+    <Property Id="ARPPRODUCTICON" />
+    <Property Id="DiskPrompt" Value="AnyI2C Installation [1]" />
+    <Property Id="WixShellExecTarget" Value="[#AnyI2CExe]" />
+    <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOX" Value="1" />
+    <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT" Value="Launch AnyI2C Now." />
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
+    <Feature Id="ProductFeature" Title="AnyI2C Setup" Level="1">
+      <ComponentGroupRef Id="ProductComponents" />
+    </Feature>
+    <UI>
+      <UIRef Id="WixUI_InstallDir" />
+      <Publish Dialog="WelcomeDlg" Control="Next" Event="NewDialog" Value="InstallDirDlg" Order="2">1</Publish>
+      <Publish Dialog="InstallDirDlg" Control="Back" Event="NewDialog" Value="WelcomeDlg" Order="2">1</Publish>
+      <Publish Dialog="ExitDialog" Control="Finish" Event="DoAction" Value="LaunchApplication">WIXUI_EXITDIALOGOPTIONALCHECKBOX = 1 and NOT Installed</Publish>
+    </UI>
+    <!--<WixVariable Id="WixUIBannerBmp" Value="CommOpBanner.bmp" />
+    <WixVariable Id="WixUIDialogBmp" Value="CommOpSide.bmp" />-->
+    <!-- Step 3: Include the custom action -->
+    <CustomAction Id="LaunchApplication" BinaryKey="WixCA" DllEntry="WixShellExec" Impersonate="yes" />
+  </Product>
+  <Fragment>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="ManufactureerFolder" Name="Control Everything">
+          <Directory Id="INSTALLFOLDER" Name="AnyI2C V1.0">
+            <Component Id="AnyI2CExe" Guid="*">
+              <File Id="AnyI2CExe" Name="AnyI2C.exe" DiskId="1" Source="AnyI2C.exe" KeyPath="yes">
+                <Shortcut Id="startmenuCommOpQuick" Directory="ProgramMenuFolder" Name="AnyI2C" WorkingDirectory="INSTALLFOLDER" Advertise="yes" />
+                <Shortcut Id="startmenuCommOp" Directory="ProgramMenuDir" Name="AnyI2C"  WorkingDirectory="INSTALLFOLDER" Advertise="yes" />
+                <Shortcut Id="desktopCommOp" Directory="DesktopFolder" Name="AnyI2C"  WorkingDirectory="INSTALLFOLDER" Advertise="yes" />
+              </File>
+            </Component>
+            <Component Id="AnyI2CLibDll" Guid="*">
+              <File Id="AnyI2CLibDll" Name="AnyI2cLib.dll" DiskId="1" Source="AnyI2cLib.dll" KeyPath="yes"></File>
+            </Component>
+
+            <Directory Id="DataFolder" Name="Data">
+              <!--<Component Id="MainHtml" Guid="*">
+                <File Id="MainHtml" Name="main.html" DiskId="1" Source="./www/main.html" KeyPath="yes"></File>
+              </Component>
+              <Component Id="prototypejs" Guid="*">
+                <File Id="prototypejs" Name="prototype.js" DiskId="1" Source="./www/prototype.js" KeyPath="yes"></File>
+              </Component>
+              <Component Id="faviconico" Guid="*">
+                <File Id="faviconico" Name="favicon.ico" DiskId="1" Source="./www/favicon.ico" KeyPath="yes"></File>
+              </Component>-->
+            </Directory>
+          </Directory>
+        </Directory>
+      </Directory>
+      <Directory Id="ProgramMenuFolder" Name="Programs">
+        <Directory Id="ProgramMenuDir" Name="AnyI2C">
+          <Component Id="ProgramMenuDir" Guid="*">
+            <RemoveFolder Id="ProgramMenuDir" On="uninstall" />
+            <RegistryValue Root="HKCU" Key="Software\[Menufacturer]\[ProductName]" Type="string" Value="" KeyPath="yes" />
+          </Component>
+        </Directory>
+      </Directory>
+      <Directory Id="DesktopFolder" Name="Desktop" />
+    </Directory>
+  </Fragment>
+  <Fragment>
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <ComponentRef Id="AnyI2CExe" />
+      <ComponentRef Id="AnyI2CLibDll" />
+      <ComponentRef Id="ProgramMenuDir" />
+      <!--<ComponentRef Id="CommOpIcon" />
+      <ComponentRef Id="HelpIcon" />
+      <ComponentRef Id="BrowserIcon" />
+      <ComponentRef Id="HelpFile" />
+      <ComponentRef Id="HomePage" />
+      <ComponentRef Id="MainHtml" />
+      <ComponentRef Id="prototypejs" />
+      <ComponentRef Id="faviconico" />-->
+    </ComponentGroup>
+  </Fragment>
+</Wix>
