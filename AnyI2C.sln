@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30626.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnyI2C", "AnyI2C\AnyI2C.csproj", "{50179CEA-902D-4086-8867-0819CEC74C8B}"
 EndProject
@@ -176,8 +176,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SHT25", "SHT25", "{B4440F3C-5F15-44DC-BC50-5D6A9D3057B7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "I2CS", "Plugins\SHT25\I2CS\I2CS.csproj", "{064BD6E0-AAE1-4D49-8C31-8801A5FA34A2}"
-EndProject
-Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "AnyI2CSetup", "AnyI2C\bin\AnyI2CSetup.wixproj", "{0114F422-4870-4B01-A2A6-22E9B4297C9D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SetupXmlCreator", "SetupXmlCreator\SetupXmlCreator.csproj", "{1D117753-4EA3-4BAE-8C8C-0A18E5B7F454}"
 EndProject
@@ -639,16 +637,6 @@ Global
 		{064BD6E0-AAE1-4D49-8C31-8801A5FA34A2}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{064BD6E0-AAE1-4D49-8C31-8801A5FA34A2}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{064BD6E0-AAE1-4D49-8C31-8801A5FA34A2}.Release|x86.ActiveCfg = Release|Any CPU
-		{0114F422-4870-4B01-A2A6-22E9B4297C9D}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{0114F422-4870-4B01-A2A6-22E9B4297C9D}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{0114F422-4870-4B01-A2A6-22E9B4297C9D}.Debug|Mixed Platforms.Build.0 = Debug|x86
-		{0114F422-4870-4B01-A2A6-22E9B4297C9D}.Debug|x86.ActiveCfg = Debug|x86
-		{0114F422-4870-4B01-A2A6-22E9B4297C9D}.Debug|x86.Build.0 = Debug|x86
-		{0114F422-4870-4B01-A2A6-22E9B4297C9D}.Release|Any CPU.ActiveCfg = Release|x86
-		{0114F422-4870-4B01-A2A6-22E9B4297C9D}.Release|Mixed Platforms.ActiveCfg = Release|x86
-		{0114F422-4870-4B01-A2A6-22E9B4297C9D}.Release|Mixed Platforms.Build.0 = Release|x86
-		{0114F422-4870-4B01-A2A6-22E9B4297C9D}.Release|x86.ActiveCfg = Release|x86
-		{0114F422-4870-4B01-A2A6-22E9B4297C9D}.Release|x86.Build.0 = Release|x86
 		{1D117753-4EA3-4BAE-8C8C-0A18E5B7F454}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1D117753-4EA3-4BAE-8C8C-0A18E5B7F454}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D117753-4EA3-4BAE-8C8C-0A18E5B7F454}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
