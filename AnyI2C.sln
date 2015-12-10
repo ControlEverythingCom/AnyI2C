@@ -179,6 +179,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "I2CS", "Plugins\SHT25\I2CS\
 EndProject
 Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "AnyI2CSetup", "AnyI2C\bin\AnyI2CSetup.wixproj", "{0114F422-4870-4B01-A2A6-22E9B4297C9D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SetupXmlCreator", "SetupXmlCreator\SetupXmlCreator.csproj", "{1D117753-4EA3-4BAE-8C8C-0A18E5B7F454}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -647,6 +649,16 @@ Global
 		{0114F422-4870-4B01-A2A6-22E9B4297C9D}.Release|Mixed Platforms.Build.0 = Release|x86
 		{0114F422-4870-4B01-A2A6-22E9B4297C9D}.Release|x86.ActiveCfg = Release|x86
 		{0114F422-4870-4B01-A2A6-22E9B4297C9D}.Release|x86.Build.0 = Release|x86
+		{1D117753-4EA3-4BAE-8C8C-0A18E5B7F454}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D117753-4EA3-4BAE-8C8C-0A18E5B7F454}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D117753-4EA3-4BAE-8C8C-0A18E5B7F454}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{1D117753-4EA3-4BAE-8C8C-0A18E5B7F454}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{1D117753-4EA3-4BAE-8C8C-0A18E5B7F454}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1D117753-4EA3-4BAE-8C8C-0A18E5B7F454}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D117753-4EA3-4BAE-8C8C-0A18E5B7F454}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D117753-4EA3-4BAE-8C8C-0A18E5B7F454}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{1D117753-4EA3-4BAE-8C8C-0A18E5B7F454}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{1D117753-4EA3-4BAE-8C8C-0A18E5B7F454}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
