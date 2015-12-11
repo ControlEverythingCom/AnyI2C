@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lbCh0 = new System.Windows.Forms.Label();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
             this.GroupBox2 = new System.Windows.Forms.GroupBox();
             this.numAddress = new System.Windows.Forms.NumericUpDown();
             this._ERROR = new System.Windows.Forms.Label();
             this.btnReadCh0 = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.chkAutoUpdate = new System.Windows.Forms.CheckBox();
             this.GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numAddress)).BeginInit();
             this.SuspendLayout();
@@ -110,17 +113,35 @@
             this.btnReadCh0.UseVisualStyleBackColor = true;
             this.btnReadCh0.Click += new System.EventHandler(this.btnReadCh0_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 500;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // chkAutoUpdate
+            // 
+            this.chkAutoUpdate.AutoSize = true;
+            this.chkAutoUpdate.Location = new System.Drawing.Point(335, 188);
+            this.chkAutoUpdate.Name = "chkAutoUpdate";
+            this.chkAutoUpdate.Size = new System.Drawing.Size(86, 17);
+            this.chkAutoUpdate.TabIndex = 525;
+            this.chkAutoUpdate.Text = "Auto Update";
+            this.chkAutoUpdate.UseVisualStyleBackColor = true;
+            this.chkAutoUpdate.CheckedChanged += new System.EventHandler(this.chkAutoUpdate_CheckedChanged);
+            // 
             // frmI2CADC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 239);
+            this.Controls.Add(this.chkAutoUpdate);
             this.Controls.Add(this.GroupBox1);
             this.Controls.Add(this.lbCh0);
             this.Controls.Add(this._ERROR);
             this.Controls.Add(this.btnReadCh0);
             this.Name = "frmI2CADC";
             this.Text = "ADC121C Control Panel";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmI2CADC_FormClosed);
             this.Load += new System.EventHandler(this.frmAD7999_Load);
             this.GroupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numAddress)).EndInit();
@@ -137,5 +158,7 @@
         internal System.Windows.Forms.NumericUpDown numAddress;
         internal System.Windows.Forms.Label _ERROR;
         internal System.Windows.Forms.Button btnReadCh0;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.CheckBox chkAutoUpdate;
     }
 }

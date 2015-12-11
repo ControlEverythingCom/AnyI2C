@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Threading;
 using AnyI2C;
 
-namespace ADXL345_I2CS
+namespace BMG160_I2CS
 {
     public partial class frmI2CS : Form
     {
@@ -50,10 +50,7 @@ namespace ADXL345_I2CS
                 _ERROR.Visible = false;
                 byte addr = GetAddress(false);
                 //config the sensor
-                byte[] value = CommObj.Send(new byte[] { addr,0x2D, 8}, 0);
-                value = CommObj.Send(new byte[] { addr, 0x31, 1 }, 0);
-                Thread.Sleep(100);
-                value = CommObj.Send(new byte[] { addr, 0x32}, 6);
+                byte[] value = CommObj.Send(new byte[] { addr, 0x2 }, 6);
                 if (value != null )
                 {
                     if (value.Length == 6)

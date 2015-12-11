@@ -68,6 +68,29 @@ namespace ADC121C_I2CADC
             lbCh0.Text = ReadCh();
         }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            ReadCh();
+        }
+
+        private void chkAutoUpdate_CheckedChanged(object sender, EventArgs e)
+        {
+            btnReadCh0.Enabled = !chkAutoUpdate.Checked;
+            if (chkAutoUpdate.Checked)
+            {
+                timer1.Enabled = true;
+            }
+            else
+            {
+                timer1.Enabled = false;
+            }
+        }
+
+        private void frmI2CADC_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            timer1.Enabled = false;
+        }
+
     }
 
 
