@@ -1,13 +1,14 @@
 ﻿<DeviceConfig>
-	<Type>I2CAD8_ADS7828</Type>
-	<path>I2CAD8_ADS7828.xml</path>
-	<Name>I2CAD8_ADS7828</Name>
-	<Manufactory></Manufactory>
+	<Type>I2CADC_ADS7828</Type>
+	<path>I2CADC_ADS7828.xml</path>
+	<Name>I2CADC_ADS7828</Name>
+	<Manufactory>TI</Manufactory>
 	<Address>72</Address>
 	<AddressCollection>
 		<Address>72</Address>
 		<Address>73</Address>
 		<Address>74</Address>
+		<Address>75</Address>
 	</AddressCollection>
 	<Commands>
 		<Name>AD8 Commands</Name>
@@ -79,8 +80,8 @@
 		<DeviceGUICommand>
 			<Name>GUI</Name>
 			<Description>GUI</Description>
-			<GUIPath>ADS7828_I2CAD8.dll</GUIPath>
-			<TypeName>ADS7828_I2CAD8.MyGUI</TypeName>
+			<GUIPath>ADS7828_I2CADC.dll</GUIPath>
+			<TypeName>ADS7828_I2CADC.MyGUI</TypeName>
 		</DeviceGUICommand>
 		
 

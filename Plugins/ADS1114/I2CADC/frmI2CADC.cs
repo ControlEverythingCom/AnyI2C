@@ -9,12 +9,12 @@ using System.Text;
 using System.Windows.Forms;
 using AnyI2C;
 
-namespace ADS7830_I2CADC
+namespace ADS1114_I2CADC
 {
-    public partial class frmI2CAD8 : Form
+    public partial class frmI2CADC : Form
     {
         CommInterface CommObj = null;
-        public frmI2CAD8()
+        public frmI2CADC()
         {
             InitializeComponent();
         }
@@ -46,16 +46,17 @@ namespace ADS7830_I2CADC
             return (byte)(numAddress.Value * 2);
         }
 
-        private string ReadCh(byte ch)
+        private string ReadCh()
         {
             try
             {
                 _ERROR.Visible = false;
                 byte addr = GetAddress(false);
-                byte[] value = CommObj.Send(new byte[] { addr, ch}, 1);
+                byte[] value = CommObj.Send(new byte[] { addr, 1, 0x84, 0x53}, 0);
+                value = CommObj.Send(new byte[] { addr, 0 }, 2);
                 if (value != null)
                 {
-                    return (value[0]).ToString();
+                    return (value[0] * 256 + value[1]).ToString();
                 }
             }
             catch
@@ -68,66 +69,17 @@ namespace ADS7830_I2CADC
 
         private void btnReadCh0_Click(object sender, EventArgs e)
         {
-            lbCh0.Text = ReadCh(128);
-        }
-
-        private void btnReadCh1_Click(object sender, EventArgs e)
-        {
-            lbCh1.Text = ReadCh(192);
-        }
-
-        private void btnReadCh2_Click(object sender, EventArgs e)
-        {
-            lbCh2.Text = ReadCh(144);
-        }
-
-        private void btnReadCh3_Click(object sender, EventArgs e)
-        {
-            lbCh3.Text = ReadCh(208);
-        }
-
-        private void btnReadCh4_Click(object sender, EventArgs e)
-        {
-            lbCh4.Text = ReadCh(160);
-        }
-
-        private void btnReadCh5_Click(object sender, EventArgs e)
-        {
-            lbCh5.Text = ReadCh(224);
-        }
-
-        private void btnReadCh6_Click(object sender, EventArgs e)
-        {
-            lbCh6.Text = ReadCh(176);
-        }
-
-        private void btnReadCh7_Click(object sender, EventArgs e)
-        {
-            lbCh7.Text = ReadCh(240);
+            lbCh0.Text = ReadCh();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            lbCh0.Text = ReadCh(128);
-            lbCh1.Text = ReadCh(192);
-            lbCh2.Text = ReadCh(144);
-            lbCh3.Text = ReadCh(208);
-            lbCh4.Text = ReadCh(160);
-            lbCh5.Text = ReadCh(224);
-            lbCh6.Text = ReadCh(176);
-            lbCh7.Text = ReadCh(240);
+            lbCh0.Text = ReadCh();
         }
 
         private void chkAutoUpdate_CheckedChanged(object sender, EventArgs e)
         {
             btnReadCh0.Enabled = !chkAutoUpdate.Checked;
-            btnReadCh1.Enabled = !chkAutoUpdate.Checked;
-            btnReadCh2.Enabled = !chkAutoUpdate.Checked;
-            btnReadCh3.Enabled = !chkAutoUpdate.Checked;
-            btnReadCh4.Enabled = !chkAutoUpdate.Checked;
-            btnReadCh5.Enabled = !chkAutoUpdate.Checked;
-            btnReadCh6.Enabled = !chkAutoUpdate.Checked;
-            btnReadCh7.Enabled = !chkAutoUpdate.Checked;
             if (chkAutoUpdate.Checked)
             {
                 timer1.Enabled = true;
@@ -138,10 +90,11 @@ namespace ADS7830_I2CADC
             }
         }
 
-        private void frmI2CAD8_FormClosing(object sender, FormClosingEventArgs e)
+        private void frmI2CADC_FormClosing(object sender, FormClosingEventArgs e)
         {
             timer1.Enabled = false;
         }
+
     }
 
 
@@ -149,7 +102,7 @@ namespace ADS7830_I2CADC
     {
         public void Show(CommInterface com)
         {
-            frmI2CAD8 frm = new frmI2CAD8();
+            frmI2CADC frm = new frmI2CADC();
             frm.Attach(com);
             frm.ShowDialog();
         }
