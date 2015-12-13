@@ -178,6 +178,7 @@
             this.Controls.Add(this.btnReadCh0);
             this.Name = "frmI2CS";
             this.Text = "BMP180 Control Panel";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmI2CS_FormClosing);
             this.Load += new System.EventHandler(this.frmADC081C_Load);
             this.GroupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numAddress)).EndInit();

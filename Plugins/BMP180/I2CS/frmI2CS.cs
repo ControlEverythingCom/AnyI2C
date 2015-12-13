@@ -162,17 +162,30 @@ namespace BMP180_I2CS
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-
+            ReadSensor();
         }
 
         private void chkAutoUpdate_CheckedChanged(object sender, EventArgs e)
         {
-
+            btnReadCh0.Enabled = !chkAutoUpdate.Checked;
+            if (chkAutoUpdate.Checked)
+            {
+                timer1.Enabled = true;
+            }
+            else
+            {
+                timer1.Enabled = false;
+            }
         }
 
         private void lbP_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void frmI2CS_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            timer1.Enabled = false;
         }
 
     }
