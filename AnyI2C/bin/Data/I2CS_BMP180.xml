@@ -3,17 +3,17 @@
 	<path>I2CS_BMP180.xml</path>
 	<Name>I2CS_BMP180</Name>
 	<Manufactory>Bosch</Manufactory>
-	<Address>118</Address>
+	<Address>119</Address>
 	<AddressCollection>
-		<Address>118</Address>
+		<Address>119</Address>
 	</AddressCollection>
 	<Commands>
 		<DeviceCommand>
-			<Name>Start Measure</Name>
-			<Description>Start Measure</Description>
+			<Name>Read Uncompensated Temperature</Name>
+			<Description>Read Uncompensated Temperature</Description>
 			<Data>
 				<Value>244</Value>
-				<Value>147</Value>
+				<Value>46</Value>
 			</Data>
 			<ReadDataLength>0</ReadDataLength>				
 		</DeviceCommand>
@@ -21,9 +21,26 @@
 			<Name>Read Data</Name>
 			<Description>Read Data</Description>
 			<Data>
-				<Value>247</Value>
+				<Value>246</Value>
 			</Data>
-			<ReadDataLength>6</ReadDataLength>				
+			<ReadDataLength>2</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Uncompensated Pressure</Name>
+			<Description>Read Uncompensated Pressure</Description>
+			<Data>
+				<Value>244</Value>
+				<Value>52</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Data</Name>
+			<Description>Read Data</Description>
+			<Data>
+				<Value>246</Value>
+			</Data>
+			<ReadDataLength>3</ReadDataLength>				
 		</DeviceCommand>
 
 		<DeviceCommandsGroup>

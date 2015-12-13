@@ -145,6 +145,7 @@ namespace BMP280_I2CS
                 var1 = ((double )P9 )* p *p /2147483648.0;
                 var2 = p* (double )P8/32768;
                 p = p + (var1 + var2 + P7)/16;
+                p = p / 100.0;
                 lbP.Text = p.ToString("F2");
             }
             catch

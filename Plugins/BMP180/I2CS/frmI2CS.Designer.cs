@@ -120,17 +120,18 @@
             // 
             this.lbP.AutoSize = true;
             this.lbP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lbP.Location = new System.Drawing.Point(414, 132);
+            this.lbP.Location = new System.Drawing.Point(390, 132);
             this.lbP.Name = "lbP";
             this.lbP.Size = new System.Drawing.Size(23, 16);
             this.lbP.TabIndex = 521;
             this.lbP.Text = "---";
+            this.lbP.Click += new System.EventHandler(this.lbP_Click);
             // 
             // lbT
             // 
             this.lbT.AutoSize = true;
             this.lbT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lbT.Location = new System.Drawing.Point(414, 163);
+            this.lbT.Location = new System.Drawing.Point(390, 163);
             this.lbT.Name = "lbT";
             this.lbT.Size = new System.Drawing.Size(23, 16);
             this.lbT.TabIndex = 521;
