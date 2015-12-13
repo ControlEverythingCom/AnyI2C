@@ -114,21 +114,37 @@ namespace BMP280_I2CS
                 //T1 = 27504;
                 //T2 = 26435;
                 //T3 = -1000;
+
+                //P1 = 36477;
+                //P2 = -10685;
+                //P3 = 3024;
+                //P4 = 2855;
+                //P5 = 140;
+                //P6 = -7;
+                //P7 = 15500;
+                //P8 = -14600;
+                //P9 = 6000;
+                
+
+
                 double var1 = (((double)adc_T) / 16384.0 - ((double)T1 )/ 1024.0) * T2;
                 double var2 = ((((double)adc_T)/ 131072.0 - ((double)T1) / 8192.0) * (((double)adc_T )/ 131072.0 - ((double)T1 )/ 8192.0)) * T3;
                 double T = (var1 + var2)/5120.0;
                 lbT.Text = T.ToString("F2");
                 double tfine = (var1 + var2);
+                //tfine = 128422;
+                //adc_P = 415148;
                 var1 = ((double)tfine / 2.0) - 64000.0;
                 var2 = var1 * var1 * ((double)P6) / 32768;
                 var2 = var2 + var1 * ((double)P5) * 2.0;
                 var2 = (var2 / 4.0) + (((double)P4) * 65536);
-                var1 = (((double)P3)*var1 * var1 /52488.0 +((double)P2)*var1)/52488;
+                var1 = (((double)P3)*var1 * var1 /522488.0 +((double)P2)*var1)/524288;
+                var1 = (1.0 + var1 / 32768.00) * P1;
                 double p = 1048576.0 -adc_P;
                 p =(p-(var2/4096.0))*6250/var1;
                 var1 = ((double )P9 )* p *p /2147483648.0;
                 var2 = p* (double )P8/32768;
-                p = p + (var1 + var2*P7)/16;
+                p = p + (var1 + var2 + P7)/16;
                 lbP.Text = p.ToString("F2");
             }
             catch
@@ -146,12 +162,25 @@ namespace BMP280_I2CS
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-
+            ReadSensor();
         }
 
         private void chkAutoUpdate_CheckedChanged(object sender, EventArgs e)
         {
+            btnReadCh0.Enabled = !chkAutoUpdate.Checked;
+            if (chkAutoUpdate.Checked)
+            {
+                timer1.Enabled = true;
+            }
+            else
+            {
+                timer1.Enabled = false;
+            }
+        }
 
+        private void frmI2CS_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            timer1.Enabled = false;
         }
 
     }

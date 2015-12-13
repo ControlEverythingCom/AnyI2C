@@ -120,7 +120,7 @@
             // 
             this.lbP.AutoSize = true;
             this.lbP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lbP.Location = new System.Drawing.Point(414, 132);
+            this.lbP.Location = new System.Drawing.Point(390, 132);
             this.lbP.Name = "lbP";
             this.lbP.Size = new System.Drawing.Size(23, 16);
             this.lbP.TabIndex = 521;
@@ -130,7 +130,7 @@
             // 
             this.lbT.AutoSize = true;
             this.lbT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lbT.Location = new System.Drawing.Point(414, 163);
+            this.lbT.Location = new System.Drawing.Point(390, 163);
             this.lbT.Name = "lbT";
             this.lbT.Size = new System.Drawing.Size(23, 16);
             this.lbT.TabIndex = 521;
@@ -177,6 +177,7 @@
             this.Controls.Add(this.btnReadCh0);
             this.Name = "frmI2CS";
             this.Text = "BMP280 Control Panel";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmI2CS_FormClosing);
             this.Load += new System.EventHandler(this.frmADC081C_Load);
             this.GroupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numAddress)).EndInit();
