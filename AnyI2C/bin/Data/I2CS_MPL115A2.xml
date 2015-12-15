@@ -1,0 +1,63 @@
+﻿<DeviceConfig>
+	<Type>Pressure Sensor</Type>
+	<path>I2CS_MPL115A2.xml</path>
+	<Name>I2CS_MPL115A2</Name>
+	<Manufactory>Freescale Semiconductor</Manufactory>
+	<Address>96</Address>
+	<AddressCollection>
+		<Address>96</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Start Pressure and Temperature Conversion</Name>
+			<Description>Start Pressure and Temperature Conversion</Description>
+			<Data>
+				<Value>18</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read 10-bit Pressure Value MSB</Name>
+			<Description>Read 10-bit Pressure Value MSB</Description>
+			<Data>
+				<Value>0</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read 10-bit Pressure Value LSB</Name>
+			<Description>Read 10-bit Pressure Value LSB</Description>
+			<Data>
+				<Value>1</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read 10-bit Temperature Value MSB</Name>
+			<Description>Read 10-bit Temperature Value MSB</Description>
+			<Data>
+				<Value>2</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read 10-bit Temperature Value LSB</Name>
+			<Description>Read 10-bit Temperature Value LSB</Description>
+			<Data>
+				<Value>3</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>MPL115A2_I2CS.dll</GUIPath>
+				<TypeName>MPL115A2_I2CS.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>

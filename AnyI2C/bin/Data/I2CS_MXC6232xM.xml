@@ -1,0 +1,30 @@
+﻿<DeviceConfig>
+	<Type>Dual Axis Accelerometer Sensor</Type>
+	<path>I2CS_MXC6232xM.xml</path>
+	<Name>I2CS_MXC6232xM</Name>
+	<Manufactory>MEMSIC</Manufactory>
+	<Address>16</Address>
+	<AddressCollection>
+		<Address>16</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Read Data</Name>
+			<Description>Read Data</Description>
+			<Data>
+					<Value>0</Value>
+			</Data>
+			<ReadDataLength>5</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>MXC6232xM_I2CS.dll</GUIPath>
+				<TypeName>MXC6232xM_I2CS.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>
