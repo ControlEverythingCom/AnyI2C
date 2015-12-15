@@ -1,7 +1,7 @@
 ﻿<DeviceConfig>
 	<Type>Digital Ambient Light Sensor</Type>
-	<path>I2CS_TSL2571.xml</path>
-	<Name>I2CS_TSL2571</Name>
+	<path>I2CS_TSL27711.xml</path>
+	<Name>I2CS_TSL27711</Name>
 	<Manufactory>TAOS</Manufactory>
 	<Address>57</Address>
 	<AddressCollection>
@@ -31,8 +31,8 @@
 			<DeviceGUICommand>
 				<Name>GUI</Name>
 				<Description>GUI</Description>
-				<GUIPath>TSL2571_I2CS.dll</GUIPath>
-				<TypeName>TSL2571_I2CS.MyGUI</TypeName>
+				<GUIPath>TSL27711_I2CS.dll</GUIPath>
+				<TypeName>TSL27711_I2CS.MyGUI</TypeName>
 			</DeviceGUICommand>
 		</DeviceCommandsGroup>		
 	</Commands>
