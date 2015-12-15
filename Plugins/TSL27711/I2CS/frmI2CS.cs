@@ -51,7 +51,7 @@ namespace TSL27711_I2CS
                 // power on and measure
                 // write to config
                 byte[] value = CommObj.Send(new byte[] { addr, 0x80, 0xB },0);
-                value = CommObj.Send(new byte[] { addr, 0x94, 4}, 4);
+                value = CommObj.Send(new byte[] { addr, 0x94}, 4);
 
                 if (value != null)
                 {

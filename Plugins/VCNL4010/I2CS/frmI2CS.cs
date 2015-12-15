@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Threading;
 using AnyI2C;
 
-namespace TSL2571_I2CS
+namespace VCNL4010_I2CS
 {
     public partial class frmI2CS : Form
     {
@@ -47,27 +47,17 @@ namespace TSL2571_I2CS
             try
             {
                 _ERROR.Visible = false;
-                byte addr = GetAddress(false);
+                byte addr = GetAddress(true);
                 // power on and measure
                 // write to config
-                byte[] value = CommObj.Send(new byte[] { addr, 0x80, 0xB },0);
-                value = CommObj.Send(new byte[] { addr, 0x94}, 4);
+                byte[] value = CommObj.Send(new byte[] { addr, 0x85},2);
+                int lum = value[0] * 256 + value[1];
+                value = CommObj.Send(new byte[] { addr, 0x87}, 2);
+                int prox = value[0] * 256 + value[1];
 
-                if (value != null)
-                {
-                    int c0 = value[1] * 256 + value[0];
-                    int c1 = value[3] * 256 + value[2];
-                    double cpl = 255 * 2.72 * 1 / 53;
-                    double lux1 = (c0 - 2 * c1) / cpl;
-                    double lux2 = (0.6 * c0 - c1) / cpl;
-                    double lux = Math.Max(lux1, lux2);
-                    if (lux < 0)
-                    {
-                        lux = 0;
-                    }
-                    lbCh0.Text = lux.ToString("F0");
-                    return value[0].ToString();
-                }
+                lbCh0.Text = lum.ToString();
+                lbProx.Text = prox.ToString();
+                return value[0].ToString();
             }
             catch
             {

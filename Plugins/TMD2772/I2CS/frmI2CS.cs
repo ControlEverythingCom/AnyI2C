@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Threading;
 using AnyI2C;
 
-namespace TSL2571_I2CS
+namespace TMD2772_I2CS
 {
     public partial class frmI2CS : Form
     {
@@ -50,24 +50,33 @@ namespace TSL2571_I2CS
                 byte addr = GetAddress(false);
                 // power on and measure
                 // write to config
-                byte[] value = CommObj.Send(new byte[] { addr, 0x80, 0xB },0);
-                value = CommObj.Send(new byte[] { addr, 0x94}, 4);
+                byte[] value = CommObj.Send(new byte[] { addr, 0x80, 0xF },0);
+                value = CommObj.Send(new byte[] { addr, 0x94}, 1);
+                int c0 = value[0];
+                value = CommObj.Send(new byte[] { addr, 0x95}, 1);
+                c0 = c0 + value[0] * 256;
 
-                if (value != null)
+                value = CommObj.Send(new byte[] { addr, 0x96 }, 1);
+                int c1 = value[0];
+                value = CommObj.Send(new byte[] { addr, 0x97 }, 1);
+                c1 = c1 + value[0] * 256;
+
+                value = CommObj.Send(new byte[] { addr, 0x98 }, 1);
+                int p = value[0];
+                value = CommObj.Send(new byte[] { addr, 0x99 }, 1);
+                p = p + value[0] * 256;
+
+                double cpl = 255 * 2.72 * 1 / 20;
+                double lux1 = (c0 - 1.75 * c1) / cpl;
+                double lux2 = (0.63 * c0 - c1) / cpl;
+                double lux = Math.Max(lux1, lux2);
+                if (lux < 0)
                 {
-                    int c0 = value[1] * 256 + value[0];
-                    int c1 = value[3] * 256 + value[2];
-                    double cpl = 255 * 2.72 * 1 / 53;
-                    double lux1 = (c0 - 2 * c1) / cpl;
-                    double lux2 = (0.6 * c0 - c1) / cpl;
-                    double lux = Math.Max(lux1, lux2);
-                    if (lux < 0)
-                    {
-                        lux = 0;
-                    }
-                    lbCh0.Text = lux.ToString("F0");
-                    return value[0].ToString();
+                    lux = 0;
                 }
+                lbCh0.Text = lux.ToString("F0");
+                lbProx.Text = p.ToString();
+                return value[0].ToString();
             }
             catch
             {
