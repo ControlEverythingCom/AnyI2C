@@ -42,15 +42,12 @@
             this.numReadLength = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.btnEdit = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbDevices = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lbStatus = new System.Windows.Forms.Label();
             this.btnSend = new System.Windows.Forms.Button();
             this.btnScan = new System.Windows.Forms.Button();
             this.btnLoad = new System.Windows.Forms.Button();
-            this.lbInfo = new AnyI2C.NumLabel();
-            this.ctlI2CAddress1 = new AnyI2C.Controls.I2C.ctlI2CAddress();
             this.btnTest = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.numPort = new System.Windows.Forms.NumericUpDown();
@@ -58,8 +55,15 @@
             this.lbType = new System.Windows.Forms.Label();
             this.lbAddress = new System.Windows.Forms.Label();
             this.lbGeneralCall = new System.Windows.Forms.Label();
+            this.lbCommandDes = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lbInfo = new AnyI2C.NumLabel();
+            this.ctlI2CAddress1 = new AnyI2C.Controls.I2C.ctlI2CAddress();
             ((System.ComponentModel.ISupportInitialize)(this.numReadLength)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPort)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmbI2CBridge
@@ -97,17 +101,17 @@
             // lstDevices
             // 
             this.lstDevices.FormattingEnabled = true;
-            this.lstDevices.Location = new System.Drawing.Point(14, 66);
+            this.lstDevices.Location = new System.Drawing.Point(19, 66);
             this.lstDevices.Name = "lstDevices";
-            this.lstDevices.Size = new System.Drawing.Size(438, 251);
+            this.lstDevices.Size = new System.Drawing.Size(433, 251);
             this.lstDevices.TabIndex = 9;
             this.lstDevices.SelectedIndexChanged += new System.EventHandler(this.lstDevices_SelectedIndexChanged);
             // 
             // tvCommands
             // 
-            this.tvCommands.Location = new System.Drawing.Point(14, 352);
+            this.tvCommands.Location = new System.Drawing.Point(8, 17);
             this.tvCommands.Name = "tvCommands";
-            this.tvCommands.Size = new System.Drawing.Size(437, 308);
+            this.tvCommands.Size = new System.Drawing.Size(433, 253);
             this.tvCommands.TabIndex = 10;
             this.tvCommands.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvCommands_AfterSelect);
             this.tvCommands.DoubleClick += new System.EventHandler(this.tvCommands_DoubleClick);
@@ -117,6 +121,7 @@
             this.txtLog.Location = new System.Drawing.Point(475, 266);
             this.txtLog.Multiline = true;
             this.txtLog.Name = "txtLog";
+            this.txtLog.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtLog.Size = new System.Drawing.Size(435, 465);
             this.txtLog.TabIndex = 11;
             // 
@@ -204,23 +209,14 @@
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-            // label1
+            // lbDevices
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 48);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 13);
-            this.label1.TabIndex = 38;
-            this.label1.Text = "Device";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 336);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 13);
-            this.label2.TabIndex = 38;
-            this.label2.Text = "Commands";
+            this.lbDevices.AutoSize = true;
+            this.lbDevices.Location = new System.Drawing.Point(16, 48);
+            this.lbDevices.Name = "lbDevices";
+            this.lbDevices.Size = new System.Drawing.Size(41, 13);
+            this.lbDevices.TabIndex = 38;
+            this.lbDevices.Text = "Device";
             // 
             // label5
             // 
@@ -262,44 +258,24 @@
             // 
             // btnLoad
             // 
-            this.btnLoad.Location = new System.Drawing.Point(19, 737);
+            this.btnLoad.Location = new System.Drawing.Point(593, 740);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(75, 23);
             this.btnLoad.TabIndex = 40;
             this.btnLoad.Text = "Load";
             this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Visible = false;
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
-            // 
-            // lbInfo
-            // 
-            this.lbInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbInfo.AutoSize = true;
-            this.lbInfo.IsShowText = false;
-            this.lbInfo.Location = new System.Drawing.Point(817, 168);
-            this.lbInfo.Name = "lbInfo";
-            this.lbInfo.Prefix = "Length: ";
-            this.lbInfo.Size = new System.Drawing.Size(94, 13);
-            this.lbInfo.TabIndex = 33;
-            this.lbInfo.Text = "Length:  0x0 [Hex]";
-            this.lbInfo.Value = new int[] {
-        0};
-            // 
-            // ctlI2CAddress1
-            // 
-            this.ctlI2CAddress1.Addr7 = ((byte)(0));
-            this.ctlI2CAddress1.Location = new System.Drawing.Point(475, 48);
-            this.ctlI2CAddress1.Name = "ctlI2CAddress1";
-            this.ctlI2CAddress1.Size = new System.Drawing.Size(448, 67);
-            this.ctlI2CAddress1.TabIndex = 12;
             // 
             // btnTest
             // 
-            this.btnTest.Location = new System.Drawing.Point(112, 737);
+            this.btnTest.Location = new System.Drawing.Point(686, 740);
             this.btnTest.Name = "btnTest";
             this.btnTest.Size = new System.Drawing.Size(75, 23);
             this.btnTest.TabIndex = 40;
             this.btnTest.Text = "Test";
             this.btnTest.UseVisualStyleBackColor = true;
+            this.btnTest.Visible = false;
             this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
             // 
             // label6
@@ -326,7 +302,7 @@
             // lbManufactory
             // 
             this.lbManufactory.AutoSize = true;
-            this.lbManufactory.Location = new System.Drawing.Point(19, 668);
+            this.lbManufactory.Location = new System.Drawing.Point(6, 20);
             this.lbManufactory.Name = "lbManufactory";
             this.lbManufactory.Size = new System.Drawing.Size(66, 13);
             this.lbManufactory.TabIndex = 42;
@@ -334,44 +310,93 @@
             // 
             // lbType
             // 
-            this.lbType.AutoSize = true;
-            this.lbType.Location = new System.Drawing.Point(19, 684);
+            this.lbType.Location = new System.Drawing.Point(5, 37);
             this.lbType.Name = "lbType";
-            this.lbType.Size = new System.Drawing.Size(31, 13);
+            this.lbType.Size = new System.Drawing.Size(282, 26);
             this.lbType.TabIndex = 42;
             this.lbType.Text = "Type";
             // 
             // lbAddress
             // 
-            this.lbAddress.Location = new System.Drawing.Point(19, 703);
+            this.lbAddress.Location = new System.Drawing.Point(7, 66);
             this.lbAddress.Name = "lbAddress";
-            this.lbAddress.Size = new System.Drawing.Size(433, 31);
+            this.lbAddress.Size = new System.Drawing.Size(403, 31);
             this.lbAddress.TabIndex = 42;
             this.lbAddress.Text = "Address";
             // 
             // lbGeneralCall
             // 
             this.lbGeneralCall.AutoSize = true;
-            this.lbGeneralCall.Location = new System.Drawing.Point(282, 684);
+            this.lbGeneralCall.Location = new System.Drawing.Point(294, 20);
             this.lbGeneralCall.Name = "lbGeneralCall";
             this.lbGeneralCall.Size = new System.Drawing.Size(104, 13);
             this.lbGeneralCall.TabIndex = 43;
             this.lbGeneralCall.Text = "Support General Call";
             // 
+            // lbCommandDes
+            // 
+            this.lbCommandDes.Location = new System.Drawing.Point(7, 276);
+            this.lbCommandDes.Name = "lbCommandDes";
+            this.lbCommandDes.Size = new System.Drawing.Size(432, 27);
+            this.lbCommandDes.TabIndex = 42;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.lbGeneralCall);
+            this.groupBox1.Controls.Add(this.lbAddress);
+            this.groupBox1.Controls.Add(this.lbManufactory);
+            this.groupBox1.Controls.Add(this.lbType);
+            this.groupBox1.Location = new System.Drawing.Point(12, 654);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(450, 100);
+            this.groupBox1.TabIndex = 44;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Device Information";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.lbCommandDes);
+            this.groupBox2.Controls.Add(this.tvCommands);
+            this.groupBox2.Location = new System.Drawing.Point(11, 333);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(451, 315);
+            this.groupBox2.TabIndex = 45;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Commands";
+            // 
+            // lbInfo
+            // 
+            this.lbInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbInfo.AutoSize = true;
+            this.lbInfo.IsShowText = false;
+            this.lbInfo.Location = new System.Drawing.Point(817, 168);
+            this.lbInfo.Name = "lbInfo";
+            this.lbInfo.Prefix = "Length: ";
+            this.lbInfo.Size = new System.Drawing.Size(94, 13);
+            this.lbInfo.TabIndex = 33;
+            this.lbInfo.Text = "Length:  0x0 [Hex]";
+            this.lbInfo.Value = new int[] {
+        0};
+            // 
+            // ctlI2CAddress1
+            // 
+            this.ctlI2CAddress1.Addr7 = ((byte)(0));
+            this.ctlI2CAddress1.Location = new System.Drawing.Point(475, 48);
+            this.ctlI2CAddress1.Name = "ctlI2CAddress1";
+            this.ctlI2CAddress1.Size = new System.Drawing.Size(448, 67);
+            this.ctlI2CAddress1.TabIndex = 12;
+            // 
             // frmMain
             // 
             this.ClientSize = new System.Drawing.Size(923, 779);
-            this.Controls.Add(this.lbGeneralCall);
-            this.Controls.Add(this.lbAddress);
-            this.Controls.Add(this.lbType);
-            this.Controls.Add(this.lbManufactory);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.numPort);
             this.Controls.Add(this.btnTest);
             this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.lbStatus);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbDevices);
             this.Controls.Add(this.btnSend);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.chkRead);
@@ -384,7 +409,6 @@
             this.Controls.Add(this.txtQuickSend);
             this.Controls.Add(this.ctlI2CAddress1);
             this.Controls.Add(this.txtLog);
-            this.Controls.Add(this.tvCommands);
             this.Controls.Add(this.lstDevices);
             this.Controls.Add(this.btnScan);
             this.Controls.Add(this.btnOpen);
@@ -399,6 +423,9 @@
             this.Load += new System.EventHandler(this.frmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numReadLength)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPort)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -422,8 +449,7 @@
         private System.Windows.Forms.NumericUpDown numReadLength;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbDevices;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lbStatus;
         private System.Windows.Forms.Button btnSend;
@@ -436,6 +462,9 @@
         private System.Windows.Forms.Label lbType;
         private System.Windows.Forms.Label lbAddress;
         private System.Windows.Forms.Label lbGeneralCall;
+        private System.Windows.Forms.Label lbCommandDes;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
 

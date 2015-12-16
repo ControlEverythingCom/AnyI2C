@@ -501,6 +501,7 @@ namespace AnyI2C
             {
                 lstDevices.Items.Add(dev.Name);
             }
+            lbDevices.Text = string.Format("Devices ({0})", lstDevices.Items.Count);
             if (mDevices.Devices.Length > 0)
             {
                 FillCommandsTree(mDevices.Devices[0]);
@@ -629,6 +630,20 @@ namespace AnyI2C
 
         private void tvCommands_AfterSelect(object sender, TreeViewEventArgs e)
         {
+            TreeNode nd = tvCommands.SelectedNode;
+            if (nd != null)
+            {
+                if (nd.Tag is DeviceCommand)
+                {
+                    DeviceCommand cmd = (DeviceCommand)nd.Tag;
+                    lbCommandDes.Text = cmd.Description;
+                }
+                else if (nd.Tag is DeviceGUICommand)
+                {
+                    DeviceGUICommand cmd = (DeviceGUICommand)nd.Tag;
+                    lbCommandDes.Text = cmd.Description + "\r\n" + cmd.GUIPath;
+                }
+            }
 
         }
 
