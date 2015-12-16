@@ -1,0 +1,49 @@
+﻿<DeviceConfig>
+	<Type>9-axis Motion Sensor</Type>
+	<path>I2CS_MPU9150.xml</path>
+	<Name>I2CS_MPU9150</Name>
+	<Manufactory>InvenSense</Manufactory>
+	<Address>104</Address>
+	<AddressCollection>
+		<Address>104</Address>
+		<Address>105</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Wakeup Device</Name>
+			<Description>Wakeup Device</Description>
+			<Data>
+					<Value>107</Value>
+					<Value>0</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Accel Data</Name>
+			<Description>Read Accel Data</Description>
+			<Data>
+					<Value>59</Value>
+			</Data>
+			<ReadDataLength>6</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Gyro Data</Name>
+			<Description>Read Gyro Data</Description>
+			<Data>
+					<Value>67</Value>
+			</Data>
+			<ReadDataLength>6</ReadDataLength>				
+		</DeviceCommand>
+		
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>MPU9150_I2CS.dll</GUIPath>
+				<TypeName>MPU9150_I2CS.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>
