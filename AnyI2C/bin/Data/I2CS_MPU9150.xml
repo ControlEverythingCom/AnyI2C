@@ -1,5 +1,5 @@
 ﻿<DeviceConfig>
-	<Type>Three-axis Angular  Sensor</Type>
+	<Type>9-axis Motion Sensor</Type>
 	<path>I2CS_MPU9150.xml</path>
 	<Name>I2CS_MPU9150</Name>
 	<Manufactory>InvenSense</Manufactory>
@@ -10,83 +10,39 @@
 	</AddressCollection>
 	<Commands>
 		<DeviceCommand>
-			<Name>Configure Device Sample Rate</Name>
-			<Description>Configure Device</Description>
+			<Name>Wakeup Device</Name>
+			<Description>Wakeup Device</Description>
 			<Data>
-					<Value>21</Value>
-					<Value>9</Value>
+					<Value>107</Value>
+					<Value>0</Value>
 			</Data>
 			<ReadDataLength>0</ReadDataLength>				
 		</DeviceCommand>
 		<DeviceCommand>
-			<Name>Configure Device DLPF</Name>
-			<Description>Configure Device DLPF</Description>
+			<Name>Read Accel Data</Name>
+			<Description>Read Accel Data</Description>
 			<Data>
-					<Value>22</Value>
-					<Value>25</Value>
+					<Value>59</Value>
 			</Data>
-			<ReadDataLength>0</ReadDataLength>				
+			<ReadDataLength>6</ReadDataLength>				
 		</DeviceCommand>
 		<DeviceCommand>
-			<Name>Read X High</Name>
-			<Description>Read X High</Description>
+			<Name>Read Gyro Data</Name>
+			<Description>Read Gyro Data</Description>
 			<Data>
-					<Value>29</Value>
+					<Value>67</Value>
 			</Data>
-			<ReadDataLength>1</ReadDataLength>				
-		</DeviceCommand>
-		<DeviceCommand>
-			<Name>Read X Low</Name>
-			<Description>Read X Low</Description>
-			<Data>
-					<Value>30</Value>
-			</Data>
-			<ReadDataLength>1</ReadDataLength>				
+			<ReadDataLength>6</ReadDataLength>				
 		</DeviceCommand>
 		
-		<DeviceCommand>
-			<Name>Read Y High</Name>
-			<Description>Read Y High</Description>
-			<Data>
-					<Value>31</Value>
-			</Data>
-			<ReadDataLength>1</ReadDataLength>				
-		</DeviceCommand>
-		<DeviceCommand>
-			<Name>Read Y Low</Name>
-			<Description>Read Y Low</Description>
-			<Data>
-					<Value>32</Value>
-			</Data>
-			<ReadDataLength>1</ReadDataLength>				
-		</DeviceCommand>
-		
-		<DeviceCommand>
-			<Name>Read Z High</Name>
-			<Description>Read Z High</Description>
-			<Data>
-					<Value>33</Value>
-			</Data>
-			<ReadDataLength>1</ReadDataLength>				
-		</DeviceCommand>
-		<DeviceCommand>
-			<Name>Read Z Low</Name>
-			<Description>Read Z Low</Description>
-			<Data>
-					<Value>34</Value>
-			</Data>
-			<ReadDataLength>1</ReadDataLength>				
-		</DeviceCommand>
-		
-
 		<DeviceCommandsGroup>
 			<Name>GUI</Name>
 			<Description>GUI</Description>
 			<DeviceGUICommand>
 				<Name>GUI</Name>
 				<Description>GUI</Description>
-				<GUIPath>ITG3200_I2CS.dll</GUIPath>
-				<TypeName>ITG3200_I2CS.MyGUI</TypeName>
+				<GUIPath>MPU9150_I2CS.dll</GUIPath>
+				<TypeName>MPU9150_I2CS.MyGUI</TypeName>
 			</DeviceGUICommand>
 		</DeviceCommandsGroup>		
 	</Commands>

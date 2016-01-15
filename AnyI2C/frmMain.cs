@@ -281,7 +281,12 @@ namespace AnyI2C
                     LogText(sb.ToString());
                 }
 
-                mBridge.Write((byte)numPort.Value, ctlI2CAddress1.Addr7, mData.Content);
+                bool b = mBridge.Write((byte)numPort.Value, ctlI2CAddress1.Addr7, mData.Content);
+                if(!b)
+                {
+                    LogText("Write Data Fail");
+                }
+
                 if (chkRead.Checked)
                 {
                     byte[] readData = mBridge.ReadData((byte)numPort.Value, ctlI2CAddress1.Addr7, (byte)numReadLength.Value);
@@ -298,6 +303,10 @@ namespace AnyI2C
                             sb.AppendFormat(format, readData[i]);
                         }
                         LogText(sb.ToString());
+                        if(IsFail(readData))
+                        {
+                            LogText("Read Data Fail");
+                        }
                     }
                 }
 
@@ -306,6 +315,26 @@ namespace AnyI2C
             catch 
             {
             }
+        }
+
+        /// <summary>
+        /// check if hte byte array is fail code
+        /// </summary>
+        /// <param name="?"></param>
+        /// <returns></returns>
+        bool IsFail(byte[] b)
+        {
+            if(b != null)
+            {
+                if(b.Length == 4)
+                {
+                    if(b[0] == 0xBC && b[1] == 0x5C && b[2] == 0xA3 && b[3] ==0x43)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
         }
 
         private void btnSend_Click(object sender, EventArgs e)
@@ -472,6 +501,7 @@ namespace AnyI2C
             {
                 lstDevices.Items.Add(dev.Name);
             }
+            lbDevices.Text = string.Format("Devices ({0})", lstDevices.Items.Count);
             if (mDevices.Devices.Length > 0)
             {
                 FillCommandsTree(mDevices.Devices[0]);
@@ -576,15 +606,22 @@ namespace AnyI2C
                 }
                 else if (nd.Tag is DeviceGUICommand)
                 {
-                    DeviceGUICommand cmd = (DeviceGUICommand)nd.Tag;
-                    string path = System.IO.Directory.GetParent(Application.ExecutablePath) + "\\" + cmd.GUIPath;
-                    Assembly guiLib = Assembly.LoadFile(path);
-                    //Type t = guiLib.GetType("I2CDIO8.MyGUI");
-                    Type t = guiLib.GetType(cmd.TypeName);
-                    GuiInterface gui = (GuiInterface)Activator.CreateInstance(t);
-                    CommObj obj = new CommObj(this);
+                    try
+                    {
+                        DeviceGUICommand cmd = (DeviceGUICommand)nd.Tag;
+                        string path = System.IO.Directory.GetParent(Application.ExecutablePath) + "\\" + cmd.GUIPath;
+                        Assembly guiLib = Assembly.LoadFile(path);
+                        //Type t = guiLib.GetType("I2CDIO8.MyGUI");
+                        Type t = guiLib.GetType(cmd.TypeName);
+                        GuiInterface gui = (GuiInterface)Activator.CreateInstance(t);
+                        CommObj obj = new CommObj(this);
 
-                    gui.Show(obj);
+                        gui.Show(obj);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Fail to load GUI ");
+                    }
 
 
                 }
@@ -593,6 +630,20 @@ namespace AnyI2C
 
         private void tvCommands_AfterSelect(object sender, TreeViewEventArgs e)
         {
+            TreeNode nd = tvCommands.SelectedNode;
+            if (nd != null)
+            {
+                if (nd.Tag is DeviceCommand)
+                {
+                    DeviceCommand cmd = (DeviceCommand)nd.Tag;
+                    lbCommandDes.Text = cmd.Description;
+                }
+                else if (nd.Tag is DeviceGUICommand)
+                {
+                    DeviceGUICommand cmd = (DeviceGUICommand)nd.Tag;
+                    lbCommandDes.Text = cmd.Description + "\r\n" + cmd.GUIPath;
+                }
+            }
 
         }
 
@@ -614,71 +665,83 @@ namespace AnyI2C
         /// <returns></returns>
         public byte[] SendI2C(byte[] writedata, byte readLength)
         {
-            I2CData data = new I2CData();
-            byte[] data2 = new byte[writedata.Length - 1];
-            for (int i = 1; i < writedata.Length; i++)
+            try
             {
-                data2[i - 1] = writedata[i];
-            }
-            data.Content = data2;
-            data.ReadDataLength = readLength;
-            data.IsRead = readLength > 0;
-            data.Address = (byte)(writedata[0] >> 1);
-            mData = data;
-            UpdateGUIFromData(mData.Content);
-            ctlI2CAddress1.Addr7 = mData.Address;
-            chkRead.Checked = mData.IsRead;
-            chkWrite.Checked = mData.IsWrite;
-            numReadLength.Value = mData.ReadDataLength;
-            UpdateData();
-            if (chkWrite.Checked)
-            {
-                StringBuilder sb = new StringBuilder();
-                sb.Append("W:");
-                string format = GetFormat() == emViewFormat.Hex ? "{0:X2} " : "{0:d} ";
-                sb.AppendFormat(format, ctlI2CAddress1.Addr7 * 2);
-                for (int i = 0; i < mData.Content.Length; i++)
+                I2CData data = new I2CData();
+                byte[] data2 = new byte[writedata.Length - 1];
+                for (int i = 1; i < writedata.Length; i++)
                 {
-                    sb.AppendFormat(format, mData.Content[i]);
+                    data2[i - 1] = writedata[i];
                 }
-                LogText(sb.ToString());
-            }
-
-            if (!mBridge.Write((byte)numPort.Value, mData.Address, mData.Content))
-            {
-                OnWriteDataError();
-                throw new Exception("On Write Data Error");
-            }
-            else
-            {
-                if (chkRead.Checked)
+                data.Content = data2;
+                data.ReadDataLength = readLength;
+                data.IsRead = readLength > 0;
+                data.Address = (byte)(writedata[0] >> 1);
+                mData = data;
+                UpdateGUIFromData(mData.Content);
+                ctlI2CAddress1.Addr7 = mData.Address;
+                chkRead.Checked = mData.IsRead;
+                chkWrite.Checked = mData.IsWrite;
+                numReadLength.Value = mData.ReadDataLength;
+                UpdateData();
+                if (chkWrite.Checked)
                 {
-                    try
+                    StringBuilder sb = new StringBuilder();
+                    sb.Append("W:");
+                    string format = GetFormat() == emViewFormat.Hex ? "{0:X2} " : "{0:d} ";
+                    sb.AppendFormat(format, ctlI2CAddress1.Addr7 * 2);
+                    for (int i = 0; i < mData.Content.Length; i++)
                     {
-                        byte[] readData = mBridge.ReadData((byte)numPort.Value, ctlI2CAddress1.Addr7, (byte)numReadLength.Value);
-                        if (readData != null)
+                        sb.AppendFormat(format, mData.Content[i]);
+                    }
+                    LogText(sb.ToString());
+                }
+
+                if (!mBridge.Write((byte)numPort.Value, mData.Address, mData.Content))
+                {
+                    //OnWriteDataError();
+                    throw new Exception("On Write Data Error");
+                }
+                else
+                {
+                    if (chkRead.Checked)
+                    {
+                        try
                         {
-                            StringBuilder sb = new StringBuilder();
-                            string format = GetFormat() == emViewFormat.Hex ? "{0:X2} " : "{0:d} ";
-                            sb.Append("W:");
-                            sb.AppendFormat(format, ctlI2CAddress1.Addr7 * 2 + 1);
-                            sb.AppendLine();
-                            sb.Append("R:");
-                            for (int i = 0; i < readData.Length; i++)
+                            byte[] readData = mBridge.ReadData((byte)numPort.Value, ctlI2CAddress1.Addr7, (byte)numReadLength.Value);
+                            if (IsFail(readData))
                             {
-                                sb.AppendFormat(format, readData[i]);
+                                LogText("Read Data Fail");
                             }
-                            LogText(sb.ToString());
-                            return readData;
-                        }
+                            else if (readData != null)
+                            {
+                                StringBuilder sb = new StringBuilder();
+                                string format = GetFormat() == emViewFormat.Hex ? "{0:X2} " : "{0:d} ";
+                                sb.Append("W:");
+                                sb.AppendFormat(format, ctlI2CAddress1.Addr7 * 2 + 1);
+                                sb.AppendLine();
+                                sb.Append("R:");
+                                for (int i = 0; i < readData.Length; i++)
+                                {
+                                    sb.AppendFormat(format, readData[i]);
+                                }
+                                LogText(sb.ToString());
+                                return readData;
+                            }
 
-                    }
-                    catch (Exception ex)
-                    {
-                        OnReadDataError();
-                        throw new Exception("On Read Data Error");
+                        }
+                        catch (Exception ex)
+                        {
+                            //OnReadDataError();
+                            throw new Exception("On Read Data Error");
+                        }
                     }
                 }
+
+            }
+            catch(Exception ex)
+            {
+                LogText(ex.Message);
             }
             return null;
 
