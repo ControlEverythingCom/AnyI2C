@@ -43,6 +43,7 @@ namespace SetupXmlCreator
                 sb3.AppendLine(str4);
                 Debug.Print(filename);
             }
+
             textBox1.Text = sb1.ToString();
 
             files = Directory.EnumerateFiles(".\\Data", "*I2C*.xml");
@@ -61,6 +62,7 @@ namespace SetupXmlCreator
                 sb3.AppendLine(str4);
                 Debug.Print(filename);
             }
+
             textBox1.Text = sb1.ToString();
             textBox2.Text = sb2.ToString();
             textBox3.Text = sb3.ToString();
