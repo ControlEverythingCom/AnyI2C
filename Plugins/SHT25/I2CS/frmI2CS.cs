@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Threading;
 using AnyI2C;
 
-namespace Si7020_I2CS
+namespace SHT25_I2CS
 {
     public partial class frmI2CS : Form
     {

@@ -1,4 +1,4 @@
-﻿namespace Si7020_I2CS
+﻿namespace SHT25_I2CS
 {
     partial class frmI2CS
     {
