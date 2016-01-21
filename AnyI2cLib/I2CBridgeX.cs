@@ -39,20 +39,12 @@ namespace AnyI2cLib
         {
             ArrayList devices = new ArrayList();
 
-            for (byte i = 1; i < 128; i++)
+            for (byte i = 63; i < 128; i++)
             {
-                byte [] data = ReadData(port,i, 1);
-                if(data!= null)
+                bool exist = Write(port, i, null);
+                if(exist)
                 {
-                    if (data.Length == 4)
-                    {
-
-                    }
-                    if (data.Length == 1)
-                    {
-                        devices.Add(i);
-                    }
-
+                    devices.Add(i);
                 }
             }
             return (byte[])devices.ToArray(typeof(byte));
@@ -92,13 +84,18 @@ namespace AnyI2cLib
             bool bRtn = false;
             if (Component.IsOpen)
             {
-                byte[] data = new byte[buffer.Length + 5];
+                int bufferLength = 0;
+                if (buffer != null)
+                {
+                    bufferLength = buffer.Length;
+                }
+                byte[] data = new byte[bufferLength + 5];
                 data[0] = 188;
                 data[1] = (byte)(port + 50);
-                data[2] = (byte)(buffer.Length + 1);
+                data[2] = (byte)(bufferLength + 1);
                 data[3] = (byte)(addr * 2);
-                data[4 +buffer.Length ] = 0;
-                for (int i = 0; i < buffer.Length; i++)
+                data[4 +bufferLength ] = 0;
+                for (int i = 0; i < bufferLength; i++)
                 {
                     data[4 + i] = buffer[i];
                 }
@@ -130,7 +127,7 @@ namespace AnyI2cLib
                 {
                     bool isI2c = IsI2CBridgeX(info[i].PortName);
                     Debug.Print(isI2c.ToString());
-                    if (isI2c)
+                    //if (isI2c)
                     {
                         I2CBridgeX b = new I2CBridgeX();
                         b.PortName = info[i].PortName;
