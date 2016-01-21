@@ -39,7 +39,7 @@ namespace AnyI2cLib
         {
             ArrayList devices = new ArrayList();
 
-            for (byte i = 63; i < 128; i++)
+            for (byte i = 0; i < 128; i++)
             {
                 bool exist = Write(port, i, null);
                 if(exist)
@@ -127,7 +127,7 @@ namespace AnyI2cLib
                 {
                     bool isI2c = IsI2CBridgeX(info[i].PortName);
                     Debug.Print(isI2c.ToString());
-                    //if (isI2c)
+                    if (isI2c)
                     {
                         I2CBridgeX b = new I2CBridgeX();
                         b.PortName = info[i].PortName;
