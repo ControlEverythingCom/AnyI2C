@@ -48,8 +48,7 @@
               <File Id="AnyI2cIcon" Name="anyi2c.ico" DiskId="1" Source="anyi2c.ico" KeyPath="yes">
               </File>
             </Component>
-            
-            
+
             <Component Id="AD5241_I2CPOTdll" Guid="*">
               <File Id="AD5241_I2CPOTdll" Name="AD5241_I2CPOT.dll" DiskId="1" Source="AD5241_I2CPOT.dll" KeyPath="yes"></File>
             </Component>
@@ -94,6 +93,9 @@
             </Component>
             <Component Id="ADXL345_I2CSdll" Guid="*">
               <File Id="ADXL345_I2CSdll" Name="ADXL345_I2CS.dll" DiskId="1" Source="ADXL345_I2CS.dll" KeyPath="yes"></File>
+            </Component>
+            <Component Id="AS1115_I2CL3Edll" Guid="*">
+              <File Id="AS1115_I2CL3Edll" Name="AS1115_I2CL3E.dll" DiskId="1" Source="AS1115_I2CL3E.dll" KeyPath="yes"></File>
             </Component>
             <Component Id="AT30TS74_I2CSdll" Guid="*">
               <File Id="AT30TS74_I2CSdll" Name="AT30TS74_I2CS.dll" DiskId="1" Source="AT30TS74_I2CS.dll" KeyPath="yes"></File>
@@ -233,6 +235,9 @@
             <Component Id="TMP100_I2CSdll" Guid="*">
               <File Id="TMP100_I2CSdll" Name="TMP100_I2CS.dll" DiskId="1" Source="TMP100_I2CS.dll" KeyPath="yes"></File>
             </Component>
+            <Component Id="TMP112_I2CSdll" Guid="*">
+              <File Id="TMP112_I2CSdll" Name="TMP112_I2CS.dll" DiskId="1" Source="TMP112_I2CS.dll" KeyPath="yes"></File>
+            </Component>
             <Component Id="TSL2571_I2CSdll" Guid="*">
               <File Id="TSL2571_I2CSdll" Name="TSL2571_I2CS.dll" DiskId="1" Source="TSL2571_I2CS.dll" KeyPath="yes"></File>
             </Component>
@@ -245,6 +250,7 @@
             <Component Id="VCNL4010_I2CSdll" Guid="*">
               <File Id="VCNL4010_I2CSdll" Name="VCNL4010_I2CS.dll" DiskId="1" Source="VCNL4010_I2CS.dll" KeyPath="yes"></File>
             </Component>
+
 
 
 
@@ -300,6 +306,9 @@
               </Component>
               <Component Id="I2CIO7R1_MCP23008xml" Guid="*">
                 <File Id="I2CIO7R1_MCP23008xml" Name="I2CIO7R1_MCP23008.xml" DiskId="1" Source="Data\I2CIO7R1_MCP23008.xml" KeyPath="yes"></File>
+              </Component>
+              <Component Id="I2CL3CE_AS1115xml" Guid="*">
+                <File Id="I2CL3CE_AS1115xml" Name="I2CL3CE_AS1115.xml" DiskId="1" Source="Data\I2CL3CE_AS1115.xml" KeyPath="yes"></File>
               </Component>
               <Component Id="I2CMEM_M24512xml" Guid="*">
                 <File Id="I2CMEM_M24512xml" Name="I2CMEM_M24512.xml" DiskId="1" Source="Data\I2CMEM_M24512.xml" KeyPath="yes"></File>
@@ -378,6 +387,9 @@
               </Component>
               <Component Id="I2CS_HP206Cxml" Guid="*">
                 <File Id="I2CS_HP206Cxml" Name="I2CS_HP206C.xml" DiskId="1" Source="Data\I2CS_HP206C.xml" KeyPath="yes"></File>
+              </Component>
+              <Component Id="I2CS_HYT221xml" Guid="*">
+                <File Id="I2CS_HYT221xml" Name="I2CS_HYT221.xml" DiskId="1" Source="Data\I2CS_HYT221.xml" KeyPath="yes"></File>
               </Component>
               <Component Id="I2CS_ITG3200xml" Guid="*">
                 <File Id="I2CS_ITG3200xml" Name="I2CS_ITG3200.xml" DiskId="1" Source="Data\I2CS_ITG3200.xml" KeyPath="yes"></File>
@@ -466,6 +478,9 @@
               <Component Id="I2CS_TMP100xml" Guid="*">
                 <File Id="I2CS_TMP100xml" Name="I2CS_TMP100.xml" DiskId="1" Source="Data\I2CS_TMP100.xml" KeyPath="yes"></File>
               </Component>
+              <Component Id="I2CS_TMP112xml" Guid="*">
+                <File Id="I2CS_TMP112xml" Name="I2CS_TMP112.xml" DiskId="1" Source="Data\I2CS_TMP112.xml" KeyPath="yes"></File>
+              </Component>
               <Component Id="I2CS_TSL2571xml" Guid="*">
                 <File Id="I2CS_TSL2571xml" Name="I2CS_TSL2571.xml" DiskId="1" Source="Data\I2CS_TSL2571.xml" KeyPath="yes"></File>
               </Component>
@@ -475,7 +490,6 @@
               <Component Id="I2CS_TSL45315xml" Guid="*">
                 <File Id="I2CS_TSL45315xml" Name="I2CS_TSL45315.xml" DiskId="1" Source="Data\I2CS_TSL45315.xml" KeyPath="yes"></File>
               </Component>
-
 
             </Directory>
           </Directory>
@@ -501,7 +515,6 @@
 
       <ComponentRef Id="ProgramMenuDir" />
 
-
       <ComponentRef Id="AD5241_I2CPOTdll" />
       <ComponentRef Id="AD5252_I2CPOTdll" />
       <ComponentRef Id="AD5254_I2CPOTdll" />
@@ -517,6 +530,7 @@
       <ComponentRef Id="ADS7828_I2CAD8dll" />
       <ComponentRef Id="ADT75_I2CSdll" />
       <ComponentRef Id="ADXL345_I2CSdll" />
+      <ComponentRef Id="AS1115_I2CL3Edll" />
       <ComponentRef Id="AT30TS74_I2CSdll" />
       <ComponentRef Id="BMG160_I2CSdll" />
       <ComponentRef Id="BMP180_I2CSdll" />
@@ -563,6 +577,7 @@
       <ComponentRef Id="TCS34725_I2CSdll" />
       <ComponentRef Id="TMD2772_I2CSdll" />
       <ComponentRef Id="TMP100_I2CSdll" />
+      <ComponentRef Id="TMP112_I2CSdll" />
       <ComponentRef Id="TSL2571_I2CSdll" />
       <ComponentRef Id="TSL27711_I2CSdll" />
       <ComponentRef Id="TSL45315_I2CSdll" />
@@ -584,6 +599,7 @@
       <ComponentRef Id="I2CIO4R4_MCP23008xml" />
       <ComponentRef Id="I2CIO6R2_MCP23008xml" />
       <ComponentRef Id="I2CIO7R1_MCP23008xml" />
+      <ComponentRef Id="I2CL3CE_AS1115xml" />
       <ComponentRef Id="I2CMEM_M24512xml" />
       <ComponentRef Id="I2CPOT_AD5241xml" />
       <ComponentRef Id="I2CPOT_AD5252xml" />
@@ -610,6 +626,7 @@
       <ComponentRef Id="I2CS_HMC6343xml" />
       <ComponentRef Id="I2CS_HP203Bxml" />
       <ComponentRef Id="I2CS_HP206Cxml" />
+      <ComponentRef Id="I2CS_HYT221xml" />
       <ComponentRef Id="I2CS_ITG3200xml" />
       <ComponentRef Id="I2CS_ITG3701xml" />
       <ComponentRef Id="I2CS_L3G4200xml" />
@@ -639,6 +656,7 @@
       <ComponentRef Id="I2CS_TCS34725xml" />
       <ComponentRef Id="I2CS_TMD2772xml" />
       <ComponentRef Id="I2CS_TMP100xml" />
+      <ComponentRef Id="I2CS_TMP112xml" />
       <ComponentRef Id="I2CS_TSL2571xml" />
       <ComponentRef Id="I2CS_TSL27711xml" />
       <ComponentRef Id="I2CS_TSL45315xml" />

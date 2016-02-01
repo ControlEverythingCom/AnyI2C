@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
             this.GroupBox2 = new System.Windows.Forms.GroupBox();
             this.numAddress = new System.Windows.Forms.NumericUpDown();
@@ -35,6 +36,8 @@
             this.btnReadCh0 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lbCh0 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.chkAutoUpdate = new System.Windows.Forms.CheckBox();
             this.GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numAddress)).BeginInit();
             this.SuspendLayout();
@@ -121,11 +124,28 @@
             this.lbCh0.TabIndex = 521;
             this.lbCh0.Text = "---";
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // chkAutoUpdate
+            // 
+            this.chkAutoUpdate.AutoSize = true;
+            this.chkAutoUpdate.Location = new System.Drawing.Point(335, 165);
+            this.chkAutoUpdate.Name = "chkAutoUpdate";
+            this.chkAutoUpdate.Size = new System.Drawing.Size(86, 17);
+            this.chkAutoUpdate.TabIndex = 527;
+            this.chkAutoUpdate.Text = "Auto Update";
+            this.chkAutoUpdate.UseVisualStyleBackColor = true;
+            this.chkAutoUpdate.CheckedChanged += new System.EventHandler(this.chkAutoUpdate_CheckedChanged);
+            // 
             // frmI2CS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 239);
+            this.Controls.Add(this.chkAutoUpdate);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbCh0);
             this.Controls.Add(this.GroupBox1);
@@ -133,7 +153,7 @@
             this.Controls.Add(this.btnReadCh0);
             this.Name = "frmI2CS";
             this.Text = "TMP100 Control Panel";
-            this.Load += new System.EventHandler(this.frmADC081C_Load);
+            this.Load += new System.EventHandler(this.frmTMP100_Load);
             this.GroupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numAddress)).EndInit();
             this.ResumeLayout(false);
@@ -150,5 +170,7 @@
         internal System.Windows.Forms.Button btnReadCh0;
         internal System.Windows.Forms.Label label1;
         internal System.Windows.Forms.Label lbCh0;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.CheckBox chkAutoUpdate;
     }
 }

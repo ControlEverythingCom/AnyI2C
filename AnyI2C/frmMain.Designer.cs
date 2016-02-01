@@ -61,6 +61,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lbInfo = new AnyI2C.NumLabel();
             this.ctlI2CAddress1 = new AnyI2C.Controls.I2C.ctlI2CAddress();
+            this.btnClear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numReadLength)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPort)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -387,6 +388,16 @@
             this.ctlI2CAddress1.Size = new System.Drawing.Size(448, 67);
             this.ctlI2CAddress1.TabIndex = 12;
             // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(819, 237);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(91, 23);
+            this.btnClear.TabIndex = 37;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // frmMain
             // 
             this.AutoSize = true;
@@ -399,6 +410,7 @@
             this.Controls.Add(this.lbStatus);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lbDevices);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnSend);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.chkRead);
@@ -470,6 +482,7 @@
         private System.Windows.Forms.Label lbCommandDes;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btnClear;
     }
 }
 

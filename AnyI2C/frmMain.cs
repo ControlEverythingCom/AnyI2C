@@ -763,6 +763,11 @@ namespace AnyI2C
             mDevices.Devices[0].Save("test.xml");
         }
 
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtLog.Clear();
+        }
+
     }
 
     public class Configure

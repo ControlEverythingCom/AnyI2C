@@ -20,7 +20,7 @@ namespace TMP100_I2CS
             InitializeComponent();
         }
 
-        private void frmADC081C_Load(object sender, EventArgs e)
+        private void frmTMP100_Load(object sender, EventArgs e)
         {
             numAddress.Value = CommObj.GetDefaultAddress();
         }
@@ -67,6 +67,24 @@ namespace TMP100_I2CS
         private void btnReadCh0_Click(object sender, EventArgs e)
         {
             ReadSensor();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            ReadSensor();
+        }
+
+        private void chkAutoUpdate_CheckedChanged(object sender, EventArgs e)
+        {
+            btnReadCh0.Enabled = !chkAutoUpdate.Checked;
+            if (chkAutoUpdate.Checked)
+            {
+                timer1.Enabled = true;
+            }
+            else
+            {
+                timer1.Enabled = false;
+            }
         }
 
     }
