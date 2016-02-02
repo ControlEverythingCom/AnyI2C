@@ -1,4 +1,4 @@
-﻿namespace MAG3110_I2CS
+﻿namespace H3LIS331DL_I2CS
 {
     partial class frmI2CS
     {
@@ -33,13 +33,13 @@
             this.numAddress = new System.Windows.Forms.NumericUpDown();
             this._ERROR = new System.Windows.Forms.Label();
             this.btnReadCh0 = new System.Windows.Forms.Button();
-            this.chkAutoUpdate = new System.Windows.Forms.CheckBox();
-            this.lbZ = new System.Windows.Forms.Label();
-            this.lbY = new System.Windows.Forms.Label();
-            this.lbX = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lbX = new System.Windows.Forms.Label();
+            this.lbY = new System.Windows.Forms.Label();
+            this.lbZ = new System.Windows.Forms.Label();
+            this.chkAutoUpdate = new System.Windows.Forms.CheckBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numAddress)).BeginInit();
@@ -52,7 +52,7 @@
             this.GroupBox1.Location = new System.Drawing.Point(12, 12);
             this.GroupBox1.Name = "GroupBox1";
             this.GroupBox1.Size = new System.Drawing.Size(287, 68);
-            this.GroupBox1.TabIndex = 2;
+            this.GroupBox1.TabIndex = 1;
             this.GroupBox1.TabStop = false;
             this.GroupBox1.Text = "Hardware Address";
             // 
@@ -70,7 +70,7 @@
             this.numAddress.TabIndex = 0;
             this.numAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numAddress.Value = new decimal(new int[] {
-            14,
+            24,
             0,
             0,
             0});
@@ -82,7 +82,7 @@
             this._ERROR.Location = new System.Drawing.Point(9, 102);
             this._ERROR.Name = "_ERROR";
             this._ERROR.Size = new System.Drawing.Size(290, 63);
-            this._ERROR.TabIndex = 3;
+            this._ERROR.TabIndex = 2;
             this._ERROR.Text = "ERROR: Device did Not Respond";
             this._ERROR.Visible = false;
             // 
@@ -92,71 +92,10 @@
             this.btnReadCh0.Location = new System.Drawing.Point(335, 24);
             this.btnReadCh0.Name = "btnReadCh0";
             this.btnReadCh0.Size = new System.Drawing.Size(249, 29);
-            this.btnReadCh0.TabIndex = 4;
+            this.btnReadCh0.TabIndex = 3;
             this.btnReadCh0.Text = "Read ";
             this.btnReadCh0.UseVisualStyleBackColor = true;
             this.btnReadCh0.Click += new System.EventHandler(this.btnReadCh0_Click);
-            // 
-            // chkAutoUpdate
-            // 
-            this.chkAutoUpdate.AutoSize = true;
-            this.chkAutoUpdate.Location = new System.Drawing.Point(335, 201);
-            this.chkAutoUpdate.Name = "chkAutoUpdate";
-            this.chkAutoUpdate.Size = new System.Drawing.Size(86, 17);
-            this.chkAutoUpdate.TabIndex = 534;
-            this.chkAutoUpdate.Text = "Auto Update";
-            this.chkAutoUpdate.UseVisualStyleBackColor = true;
-            this.chkAutoUpdate.CheckedChanged += new System.EventHandler(this.chkAutoUpdate_CheckedChanged);
-            // 
-            // lbZ
-            // 
-            this.lbZ.AutoSize = true;
-            this.lbZ.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lbZ.Location = new System.Drawing.Point(452, 168);
-            this.lbZ.Name = "lbZ";
-            this.lbZ.Size = new System.Drawing.Size(23, 16);
-            this.lbZ.TabIndex = 533;
-            this.lbZ.Text = "---";
-            // 
-            // lbY
-            // 
-            this.lbY.AutoSize = true;
-            this.lbY.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lbY.Location = new System.Drawing.Point(451, 132);
-            this.lbY.Name = "lbY";
-            this.lbY.Size = new System.Drawing.Size(23, 16);
-            this.lbY.TabIndex = 532;
-            this.lbY.Text = "---";
-            // 
-            // lbX
-            // 
-            this.lbX.AutoSize = true;
-            this.lbX.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lbX.Location = new System.Drawing.Point(451, 100);
-            this.lbX.Name = "lbX";
-            this.lbX.Size = new System.Drawing.Size(23, 16);
-            this.lbX.TabIndex = 531;
-            this.lbX.Text = "---";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(394, 168);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(17, 16);
-            this.label2.TabIndex = 530;
-            this.label2.Text = "Z";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(393, 132);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(18, 16);
-            this.label1.TabIndex = 529;
-            this.label1.Text = "Y";
             // 
             // label3
             // 
@@ -165,8 +104,69 @@
             this.label3.Location = new System.Drawing.Point(394, 100);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(17, 16);
-            this.label3.TabIndex = 528;
+            this.label3.TabIndex = 520;
             this.label3.Text = "X";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(393, 132);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(18, 16);
+            this.label1.TabIndex = 521;
+            this.label1.Text = "Y";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(394, 168);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(17, 16);
+            this.label2.TabIndex = 523;
+            this.label2.Text = "Z";
+            // 
+            // lbX
+            // 
+            this.lbX.AutoSize = true;
+            this.lbX.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lbX.Location = new System.Drawing.Point(451, 100);
+            this.lbX.Name = "lbX";
+            this.lbX.Size = new System.Drawing.Size(23, 16);
+            this.lbX.TabIndex = 524;
+            this.lbX.Text = "---";
+            // 
+            // lbY
+            // 
+            this.lbY.AutoSize = true;
+            this.lbY.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lbY.Location = new System.Drawing.Point(451, 132);
+            this.lbY.Name = "lbY";
+            this.lbY.Size = new System.Drawing.Size(23, 16);
+            this.lbY.TabIndex = 525;
+            this.lbY.Text = "---";
+            // 
+            // lbZ
+            // 
+            this.lbZ.AutoSize = true;
+            this.lbZ.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lbZ.Location = new System.Drawing.Point(452, 168);
+            this.lbZ.Name = "lbZ";
+            this.lbZ.Size = new System.Drawing.Size(23, 16);
+            this.lbZ.TabIndex = 526;
+            this.lbZ.Text = "---";
+            // 
+            // chkAutoUpdate
+            // 
+            this.chkAutoUpdate.AutoSize = true;
+            this.chkAutoUpdate.Location = new System.Drawing.Point(335, 201);
+            this.chkAutoUpdate.Name = "chkAutoUpdate";
+            this.chkAutoUpdate.Size = new System.Drawing.Size(86, 17);
+            this.chkAutoUpdate.TabIndex = 527;
+            this.chkAutoUpdate.Text = "Auto Update";
+            this.chkAutoUpdate.UseVisualStyleBackColor = true;
+            this.chkAutoUpdate.CheckedChanged += new System.EventHandler(this.chkAutoUpdate_CheckedChanged);
             // 
             // timer1
             // 
@@ -189,7 +189,7 @@
             this.Controls.Add(this._ERROR);
             this.Controls.Add(this.GroupBox1);
             this.Name = "frmI2CS";
-            this.Text = "MAG3110 Control Panel";
+            this.Text = "H3LIS331DL Control Panel";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmI2CS_FormClosing);
             this.Load += new System.EventHandler(this.frmI2CS_Load);
             this.GroupBox1.ResumeLayout(false);
@@ -205,13 +205,15 @@
         internal System.Windows.Forms.NumericUpDown numAddress;
         internal System.Windows.Forms.Label _ERROR;
         internal System.Windows.Forms.Button btnReadCh0;
-        private System.Windows.Forms.CheckBox chkAutoUpdate;
-        internal System.Windows.Forms.Label lbZ;
-        internal System.Windows.Forms.Label lbY;
-        internal System.Windows.Forms.Label lbX;
-        internal System.Windows.Forms.Label label2;
-        internal System.Windows.Forms.Label label1;
         internal System.Windows.Forms.Label label3;
+        internal System.Windows.Forms.Label label1;
+        internal System.Windows.Forms.Label label2;
+        internal System.Windows.Forms.Label lbX;
+        internal System.Windows.Forms.Label lbY;
+        internal System.Windows.Forms.Label lbZ;
+        private System.Windows.Forms.CheckBox chkAutoUpdate;
         private System.Windows.Forms.Timer timer1;
+
+
     }
 }
