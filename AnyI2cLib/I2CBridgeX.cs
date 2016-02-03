@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using NCD;
+using System.IO.Ports;
 namespace AnyI2cLib
 {
     /// <summary>
@@ -19,7 +19,8 @@ namespace AnyI2cLib
         public OnReadDataHandler OnReadData;
         public OnWriteDataHandler OnWriteData;
 
-        NCDComponent Component = new NCDComponent();
+        //NCDComponent Component = new NCDComponent();
+        SerialPort mCom = new SerialPort();
         public string PortName = string.Empty;
         public I2CBridgeX()
         {
@@ -28,17 +29,16 @@ namespace AnyI2cLib
 
         public bool Open()
         {
-            Component.PortName = PortName;
-            Component.BaudRate = 115200;
-            Component.UsingComPort = true;
-            Component.OpenPort();
-            return Component.IsOpen;
+            mCom.PortName = PortName;
+            mCom.BaudRate = 115200;
+            mCom.Open();
+            return mCom.IsOpen;
 
         }
 
         public void Close()
         {
-            Component.ClosePort();
+            mCom.Close();
         }
 
         public byte[] ScanDevices(byte port)
@@ -60,14 +60,14 @@ namespace AnyI2cLib
         {
             get
             {
-                return Component.IsOpen;
+                return mCom.IsOpen;
             }
         }
 
         public byte[] ReadData(byte port, byte addr, byte dataLength)
         {
 
-            if (Component.IsOpen)
+            if (mCom.IsOpen)
             {
                 byte[] data = new byte[5];
                 data[0] = 188;
@@ -75,10 +75,10 @@ namespace AnyI2cLib
                 data[2] = (byte)(1);
                 data[3] = (byte)(addr*2 + 1);
                 data[4] = dataLength;
-                Component.WriteBytesAPI(data);
-                OnMyWriteData(this, data);
-                data = Component.ReadBytesApi();
-                OnMyReadData(this, data);
+                WriteBytesAPI(data);
+                //OnMyWriteData(this, data);
+                data = ReadBytesApi();
+                //OnMyReadData(this, data);
                 if (data != null)
                 {
                     return data;
@@ -90,7 +90,7 @@ namespace AnyI2cLib
         public bool Write(byte port, byte addr, params byte[] buffer)
         {
             bool bRtn = false;
-            if (Component.IsOpen)
+            if (mCom.IsOpen)
             {
                 int bufferLength = 0;
                 if (buffer != null)
@@ -107,10 +107,10 @@ namespace AnyI2cLib
                 {
                     data[4 + i] = buffer[i];
                 }
-                Component.WriteBytesAPI(data);
-                OnMyWriteData(this, data);
-                data = Component.ReadBytesApi();
-                OnMyReadData(this, data);
+                WriteBytesAPI(data);
+                //OnMyWriteData(this, data);
+                data = ReadBytesApi();
+                //OnMyReadData(this, data);
                 if (data != null)
                 {
                     if (data[0] == 85)
@@ -129,7 +129,7 @@ namespace AnyI2cLib
         /// <returns></returns>
         public static I2CBridgeX[] EnumBridge()
         {
-            SerialDeviceInfo [] info = NCD.ListPorts.EnumPorts();
+            SerialDeviceInfo [] info = ListPorts.EnumPorts();
             ArrayList list = new ArrayList();
             try
             {
@@ -158,10 +158,10 @@ namespace AnyI2cLib
         /// </summary>
         /// <param name="addr"></param>
         /// <returns></returns>
-        private static int GetEE(NCDComponent ncdObj,  byte addr)
+        private int GetEE(byte addr)
         {
-            ncdObj.WriteBytesAPI(254, 53, addr);
-            byte[]  data = ncdObj.ReadBytesApi();
+            WriteBytesAPI(254, 53, addr);
+            byte[]  data = ReadBytesApi();
             if (data != null)
             {
                 return data[0];
@@ -177,16 +177,14 @@ namespace AnyI2cLib
         public static bool IsI2CBridgeX(string comport)
         {
             bool bRtn = false;
-            NCDComponent ncdObj = new NCDComponent();
+            I2CBridgeX x = new I2CBridgeX();
+            x.PortName = comport;
             try
             {
-                ncdObj.PortName = comport;
-                ncdObj.BaudRate = 115200;
-                ncdObj.UsingComPort = true;
-                ncdObj.OpenPort();
-                if (ncdObj.IsOpen)
+                x.Open();
+                if (x.IsOpen)
                 {
-                    int n = GetEE(ncdObj, 246);
+                    int n = x.GetEE(246);
                     if ((n > 0) && (n & 32) > 0)
                     {
                         bRtn = true;
@@ -199,7 +197,7 @@ namespace AnyI2cLib
             }
             finally
             {
-                ncdObj.ClosePort();
+                x.Close();
             }
 
             return bRtn;
@@ -220,5 +218,173 @@ namespace AnyI2cLib
                 OnWriteData(sender, e);
             }
         }
+
+        /// <summary>
+        /// Write data in api format
+        /// </summary>
+        /// <param name="data"></param>
+        public void WriteBytesAPI(params byte[] data)
+        {
+            if (mCom.IsOpen)
+            {
+                ArrayList ApiPackage = new ArrayList();
+                ApiPackage.Add((byte)170);
+                ApiPackage.Add((byte)data.Length);
+                ApiPackage.AddRange(data);
+                int checksum = 0;
+                checksum = checksum + 170;
+                checksum = checksum + data.Length;
+                for (int i = 0; i < data.Length; i++)
+                {
+                    checksum = checksum + data[i];
+                }
+                checksum = checksum % 0x100;
+                ApiPackage.Add((byte)checksum);
+                byte[] apiData = (byte[])ApiPackage.ToArray(typeof(byte));
+                WriteBytes(apiData);
+            }
+        }
+
+
+        /// <summary>
+        /// Ready a byte from Com port
+        /// </summary>
+        /// <returns>0 - 255, the data read, -1 for failure</returns>
+        public int ReadByte()
+        {
+            int nRtn = -1;
+            try
+            {
+                byte data = 0;
+                if (_ReadByte(out data))
+                {
+                    nRtn = data;
+                }
+
+            }
+            catch
+            {
+
+            }
+            return nRtn;
+        }
+
+
+        /// <summary>
+        /// Read a byte from Com Port
+        /// </summary>
+        /// <param name="data">data been read</param>
+        /// <returns>true for success</returns>
+        internal bool _ReadByte(out byte data)
+        {
+            bool bRtn = false;
+            data = 0;
+            try
+            {
+                data = (byte)mCom.ReadByte();
+                bRtn = true;
+
+            }
+            catch (TimeoutException ex)
+            {
+            }
+
+            return bRtn;
+        }
+
+        /// <summary>
+        /// Read data in api format, return null if read nothing
+        /// </summary>
+        /// <returns></returns>
+        public byte[] ReadBytesApi()
+        {
+            ArrayList ar = new ArrayList();
+            byte[] apiData = null;
+            int ack = ReadByte();
+            if (ack != 170)
+            {
+                mCom.ReadExisting();
+                return apiData;
+            }
+            ar.Add((byte)ack);
+            bool correctData = true;
+            int length = ReadByte();
+            if (length != -1)
+            {
+                ar.Add((byte)length);
+                apiData = new byte[length];
+                for (int i = 0; i < length; i++)
+                {
+                    int data = ReadByte();
+                    if (data != -1)
+                    {
+                        apiData[i] = (byte)data;
+                        ar.Add((byte)data);
+                    }
+                    else
+                    {
+                        correctData = false;
+                        break;
+                    }
+                }
+                if (correctData)
+                {
+                    int data = ReadByte();
+                    if (data != -1)
+                    {
+                        ar.Add((byte)data);
+                        int checksum = 170 + length + GetCheckSum(apiData);
+                        checksum = checksum % 0x100;
+                        if (data != checksum)
+                        {
+                            correctData = false;
+                        }
+                    }
+                    else
+                    {
+                        correctData = false;
+                    }
+
+                }
+            }
+            else
+            {
+                correctData = false;
+            }
+            OnMyReadData(this, (byte[])ar.ToArray(typeof(byte)));
+            if (correctData)
+            {
+                return apiData;
+            }
+            return null;
+
+        }
+
+        /// <summary>
+        /// calculate the checksum of the data
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        private byte GetCheckSum(byte[] data)
+        {
+            int checksum = 0;
+            for (int i = 0; i < data.Length; i++)
+            {
+                checksum = checksum + data[i];
+            }
+            checksum = checksum % 0x100;
+            return (byte)checksum;
+        }
+
+
+        private void WriteBytes(byte[] data)
+        {
+            OnMyWriteData(this, data);
+            mCom.Write(data, 0, data.Length);
+        }
+
+
     }
+
+
 }

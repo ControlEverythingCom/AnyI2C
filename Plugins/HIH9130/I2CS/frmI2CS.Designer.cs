@@ -1,4 +1,4 @@
-﻿namespace TMP100_I2CS
+﻿namespace HIH9130_I2CS
 {
     partial class frmI2CS
     {
@@ -28,16 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
             this.GroupBox2 = new System.Windows.Forms.GroupBox();
             this.numAddress = new System.Windows.Forms.NumericUpDown();
             this._ERROR = new System.Windows.Forms.Label();
             this.btnReadCh0 = new System.Windows.Forms.Button();
+            this.lbHum = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lbCh0 = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.chkAutoUpdate = new System.Windows.Forms.CheckBox();
             this.GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numAddress)).BeginInit();
             this.SuspendLayout();
@@ -77,7 +76,7 @@
             this.numAddress.TabIndex = 490;
             this.numAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numAddress.Value = new decimal(new int[] {
-            79,
+            39,
             0,
             0,
             0});
@@ -104,6 +103,26 @@
             this.btnReadCh0.UseVisualStyleBackColor = true;
             this.btnReadCh0.Click += new System.EventHandler(this.btnReadCh0_Click);
             // 
+            // lbHum
+            // 
+            this.lbHum.AutoSize = true;
+            this.lbHum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lbHum.Location = new System.Drawing.Point(411, 100);
+            this.lbHum.Name = "lbHum";
+            this.lbHum.Size = new System.Drawing.Size(23, 16);
+            this.lbHum.TabIndex = 519;
+            this.lbHum.Text = "---";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(473, 100);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(21, 16);
+            this.label3.TabIndex = 519;
+            this.label3.Text = "%";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -124,36 +143,21 @@
             this.lbCh0.TabIndex = 521;
             this.lbCh0.Text = "---";
             // 
-            // timer1
-            // 
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // chkAutoUpdate
-            // 
-            this.chkAutoUpdate.AutoSize = true;
-            this.chkAutoUpdate.Location = new System.Drawing.Point(335, 165);
-            this.chkAutoUpdate.Name = "chkAutoUpdate";
-            this.chkAutoUpdate.Size = new System.Drawing.Size(86, 17);
-            this.chkAutoUpdate.TabIndex = 527;
-            this.chkAutoUpdate.Text = "Auto Update";
-            this.chkAutoUpdate.UseVisualStyleBackColor = true;
-            this.chkAutoUpdate.CheckedChanged += new System.EventHandler(this.chkAutoUpdate_CheckedChanged);
-            // 
             // frmI2CS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 239);
-            this.Controls.Add(this.chkAutoUpdate);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbCh0);
             this.Controls.Add(this.GroupBox1);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lbHum);
             this.Controls.Add(this._ERROR);
             this.Controls.Add(this.btnReadCh0);
             this.Name = "frmI2CS";
-            this.Text = "TMP100 Control Panel";
-            this.Load += new System.EventHandler(this.frmTMP100_Load);
+            this.Text = "HIH6020/ HIH7130 /HIH9130 Control Panel";
+            this.Load += new System.EventHandler(this.frmADC081C_Load);
             this.GroupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numAddress)).EndInit();
             this.ResumeLayout(false);
@@ -168,9 +172,9 @@
         internal System.Windows.Forms.NumericUpDown numAddress;
         internal System.Windows.Forms.Label _ERROR;
         internal System.Windows.Forms.Button btnReadCh0;
+        internal System.Windows.Forms.Label lbHum;
+        internal System.Windows.Forms.Label label3;
         internal System.Windows.Forms.Label label1;
         internal System.Windows.Forms.Label lbCh0;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.CheckBox chkAutoUpdate;
     }
 }

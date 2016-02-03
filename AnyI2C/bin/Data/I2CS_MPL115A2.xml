@@ -13,6 +13,7 @@
 			<Description>Start Pressure and Temperature Conversion</Description>
 			<Data>
 				<Value>18</Value>
+				<Value>0</Value>
 			</Data>
 			<ReadDataLength>0</ReadDataLength>				
 		</DeviceCommand>

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Threading;
 using AnyI2C;
 
-namespace TMP100_I2CS
+namespace HIH9130_I2CS
 {
     public partial class frmI2CS : Form
     {
@@ -20,7 +20,7 @@ namespace TMP100_I2CS
             InitializeComponent();
         }
 
-        private void frmTMP100_Load(object sender, EventArgs e)
+        private void frmADC081C_Load(object sender, EventArgs e)
         {
             numAddress.Value = CommObj.GetDefaultAddress();
         }
@@ -48,10 +48,12 @@ namespace TMP100_I2CS
             {
                 _ERROR.Visible = false;
                 byte addr = GetAddress(false);
-                byte[] value = CommObj.Send(new byte[] { addr, 0}, 2);
+                byte[] value = CommObj.Send(new byte[] { addr}, 4);
                 if (value != null)
                 {
-                    double t = (value[0] * 256 + value[1] ) /256.0;
+                    double h = ((value[0] & 0x3F) * 256 + value[1]) / 163.84;
+                    double t = (value[2] * 64 + value[3] / 4) / 99.29 - 40;
+                    lbHum.Text = h.ToString("F2");
                     lbCh0.Text = t.ToString("F2");
                     return value[0].ToString();
                 }
@@ -69,22 +71,15 @@ namespace TMP100_I2CS
             ReadSensor();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void btnSetup_Click(object sender, EventArgs e)
         {
-            ReadSensor();
-        }
-
-        private void chkAutoUpdate_CheckedChanged(object sender, EventArgs e)
-        {
-            btnReadCh0.Enabled = !chkAutoUpdate.Checked;
-            if (chkAutoUpdate.Checked)
-            {
-                timer1.Enabled = true;
-            }
-            else
-            {
-                timer1.Enabled = false;
-            }
+            byte addr = GetAddress(false);
+            CommObj.Send(new byte[] { addr, 160, 0, 0 }, 4);
+            Thread.Sleep(100);
+            CommObj.Send(new byte[] { addr, 160, 63, 255 }, 4);
+            Thread.Sleep(100);
+            CommObj.Send(new byte[] { addr, 128, 0, 0}, 4);
+            Thread.Sleep(100);
         }
 
     }
