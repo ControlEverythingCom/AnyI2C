@@ -40,9 +40,6 @@
             <Component Id="AnyI2CLibDll" Guid="*">
               <File Id="AnyI2CLibDll" Name="AnyI2cLib.dll" DiskId="1" Source="AnyI2cLib.dll" KeyPath="yes"></File>
             </Component>
-            <Component Id="NCDComponentDll" Guid="*">
-              <File Id="NCDComponentDll" Name="NCDComponent.dll" DiskId="1" Source="NCDComponent.dll" KeyPath="yes"></File>
-            </Component>
 
             <Component Id="AnyI2cIcon" Guid="*">
               <File Id="AnyI2cIcon" Name="anyi2c.ico" DiskId="1" Source="anyi2c.ico" KeyPath="yes">
@@ -560,7 +557,6 @@
     <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
       <ComponentRef Id="AnyI2CExe" />
       <ComponentRef Id="AnyI2CLibDll" />
-      <ComponentRef Id="NCDComponentDll" />
       <ComponentRef Id="AnyI2cIcon" />
 
       <ComponentRef Id="ProgramMenuDir" />

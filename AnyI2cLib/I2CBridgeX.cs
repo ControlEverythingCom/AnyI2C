@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO.Ports;
-using NCD;
 namespace AnyI2cLib
 {
     /// <summary>
@@ -159,10 +158,10 @@ namespace AnyI2cLib
         /// </summary>
         /// <param name="addr"></param>
         /// <returns></returns>
-        private static int GetEE(NCDComponent ncdObj,  byte addr)
+        private int GetEE(byte addr)
         {
-            ncdObj.WriteBytesAPI(254, 53, addr);
-            byte[]  data = ncdObj.ReadBytesApi();
+            WriteBytesAPI(254, 53, addr);
+            byte[]  data = ReadBytesApi();
             if (data != null)
             {
                 return data[0];
@@ -178,16 +177,14 @@ namespace AnyI2cLib
         public static bool IsI2CBridgeX(string comport)
         {
             bool bRtn = false;
-            NCDComponent ncdObj = new NCDComponent();
+            I2CBridgeX x = new I2CBridgeX();
+            x.PortName = comport;
             try
             {
-                ncdObj.PortName = comport;
-                ncdObj.BaudRate = 115200;
-                ncdObj.UsingComPort = true;
-                ncdObj.OpenPort();
-                if (ncdObj.IsOpen)
+                x.Open();
+                if (x.IsOpen)
                 {
-                    int n = GetEE(ncdObj, 246);
+                    int n = x.GetEE(246);
                     if ((n > 0) && (n & 32) > 0)
                     {
                         bRtn = true;
@@ -200,7 +197,7 @@ namespace AnyI2cLib
             }
             finally
             {
-                ncdObj.ClosePort();
+                x.Close();
             }
 
             return bRtn;
