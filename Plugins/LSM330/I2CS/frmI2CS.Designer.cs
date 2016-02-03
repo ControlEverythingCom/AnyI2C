@@ -1,4 +1,4 @@
-﻿namespace AIS328DQTR_I2CS
+﻿namespace LSM330_I2CS
 {
     partial class frmI2CS
     {
@@ -51,7 +51,7 @@
             this.chkAutoUpdate.Location = new System.Drawing.Point(335, 201);
             this.chkAutoUpdate.Name = "chkAutoUpdate";
             this.chkAutoUpdate.Size = new System.Drawing.Size(86, 17);
-            this.chkAutoUpdate.TabIndex = 537;
+            this.chkAutoUpdate.TabIndex = 544;
             this.chkAutoUpdate.Text = "Auto Update";
             this.chkAutoUpdate.UseVisualStyleBackColor = true;
             this.chkAutoUpdate.CheckedChanged += new System.EventHandler(this.chkAutoUpdate_CheckedChanged);
@@ -63,7 +63,7 @@
             this.lbZ.Location = new System.Drawing.Point(452, 168);
             this.lbZ.Name = "lbZ";
             this.lbZ.Size = new System.Drawing.Size(23, 16);
-            this.lbZ.TabIndex = 536;
+            this.lbZ.TabIndex = 543;
             this.lbZ.Text = "---";
             // 
             // lbY
@@ -73,7 +73,7 @@
             this.lbY.Location = new System.Drawing.Point(451, 132);
             this.lbY.Name = "lbY";
             this.lbY.Size = new System.Drawing.Size(23, 16);
-            this.lbY.TabIndex = 535;
+            this.lbY.TabIndex = 542;
             this.lbY.Text = "---";
             // 
             // lbX
@@ -83,7 +83,7 @@
             this.lbX.Location = new System.Drawing.Point(451, 100);
             this.lbX.Name = "lbX";
             this.lbX.Size = new System.Drawing.Size(23, 16);
-            this.lbX.TabIndex = 534;
+            this.lbX.TabIndex = 541;
             this.lbX.Text = "---";
             // 
             // label2
@@ -93,7 +93,7 @@
             this.label2.Location = new System.Drawing.Point(394, 168);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(17, 16);
-            this.label2.TabIndex = 533;
+            this.label2.TabIndex = 540;
             this.label2.Text = "Z";
             // 
             // label1
@@ -103,7 +103,7 @@
             this.label1.Location = new System.Drawing.Point(393, 132);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(18, 16);
-            this.label1.TabIndex = 532;
+            this.label1.TabIndex = 539;
             this.label1.Text = "Y";
             // 
             // label3
@@ -113,7 +113,7 @@
             this.label3.Location = new System.Drawing.Point(394, 100);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(17, 16);
-            this.label3.TabIndex = 531;
+            this.label3.TabIndex = 538;
             this.label3.Text = "X";
             // 
             // btnReadCh0
@@ -122,7 +122,7 @@
             this.btnReadCh0.Location = new System.Drawing.Point(335, 24);
             this.btnReadCh0.Name = "btnReadCh0";
             this.btnReadCh0.Size = new System.Drawing.Size(249, 29);
-            this.btnReadCh0.TabIndex = 530;
+            this.btnReadCh0.TabIndex = 537;
             this.btnReadCh0.Text = "Read ";
             this.btnReadCh0.UseVisualStyleBackColor = true;
             this.btnReadCh0.Click += new System.EventHandler(this.btnReadCh0_Click);
@@ -134,7 +134,7 @@
             this._ERROR.Location = new System.Drawing.Point(9, 102);
             this._ERROR.Name = "_ERROR";
             this._ERROR.Size = new System.Drawing.Size(290, 63);
-            this._ERROR.TabIndex = 529;
+            this._ERROR.TabIndex = 536;
             this._ERROR.Text = "ERROR: Device did Not Respond";
             this._ERROR.Visible = false;
             // 
@@ -145,7 +145,7 @@
             this.GroupBox1.Location = new System.Drawing.Point(12, 12);
             this.GroupBox1.Name = "GroupBox1";
             this.GroupBox1.Size = new System.Drawing.Size(287, 68);
-            this.GroupBox1.TabIndex = 528;
+            this.GroupBox1.TabIndex = 535;
             this.GroupBox1.TabStop = false;
             this.GroupBox1.Text = "Hardware Address";
             // 
@@ -163,7 +163,7 @@
             this.numAddress.TabIndex = 0;
             this.numAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numAddress.Value = new decimal(new int[] {
-            24,
+            30,
             0,
             0,
             0});
@@ -189,7 +189,7 @@
             this.Controls.Add(this._ERROR);
             this.Controls.Add(this.GroupBox1);
             this.Name = "frmI2CS";
-            this.Text = "AIS328DQTR Control Panel";
+            this.Text = "LSM330 Control Panel";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmI2CS_FormClosing);
             this.Load += new System.EventHandler(this.frmI2CS_Load);
             this.GroupBox1.ResumeLayout(false);
@@ -213,7 +213,6 @@
         internal System.Windows.Forms.GroupBox GroupBox1;
         internal System.Windows.Forms.NumericUpDown numAddress;
         private System.Windows.Forms.Timer timer1;
-
 
     }
 }
