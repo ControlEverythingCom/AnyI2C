@@ -55,6 +55,9 @@ namespace AnyI2C
                         if (config.Opened)
                         {
                             mBridge.Open();
+                            mBridge.OnReadData += OnReadDataHandler;
+                            mBridge.OnWriteData += OnSendDataHandler; 
+
                             btnScan.Enabled = true;
                             btnSend.Enabled = true;
                         }
@@ -315,6 +318,43 @@ namespace AnyI2C
             catch 
             {
             }
+        }
+
+        /// <summary>
+        /// log data according the current log data type setting
+        /// </summary>
+        /// <param name="prefix">prefix string in log string</param>
+        /// <param name="?">i2c data</param>
+        /// send: true for send data
+        void LogData(string prefix, byte []i2cData, bool send)
+        {
+            byte[] data = i2cData;
+            if (cmbLogDataType.SelectedIndex == 1)  // raw data
+            {
+                data = GetRawData(i2cData, send);
+            }
+
+            StringBuilder sb = new StringBuilder();
+            string format = GetFormat() == emViewFormat.Hex ? "{0:X2} " : "{0:d} ";
+            sb.Append(prefix);
+            for (int i = 0; i < i2cData.Length; i++)
+            {
+                sb.AppendFormat(format, i2cData[i]);
+            }
+            LogText(sb.ToString());
+
+
+        }
+
+
+
+        byte[] GetRawData(byte[] i2cData, bool send)
+        {
+            if (send)
+            {
+                //byte [] data = new byte[i2cData.Length + ]
+            }
+            throw new NotImplementedException();
         }
 
         /// <summary>
@@ -763,6 +803,51 @@ namespace AnyI2C
             mDevices.Devices[0].Save("test.xml");
         }
 
+        public void OnReadDataHandler(object sender, byte [] rData)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("R: ");
+            if (rData != null)
+            {
+                for (int i = 0; i < rData.Length; i++)
+                {
+                    if (cmbShowFormat.SelectedIndex == 0)   //hex
+                    {
+                        sb.Append(string.Format("{0:X2} ", rData[i]));
+                    }
+                    else
+                    {
+                        sb.Append(string.Format("{0} ", rData[i]));
+                    }
+                }
+
+            }
+            LogText(sb.ToString());
+
+        }
+
+        public void OnSendDataHandler(object sender, byte [] sData)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("W: ");
+            if (sData != null)
+            {
+                for (int i = 0; i < sData.Length; i++)
+                {
+                    if (cmbShowFormat.SelectedIndex == 0)   //hex
+                    {
+                        sb.Append(string.Format("{0:X2} ", sData[i]));
+                    }
+                    else
+                    {
+                        sb.Append(string.Format("{0} ", sData[i]));
+                    }
+                }
+
+            }
+            LogText(sb.ToString());
+        }
+
     }
 
     public class Configure
@@ -771,7 +856,14 @@ namespace AnyI2C
         public bool Opened = false; // if the bridge is opened
         public string PortName = string.Empty;
         public I2CData Data;        // current i2c data
-        
+        public enum enumLogDataType
+        {
+            I2C,
+            RAW
+        }
+
+        public enumLogDataType LogDataType = enumLogDataType.I2C;
+
         //load the configure file
         public void Load()
         {
@@ -784,6 +876,8 @@ namespace AnyI2C
                 LocationID = temp.LocationID;
                 Opened = temp.Opened;
                 PortName = temp.PortName;
+                LogDataType = temp.LogDataType;
+
                 reader.Close();
             }
             catch (Exception e)

@@ -61,6 +61,8 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lbInfo = new AnyI2C.NumLabel();
             this.ctlI2CAddress1 = new AnyI2C.Controls.I2C.ctlI2CAddress();
+            this.cmbLogDataType = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numReadLength)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPort)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -222,7 +224,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(488, 250);
+            this.label5.Location = new System.Drawing.Point(488, 245);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(25, 13);
             this.label5.TabIndex = 38;
@@ -387,16 +389,39 @@
             this.ctlI2CAddress1.Size = new System.Drawing.Size(448, 67);
             this.ctlI2CAddress1.TabIndex = 12;
             // 
+            // cmbLogDataType
+            // 
+            this.cmbLogDataType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbLogDataType.FormattingEnabled = true;
+            this.cmbLogDataType.Items.AddRange(new object[] {
+            "I2C Data",
+            "Raw Data"});
+            this.cmbLogDataType.Location = new System.Drawing.Point(734, 242);
+            this.cmbLogDataType.Name = "cmbLogDataType";
+            this.cmbLogDataType.Size = new System.Drawing.Size(176, 21);
+            this.cmbLogDataType.TabIndex = 46;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(650, 245);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(78, 13);
+            this.label1.TabIndex = 38;
+            this.label1.Text = "Log Data Type";
+            // 
             // frmMain
             // 
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(923, 779);
+            this.Controls.Add(this.cmbLogDataType);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.numPort);
             this.Controls.Add(this.btnTest);
             this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.lbStatus);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lbDevices);
             this.Controls.Add(this.btnSend);
@@ -470,6 +495,8 @@
         private System.Windows.Forms.Label lbCommandDes;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ComboBox cmbLogDataType;
+        private System.Windows.Forms.Label label1;
     }
 }
 

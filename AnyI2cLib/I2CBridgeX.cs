@@ -12,11 +12,17 @@ namespace AnyI2cLib
     /// </summary>
     public class I2CBridgeX
     {
+
+        public delegate void OnReadDataHandler(object sender, byte[]rData);
+        public delegate void OnWriteDataHandler(object sender, byte[] sData);
+
+        public OnReadDataHandler OnReadData;
+        public OnWriteDataHandler OnWriteData;
+
         NCDComponent Component = new NCDComponent();
         public string PortName = string.Empty;
         public I2CBridgeX()
         {
-
         }
 
 
@@ -195,5 +201,20 @@ namespace AnyI2cLib
             return bRtn;
         }
 
+        public void OnMyReadData(object sender, byte[]  e)
+        {
+            if (OnReadData != null)
+            {
+                OnReadData(sender, e);
+            }
+        }
+
+        public void OnMyWriteData(object sender, byte[] e)
+        {
+            if (OnWriteData != null)
+            {
+                OnWriteData(sender, e);
+            }
+        }
     }
 }
