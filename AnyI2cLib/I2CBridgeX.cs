@@ -76,7 +76,9 @@ namespace AnyI2cLib
                 data[3] = (byte)(addr*2 + 1);
                 data[4] = dataLength;
                 Component.WriteBytesAPI(data);
+                OnMyWriteData(this, data);
                 data = Component.ReadBytesApi();
+                OnMyReadData(this, data);
                 if (data != null)
                 {
                     return data;
@@ -106,7 +108,9 @@ namespace AnyI2cLib
                     data[4 + i] = buffer[i];
                 }
                 Component.WriteBytesAPI(data);
+                OnMyWriteData(this, data);
                 data = Component.ReadBytesApi();
+                OnMyReadData(this, data);
                 if (data != null)
                 {
                     if (data[0] == 85)

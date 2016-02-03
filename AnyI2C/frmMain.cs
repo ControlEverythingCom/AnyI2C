@@ -22,7 +22,6 @@ namespace AnyI2C
     public partial class frmMain : Form
     {
         I2CBridgeX mBridge = null;
-        I2CAdapter[] i2cBridges;
         I2CData mData = new I2CData();
         DevicesCollection mDevices;
         I2CBridgeX[] i2cBridgeXs;
@@ -31,9 +30,6 @@ namespace AnyI2C
             InitializeComponent();
         }
 
-
-
-
         private void frmMain_Load(object sender, EventArgs e)
         {
 
@@ -41,25 +37,22 @@ namespace AnyI2C
             EnumBridgeX();
             btnScan.Enabled = false;
             btnSend.Enabled = false;
+           
             Configure config = new Configure();
             config.Load();
+            
             mData = config.Data;
-            if (i2cBridges != null)
+            if (i2cBridgeXs != null)
             {
-                for (int i = 0; i < i2cBridges.Length; i++)
+                for (int i = 0; i < i2cBridgeXs.Length; i++)
                 {
-                    if (i2cBridges[i].LocationID == config.LocationID)
+                    if (i2cBridgeXs[i].PortName == config.PortName)
                     {
                         mBridge = i2cBridgeXs[i];
                         cmbI2CBridge.SelectedIndex = i;
                         if (config.Opened)
                         {
-                            mBridge.Open();
-                            mBridge.OnReadData += OnReadDataHandler;
-                            mBridge.OnWriteData += OnSendDataHandler; 
-
-                            btnScan.Enabled = true;
-                            btnSend.Enabled = true;
+                            OpenI2CAdapter();
                         }
                         break;
                     }
@@ -76,6 +69,7 @@ namespace AnyI2C
             chkRead.Checked = mData.IsRead;
             numReadLength.Value = mData.ReadDataLength;
             SetFormat(mData.Format);
+            cmbLogDataType.SelectedIndex = (int)config.LogDataType;
             LoadDevicesConfigure();
         }
 
@@ -98,29 +92,6 @@ namespace AnyI2C
             txtQuickSend.Text = sb.ToString();
         }
 
-        /// <summary>
-        /// Found all Ftdi devices and fill them in list
-        /// </summary>
-        private void InitFtdiControls()
-        {
-            try
-            {
-                i2cBridges = I2CAdapter.EnumBridge();
-                cmbI2CBridge.Items.Clear();
-                for (int i = 0; i < i2cBridges.Length; i++)
-                {
-                    cmbI2CBridge.Items.Add("I2C Bridge - " + i2cBridges[i].LocationID.ToString());
-                }
-                if (i2cBridges.Length > 0)
-                {
-                    cmbI2CBridge.SelectedIndex = 0;
-                }
-            }
-            catch
-            {
-            }
-
-        }
 
         private void EnumBridgeX()
         {
@@ -196,6 +167,8 @@ namespace AnyI2C
             {
                 mBridge = i2cBridgeXs[id];
                 mBridge.Open();
+                mBridge.OnReadData += OnReadDataHandler;
+                mBridge.OnWriteData += OnSendDataHandler; 
                 if (mBridge.IsOpen)
                 {
                     lbStatus.Text = "Selected I2C Bridge Opened.";
@@ -281,14 +254,17 @@ namespace AnyI2C
                     {
                         sb.AppendFormat(format, mData.Content[i]);
                     }
-                    LogText(sb.ToString());
+                    if(cmbLogDataType.SelectedIndex == 0)
+                    {
+                        LogText(sb.ToString());
+                    }
+                    bool b = mBridge.Write((byte)numPort.Value, ctlI2CAddress1.Addr7, mData.Content);
+                    if(!b)
+                    {
+                        LogText("Write Data Fail");
+                    }
                 }
 
-                bool b = mBridge.Write((byte)numPort.Value, ctlI2CAddress1.Addr7, mData.Content);
-                if(!b)
-                {
-                    LogText("Write Data Fail");
-                }
 
                 if (chkRead.Checked)
                 {
@@ -305,10 +281,17 @@ namespace AnyI2C
                         {
                             sb.AppendFormat(format, readData[i]);
                         }
-                        LogText(sb.ToString());
-                        if(IsFail(readData))
+
+                        if (IsFail(readData))
                         {
                             LogText("Read Data Fail");
+                        }
+                        else
+                        {
+                            if (cmbLogDataType.SelectedIndex == 0)
+                            {
+                                LogText(sb.ToString());
+                            }
                         }
                     }
                 }
@@ -320,42 +303,6 @@ namespace AnyI2C
             }
         }
 
-        /// <summary>
-        /// log data according the current log data type setting
-        /// </summary>
-        /// <param name="prefix">prefix string in log string</param>
-        /// <param name="?">i2c data</param>
-        /// send: true for send data
-        void LogData(string prefix, byte []i2cData, bool send)
-        {
-            byte[] data = i2cData;
-            if (cmbLogDataType.SelectedIndex == 1)  // raw data
-            {
-                data = GetRawData(i2cData, send);
-            }
-
-            StringBuilder sb = new StringBuilder();
-            string format = GetFormat() == emViewFormat.Hex ? "{0:X2} " : "{0:d} ";
-            sb.Append(prefix);
-            for (int i = 0; i < i2cData.Length; i++)
-            {
-                sb.AppendFormat(format, i2cData[i]);
-            }
-            LogText(sb.ToString());
-
-
-        }
-
-
-
-        byte[] GetRawData(byte[] i2cData, bool send)
-        {
-            if (send)
-            {
-                //byte [] data = new byte[i2cData.Length + ]
-            }
-            throw new NotImplementedException();
-        }
 
         /// <summary>
         /// check if hte byte array is fail code
@@ -505,7 +452,7 @@ namespace AnyI2C
             try
             {
                 Configure config = new Configure();
-                //config.LocationID = mBridge.LocationID;
+                config.LogDataType = (enumLogDataType) cmbLogDataType.SelectedIndex;
                 config.PortName = mBridge.PortName;
                 config.Data = mData;
                 config.Opened = mBridge.IsOpen;
@@ -724,7 +671,7 @@ namespace AnyI2C
                 chkWrite.Checked = mData.IsWrite;
                 numReadLength.Value = mData.ReadDataLength;
                 UpdateData();
-                if (chkWrite.Checked)
+                if (chkWrite.Checked )
                 {
                     StringBuilder sb = new StringBuilder();
                     sb.Append("W:");
@@ -734,14 +681,17 @@ namespace AnyI2C
                     {
                         sb.AppendFormat(format, mData.Content[i]);
                     }
-                    LogText(sb.ToString());
+                    if(cmbLogDataType.SelectedIndex == 0)
+                    {
+                        LogText(sb.ToString());
+                    }
+                    if (!mBridge.Write((byte)numPort.Value, mData.Address, mData.Content))
+                    {
+                        //OnWriteDataError();
+                        throw new Exception("On Write Data Error");
+                    }
                 }
 
-                if (!mBridge.Write((byte)numPort.Value, mData.Address, mData.Content))
-                {
-                    //OnWriteDataError();
-                    throw new Exception("On Write Data Error");
-                }
                 else
                 {
                     if (chkRead.Checked)
@@ -753,7 +703,7 @@ namespace AnyI2C
                             {
                                 LogText("Read Data Fail");
                             }
-                            else if (readData != null)
+                            else if (readData != null && cmbLogDataType.SelectedIndex == 0)
                             {
                                 StringBuilder sb = new StringBuilder();
                                 string format = GetFormat() == emViewFormat.Hex ? "{0:X2} " : "{0:d} ";
@@ -805,6 +755,10 @@ namespace AnyI2C
 
         public void OnReadDataHandler(object sender, byte [] rData)
         {
+            if (cmbLogDataType.SelectedIndex != 1)
+            {
+                return;
+            }
             StringBuilder sb = new StringBuilder();
             sb.Append("R: ");
             if (rData != null)
@@ -828,6 +782,10 @@ namespace AnyI2C
 
         public void OnSendDataHandler(object sender, byte [] sData)
         {
+            if (cmbLogDataType.SelectedIndex != 1)// raw data
+            {
+                return;
+            }
             StringBuilder sb = new StringBuilder();
             sb.Append("W: ");
             if (sData != null)
@@ -850,17 +808,18 @@ namespace AnyI2C
 
     }
 
+    public enum enumLogDataType
+    {
+        I2C,
+        RAW
+    }
+
     public class Configure
     {
         public uint LocationID = 0; // location id of the i2cbridge device
         public bool Opened = false; // if the bridge is opened
         public string PortName = string.Empty;
         public I2CData Data;        // current i2c data
-        public enum enumLogDataType
-        {
-            I2C,
-            RAW
-        }
 
         public enumLogDataType LogDataType = enumLogDataType.I2C;
 
