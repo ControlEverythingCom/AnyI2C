@@ -1,0 +1,73 @@
+<DeviceConfig>
+	<Type>Light Sensor</Type>
+	<path>I2CS_MMC2460MT.xml</path>
+	<Name>I2CS_MMC2460MT</Name>
+	<Manufactory>TAOS</Manufactory>
+	<Address>48</Address>
+	<AddressCollection>
+		<Address>48</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Configure Device 0</Name>
+			<Description>Configure Device 0</Description>
+			<Data>
+					<Value>7</Value>
+					<Value>3</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Configure Device 1</Name>
+			<Description>Configure Device 1</Description>
+			<Data>
+					<Value>8</Value>
+					<Value>16</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read X Low</Name>
+			<Description>Read X Low</Description>
+			<Data>
+					<Value>0</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read X High</Name>
+			<Description>Read X High</Description>
+			<Data>
+					<Value>1</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		
+		<DeviceCommand>
+			<Name>Read Y Low</Name>
+			<Description>Read Y Low</Description>
+			<Data>
+					<Value>2</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Y High</Name>
+			<Description>Read Y High</Description>
+			<Data>
+					<Value>3</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>MMC2460MT_I2CS.dll</GUIPath>
+				<TypeName>MMC2460MT_I2CS.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>
