@@ -1,5 +1,5 @@
 <DeviceConfig>
-	<Type>Light Sensor</Type>
+	<Type>Magnetic Sensor</Type>
 	<path>I2CS_MMC2460MT.xml</path>
 	<Name>I2CS_MMC2460MT</Name>
 	<Manufactory>TAOS</Manufactory>
