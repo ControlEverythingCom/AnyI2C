@@ -29,6 +29,10 @@ namespace AnyI2cLib
 
         public bool Open()
         {
+            if (mCom.IsOpen)
+            {
+                mCom.Close();
+            }
             mCom.PortName = PortName;
             mCom.BaudRate = 115200;
             mCom.Open();
