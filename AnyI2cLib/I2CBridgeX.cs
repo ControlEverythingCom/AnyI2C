@@ -29,8 +29,13 @@ namespace AnyI2cLib
 
         public bool Open()
         {
+            if (mCom.IsOpen)
+            {
+                mCom.Close();
+            }
             mCom.PortName = PortName;
             mCom.BaudRate = 115200;
+            mCom.ReadTimeout = 100;
             mCom.Open();
             return mCom.IsOpen;
 
@@ -135,13 +140,16 @@ namespace AnyI2cLib
             {
                 for (int i = 0; i < info.Length; i++)
                 {
-                    bool isI2c = IsI2CBridgeX(info[i].PortName);
-                    Debug.Print(isI2c.ToString());
-                    if (isI2c)
+                    if (info[i].FriendName.Contains("USB"))
                     {
-                        I2CBridgeX b = new I2CBridgeX();
-                        b.PortName = info[i].PortName;
-                        list.Add(b);
+                        bool isI2c = IsI2CBridgeX(info[i].PortName);
+                        Debug.Print(isI2c.ToString());
+                        if (isI2c)
+                        {
+                            I2CBridgeX b = new I2CBridgeX();
+                            b.PortName = info[i].PortName;
+                            list.Add(b);
+                        }
                     }
                 }
             }

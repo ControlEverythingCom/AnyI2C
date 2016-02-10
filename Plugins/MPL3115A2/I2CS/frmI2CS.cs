@@ -103,6 +103,11 @@ namespace MPL3115A2_I2CS
             }
         }
 
+        private void frmI2CS_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            timer1.Enabled = false;
+        }
+
     }
 
 

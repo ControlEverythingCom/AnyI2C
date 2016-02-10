@@ -52,7 +52,7 @@ namespace SHT3x_I2CS
                 {
                     if (value.Length == 6)
                     {
-                        double t = (value[0] * 256 + value[1]) * 0.00267 - 40;
+                        double t = (value[0] * 256 + value[1]) * 0.00267 - 45;
                         lbTemp.Text = t.ToString("F2");
                         double h = (value[3] * 256 + value[4]) * 0.001526;
                         lbHum.Text = h.ToString("F2");
