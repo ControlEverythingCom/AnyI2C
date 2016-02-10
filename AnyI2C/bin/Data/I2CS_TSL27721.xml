@@ -1,0 +1,75 @@
+<DeviceConfig>
+	<Type>Light and Proximity Sensor</Type>
+	<path>I2CS_TSL27721.xml</path>
+	<Name>I2CS_TSL27721</Name>
+	<Manufactory>TAOS</Manufactory>
+	<Address>57</Address>
+	<AddressCollection>
+		<Address>57</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Power On</Name>
+			<Description>Power On</Description>
+			<Data>
+					<Value>128</Value>
+					<Value>15</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>ALS Timing</Name>
+			<Description>ALS Timing</Description>
+			<Data>
+					<Value>129</Value>
+					<Value>0</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Proximity Timing</Name>
+			<Description>Proximity Timing</Description>
+			<Data>
+					<Value>130</Value>
+					<Value>255</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Wait Timing</Name>
+			<Description>Wait Timing</Description>
+			<Data>
+					<Value>131</Value>
+					<Value>255</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Control Settings</Name>
+			<Description>Control Settings</Description>
+			<Data>
+					<Value>143</Value>
+					<Value>32</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Sensor</Name>
+			<Description>Read Sensor</Description>
+			<Data>
+					<Value>148</Value>
+			</Data>
+			<ReadDataLength>6</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>TSL27721_I2CS.dll</GUIPath>
+				<TypeName>TSL27721_I2CS.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>

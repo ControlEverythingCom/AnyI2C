@@ -1,0 +1,40 @@
+<DeviceConfig>
+	<Type>Pressure Sensor</Type>
+	<path>I2CS_LPS25HB.xml</path>
+	<Name>I2CS_LPS25HB</Name>
+	<Manufactory>ST</Manufactory>
+	<Address>92</Address>
+	<AddressCollection>
+		<Address>92</Address>
+		<Address>93</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Power On</Name>
+			<Description>Power On</Description>
+			<Data>
+					<Value>32</Value>
+					<Value>144</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Sensor</Name>
+			<Description>Read Sensor</Description>
+			<Data>
+					<Value>168</Value>
+			</Data>
+			<ReadDataLength>3</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>LPS25HB_I2CS.dll</GUIPath>
+				<TypeName>LPS25HB_I2CS.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>
