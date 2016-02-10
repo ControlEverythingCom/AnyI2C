@@ -692,41 +692,39 @@ namespace AnyI2C
                     }
                 }
 
-                else
+                if (chkRead.Checked)
                 {
-                    if (chkRead.Checked)
+                    try
                     {
-                        try
+                        byte[] readData = mBridge.ReadData((byte)numPort.Value, ctlI2CAddress1.Addr7, (byte)numReadLength.Value);
+                        if (IsFail(readData))
                         {
-                            byte[] readData = mBridge.ReadData((byte)numPort.Value, ctlI2CAddress1.Addr7, (byte)numReadLength.Value);
-                            if (IsFail(readData))
+                            LogText("Read Data Fail");
+                        }
+                        else if (readData != null && cmbLogDataType.SelectedIndex == 0)
+                        {
+                            StringBuilder sb = new StringBuilder();
+                            string format = GetFormat() == emViewFormat.Hex ? "{0:X2} " : "{0:d} ";
+                            sb.Append("W:");
+                            sb.AppendFormat(format, ctlI2CAddress1.Addr7 * 2 + 1);
+                            sb.AppendLine();
+                            sb.Append("R:");
+                            for (int i = 0; i < readData.Length; i++)
                             {
-                                LogText("Read Data Fail");
+                                sb.AppendFormat(format, readData[i]);
                             }
-                            else if (readData != null && cmbLogDataType.SelectedIndex == 0)
-                            {
-                                StringBuilder sb = new StringBuilder();
-                                string format = GetFormat() == emViewFormat.Hex ? "{0:X2} " : "{0:d} ";
-                                sb.Append("W:");
-                                sb.AppendFormat(format, ctlI2CAddress1.Addr7 * 2 + 1);
-                                sb.AppendLine();
-                                sb.Append("R:");
-                                for (int i = 0; i < readData.Length; i++)
-                                {
-                                    sb.AppendFormat(format, readData[i]);
-                                }
-                                LogText(sb.ToString());
-                                return readData;
-                            }
+                            LogText(sb.ToString());
+                            return readData;
+                        }
 
-                        }
-                        catch (Exception ex)
-                        {
-                            //OnReadDataError();
-                            throw new Exception("On Read Data Error");
-                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        //OnReadDataError();
+                        throw new Exception("On Read Data Error");
                     }
                 }
+                
 
             }
             catch(Exception ex)
