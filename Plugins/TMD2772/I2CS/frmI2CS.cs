@@ -50,20 +50,20 @@ namespace TMD2772_I2CS
                 byte addr = GetAddress(false);
                 // power on and measure
                 // write to config
-                byte[] value = CommObj.Send(new byte[] { addr, 0x80, 0xF },0);
-                value = CommObj.Send(new byte[] { addr, 0x94}, 1);
+                byte[] value = CommObj.Send(new byte[] { 0x80, 0xF },0);
+                value = CommObj.Send(new byte[] { 0x94}, 1);
                 int c0 = value[0];
-                value = CommObj.Send(new byte[] { addr, 0x95}, 1);
+                value = CommObj.Send(new byte[] { 0x95}, 1);
                 c0 = c0 + value[0] * 256;
 
-                value = CommObj.Send(new byte[] { addr, 0x96 }, 1);
+                value = CommObj.Send(new byte[] { 0x96 }, 1);
                 int c1 = value[0];
-                value = CommObj.Send(new byte[] { addr, 0x97 }, 1);
+                value = CommObj.Send(new byte[] { 0x97 }, 1);
                 c1 = c1 + value[0] * 256;
 
-                value = CommObj.Send(new byte[] { addr, 0x98 }, 1);
+                value = CommObj.Send(new byte[] { 0x98 }, 1);
                 int p = value[0];
-                value = CommObj.Send(new byte[] { addr, 0x99 }, 1);
+                value = CommObj.Send(new byte[] { 0x99 }, 1);
                 p = p + value[0] * 256;
 
                 double cpl = 255 * 2.72 * 1 / 20;
