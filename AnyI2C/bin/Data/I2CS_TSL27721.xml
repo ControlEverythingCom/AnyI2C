@@ -22,7 +22,11 @@
 			<Description>ALS Timing</Description>
 			<Data>
 					<Value>129</Value>
+<<<<<<< HEAD
 					<Value>00</Value>
+=======
+					<Value>0</Value>
+>>>>>>> 246b1fd42b611da654cc8e02c45b56d83a970b2f
 			</Data>
 			<ReadDataLength>0</ReadDataLength>				
 		</DeviceCommand>
