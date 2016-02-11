@@ -136,7 +136,7 @@
             this.cmbShowFormat.Items.AddRange(new object[] {
             "HEX",
             "DEC"});
-            this.cmbShowFormat.Location = new System.Drawing.Point(820, 144);
+            this.cmbShowFormat.Location = new System.Drawing.Point(820, 121);
             this.cmbShowFormat.Name = "cmbShowFormat";
             this.cmbShowFormat.Size = new System.Drawing.Size(91, 21);
             this.cmbShowFormat.TabIndex = 29;
@@ -164,7 +164,7 @@
             // txtQuickSend
             // 
             this.txtQuickSend.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtQuickSend.Location = new System.Drawing.Point(585, 141);
+            this.txtQuickSend.Location = new System.Drawing.Point(585, 118);
             this.txtQuickSend.Multiline = true;
             this.txtQuickSend.Name = "txtQuickSend";
             this.txtQuickSend.Size = new System.Drawing.Size(225, 40);
@@ -233,7 +233,7 @@
             // lbStatus
             // 
             this.lbStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lbStatus.Location = new System.Drawing.Point(0, 766);
+            this.lbStatus.Location = new System.Drawing.Point(0, 720);
             this.lbStatus.Name = "lbStatus";
             this.lbStatus.Size = new System.Drawing.Size(923, 13);
             this.lbStatus.TabIndex = 39;
@@ -372,7 +372,7 @@
             this.lbInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbInfo.AutoSize = true;
             this.lbInfo.IsShowText = false;
-            this.lbInfo.Location = new System.Drawing.Point(817, 168);
+            this.lbInfo.Location = new System.Drawing.Point(817, 145);
             this.lbInfo.Name = "lbInfo";
             this.lbInfo.Prefix = "Length: ";
             this.lbInfo.Size = new System.Drawing.Size(94, 13);
@@ -413,7 +413,7 @@
             // frmMain
             // 
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(923, 779);
+            this.ClientSize = new System.Drawing.Size(923, 733);
             this.Controls.Add(this.cmbLogDataType);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);

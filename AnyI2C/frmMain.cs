@@ -671,7 +671,7 @@ namespace AnyI2C
                 chkWrite.Checked = mData.IsWrite;
                 numReadLength.Value = mData.ReadDataLength;
                 UpdateData();
-                if (chkWrite.Checked )
+                if (chkWrite.Checked)
                 {
                     StringBuilder sb = new StringBuilder();
                     sb.Append("W:");
@@ -681,7 +681,7 @@ namespace AnyI2C
                     {
                         sb.AppendFormat(format, mData.Content[i]);
                     }
-                    if(cmbLogDataType.SelectedIndex == 0)
+                    if (cmbLogDataType.SelectedIndex == 0)
                     {
                         LogText(sb.ToString());
                     }
@@ -727,7 +727,7 @@ namespace AnyI2C
                 
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 LogText(ex.Message);
             }
