@@ -6,4 +6,4 @@ It uses AnyI2CLib which is a basic lib that handle the communication between PC 
 # Download AnyI2C
 
 https://github.com/ControlEverythingCom/AnyI2C/blob/master/Bin/AnyI2CSetup.msi
-https://raw.githubusercontent.com/downloads/ControlEverythingCom/AnyI2C/Bin/AnyI2CSetup.msi
+https://github.com/ControlEverythingCom/AnyI2C/raw/master/Bin/AnyI2CSetup.msi
