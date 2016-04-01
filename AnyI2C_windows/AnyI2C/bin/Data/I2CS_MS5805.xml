@@ -1,0 +1,47 @@
+﻿<DeviceConfig>
+	<Type>Altimeter Sensor</Type>
+	<path>I2CS_MS5805.xml</path>
+	<Name>I2CS_MS5805</Name>
+	<Manufactory>Measurement Specialties</Manufactory>
+	<GeneralCall>false</GeneralCall>	
+	<Address>118</Address>
+	<AddressCollection>
+		<Address>118</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Reset Device</Name>
+			<Description>Reset Device</Description>
+			<Data>
+				<Value>30</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Init a pressure conversion(OSR=4096, typ=D1)</Name>
+			<Description>Init a pressure conversion(OSR=4096, typ=D1)</Description>
+			<Data>
+				<Value>72</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read</Name>
+			<Description>Read</Description>
+			<Data>
+				<Value>0</Value>
+			</Data>
+			<ReadDataLength>3</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>MS5805_I2CS.dll</GUIPath>
+				<TypeName>MS5805_I2CS.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>

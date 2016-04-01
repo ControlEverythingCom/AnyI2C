@@ -1,0 +1,130 @@
+<DeviceConfig>
+	<Type>Temperature Sensor</Type>
+	<path>I2CS_TMG39931.xml</path>
+	<Name>I2CS_TMG39931</Name>
+	<Manufactory>AMS</Manufactory>
+	<Address>57</Address>
+	<AddressCollection>
+		<Address>57</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Enable Register</Name>
+			<Description>Enable Register</Description>
+			<Data>
+				<Value>128</Value>
+				<Value>15</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>ADC Integration Time Register</Name>
+			<Description>ADC Integration Time Register</Description>
+			<Data>
+				<Value>129</Value>
+				<Value>255</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Wait Time Register </Name>
+			<Description>Wait Time Register </Description>
+			<Data>
+				<Value>131</Value>
+				<Value>255</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Control Register</Name>
+			<Description>Control Register</Description>
+			<Data>
+				<Value>143</Value>
+				<Value>0</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read CDATAL</Name>
+			<Description>Read CDATAL</Description>
+			<Data>
+				<Value>148</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read CDATAH</Name>
+			<Description>Read CDATAH</Description>
+			<Data>
+				<Value>149</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read RDATAL</Name>
+			<Description>Read RDATAL</Description>
+			<Data>
+				<Value>150</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read RDATAH</Name>
+			<Description>Read RDATAH</Description>
+			<Data>
+				<Value>151</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read GDATAL</Name>
+			<Description>Read GDATAL</Description>
+			<Data>
+				<Value>152</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read GDATAH</Name>
+			<Description>Read GDATAH</Description>
+			<Data>
+				<Value>153</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read BDATAL</Name>
+			<Description>Read BDATAL</Description>
+			<Data>
+				<Value>154</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read BDATAH</Name>
+			<Description>Read BDATAH</Description>
+			<Data>
+				<Value>155</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read PDATA</Name>
+			<Description>Read PDATA</Description>
+			<Data>
+				<Value>156</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>TMG39931_I2CS.dll</GUIPath>
+				<TypeName>TMG39931_I2CS.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>

@@ -1,0 +1,47 @@
+﻿<DeviceConfig>
+	<Type>Pressure Temperature Humidity Sensor</Type>
+	<path>I2CS_MS8607_PH.xml</path>
+	<Name>I2CS_MS8607_PH</Name>
+	<GeneralCall>false</GeneralCall>	
+	<Manufactory>MEAS</Manufactory>
+	<Address>64</Address>
+	<AddressCollection>
+		<Address>64</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Reset Device</Name>
+			<Description>Reset Device</Description>
+			<Data>
+				<Value>254</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Init a humidity conversion</Name>
+			<Description>Init a humidity conversion</Description>
+			<Data>
+				<Value>229</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read</Name>
+			<Description>Read</Description>
+			<Data>
+				<Value>0</Value>
+			</Data>
+			<ReadDataLength>3</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>MS8607_I2CS.dll</GUIPath>
+				<TypeName>MS8607_I2CS.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>

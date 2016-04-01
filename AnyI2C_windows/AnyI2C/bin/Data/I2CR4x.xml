@@ -1,0 +1,96 @@
+﻿<DeviceConfig>
+	<Type>I2CR4x</Type>
+	<path>I2CR4x.xml</path>
+	<Name>I2CR4x</Name>
+	<Manufactory></Manufactory>
+	<Address>32</Address>
+	<AddressCollection>
+		<Address>32</Address>
+		<Address>33</Address>
+		<Address>34</Address>
+	</AddressCollection>
+	<Commands>
+		<Name>Init</Name>
+		<Description>Initial device</Description>
+		<DeviceCommand>
+			<Name>Init</Name>
+			<Description>Init Device </Description>
+			<Data>
+				<Value>0</Value>
+				<Value>0</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>Control Relays</Name>
+			<Description>Control Relays</Description>
+			<DeviceCommand>
+				<Name>Turn On Relay 1</Name>
+				<Description>Turn On Relay 1</Description>
+				<Data>
+					<Value>9</Value>
+					<Value>1</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>Turn On Relay 2</Name>
+				<Description>Turn On Relay 2</Description>
+				<Data>
+					<Value>9</Value>
+					<Value>2</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>Turn On Relay 3</Name>
+				<Description>Turn On Relay 3</Description>
+				<Data>
+					<Value>9</Value>
+					<Value>4</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>Turn On Relay 4</Name>
+				<Description>Turn On Relay 4</Description>
+				<Data>
+					<Value>9</Value>
+					<Value>8</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>
+			</DeviceCommand>
+
+			<DeviceCommand>
+				<Name>Turn On All Relays1</Name>
+				<Description>Turn On All Relays</Description>
+				<Data>
+					<Value>9</Value>
+					<Value>255</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>Turn Off All Relays</Name>
+				<Description>Turn Off All Relays</Description>
+				<Data>
+					<Value>9</Value>
+					<Value>0</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>Read Relay Status</Name>
+				<Description>Read Relay Status</Description>
+				<Data>
+					<Value>9</Value>
+				</Data>
+				<ReadDataLength>1</ReadDataLength>
+			</DeviceCommand>
+
+			</DeviceCommandsGroup>
+		
+		
+
+	</Commands>
+</DeviceConfig>

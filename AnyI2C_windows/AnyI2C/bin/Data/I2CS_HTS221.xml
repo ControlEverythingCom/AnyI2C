@@ -1,0 +1,152 @@
+<DeviceConfig>
+	<Type>Humidity and Temperature Sensor</Type>
+	<path>I2CS_HTS221.xml</path>
+	<Name>I2CS_HTS221</Name>
+	<Manufactory>ST</Manufactory>
+	<Address>95</Address>
+	<AddressCollection>
+		<Address>95</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Select average configuration register</Name>
+			<Description>Select average configuration register</Description>
+			<Data>
+				<Value>16</Value>
+				<Value>27</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Select control register1(Power on)</Name>
+			<Description>Select control register1(Power on)</Description>
+			<Data>
+				<Value>32</Value>
+				<Value>133</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Humidity calliberation values(H0)</Name>
+			<Description>Read Humidity calliberation values(H0)</Description>
+			<Data>
+				<Value>48</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Humidity calliberation values(H1)</Name>
+			<Description>Read Humidity calliberation values(H1)</Description>
+			<Data>
+				<Value>49</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Humidity calliberation values(H2 Low)</Name>
+			<Description>Read Humidity calliberation values(H2 LOW)</Description>
+			<Data>
+				<Value>54</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Humidity calliberation values(H2 High)</Name>
+			<Description>Read Humidity calliberation values(H2 High)</Description>
+			<Data>
+				<Value>55</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Humidity calliberation values(H3 Low)</Name>
+			<Description>Read Humidity calliberation values(H3 Low)</Description>
+			<Data>
+				<Value>58</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Humidity calliberation values(H3 High)</Name>
+			<Description>Read Humidity calliberation values(H3 High)</Description>
+			<Data>
+				<Value>59</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Temp calliberation values(T0)</Name>
+			<Description>Read Temp calliberation values(T0)</Description>
+			<Data>
+				<Value>50</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Temp calliberation values(T1)</Name>
+			<Description>Read Temp calliberation values(T1)</Description>
+			<Data>
+				<Value>51</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Temp Raw</Name>
+			<Description>Read Temp Raw</Description>
+			<Data>
+				<Value>53</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Temp calliberation values(T2 Low)</Name>
+			<Description>Read Temp calliberation values(T2 Low)</Description>
+			<Data>
+				<Value>60</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Temp calliberation values(T2 High)</Name>
+			<Description>Read Temp calliberation values(T2 High)</Description>
+			<Data>
+				<Value>61</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Temp calliberation values(T3 Low)</Name>
+			<Description>Read Temp calliberation values(T3 Low)</Description>
+			<Data>
+				<Value>62</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Temp calliberation values(T3 High)</Name>
+			<Description>Read Temp calliberation values(T3 High)</Description>
+			<Data>
+				<Value>63</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read hum msb, hum lsb, temp msb, temp lsb</Name>
+			<Description>Read hum msb, hum lsb, temp msb, temp lsb</Description>
+			<Data>
+				<Value>168</Value>
+			</Data>
+			<ReadDataLength>4</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>HTS221_I2CS.dll</GUIPath>
+				<TypeName>HTS221_I2CS.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>

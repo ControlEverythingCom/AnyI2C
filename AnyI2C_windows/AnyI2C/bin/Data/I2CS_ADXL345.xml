@@ -1,0 +1,94 @@
+﻿<DeviceConfig>
+	<Type>Three-axis Accelerometer Sensor</Type>
+	<path>I2CS_ADXL345.xml</path>
+	<Name>I2CS_ADXL345</Name>
+	<Manufactory>Analog Devices</Manufactory>
+	<Address>83</Address>
+	<AddressCollection>
+		<Address>83</Address>
+		<Address>84</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Configure Power</Name>
+			<Description>Configure Power</Description>
+			<Data>
+					<Value>45</Value>
+					<Value>8</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Configure Data Format</Name>
+			<Description>Configure Data Format</Description>
+			<Data>
+					<Value>49</Value>
+					<Value>1</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+
+		<DeviceCommand>
+			<Name>Read X Low</Name>
+			<Description>Read X Low</Description>
+			<Data>
+					<Value>50</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read X High</Name>
+			<Description>Read X High</Description>
+			<Data>
+					<Value>51</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		
+		<DeviceCommand>
+			<Name>Read Y Low</Name>
+			<Description>Read Y Low</Description>
+			<Data>
+					<Value>52</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Y High</Name>
+			<Description>Read Y High</Description>
+			<Data>
+					<Value>53</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		
+		<DeviceCommand>
+			<Name>Read Z Low</Name>
+			<Description>Read Z Low</Description>
+			<Data>
+					<Value>53</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Z High</Name>
+			<Description>Read Z High</Description>
+			<Data>
+					<Value>54</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+
+
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>ADXL345_I2CS.dll</GUIPath>
+				<TypeName>ADXL345_I2CS.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>

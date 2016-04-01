@@ -1,0 +1,62 @@
+﻿<DeviceConfig>
+	<Type>Humidity and Temperature Sensor</Type>
+	<path>I2CS_Si7020.xml</path>
+	<Name>I2CS_Si7020/Si7021</Name>
+	<Manufactory>Silicon Labs</Manufactory>
+	<Address>64</Address>
+	<AddressCollection>
+		<Address>64</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Reset Device</Name>
+			<Description>Reset Device</Description>
+			<Data>
+				<Value>254</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Measure Relative Humidity</Name>
+			<Description>Measure Relative Humidity, Hold Master Mode</Description>
+			<Data>
+				<Value>229</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Measure Relative Humidity</Name>
+			<Description>Measure Relative Humidity, No Hold Master Mode</Description>
+			<Data>
+				<Value>245</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Measure Temperature</Name>
+			<Description>Measure Temperature, Hold Master Mode</Description>
+			<Data>
+				<Value>227</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Measure Temperature</Name>
+			<Description>Measure Temperature, No Hold Master Mode</Description>
+			<Data>
+				<Value>243</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>Si7020_I2CS.dll</GUIPath>
+				<TypeName>Si7020_I2CS.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>

@@ -1,0 +1,83 @@
+﻿<DeviceConfig>
+	<Type>Digital ALS and Proximity Sensor</Type>
+	<path>I2CS_TMD2772.xml</path>
+	<Name>I2CS_TMD2772</Name>
+	<Manufactory>TAOS</Manufactory>
+	<Address>57</Address>
+	<AddressCollection>
+		<Address>57</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Start Measure</Name>
+			<Description>Start Measure</Description>
+			<Data>
+					<Value>128</Value>
+					<Value>15</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		
+		<DeviceCommand>
+			<Name>Read CH0 Low</Name>
+			<Description>Read CH0 Low</Description>
+			<Data>
+					<Value>148</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read CH0 High</Name>
+			<Description>Read CH0 High</Description>
+			<Data>
+					<Value>149</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+
+		<DeviceCommand>
+			<Name>Read CH1 Low</Name>
+			<Description>Read CH1 Low</Description>
+			<Data>
+					<Value>150</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read CH1 High</Name>
+			<Description>Read CH1 High</Description>
+			<Data>
+					<Value>151</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+
+		<DeviceCommand>
+			<Name>Read Proximity Low</Name>
+			<Description>Read Proximity Low</Description>
+			<Data>
+					<Value>152</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Proximity High</Name>
+			<Description>Read Proximity High</Description>
+			<Data>
+					<Value>153</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>TMD2772_I2CS.dll</GUIPath>
+				<TypeName>TMD2772_I2CS.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>

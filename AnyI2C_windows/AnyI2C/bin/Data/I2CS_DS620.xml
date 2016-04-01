@@ -1,0 +1,51 @@
+<DeviceConfig>
+	<Type>Temperature Sensor</Type>
+	<path>I2CS_DS620.xml</path>
+	<Name>I2CS_DS620</Name>
+	<Manufactory>Dallas Semoconductor</Manufactory>
+	<Address>72</Address>
+	<AddressCollection>
+		<Address>72</Address>
+		<Address>73</Address>
+		<Address>74</Address>
+		<Address>76</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Configure register MSB</Name>
+			<Description>Configure register MSB</Description>
+			<Data>
+					<Value>172</Value>
+					<Value>14</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Configure register LSB</Name>
+			<Description>Configure register LSB</Description>
+			<Data>
+					<Value>173</Value>
+					<Value>0</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Sensor</Name>
+			<Description>Read Sensor</Description>
+			<Data>
+					<Value>170</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>DS620_I2CS.dll</GUIPath>
+				<TypeName>DS620_I2CS.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>

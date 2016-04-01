@@ -1,0 +1,43 @@
+﻿<DeviceConfig>
+	<Type>I2CADC_ADS1114</Type>
+	<path>I2CADC_ADS1114.xml</path>
+	<Name>I2CADC_ADS1114</Name>
+	<Manufactory>Texas Instruments</Manufactory>
+	<Address>72</Address>
+	<AddressCollection>
+		<Address>72</Address>
+		<Address>73</Address>
+		<Address>74</Address>
+		<Address>75</Address>
+	</AddressCollection>
+	<Commands>
+		<Name>AD Commands</Name>
+		<Description>ADCommands</Description>
+		<DeviceCommand>
+			<Name>Configure Device</Name>
+			<Description>Configure Device</Description>
+			<Data>
+				<Value>1</Value>
+				<Value>132</Value>
+				<Value>83</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Ch 0</Name>
+			<Description>Read Channel 0</Description>
+			<Data>
+				<Value>0</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>
+		</DeviceCommand>
+		<DeviceGUICommand>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<GUIPath>ADS1114_I2CADC.dll</GUIPath>
+			<TypeName>ADS1114_I2CADC.MyGUI</TypeName>
+		</DeviceGUICommand>
+		
+
+	</Commands>
+</DeviceConfig>

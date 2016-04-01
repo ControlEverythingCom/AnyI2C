@@ -1,0 +1,111 @@
+<DeviceConfig>
+	<Type>Barometric Pressure Sensor</Type>
+	<path>I2CS_MS5611-01BXXX.xml</path>
+	<Name>I2CS_MS5611-01BXXX</Name>
+	<Manufactory>Measurement Specialties</Manufactory>
+	<GeneralCall>false</GeneralCall>	
+	<Address>119</Address>
+	<AddressCollection>
+		<Address>119</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Reset Device</Name>
+			<Description>Reset Device</Description>
+			<Data>
+				<Value>30</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Init a pressure conversion(OSR=256, typ=D1)</Name>
+			<Description>Init a pressure conversion(OSR=256, typ=D1)</Description>
+			<Data>
+				<Value>64</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read D1</Name>
+			<Description>Read D1</Description>
+			<Data>
+				<Value>0</Value>
+			</Data>
+			<ReadDataLength>3</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Init a pressure conversion(OSR=256, typ=D2)</Name>
+			<Description>Init a pressure conversion(OSR=256, typ=D2)</Description>
+			<Data>
+				<Value>80</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read D2</Name>
+			<Description>Read D2</Description>
+			<Data>
+				<Value>0</Value>
+			</Data>
+			<ReadDataLength>3</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read calibration C1</Name>
+			<Description>Read calibration C1</Description>
+			<Data>
+				<Value>162</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read calibration C2</Name>
+			<Description>Read calibration C2</Description>
+			<Data>
+				<Value>164</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read calibration C3</Name>
+			<Description>Read calibration C3</Description>
+			<Data>
+				<Value>166</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read calibration C4</Name>
+			<Description>Read calibration C4</Description>
+			<Data>
+				<Value>168</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read calibration C5</Name>
+			<Description>Read calibration C5</Description>
+			<Data>
+				<Value>170</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read calibration C6</Name>
+			<Description>Read calibration C6</Description>
+			<Data>
+				<Value>172</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>MS5611_01BXXX_I2CS.dll</GUIPath>
+				<TypeName>MS5611_01BXXX_I2CS.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>

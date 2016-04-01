@@ -1,0 +1,48 @@
+<DeviceConfig>
+	<Type>Light Sensor</Type>
+	<path>I2CS_ISL29003.xml</path>
+	<Name>I2CS_ISL29003</Name>
+	<Manufactory>Intersil</Manufactory>
+	<Address>68</Address>
+	<AddressCollection>
+		<Address>68</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Enable ADC</Name>
+			<Description>Enable ADC</Description>
+			<Data>
+				<Value>0</Value>
+				<Value>128</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Control</Name>
+			<Description>Control</Description>
+			<Data>
+				<Value>1</Value>
+				<Value>15</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Sensor</Name>
+			<Description>Read Sensor</Description>
+			<Data>
+				<Value>4</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>ISL29003_I2CS.dll</GUIPath>
+				<TypeName>ISL29003_I2CS.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>

@@ -1,0 +1,40 @@
+<DeviceConfig>
+	<Type>Temperature Sensor</Type>
+	<path>I2CS_TMP101NA.xml</path>
+	<Name>I2CS_TMP101NA</Name>
+	<Manufactory>Texas Instruments</Manufactory>
+	<Address>73</Address>
+	<AddressCollection>
+		<Address>73</Address>
+		<Address>74</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Configure</Name>
+			<Description>Configure</Description>
+			<Data>
+					<Value>01</Value>
+					<Value>0</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Sensor</Name>
+			<Description>Read Sensor</Description>
+			<Data>
+					<Value>0</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>TMP101NA_I2CS.dll</GUIPath>
+				<TypeName>TMP101NA_I2CS.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>

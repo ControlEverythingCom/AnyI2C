@@ -1,0 +1,88 @@
+<DeviceConfig>
+	<Type>Digital Magnetometer Sensor</Type>
+	<path>I2CS_MAG3110.xml</path>
+	<Name>I2CS_MAG3110</Name>
+	<Manufactory>NXP Devices</Manufactory>
+	<Address>14</Address>
+	<AddressCollection>
+		<Address>14</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Configure Operation mode 1</Name>
+			<Description>Configure Operation mode 1</Description>
+			<Data>
+					<Value>16</Value>
+					<Value>1</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Configure Operation mode 2</Name>
+			<Description>Configure Operation mode 2</Description>
+			<Data>
+					<Value>17</Value>
+					<Value>160</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read X High</Name>
+			<Description>Read X High</Description>
+			<Data>
+					<Value>1</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read X Low</Name>
+			<Description>Read X Low</Description>
+			<Data>
+					<Value>2</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Y High</Name>
+			<Description>Read Y High</Description>
+			<Data>
+					<Value>3</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Y Low</Name>
+			<Description>Read Y Low</Description>
+			<Data>
+					<Value>4</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Z High</Name>
+			<Description>Read Z High</Description>
+			<Data>
+					<Value>5</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Z Low</Name>
+			<Description>Read Z Low</Description>
+			<Data>
+					<Value>6</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>MAG3110_I2CS.dll</GUIPath>
+				<TypeName>MAG3110_I2CS.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>

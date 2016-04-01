@@ -1,0 +1,47 @@
+<DeviceConfig>
+	<Type>Light Sensor</Type>
+	<path>I2CS_BH1715.xml</path>
+	<Name>I2CS_BH1715</Name>
+	<Manufactory>ROHM</Manufactory>
+	<GeneralCall>false</GeneralCall>
+	<Address>35</Address>
+	<AddressCollection>
+		<Address>35</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Power On</Name>
+			<Description>Power On</Description>
+			<Data>
+					<Value>1</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Continous H-resolution Mode</Name>
+			<Description>Continous H-resolution Mode</Description>
+			<Data>
+					<Value>16</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Sensor</Name>
+			<Description>Read Sensor</Description>
+			<Data>
+					<Value>35</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>BH1715_I2CS.dll</GUIPath>
+				<TypeName>BH1715_I2CS.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>

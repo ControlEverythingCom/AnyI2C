@@ -1,0 +1,82 @@
+﻿<DeviceConfig>
+	<Type>I2CDAC_AD5667</Type>
+	<path>I2CDAC_AD5667.xml</path>
+	<Name>I2CDAC_AD5667</Name>
+	<Manufactory>Analog Devices</Manufactory>
+	<Address>14</Address>
+	<AddressCollection>
+		<Address>14</Address>
+		<Address>15</Address>
+		<Address>16</Address>
+	</AddressCollection>
+	<Commands>
+<!-- 		<Name>Init</Name>
+		<Description>Initial device</Description>
+		<DeviceCommand>
+			<Name>test</Name>
+			<Description>test des</Description>
+			<Data>
+				<Value>22</Value>
+				<Value>33</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>
+		</DeviceCommand>
+ -->		
+		<DeviceCommandsGroup>
+			<Name>DAC A</Name>
+			<Description>DAC A</Description>
+			<DeviceCommand>
+				<Name>Set To 0</Name>
+				<Description>Set To 0</Description>
+				<Data>
+					<Value>24</Value>
+					<Value>0</Value>
+					<Value>0</Value>
+				</Data>
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>Set To Max Value</Name>
+				<Description>Set To 65535</Description>
+				<Data>
+					<Value>24</Value>
+					<Value>255</Value>
+					<Value>255</Value>
+				</Data>
+			</DeviceCommand>
+		</DeviceCommandsGroup>
+		<DeviceCommandsGroup>
+			<Name>DAC B</Name>
+			<Description>DAC B</Description>
+			<DeviceCommand>
+				<Name>Set To 0</Name>
+				<Description>Set To 0</Description>
+				<Data>
+					<Value>25</Value>
+					<Value>0</Value>
+					<Value>0</Value>
+				</Data>
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>Set To Max Value</Name>
+				<Description>Set To 65535</Description>
+				<Data>
+					<Value>25</Value>
+					<Value>255</Value>
+					<Value>255</Value>
+				</Data>
+			</DeviceCommand>
+		</DeviceCommandsGroup>
+
+
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>AD5667_I2CDAC.dll</GUIPath>
+				<TypeName>AD5667_I2CDAC.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>
+	</Commands>
+</DeviceConfig>

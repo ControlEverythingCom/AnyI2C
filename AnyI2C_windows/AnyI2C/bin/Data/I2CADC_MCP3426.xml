@@ -1,0 +1,36 @@
+﻿<DeviceConfig>
+	<Type>I2CADC_MCP3426</Type>
+	<path>I2CADC_MCP3426.xml</path>
+	<Name>I2CADC_MCP3426</Name>
+	<Manufactory></Manufactory>
+	<Address>104</Address>
+	<AddressCollection>
+		<Address>104</Address>
+	</AddressCollection>
+	<Commands>
+		<Name>AD Commands</Name>
+		<Description>AD Commands</Description>
+		<DeviceCommand>
+			<Name>Read Ch 0</Name>
+			<Description>Read Channel 0</Description>
+			<Data>
+				<Value>152</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Ch 1</Name>
+			<Description>Read Channel 1</Description>
+			<Data>
+				<Value>184</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>
+		</DeviceCommand>
+		<DeviceGUICommand>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<GUIPath>MCP3426_I2CADC.dll</GUIPath>
+			<TypeName>MCP3426_I2CADC.MyGUI</TypeName>
+		</DeviceGUICommand>
+	</Commands>
+</DeviceConfig>

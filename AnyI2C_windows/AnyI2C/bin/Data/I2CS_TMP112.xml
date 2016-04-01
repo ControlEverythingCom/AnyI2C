@@ -1,0 +1,40 @@
+<DeviceConfig>
+	<Type>Temperature Sensor 112</Type>
+	<path>I2CS_TMP112.xml</path>
+	<Name>I2CS_TMP112</Name>
+	<Manufactory>Texas Instruments</Manufactory>
+	<Address>72</Address>
+	<AddressCollection>
+		<Address>72</Address>
+		<Address>73</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Configure</Name>
+			<Description>Configure</Description>
+			<Data>
+					<Value>01</Value>
+					<Value>0</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Sensor</Name>
+			<Description>Read Sensor</Description>
+			<Data>
+					<Value>0</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>TMP112_I2CS.dll</GUIPath>
+				<TypeName>TMP112_I2CS.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>
