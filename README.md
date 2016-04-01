@@ -5,5 +5,7 @@ It uses AnyI2CLib which is a basic lib that handle the communication between PC 
 
 # Download AnyI2C
 
-https://github.com/ControlEverythingCom/AnyI2C/blob/master/Bin/AnyI2CSetup.msi
 https://github.com/ControlEverythingCom/AnyI2C/raw/master/Bin/AnyI2CSetup.msi
+
+# Compile AnyI2C
+To compile AnyI2C, Microsoft VS2013 Express or higher is needed. The code is written in C#. 
