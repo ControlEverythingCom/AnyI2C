@@ -2,7 +2,7 @@
 	<Type>AMBIENT LIGHT SENSOR</Type>
 	<path>I2CS_MLX90393.xml</path>
 	<Name>I2CS_MLX90393</Name>
-	<Manufactory>SILICON LABS</Manufactory>
+	<Manufactory>Melexis</Manufactory>
 	<Address>12</Address>
 	<AddressCollection>
 		<Address>12</Address>
