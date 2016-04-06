@@ -1,0 +1,38 @@
+<DeviceConfig>
+	<Type>AMPLIFIED PRESSURE SENSOR</Type>
+	<path>I2CS_ADS7830.xml</path>
+	<Name>I2CS_ADS7830</Name>
+	<Manufactory>TEXAS INSTRUMENTS</Manufactory>
+	<Address>72</Address>
+	<AddressCollection>
+		<Address>72</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Configure</Name>
+			<Description>Configure</Description>
+			<Data>
+				<Value>4</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Sensor</Name>
+			<Description>Read Sensor</Description>
+			<Data>
+				<Value>0</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>ADS7830_I2CS.dll</GUIPath>
+				<TypeName>ADS7830_I2CS.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>
+	</Commands>
+</DeviceConfig>
