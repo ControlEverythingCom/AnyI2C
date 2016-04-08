@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.lbCh1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.numPort = new System.Windows.Forms.NumericUpDown();
@@ -45,26 +43,6 @@
             this.GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numAddress)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(410, 99);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 16);
-            this.label1.TabIndex = 652;
-            this.label1.Text = "CH1";
-            // 
-            // lbCh1
-            // 
-            this.lbCh1.AutoSize = true;
-            this.lbCh1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lbCh1.Location = new System.Drawing.Point(484, 99);
-            this.lbCh1.Name = "lbCh1";
-            this.lbCh1.Size = new System.Drawing.Size(23, 16);
-            this.lbCh1.TabIndex = 653;
-            this.lbCh1.Text = "---";
             // 
             // groupBox3
             // 
@@ -189,8 +167,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 182);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.lbCh1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.C);
             this.Controls.Add(this.lbCh0);
@@ -212,8 +188,6 @@
 
         #endregion
 
-        internal System.Windows.Forms.Label label1;
-        internal System.Windows.Forms.Label lbCh1;
         internal System.Windows.Forms.GroupBox groupBox3;
         internal System.Windows.Forms.GroupBox groupBox4;
         internal System.Windows.Forms.NumericUpDown numPort;

@@ -50,39 +50,20 @@ namespace PCA9530_I2CS
             {
                 _ERROR.Visible = false;
                 byte addr = GetAddress(false);
-                int data = 0;
-                //Power On
-                byte[] value = CommObj.Send(new byte[] { addr, 0xA0, 0xFF }, 0);
-                Thread.Sleep(500);
-                // Read data
-                value = CommObj.Send(new byte[] { addr, 0x00 }, 1);
+                //Select frequency prescaler
+                //0x4B(75)	Period of blink = 0.5 sec
+                byte[] value = CommObj.Send(new byte[] { addr, 0x01, 0x4B }, 0);
+                //Select pulse width modulation
+                value = CommObj.Send(new byte[] { addr, 0x02, 0x80 }, 0);
+                //Select LED selector register
+                value = CommObj.Send(new byte[] { addr, 0x05, 0xFA }, 1);
                 if (value != null)
                 {
-                    data = (value[0] & 0x0F);
+                    lbCh0.Text = "HIGH";
                 }
-                int i;
-                string lbout;
-                for (i = 0; i < 4; i++)
+                else
                 {
-                    int mask = 0;
-                    mask = (int)Math.Pow(2, i);
-                    if ((data & mask) == 0)
-                    {
-                        lbout = "LOW";
-                    }
-                    else
-                    {
-                        lbout = "HIGH";
-                    }
-                    if (i == 0)
-                    {
-                        lbCh0.Text = lbout;
-                    }
-                    else if (i == 1)
-                    {
-                        lbCh1.Text = lbout;
-                    }
-                    Thread.Sleep(500);
+                    lbCh0.Text = "LOW";
                 }
             }
             catch
