@@ -1,0 +1,43 @@
+<DeviceConfig>
+	<Type>Humidity Sensor</Type>
+	<path>I2CADC_ADC121C021_HIH4030.xml</path>
+	<Name>I2CADC_ADC121C021_HIH4030</Name>
+	<Manufactory>Honeywell</Manufactory>
+	<Address>80</Address>
+	<AddressCollection>
+		<Address>80</Address>
+		<Address>81</Address>
+		<Address>82</Address>
+		<Address>84</Address>
+		<Address>88</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Configure Register</Name>
+			<Description>Configure Register</Description>
+			<Data>
+				<Value>2</Value>
+				<Value>32</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read</Name>
+			<Description>Read</Description>
+			<Data>
+				<Value>0</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>ADC121C021_HIH4030_I2CADC.dll</GUIPath>
+				<TypeName>ADC121C021_HIH4030_I2CADC.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>

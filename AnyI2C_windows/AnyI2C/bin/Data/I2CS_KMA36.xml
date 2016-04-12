@@ -1,0 +1,42 @@
+<DeviceConfig>
+	<Type>Angle Measurement Sensor</Type>
+	<path>I2CS_KMA36.xml</path>
+	<Name>I2CS_KMA36</Name>
+	<Manufactory>Measurement Specialties</Manufactory>
+	<Address>89</Address>
+	<AddressCollection>
+		<Address>89</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Configure</Name>
+			<Description>Configure</Description>
+			<Data>
+				<Value>0</Value>
+				<Value>3</Value>
+				<Value>127</Value>
+				<Value>255</Value>
+				<Value>127</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Sensor</Name>
+			<Description>Read Sensor</Description>
+			<Data>
+				<Value>0</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>KMA36_I2CS.dll</GUIPath>
+				<TypeName>KMA36_I2CS.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>
+	</Commands>
+</DeviceConfig>
