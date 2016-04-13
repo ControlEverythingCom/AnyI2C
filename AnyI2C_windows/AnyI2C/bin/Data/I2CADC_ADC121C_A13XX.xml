@@ -1,0 +1,34 @@
+<DeviceConfig>
+	<Type>Magnetic Angle Sensor</Type>
+	<path>I2CADC_ADC121C_A13XX.xml</path>
+	<Name>I2CADC_ADC121C_A13XX</Name>
+	<Manufactory>Honeywell</Manufactory>
+	<Address>80</Address>
+	<AddressCollection>
+		<Address>80</Address>
+		<Address>81</Address>
+		<Address>82</Address>
+		<Address>84</Address>
+		<Address>88</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Read</Name>
+			<Description>Read</Description>
+			<Data>
+				<Value>0</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>ADC121C_A13XX_I2CADC.dll</GUIPath>
+				<TypeName>ADC121C_A13XX_I2CADC.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>
