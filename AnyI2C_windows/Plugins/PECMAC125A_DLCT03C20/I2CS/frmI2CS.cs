@@ -163,6 +163,7 @@ namespace PECMAC125A_DLCT03C20_I2CS
 
         private void chkAutoUpdate_CheckedChanged(object sender, EventArgs e)
         {
+            timer1.Interval = int.Parse(txtInterval.Text);
             timer1.Enabled = chkAutoUpdate.Checked;
         }
 

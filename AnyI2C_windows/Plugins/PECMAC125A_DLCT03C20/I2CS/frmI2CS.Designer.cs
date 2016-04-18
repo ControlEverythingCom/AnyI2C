@@ -94,6 +94,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBoxReadAllCh = new System.Windows.Forms.GroupBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtInterval = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.ReadAllCh = new System.Windows.Forms.Button();
             this.chkAutoUpdate = new System.Windows.Forms.CheckBox();
             this.btnInit = new System.Windows.Forms.Button();
@@ -198,7 +201,7 @@
             // 
             this._ERROR.BackColor = System.Drawing.Color.Red;
             this._ERROR.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._ERROR.Location = new System.Drawing.Point(12, 345);
+            this._ERROR.Location = new System.Drawing.Point(12, 343);
             this._ERROR.Name = "_ERROR";
             this._ERROR.Size = new System.Drawing.Size(290, 45);
             this._ERROR.TabIndex = 541;
@@ -833,15 +836,44 @@
             // 
             // groupBoxReadAllCh
             // 
+            this.groupBoxReadAllCh.Controls.Add(this.label15);
+            this.groupBoxReadAllCh.Controls.Add(this.txtInterval);
+            this.groupBoxReadAllCh.Controls.Add(this.label13);
             this.groupBoxReadAllCh.Controls.Add(this.ReadAllCh);
             this.groupBoxReadAllCh.Controls.Add(this.chkAutoUpdate);
             this.groupBoxReadAllCh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxReadAllCh.Location = new System.Drawing.Point(12, 272);
             this.groupBoxReadAllCh.Name = "groupBoxReadAllCh";
-            this.groupBoxReadAllCh.Size = new System.Drawing.Size(287, 56);
+            this.groupBoxReadAllCh.Size = new System.Drawing.Size(287, 68);
             this.groupBoxReadAllCh.TabIndex = 557;
             this.groupBoxReadAllCh.TabStop = false;
             this.groupBoxReadAllCh.Text = "Read All Channels";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(251, 38);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(26, 15);
+            this.label15.TabIndex = 554;
+            this.label15.Text = "ms";
+            // 
+            // txtInterval
+            // 
+            this.txtInterval.Location = new System.Drawing.Point(181, 35);
+            this.txtInterval.Name = "txtInterval";
+            this.txtInterval.Size = new System.Drawing.Size(64, 21);
+            this.txtInterval.TabIndex = 553;
+            this.txtInterval.Text = "8000";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(126, 36);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(54, 15);
+            this.label13.TabIndex = 552;
+            this.label13.Text = "Interval";
             // 
             // ReadAllCh
             // 
@@ -857,7 +889,7 @@
             // chkAutoUpdate
             // 
             this.chkAutoUpdate.AutoSize = true;
-            this.chkAutoUpdate.Location = new System.Drawing.Point(167, 25);
+            this.chkAutoUpdate.Location = new System.Drawing.Point(167, 10);
             this.chkAutoUpdate.Name = "chkAutoUpdate";
             this.chkAutoUpdate.Size = new System.Drawing.Size(104, 19);
             this.chkAutoUpdate.TabIndex = 526;
@@ -892,7 +924,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(913, 405);
+            this.ClientSize = new System.Drawing.Size(913, 398);
             this.Controls.Add(this.btnCalibration);
             this.Controls.Add(this.btnInit);
             this.Controls.Add(this.groupBoxReadAllCh);
@@ -1023,5 +1055,8 @@
         private System.Windows.Forms.Label lbType;
         private System.Windows.Forms.Label label9;
         internal System.Windows.Forms.Button btnCalibration;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox txtInterval;
+        private System.Windows.Forms.Label label13;
     }
 }
