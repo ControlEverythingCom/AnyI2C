@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using System.Threading;
 using AnyI2C;
 
-namespace PECMAC125A_DLCT03C20_I2CS
+namespace CurrentMonitor_I2CS
 {
     public partial class frmI2CS : Form
     {

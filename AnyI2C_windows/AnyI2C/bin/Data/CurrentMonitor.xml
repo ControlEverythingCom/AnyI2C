@@ -74,8 +74,8 @@
 			<DeviceGUICommand>
 				<Name>GUI</Name>
 				<Description>GUI</Description>
-				<GUIPath>PECMAC125A_DLCT03C20_I2CS.dll</GUIPath>
-				<TypeName>PECMAC125A_DLCT03C20_I2CS.MyGUI</TypeName>
+				<GUIPath>CurrentMonitor_I2CS.dll</GUIPath>
+				<TypeName>CurrentMonitor_I2CS.MyGUI</TypeName>
 			</DeviceGUICommand>
 		</DeviceCommandsGroup>		
 	</Commands>

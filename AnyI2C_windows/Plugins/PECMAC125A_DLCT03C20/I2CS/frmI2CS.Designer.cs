@@ -1,4 +1,4 @@
-﻿namespace PECMAC125A_DLCT03C20_I2CS
+﻿namespace CurrentMonitor_I2CS
 {
     partial class frmI2CS
     {

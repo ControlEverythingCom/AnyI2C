@@ -7,8 +7,8 @@
     <ProjectGuid>{9B3D073B-21AF-4253-93DA-3993CCF6B5CD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PECMAC125A_DLCT03C20_I2CS</RootNamespace>
-    <AssemblyName>PECMAC125A_DLCT03C20_I2CS</AssemblyName>
+    <RootNamespace>CurrentMonitor_I2CS</RootNamespace>
+    <AssemblyName>CurrentMonitor_I2CS</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -25,7 +25,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>..\..\..\AnyI2C\bin\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>

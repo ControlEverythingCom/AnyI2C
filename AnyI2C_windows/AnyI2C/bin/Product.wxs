@@ -79,14 +79,26 @@
             <Component Id="ADC081C_I2CADCdll" Guid="*">
               <File Id="ADC081C_I2CADCdll" Name="ADC081C_I2CADC.dll" DiskId="1" Source="ADC081C_I2CADC.dll" KeyPath="yes"></File>
             </Component>
+            <Component Id="ADC121C021_HIH4030_I2CADCdll" Guid="*">
+              <File Id="ADC121C021_HIH4030_I2CADCdll" Name="ADC121C021_HIH4030_I2CADC.dll" DiskId="1" Source="ADC121C021_HIH4030_I2CADC.dll" KeyPath="yes"></File>
+            </Component>
+            <Component Id="ADC121C021_SM72480_I2CADCdll" Guid="*">
+              <File Id="ADC121C021_SM72480_I2CADCdll" Name="ADC121C021_SM72480_I2CADC.dll" DiskId="1" Source="ADC121C021_SM72480_I2CADC.dll" KeyPath="yes"></File>
+            </Component>
             <Component Id="ADC121C021_TA12_200_I2CADCdll" Guid="*">
               <File Id="ADC121C021_TA12_200_I2CADCdll" Name="ADC121C021_TA12_200_I2CADC.dll" DiskId="1" Source="ADC121C021_TA12_200_I2CADC.dll" KeyPath="yes"></File>
+            </Component>
+            <Component Id="ADC121C_A13XX_I2CADCdll" Guid="*">
+              <File Id="ADC121C_A13XX_I2CADCdll" Name="ADC121C_A13XX_I2CADC.dll" DiskId="1" Source="ADC121C_A13XX_I2CADC.dll" KeyPath="yes"></File>
             </Component>
             <Component Id="ADC121C_I2CADCdll" Guid="*">
               <File Id="ADC121C_I2CADCdll" Name="ADC121C_I2CADC.dll" DiskId="1" Source="ADC121C_I2CADC.dll" KeyPath="yes"></File>
             </Component>
             <Component Id="ADS1114_I2CADCdll" Guid="*">
               <File Id="ADS1114_I2CADCdll" Name="ADS1114_I2CADC.dll" DiskId="1" Source="ADS1114_I2CADC.dll" KeyPath="yes"></File>
+            </Component>
+            <Component Id="ADS1115_I2CADCdll" Guid="*">
+              <File Id="ADS1115_I2CADCdll" Name="ADS1115_I2CADC.dll" DiskId="1" Source="ADS1115_I2CADC.dll" KeyPath="yes"></File>
             </Component>
             <Component Id="ADS7828_I2CADCdll" Guid="*">
               <File Id="ADS7828_I2CADCdll" Name="ADS7828_I2CADC.dll" DiskId="1" Source="ADS7828_I2CADC.dll" KeyPath="yes"></File>
@@ -103,11 +115,17 @@
             <Component Id="AIS328DQTR_I2CSdll" Guid="*">
               <File Id="AIS328DQTR_I2CSdll" Name="AIS328DQTR_I2CS.dll" DiskId="1" Source="AIS328DQTR_I2CS.dll" KeyPath="yes"></File>
             </Component>
+            <Component Id="AMS5812_0050DB_I2CSdll" Guid="*">
+              <File Id="AMS5812_0050DB_I2CSdll" Name="AMS5812_0050DB_I2CS.dll" DiskId="1" Source="AMS5812_0050DB_I2CS.dll" KeyPath="yes"></File>
+            </Component>
             <Component Id="AnyI2cLibdll" Guid="*">
               <File Id="AnyI2cLibdll" Name="AnyI2cLib.dll" DiskId="1" Source="AnyI2cLib.dll" KeyPath="yes"></File>
             </Component>
             <Component Id="AS1115_I2CL3Edll" Guid="*">
               <File Id="AS1115_I2CL3Edll" Name="AS1115_I2CL3E.dll" DiskId="1" Source="AS1115_I2CL3E.dll" KeyPath="yes"></File>
+            </Component>
+            <Component Id="AT24HC02C_I2CSdll" Guid="*">
+              <File Id="AT24HC02C_I2CSdll" Name="AT24HC02C_I2CS.dll" DiskId="1" Source="AT24HC02C_I2CS.dll" KeyPath="yes"></File>
             </Component>
             <Component Id="AT30TS74_I2CSdll" Guid="*">
               <File Id="AT30TS74_I2CSdll" Name="AT30TS74_I2CS.dll" DiskId="1" Source="AT30TS74_I2CS.dll" KeyPath="yes"></File>
@@ -120,6 +138,9 @@
             </Component>
             <Component Id="BMA250_I2CSdll" Guid="*">
               <File Id="BMA250_I2CSdll" Name="BMA250_I2CS.dll" DiskId="1" Source="BMA250_I2CS.dll" KeyPath="yes"></File>
+            </Component>
+            <Component Id="BME280_I2CSdll" Guid="*">
+              <File Id="BME280_I2CSdll" Name="BME280_I2CS.dll" DiskId="1" Source="BME280_I2CS.dll" KeyPath="yes"></File>
             </Component>
             <Component Id="BMG160_I2CSdll" Guid="*">
               <File Id="BMG160_I2CSdll" Name="BMG160_I2CS.dll" DiskId="1" Source="BMG160_I2CS.dll" KeyPath="yes"></File>
@@ -135,6 +156,9 @@
             </Component>
             <Component Id="CPS120_I2CSdll" Guid="*">
               <File Id="CPS120_I2CSdll" Name="CPS120_I2CS.dll" DiskId="1" Source="CPS120_I2CS.dll" KeyPath="yes"></File>
+            </Component>
+            <Component Id="CurrentMonitor_I2CSdll" Guid="*">
+              <File Id="CurrentMonitor_I2CSdll" Name="CurrentMonitor_I2CS.dll" DiskId="1" Source="CurrentMonitor_I2CS.dll" KeyPath="yes"></File>
             </Component>
             <Component Id="DS620_I2CSdll" Guid="*">
               <File Id="DS620_I2CSdll" Name="DS620_I2CS.dll" DiskId="1" Source="DS620_I2CS.dll" KeyPath="yes"></File>
@@ -163,6 +187,9 @@
             <Component Id="HP206C_I2CSdll" Guid="*">
               <File Id="HP206C_I2CSdll" Name="HP206C_I2CS.dll" DiskId="1" Source="HP206C_I2CS.dll" KeyPath="yes"></File>
             </Component>
+            <Component Id="HTS221_I2CSdll" Guid="*">
+              <File Id="HTS221_I2CSdll" Name="HTS221_I2CS.dll" DiskId="1" Source="HTS221_I2CS.dll" KeyPath="yes"></File>
+            </Component>
             <Component Id="HTU20D_I2CSdll" Guid="*">
               <File Id="HTU20D_I2CSdll" Name="HTU20D_I2CS.dll" DiskId="1" Source="HTU20D_I2CS.dll" KeyPath="yes"></File>
             </Component>
@@ -183,6 +210,9 @@
             </Component>
             <Component Id="ITG3701_I2CSdll" Guid="*">
               <File Id="ITG3701_I2CSdll" Name="ITG3701_I2CS.dll" DiskId="1" Source="ITG3701_I2CS.dll" KeyPath="yes"></File>
+            </Component>
+            <Component Id="KMA36_I2CSdll" Guid="*">
+              <File Id="KMA36_I2CSdll" Name="KMA36_I2CS.dll" DiskId="1" Source="KMA36_I2CS.dll" KeyPath="yes"></File>
             </Component>
             <Component Id="L3G4200_I2CSdll" Guid="*">
               <File Id="L3G4200_I2CSdll" Name="L3G4200_I2CS.dll" DiskId="1" Source="L3G4200_I2CS.dll" KeyPath="yes"></File>
@@ -250,6 +280,9 @@
             <Component Id="MCP9808_I2CSdll" Guid="*">
               <File Id="MCP9808_I2CSdll" Name="MCP9808_I2CS.dll" DiskId="1" Source="MCP9808_I2CS.dll" KeyPath="yes"></File>
             </Component>
+            <Component Id="MLX90393_I2CSdll" Guid="*">
+              <File Id="MLX90393_I2CSdll" Name="MLX90393_I2CS.dll" DiskId="1" Source="MLX90393_I2CS.dll" KeyPath="yes"></File>
+            </Component>
             <Component Id="MMA7455_I2CSdll" Guid="*">
               <File Id="MMA7455_I2CSdll" Name="MMA7455_I2CS.dll" DiskId="1" Source="MMA7455_I2CS.dll" KeyPath="yes"></File>
             </Component>
@@ -280,14 +313,44 @@
             <Component Id="MS5611_01BXXX_I2CSdll" Guid="*">
               <File Id="MS5611_01BXXX_I2CSdll" Name="MS5611_01BXXX_I2CS.dll" DiskId="1" Source="MS5611_01BXXX_I2CS.dll" KeyPath="yes"></File>
             </Component>
+            <Component Id="MS5637_02BA03_I2CSdll" Guid="*">
+              <File Id="MS5637_02BA03_I2CSdll" Name="MS5637_02BA03_I2CS.dll" DiskId="1" Source="MS5637_02BA03_I2CS.dll" KeyPath="yes"></File>
+            </Component>
             <Component Id="MS5803_01BA_I2CSdll" Guid="*">
               <File Id="MS5803_01BA_I2CSdll" Name="MS5803_01BA_I2CS.dll" DiskId="1" Source="MS5803_01BA_I2CS.dll" KeyPath="yes"></File>
+            </Component>
+            <Component Id="MS5803_02BA_I2CSdll" Guid="*">
+              <File Id="MS5803_02BA_I2CSdll" Name="MS5803_02BA_I2CS.dll" DiskId="1" Source="MS5803_02BA_I2CS.dll" KeyPath="yes"></File>
+            </Component>
+            <Component Id="MS5803_05BA_I2CSdll" Guid="*">
+              <File Id="MS5803_05BA_I2CSdll" Name="MS5803_05BA_I2CS.dll" DiskId="1" Source="MS5803_05BA_I2CS.dll" KeyPath="yes"></File>
+            </Component>
+            <Component Id="MS5803_07BA_I2CSdll" Guid="*">
+              <File Id="MS5803_07BA_I2CSdll" Name="MS5803_07BA_I2CS.dll" DiskId="1" Source="MS5803_07BA_I2CS.dll" KeyPath="yes"></File>
+            </Component>
+            <Component Id="MS5803_14BA_I2CSdll" Guid="*">
+              <File Id="MS5803_14BA_I2CSdll" Name="MS5803_14BA_I2CS.dll" DiskId="1" Source="MS5803_14BA_I2CS.dll" KeyPath="yes"></File>
+            </Component>
+            <Component Id="MS5803_30BA_I2CSdll" Guid="*">
+              <File Id="MS5803_30BA_I2CSdll" Name="MS5803_30BA_I2CS.dll" DiskId="1" Source="MS5803_30BA_I2CS.dll" KeyPath="yes"></File>
+            </Component>
+            <Component Id="MS5805_02BA01_I2CSdll" Guid="*">
+              <File Id="MS5805_02BA01_I2CSdll" Name="MS5805_02BA01_I2CS.dll" DiskId="1" Source="MS5805_02BA01_I2CS.dll" KeyPath="yes"></File>
             </Component>
             <Component Id="MS5805_I2CSdll" Guid="*">
               <File Id="MS5805_I2CSdll" Name="MS5805_I2CS.dll" DiskId="1" Source="MS5805_I2CS.dll" KeyPath="yes"></File>
             </Component>
+            <Component Id="MS5837_30BA_I2CSdll" Guid="*">
+              <File Id="MS5837_30BA_I2CSdll" Name="MS5837_30BA_I2CS.dll" DiskId="1" Source="MS5837_30BA_I2CS.dll" KeyPath="yes"></File>
+            </Component>
             <Component Id="MS5837_I2CSdll" Guid="*">
               <File Id="MS5837_I2CSdll" Name="MS5837_I2CS.dll" DiskId="1" Source="MS5837_I2CS.dll" KeyPath="yes"></File>
+            </Component>
+            <Component Id="MS8607_02BA01_H_I2CSdll" Guid="*">
+              <File Id="MS8607_02BA01_H_I2CSdll" Name="MS8607_02BA01_H_I2CS.dll" DiskId="1" Source="MS8607_02BA01_H_I2CS.dll" KeyPath="yes"></File>
+            </Component>
+            <Component Id="MS8607_02BA01_PT_I2CSdll" Guid="*">
+              <File Id="MS8607_02BA01_PT_I2CSdll" Name="MS8607_02BA01_PT_I2CS.dll" DiskId="1" Source="MS8607_02BA01_PT_I2CS.dll" KeyPath="yes"></File>
             </Component>
             <Component Id="MS8607_I2CSdll" Guid="*">
               <File Id="MS8607_I2CSdll" Name="MS8607_I2CS.dll" DiskId="1" Source="MS8607_I2CS.dll" KeyPath="yes"></File>
@@ -297,6 +360,12 @@
             </Component>
             <Component Id="MXC6232xM_I2CSdll" Guid="*">
               <File Id="MXC6232xM_I2CSdll" Name="MXC6232xM_I2CS.dll" DiskId="1" Source="MXC6232xM_I2CS.dll" KeyPath="yes"></File>
+            </Component>
+            <Component Id="PCA9530_I2CSdll" Guid="*">
+              <File Id="PCA9530_I2CSdll" Name="PCA9530_I2CS.dll" DiskId="1" Source="PCA9530_I2CS.dll" KeyPath="yes"></File>
+            </Component>
+            <Component Id="PCA9536_I2CSdll" Guid="*">
+              <File Id="PCA9536_I2CSdll" Name="PCA9536_I2CS.dll" DiskId="1" Source="PCA9536_I2CS.dll" KeyPath="yes"></File>
             </Component>
             <Component Id="PCA9633_I2CSdll" Guid="*">
               <File Id="PCA9633_I2CSdll" Name="PCA9633_I2CS.dll" DiskId="1" Source="PCA9633_I2CS.dll" KeyPath="yes"></File>
@@ -343,8 +412,17 @@
             <Component Id="TMD26721_I2CSdll" Guid="*">
               <File Id="TMD26721_I2CSdll" Name="TMD26721_I2CS.dll" DiskId="1" Source="TMD26721_I2CS.dll" KeyPath="yes"></File>
             </Component>
+            <Component Id="TMD2771_I2CSdll" Guid="*">
+              <File Id="TMD2771_I2CSdll" Name="TMD2771_I2CS.dll" DiskId="1" Source="TMD2771_I2CS.dll" KeyPath="yes"></File>
+            </Component>
             <Component Id="TMD2772_I2CSdll" Guid="*">
               <File Id="TMD2772_I2CSdll" Name="TMD2772_I2CS.dll" DiskId="1" Source="TMD2772_I2CS.dll" KeyPath="yes"></File>
+            </Component>
+            <Component Id="TMD37821_I2CSdll" Guid="*">
+              <File Id="TMD37821_I2CSdll" Name="TMD37821_I2CS.dll" DiskId="1" Source="TMD37821_I2CS.dll" KeyPath="yes"></File>
+            </Component>
+            <Component Id="TMG39931_I2CSdll" Guid="*">
+              <File Id="TMG39931_I2CSdll" Name="TMG39931_I2CS.dll" DiskId="1" Source="TMG39931_I2CS.dll" KeyPath="yes"></File>
             </Component>
             <Component Id="TMP007_I2CSdll" Guid="*">
               <File Id="TMP007_I2CSdll" Name="TMP007_I2CS.dll" DiskId="1" Source="TMP007_I2CS.dll" KeyPath="yes"></File>
@@ -367,6 +445,9 @@
             <Component Id="TSL2571_I2CSdll" Guid="*">
               <File Id="TSL2571_I2CSdll" Name="TSL2571_I2CS.dll" DiskId="1" Source="TSL2571_I2CS.dll" KeyPath="yes"></File>
             </Component>
+            <Component Id="TSL26711_I2CSdll" Guid="*">
+              <File Id="TSL26711_I2CSdll" Name="TSL26711_I2CS.dll" DiskId="1" Source="TSL26711_I2CS.dll" KeyPath="yes"></File>
+            </Component>
             <Component Id="TSL27711_I2CSdll" Guid="*">
               <File Id="TSL27711_I2CSdll" Name="TSL27711_I2CS.dll" DiskId="1" Source="TSL27711_I2CS.dll" KeyPath="yes"></File>
             </Component>
@@ -385,10 +466,10 @@
 
 
             <Directory Id="DataFolder" Name="Data">
+              
               <Component Id="CurrentMonitorxml" Guid="*">
                 <File Id="CurrentMonitorxml" Name="CurrentMonitor.xml" DiskId="1" Source="Data\CurrentMonitor.xml" KeyPath="yes"></File>
               </Component>
-
 
               <Component Id="I2CADC_AD7999xml" Guid="*">
                 <File Id="I2CADC_AD7999xml" Name="I2CADC_AD7999.xml" DiskId="1" Source="Data\I2CADC_AD7999.xml" KeyPath="yes"></File>
@@ -399,11 +480,23 @@
               <Component Id="I2CADC_ADC121Cxml" Guid="*">
                 <File Id="I2CADC_ADC121Cxml" Name="I2CADC_ADC121C.xml" DiskId="1" Source="Data\I2CADC_ADC121C.xml" KeyPath="yes"></File>
               </Component>
+              <Component Id="I2CADC_ADC121C021_HIH4030xml" Guid="*">
+                <File Id="I2CADC_ADC121C021_HIH4030xml" Name="I2CADC_ADC121C021_HIH4030.xml" DiskId="1" Source="Data\I2CADC_ADC121C021_HIH4030.xml" KeyPath="yes"></File>
+              </Component>
+              <Component Id="I2CADC_ADC121C021_SM72480xml" Guid="*">
+                <File Id="I2CADC_ADC121C021_SM72480xml" Name="I2CADC_ADC121C021_SM72480.xml" DiskId="1" Source="Data\I2CADC_ADC121C021_SM72480.xml" KeyPath="yes"></File>
+              </Component>
               <Component Id="I2CADC_ADC121C021_TA12_200xml" Guid="*">
                 <File Id="I2CADC_ADC121C021_TA12_200xml" Name="I2CADC_ADC121C021_TA12_200.xml" DiskId="1" Source="Data\I2CADC_ADC121C021_TA12_200.xml" KeyPath="yes"></File>
               </Component>
+              <Component Id="I2CADC_ADC121C_A13XXxml" Guid="*">
+                <File Id="I2CADC_ADC121C_A13XXxml" Name="I2CADC_ADC121C_A13XX.xml" DiskId="1" Source="Data\I2CADC_ADC121C_A13XX.xml" KeyPath="yes"></File>
+              </Component>
               <Component Id="I2CADC_ADS1114xml" Guid="*">
                 <File Id="I2CADC_ADS1114xml" Name="I2CADC_ADS1114.xml" DiskId="1" Source="Data\I2CADC_ADS1114.xml" KeyPath="yes"></File>
+              </Component>
+              <Component Id="I2CADC_ADS1115xml" Guid="*">
+                <File Id="I2CADC_ADS1115xml" Name="I2CADC_ADS1115.xml" DiskId="1" Source="Data\I2CADC_ADS1115.xml" KeyPath="yes"></File>
               </Component>
               <Component Id="I2CADC_ADS7828xml" Guid="*">
                 <File Id="I2CADC_ADS7828xml" Name="I2CADC_ADS7828.xml" DiskId="1" Source="Data\I2CADC_ADS7828.xml" KeyPath="yes"></File>
@@ -495,6 +588,9 @@
               <Component Id="I2CS_AD7416ARZxml" Guid="*">
                 <File Id="I2CS_AD7416ARZxml" Name="I2CS_AD7416ARZ.xml" DiskId="1" Source="Data\I2CS_AD7416ARZ.xml" KeyPath="yes"></File>
               </Component>
+              <Component Id="I2CS_ADS7830xml" Guid="*">
+                <File Id="I2CS_ADS7830xml" Name="I2CS_ADS7830.xml" DiskId="1" Source="Data\I2CS_ADS7830.xml" KeyPath="yes"></File>
+              </Component>
               <Component Id="I2CS_ADT75xml" Guid="*">
                 <File Id="I2CS_ADT75xml" Name="I2CS_ADT75.xml" DiskId="1" Source="Data\I2CS_ADT75.xml" KeyPath="yes"></File>
               </Component>
@@ -503,6 +599,12 @@
               </Component>
               <Component Id="I2CS_AIS328DQTRxml" Guid="*">
                 <File Id="I2CS_AIS328DQTRxml" Name="I2CS_AIS328DQTR.xml" DiskId="1" Source="Data\I2CS_AIS328DQTR.xml" KeyPath="yes"></File>
+              </Component>
+              <Component Id="I2CS_AMS5812xml" Guid="*">
+                <File Id="I2CS_AMS5812xml" Name="I2CS_AMS5812.xml" DiskId="1" Source="Data\I2CS_AMS5812.xml" KeyPath="yes"></File>
+              </Component>
+              <Component Id="I2CS_AT24HC02Cxml" Guid="*">
+                <File Id="I2CS_AT24HC02Cxml" Name="I2CS_AT24HC02C.xml" DiskId="1" Source="Data\I2CS_AT24HC02C.xml" KeyPath="yes"></File>
               </Component>
               <Component Id="I2CS_AT30TS74xml" Guid="*">
                 <File Id="I2CS_AT30TS74xml" Name="I2CS_AT30TS74.xml" DiskId="1" Source="Data\I2CS_AT30TS74.xml" KeyPath="yes"></File>
@@ -515,6 +617,9 @@
               </Component>
               <Component Id="I2CS_BMA250xml" Guid="*">
                 <File Id="I2CS_BMA250xml" Name="I2CS_BMA250.xml" DiskId="1" Source="Data\I2CS_BMA250.xml" KeyPath="yes"></File>
+              </Component>
+              <Component Id="I2CS_BME280xml" Guid="*">
+                <File Id="I2CS_BME280xml" Name="I2CS_BME280.xml" DiskId="1" Source="Data\I2CS_BME280.xml" KeyPath="yes"></File>
               </Component>
               <Component Id="I2CS_BMG160xml" Guid="*">
                 <File Id="I2CS_BMG160xml" Name="I2CS_BMG160.xml" DiskId="1" Source="Data\I2CS_BMG160.xml" KeyPath="yes"></File>
@@ -558,6 +663,9 @@
               <Component Id="I2CS_HP206Cxml" Guid="*">
                 <File Id="I2CS_HP206Cxml" Name="I2CS_HP206C.xml" DiskId="1" Source="Data\I2CS_HP206C.xml" KeyPath="yes"></File>
               </Component>
+              <Component Id="I2CS_HTS221xml" Guid="*">
+                <File Id="I2CS_HTS221xml" Name="I2CS_HTS221.xml" DiskId="1" Source="Data\I2CS_HTS221.xml" KeyPath="yes"></File>
+              </Component>
               <Component Id="I2CS_HTU20Dxml" Guid="*">
                 <File Id="I2CS_HTU20Dxml" Name="I2CS_HTU20D.xml" DiskId="1" Source="Data\I2CS_HTU20D.xml" KeyPath="yes"></File>
               </Component>
@@ -578,6 +686,9 @@
               </Component>
               <Component Id="I2CS_ITG3701xml" Guid="*">
                 <File Id="I2CS_ITG3701xml" Name="I2CS_ITG3701.xml" DiskId="1" Source="Data\I2CS_ITG3701.xml" KeyPath="yes"></File>
+              </Component>
+              <Component Id="I2CS_KMA36xml" Guid="*">
+                <File Id="I2CS_KMA36xml" Name="I2CS_KMA36.xml" DiskId="1" Source="Data\I2CS_KMA36.xml" KeyPath="yes"></File>
               </Component>
               <Component Id="I2CS_L3G4200xml" Guid="*">
                 <File Id="I2CS_L3G4200xml" Name="I2CS_L3G4200.xml" DiskId="1" Source="Data\I2CS_L3G4200.xml" KeyPath="yes"></File>
@@ -618,6 +729,9 @@
               <Component Id="I2CS_MCP9808xml" Guid="*">
                 <File Id="I2CS_MCP9808xml" Name="I2CS_MCP9808.xml" DiskId="1" Source="Data\I2CS_MCP9808.xml" KeyPath="yes"></File>
               </Component>
+              <Component Id="I2CS_MLX90393xml" Guid="*">
+                <File Id="I2CS_MLX90393xml" Name="I2CS_MLX90393.xml" DiskId="1" Source="Data\I2CS_MLX90393.xml" KeyPath="yes"></File>
+              </Component>
               <Component Id="I2CS_MMA7455xml" Guid="*">
                 <File Id="I2CS_MMA7455xml" Name="I2CS_MMA7455.xml" DiskId="1" Source="Data\I2CS_MMA7455.xml" KeyPath="yes"></File>
               </Component>
@@ -648,6 +762,9 @@
               <Component Id="I2CS_MS5611_01BXXXxml" Guid="*">
                 <File Id="I2CS_MS5611_01BXXXxml" Name="I2CS_MS5611_01BXXX.xml" DiskId="1" Source="Data\I2CS_MS5611_01BXXX.xml" KeyPath="yes"></File>
               </Component>
+              <Component Id="I2CS_MS5637_02BA03xml" Guid="*">
+                <File Id="I2CS_MS5637_02BA03xml" Name="I2CS_MS5637_02BA03.xml" DiskId="1" Source="Data\I2CS_MS5637_02BA03.xml" KeyPath="yes"></File>
+              </Component>
               <Component Id="I2CS_MS5803_01BAxml" Guid="*">
                 <File Id="I2CS_MS5803_01BAxml" Name="I2CS_MS5803_01BA.xml" DiskId="1" Source="Data\I2CS_MS5803_01BA.xml" KeyPath="yes"></File>
               </Component>
@@ -660,14 +777,32 @@
               <Component Id="I2CS_MS5803_07BAxml" Guid="*">
                 <File Id="I2CS_MS5803_07BAxml" Name="I2CS_MS5803_07BA.xml" DiskId="1" Source="Data\I2CS_MS5803_07BA.xml" KeyPath="yes"></File>
               </Component>
+              <Component Id="I2CS_MS5803_14BAxml" Guid="*">
+                <File Id="I2CS_MS5803_14BAxml" Name="I2CS_MS5803_14BA.xml" DiskId="1" Source="Data\I2CS_MS5803_14BA.xml" KeyPath="yes"></File>
+              </Component>
+              <Component Id="I2CS_MS5803_30BAxml" Guid="*">
+                <File Id="I2CS_MS5803_30BAxml" Name="I2CS_MS5803_30BA.xml" DiskId="1" Source="Data\I2CS_MS5803_30BA.xml" KeyPath="yes"></File>
+              </Component>
               <Component Id="I2CS_MS5805xml" Guid="*">
                 <File Id="I2CS_MS5805xml" Name="I2CS_MS5805.xml" DiskId="1" Source="Data\I2CS_MS5805.xml" KeyPath="yes"></File>
+              </Component>
+              <Component Id="I2CS_MS5805_02BA01xml" Guid="*">
+                <File Id="I2CS_MS5805_02BA01xml" Name="I2CS_MS5805_02BA01.xml" DiskId="1" Source="Data\I2CS_MS5805_02BA01.xml" KeyPath="yes"></File>
               </Component>
               <Component Id="I2CS_MS5837xml" Guid="*">
                 <File Id="I2CS_MS5837xml" Name="I2CS_MS5837.xml" DiskId="1" Source="Data\I2CS_MS5837.xml" KeyPath="yes"></File>
               </Component>
+              <Component Id="I2CS_MS5837_30BAxml" Guid="*">
+                <File Id="I2CS_MS5837_30BAxml" Name="I2CS_MS5837_30BA.xml" DiskId="1" Source="Data\I2CS_MS5837_30BA.xml" KeyPath="yes"></File>
+              </Component>
               <Component Id="I2CS_MS8607xml" Guid="*">
                 <File Id="I2CS_MS8607xml" Name="I2CS_MS8607.xml" DiskId="1" Source="Data\I2CS_MS8607.xml" KeyPath="yes"></File>
+              </Component>
+              <Component Id="I2CS_MS8607_02BA01_Hxml" Guid="*">
+                <File Id="I2CS_MS8607_02BA01_Hxml" Name="I2CS_MS8607_02BA01_H.xml" DiskId="1" Source="Data\I2CS_MS8607_02BA01_H.xml" KeyPath="yes"></File>
+              </Component>
+              <Component Id="I2CS_MS8607_02BA01_PTxml" Guid="*">
+                <File Id="I2CS_MS8607_02BA01_PTxml" Name="I2CS_MS8607_02BA01_PT.xml" DiskId="1" Source="Data\I2CS_MS8607_02BA01_PT.xml" KeyPath="yes"></File>
               </Component>
               <Component Id="I2CS_MS8607_PHxml" Guid="*">
                 <File Id="I2CS_MS8607_PHxml" Name="I2CS_MS8607_PH.xml" DiskId="1" Source="Data\I2CS_MS8607_PH.xml" KeyPath="yes"></File>
@@ -678,6 +813,15 @@
               <Component Id="I2CS_MXC6232xMxml" Guid="*">
                 <File Id="I2CS_MXC6232xMxml" Name="I2CS_MXC6232xM.xml" DiskId="1" Source="Data\I2CS_MXC6232xM.xml" KeyPath="yes"></File>
               </Component>
+              <Component Id="I2CS_PCA9530xml" Guid="*">
+                <File Id="I2CS_PCA9530xml" Name="I2CS_PCA9530.xml" DiskId="1" Source="Data\I2CS_PCA9530.xml" KeyPath="yes"></File>
+              </Component>
+              <Component Id="I2CS_PCA9531xml" Guid="*">
+                <File Id="I2CS_PCA9531xml" Name="I2CS_PCA9531.xml" DiskId="1" Source="Data\I2CS_PCA9531.xml" KeyPath="yes"></File>
+              </Component>
+              <Component Id="I2CS_PCA9536xml" Guid="*">
+                <File Id="I2CS_PCA9536xml" Name="I2CS_PCA9536.xml" DiskId="1" Source="Data\I2CS_PCA9536.xml" KeyPath="yes"></File>
+              </Component>
               <Component Id="I2CS_PCA9633xml" Guid="*">
                 <File Id="I2CS_PCA9633xml" Name="I2CS_PCA9633.xml" DiskId="1" Source="Data\I2CS_PCA9633.xml" KeyPath="yes"></File>
               </Component>
@@ -686,6 +830,12 @@
               </Component>
               <Component Id="I2CS_SHT3xxml" Guid="*">
                 <File Id="I2CS_SHT3xxml" Name="I2CS_SHT3x.xml" DiskId="1" Source="Data\I2CS_SHT3x.xml" KeyPath="yes"></File>
+              </Component>
+              <Component Id="I2CS_SI1132xml" Guid="*">
+                <File Id="I2CS_SI1132xml" Name="I2CS_SI1132.xml" DiskId="1" Source="Data\I2CS_SI1132.xml" KeyPath="yes"></File>
+              </Component>
+              <Component Id="I2CS_SI1141xml" Guid="*">
+                <File Id="I2CS_SI1141xml" Name="I2CS_SI1141.xml" DiskId="1" Source="Data\I2CS_SI1141.xml" KeyPath="yes"></File>
               </Component>
               <Component Id="I2CS_Si7005xml" Guid="*">
                 <File Id="I2CS_Si7005xml" Name="I2CS_Si7005.xml" DiskId="1" Source="Data\I2CS_Si7005.xml" KeyPath="yes"></File>
@@ -720,8 +870,17 @@
               <Component Id="I2CS_TMD26721xml" Guid="*">
                 <File Id="I2CS_TMD26721xml" Name="I2CS_TMD26721.xml" DiskId="1" Source="Data\I2CS_TMD26721.xml" KeyPath="yes"></File>
               </Component>
+              <Component Id="I2CS_TMD2771xml" Guid="*">
+                <File Id="I2CS_TMD2771xml" Name="I2CS_TMD2771.xml" DiskId="1" Source="Data\I2CS_TMD2771.xml" KeyPath="yes"></File>
+              </Component>
               <Component Id="I2CS_TMD2772xml" Guid="*">
                 <File Id="I2CS_TMD2772xml" Name="I2CS_TMD2772.xml" DiskId="1" Source="Data\I2CS_TMD2772.xml" KeyPath="yes"></File>
+              </Component>
+              <Component Id="I2CS_TMD37821xml" Guid="*">
+                <File Id="I2CS_TMD37821xml" Name="I2CS_TMD37821.xml" DiskId="1" Source="Data\I2CS_TMD37821.xml" KeyPath="yes"></File>
+              </Component>
+              <Component Id="I2CS_TMG39931xml" Guid="*">
+                <File Id="I2CS_TMG39931xml" Name="I2CS_TMG39931.xml" DiskId="1" Source="Data\I2CS_TMG39931.xml" KeyPath="yes"></File>
               </Component>
               <Component Id="I2CS_TMP007xml" Guid="*">
                 <File Id="I2CS_TMP007xml" Name="I2CS_TMP007.xml" DiskId="1" Source="Data\I2CS_TMP007.xml" KeyPath="yes"></File>
@@ -743,6 +902,9 @@
               </Component>
               <Component Id="I2CS_TSL2571xml" Guid="*">
                 <File Id="I2CS_TSL2571xml" Name="I2CS_TSL2571.xml" DiskId="1" Source="Data\I2CS_TSL2571.xml" KeyPath="yes"></File>
+              </Component>
+              <Component Id="I2CS_TSL26711xml" Guid="*">
+                <File Id="I2CS_TSL26711xml" Name="I2CS_TSL26711.xml" DiskId="1" Source="Data\I2CS_TSL26711.xml" KeyPath="yes"></File>
               </Component>
               <Component Id="I2CS_TSL27711xml" Guid="*">
                 <File Id="I2CS_TSL27711xml" Name="I2CS_TSL27711.xml" DiskId="1" Source="Data\I2CS_TSL27711.xml" KeyPath="yes"></File>
@@ -794,25 +956,33 @@
       <ComponentRef Id="AD7416ARZ_I2CSdll" />
       <ComponentRef Id="AD7999_I2CADCdll" />
       <ComponentRef Id="ADC081C_I2CADCdll" />
+      <ComponentRef Id="ADC121C021_HIH4030_I2CADCdll" />
+      <ComponentRef Id="ADC121C021_SM72480_I2CADCdll" />
       <ComponentRef Id="ADC121C021_TA12_200_I2CADCdll" />
+      <ComponentRef Id="ADC121C_A13XX_I2CADCdll" />
       <ComponentRef Id="ADC121C_I2CADCdll" />
       <ComponentRef Id="ADS1114_I2CADCdll" />
+      <ComponentRef Id="ADS1115_I2CADCdll" />
       <ComponentRef Id="ADS7828_I2CADCdll" />
       <ComponentRef Id="ADS7830_I2CADCdll" />
       <ComponentRef Id="ADT75_I2CSdll" />
       <ComponentRef Id="ADXL345_I2CSdll" />
       <ComponentRef Id="AIS328DQTR_I2CSdll" />
+      <ComponentRef Id="AMS5812_0050DB_I2CSdll" />
       <ComponentRef Id="AnyI2cLibdll" />
       <ComponentRef Id="AS1115_I2CL3Edll" />
+      <ComponentRef Id="AT24HC02C_I2CSdll" />
       <ComponentRef Id="AT30TS74_I2CSdll" />
       <ComponentRef Id="BH1715_I2CSdll" />
       <ComponentRef Id="BH1745NUC_I2CSdll" />
       <ComponentRef Id="BMA250_I2CSdll" />
+      <ComponentRef Id="BME280_I2CSdll" />
       <ComponentRef Id="BMG160_I2CSdll" />
       <ComponentRef Id="BMP180_I2CSdll" />
       <ComponentRef Id="BMP280_I2CSdll" />
       <ComponentRef Id="CHIPCAP2_I2CSdll" />
       <ComponentRef Id="CPS120_I2CSdll" />
+      <ComponentRef Id="CurrentMonitor_I2CSdll" />
       <ComponentRef Id="DS620_I2CSdll" />
       <ComponentRef Id="H3LIS331DL_I2CSdll" />
       <ComponentRef Id="HCPA5VU3_I2CSdll" />
@@ -822,6 +992,7 @@
       <ComponentRef Id="HMC6343_I2CSdll" />
       <ComponentRef Id="HP203B_I2CSdll" />
       <ComponentRef Id="HP206C_I2CSdll" />
+      <ComponentRef Id="HTS221_I2CSdll" />
       <ComponentRef Id="HTU20D_I2CSdll" />
       <ComponentRef Id="HYT221_I2CSdll" />
       <ComponentRef Id="HYT271_I2CSdll" />
@@ -829,6 +1000,7 @@
       <ComponentRef Id="ISL29003_I2CSdll" />
       <ComponentRef Id="ITG3200_I2CSdll" />
       <ComponentRef Id="ITG3701_I2CSdll" />
+      <ComponentRef Id="KMA36_I2CSdll" />
       <ComponentRef Id="L3G4200_I2CSdll" />
       <ComponentRef Id="LIS331HH_I2CSdll" />
       <ComponentRef Id="LIS33DE_I2CSdll" />
@@ -851,6 +1023,7 @@
       <ComponentRef Id="MCP3428_I2CADCdll" />
       <ComponentRef Id="MCP9803_I2CSdll" />
       <ComponentRef Id="MCP9808_I2CSdll" />
+      <ComponentRef Id="MLX90393_I2CSdll" />
       <ComponentRef Id="MMA7455_I2CSdll" />
       <ComponentRef Id="MMA7660FC_I2CSdll" />
       <ComponentRef Id="MMA8452Q_I2CSdll" />
@@ -861,12 +1034,24 @@
       <ComponentRef Id="MPU6000_I2CSdll" />
       <ComponentRef Id="MPU9150_I2CSdll" />
       <ComponentRef Id="MS5611_01BXXX_I2CSdll" />
+      <ComponentRef Id="MS5637_02BA03_I2CSdll" />
       <ComponentRef Id="MS5803_01BA_I2CSdll" />
+      <ComponentRef Id="MS5803_02BA_I2CSdll" />
+      <ComponentRef Id="MS5803_05BA_I2CSdll" />
+      <ComponentRef Id="MS5803_07BA_I2CSdll" />
+      <ComponentRef Id="MS5803_14BA_I2CSdll" />
+      <ComponentRef Id="MS5803_30BA_I2CSdll" />
+      <ComponentRef Id="MS5805_02BA01_I2CSdll" />
       <ComponentRef Id="MS5805_I2CSdll" />
+      <ComponentRef Id="MS5837_30BA_I2CSdll" />
       <ComponentRef Id="MS5837_I2CSdll" />
+      <ComponentRef Id="MS8607_02BA01_H_I2CSdll" />
+      <ComponentRef Id="MS8607_02BA01_PT_I2CSdll" />
       <ComponentRef Id="MS8607_I2CSdll" />
       <ComponentRef Id="MXC6226XU_I2CSdll" />
       <ComponentRef Id="MXC6232xM_I2CSdll" />
+      <ComponentRef Id="PCA9530_I2CSdll" />
+      <ComponentRef Id="PCA9536_I2CSdll" />
       <ComponentRef Id="PCA9633_I2CSdll" />
       <ComponentRef Id="PECMAC125A_DLCT03C20_I2CSdll" />
       <ComponentRef Id="SHT25_I2CSdll" />
@@ -882,7 +1067,10 @@
       <ComponentRef Id="TCS34725_I2CSdll" />
       <ComponentRef Id="TCS34903_I2CSdll" />
       <ComponentRef Id="TMD26721_I2CSdll" />
+      <ComponentRef Id="TMD2771_I2CSdll" />
       <ComponentRef Id="TMD2772_I2CSdll" />
+      <ComponentRef Id="TMD37821_I2CSdll" />
+      <ComponentRef Id="TMG39931_I2CSdll" />
       <ComponentRef Id="TMP007_I2CSdll" />
       <ComponentRef Id="TMP100_I2CSdll" />
       <ComponentRef Id="TMP101NA_I2CSdll" />
@@ -890,6 +1078,7 @@
       <ComponentRef Id="TSL2561_I2CSdll" />
       <ComponentRef Id="TSL2569_I2CSdll" />
       <ComponentRef Id="TSL2571_I2CSdll" />
+      <ComponentRef Id="TSL26711_I2CSdll" />
       <ComponentRef Id="TSL27711_I2CSdll" />
       <ComponentRef Id="TSL27721_I2CSdll" />
       <ComponentRef Id="TSL45315_I2CSdll" />
@@ -898,8 +1087,12 @@
       <ComponentRef Id="I2CADC_AD7999xml" />
       <ComponentRef Id="I2CADC_ADC081Cxml" />
       <ComponentRef Id="I2CADC_ADC121Cxml" />
+      <ComponentRef Id="I2CADC_ADC121C021_HIH4030xml" />
+      <ComponentRef Id="I2CADC_ADC121C021_SM72480xml" />
       <ComponentRef Id="I2CADC_ADC121C021_TA12_200xml" />
+      <ComponentRef Id="I2CADC_ADC121C_A13XXxml" />
       <ComponentRef Id="I2CADC_ADS1114xml" />
+      <ComponentRef Id="I2CADC_ADS1115xml" />
       <ComponentRef Id="I2CADC_ADS7828xml" />
       <ComponentRef Id="I2CADC_ADS7830xml" />
       <ComponentRef Id="I2CADC_MCP3425xml" />
@@ -930,13 +1123,17 @@
       <ComponentRef Id="I2CS_A1332xml" />
       <ComponentRef Id="I2CS_A3G4250DTRxml" />
       <ComponentRef Id="I2CS_AD7416ARZxml" />
+      <ComponentRef Id="I2CS_ADS7830xml" />
       <ComponentRef Id="I2CS_ADT75xml" />
       <ComponentRef Id="I2CS_ADXL345xml" />
       <ComponentRef Id="I2CS_AIS328DQTRxml" />
+      <ComponentRef Id="I2CS_AMS5812xml" />
+      <ComponentRef Id="I2CS_AT24HC02Cxml" />
       <ComponentRef Id="I2CS_AT30TS74xml" />
       <ComponentRef Id="I2CS_BH1715xml" />
       <ComponentRef Id="I2CS_BH1745NUCxml" />
       <ComponentRef Id="I2CS_BMA250xml" />
+      <ComponentRef Id="I2CS_BME280xml" />
       <ComponentRef Id="I2CS_BMG160xml" />
       <ComponentRef Id="I2CS_BMP180xml" />
       <ComponentRef Id="I2CS_BMP280xml" />
@@ -951,6 +1148,7 @@
       <ComponentRef Id="I2CS_HMC6343xml" />
       <ComponentRef Id="I2CS_HP203Bxml" />
       <ComponentRef Id="I2CS_HP206Cxml" />
+      <ComponentRef Id="I2CS_HTS221xml" />
       <ComponentRef Id="I2CS_HTU20Dxml" />
       <ComponentRef Id="I2CS_HYT221xml" />
       <ComponentRef Id="I2CS_HYT271xml" />
@@ -958,6 +1156,7 @@
       <ComponentRef Id="I2CS_ISL29003xml" />
       <ComponentRef Id="I2CS_ITG3200xml" />
       <ComponentRef Id="I2CS_ITG3701xml" />
+      <ComponentRef Id="I2CS_KMA36xml" />
       <ComponentRef Id="I2CS_L3G4200xml" />
       <ComponentRef Id="I2CS_LIS331HHxml" />
       <ComponentRef Id="I2CS_LIS33DExml" />
@@ -971,6 +1170,7 @@
       <ComponentRef Id="I2CS_MAG3110xml" />
       <ComponentRef Id="I2CS_MCP9803xml" />
       <ComponentRef Id="I2CS_MCP9808xml" />
+      <ComponentRef Id="I2CS_MLX90393xml" />
       <ComponentRef Id="I2CS_MMA7455xml" />
       <ComponentRef Id="I2CS_MMA7660FCxml" />
       <ComponentRef Id="I2CS_MMA8452Qxml" />
@@ -981,19 +1181,31 @@
       <ComponentRef Id="I2CS_MPU6000xml" />
       <ComponentRef Id="I2CS_MPU9150xml" />
       <ComponentRef Id="I2CS_MS5611_01BXXXxml" />
+      <ComponentRef Id="I2CS_MS5637_02BA03xml" />
       <ComponentRef Id="I2CS_MS5803_01BAxml" />
       <ComponentRef Id="I2CS_MS5803_02BAxml" />
       <ComponentRef Id="I2CS_MS5803_05BAxml" />
       <ComponentRef Id="I2CS_MS5803_07BAxml" />
+      <ComponentRef Id="I2CS_MS5803_14BAxml" />
+      <ComponentRef Id="I2CS_MS5803_30BAxml" />
       <ComponentRef Id="I2CS_MS5805xml" />
+      <ComponentRef Id="I2CS_MS5805_02BA01xml" />
       <ComponentRef Id="I2CS_MS5837xml" />
+      <ComponentRef Id="I2CS_MS5837_30BAxml" />
       <ComponentRef Id="I2CS_MS8607xml" />
+      <ComponentRef Id="I2CS_MS8607_02BA01_Hxml" />
+      <ComponentRef Id="I2CS_MS8607_02BA01_PTxml" />
       <ComponentRef Id="I2CS_MS8607_PHxml" />
       <ComponentRef Id="I2CS_MXC6226XUxml" />
       <ComponentRef Id="I2CS_MXC6232xMxml" />
+      <ComponentRef Id="I2CS_PCA9530xml" />
+      <ComponentRef Id="I2CS_PCA9531xml" />
+      <ComponentRef Id="I2CS_PCA9536xml" />
       <ComponentRef Id="I2CS_PCA9633xml" />
       <ComponentRef Id="I2CS_SHT25xml" />
       <ComponentRef Id="I2CS_SHT3xxml" />
+      <ComponentRef Id="I2CS_SI1132xml" />
+      <ComponentRef Id="I2CS_SI1141xml" />
       <ComponentRef Id="I2CS_Si7005xml" />
       <ComponentRef Id="I2CS_Si7006xml" />
       <ComponentRef Id="I2CS_Si7013xml" />
@@ -1005,7 +1217,10 @@
       <ComponentRef Id="I2CS_TCS34725xml" />
       <ComponentRef Id="I2CS_TCS34903xml" />
       <ComponentRef Id="I2CS_TMD26721xml" />
+      <ComponentRef Id="I2CS_TMD2771xml" />
       <ComponentRef Id="I2CS_TMD2772xml" />
+      <ComponentRef Id="I2CS_TMD37821xml" />
+      <ComponentRef Id="I2CS_TMG39931xml" />
       <ComponentRef Id="I2CS_TMP007xml" />
       <ComponentRef Id="I2CS_TMP100xml" />
       <ComponentRef Id="I2CS_TMP101NAxml" />
@@ -1013,6 +1228,7 @@
       <ComponentRef Id="I2CS_TSL2561xml" />
       <ComponentRef Id="I2CS_TSL2569xml" />
       <ComponentRef Id="I2CS_TSL2571xml" />
+      <ComponentRef Id="I2CS_TSL26711xml" />
       <ComponentRef Id="I2CS_TSL27711xml" />
       <ComponentRef Id="I2CS_TSL27721xml" />
       <ComponentRef Id="I2CS_TSL45315xml" />
