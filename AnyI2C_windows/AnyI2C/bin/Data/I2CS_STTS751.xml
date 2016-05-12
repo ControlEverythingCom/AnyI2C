@@ -1,0 +1,56 @@
+<DeviceConfig>
+	<Type>Temprature Sensor</Type>
+	<path>I2CS_STTS751.xml</path>
+	<Name>I2CS_STTS751</Name>
+	<Manufactory>STMicroelectronics</Manufactory>
+	<Address>57</Address>
+	<AddressCollection>
+		<Address>57</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Select configuration register</Name>
+			<Description>Select configuration register</Description>
+			<Data>
+				<Value>03</Value>
+				<Value>140</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Select rate conversion register</Name>
+			<Description>Select rate conversion register</Description>
+			<Data>
+				<Value>04</Value>
+				<Value>04</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read LSB</Name>
+			<Description>Read LSB</Description>
+			<Data>
+				<Value>02</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read MSB</Name>
+			<Description>Read MSB</Description>
+			<Data>
+				<Value>0</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>STTS751_I2CS.dll</GUIPath>
+				<TypeName>STTS751_I2CS.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>

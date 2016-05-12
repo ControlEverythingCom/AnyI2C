@@ -1,0 +1,75 @@
+<DeviceConfig>
+	<Type>Proximity Sensor</Type>
+	<path>I2CS_TMD2671.xml</path>
+	<Name>I2CS_TMD2671</Name>
+	<Manufactory>TAOS</Manufactory>
+	<Address>57</Address>
+	<AddressCollection>
+		<Address>57</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Select proximity time register OR with command register</Name>
+			<Description>Select proximity time register OR with command register</Description>
+			<Data>
+				<Value>130</Value>
+				<Value>255</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Select wait time register OR with command register</Name>
+			<Description>Select wait time register OR with command register</Description>
+			<Data>
+				<Value>131</Value>
+				<Value>255</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Select pulse count register OR with command register</Name>
+			<Description>Select pulse count register OR with command register</Description>
+			<Data>
+				<Value>142</Value>
+				<Value>32</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Select control register OR with command register</Name>
+			<Description>Select control register OR with command register</Description>
+			<Data>
+				<Value>143</Value>
+				<Value>32</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Select enable register OR with command register</Name>
+			<Description>Select enable register OR with command register</Description>
+			<Data>
+				<Value>128</Value>
+				<Value>15</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read 2 bytes of data</Name>
+			<Description>Read 2 bytes of data</Description>
+			<Data>
+				<Value>98</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>TMD2671_I2CS.dll</GUIPath>
+				<TypeName>TMD2671_I2CS.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>

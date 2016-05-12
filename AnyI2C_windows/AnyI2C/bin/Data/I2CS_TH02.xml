@@ -1,0 +1,56 @@
+<DeviceConfig>
+	<Type>Humidity and Temperature Sensor</Type>
+	<path>I2CS_TH02.xml</path>
+	<Name>I2CS_TH02</Name>
+	<Manufactory>Hoperf electronics</Manufactory>
+	<Address>64</Address>
+	<AddressCollection>
+		<Address>64</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Select configuration register</Name>
+			<Description>Normal mode enabled, Temperature</Description>
+			<Data>
+				<Value>03</Value>
+				<Value>17</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read 3 bytes of data</Name>
+			<Description>status, temp msb, temp lsb</Description>
+			<Data>
+				<Value>0</Value>
+			</Data>
+			<ReadDataLength>3</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Select configuration register</Name>
+			<Description>Normal mode enabled, Relative Humidity</Description>
+			<Data>
+				<Value>03</Value>
+				<Value>01</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read 3 bytes of data</Name>
+			<Description>status, humidity msb, humidity lsb</Description>
+			<Data>
+				<Value>0</Value>
+			</Data>
+			<ReadDataLength>3</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>TH02_I2CS.dll</GUIPath>
+				<TypeName>TH02_I2CS.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>
