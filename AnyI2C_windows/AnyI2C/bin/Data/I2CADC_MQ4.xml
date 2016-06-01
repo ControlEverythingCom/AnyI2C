@@ -1,0 +1,31 @@
+<DeviceConfig>
+	<Type>I2CADC_MQ4</Type>
+	<path>I2CADC_MQ4.xml</path>
+	<Name>I2CADC_MQ4</Name>
+	<Manufactory>Texas Instruments</Manufactory>
+	<Address>80</Address>
+	<AddressCollection>
+		<Address>80</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Read 2 bytes of data</Name>
+			<Description>raw_adc msb, raw_adc lsb</Description>
+			<Data>
+				<Value>0</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>MQ4_I2CADC.dll</GUIPath>
+				<TypeName>MQ4_I2CADC.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>
+
+	</Commands>
+</DeviceConfig>
