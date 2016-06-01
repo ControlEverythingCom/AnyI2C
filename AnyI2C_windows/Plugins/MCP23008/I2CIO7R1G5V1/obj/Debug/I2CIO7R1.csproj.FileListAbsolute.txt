@@ -1,0 +1,7 @@
+E:\AnyI2C-may\AnyI2C\AnyI2C_windows\AnyI2C\bin\MCP23008_I2CIO7R1.dll
+E:\AnyI2C-may\AnyI2C\AnyI2C_windows\AnyI2C\bin\MCP23008_I2CIO7R1.pdb
+E:\AnyI2C-may\AnyI2C\AnyI2C_windows\Plugins\MCP23008\I2CIO7R1G5V1\obj\Debug\I2CIO7R1.csprojResolveAssemblyReference.cache
+E:\AnyI2C-may\AnyI2C\AnyI2C_windows\Plugins\MCP23008\I2CIO7R1G5V1\obj\Debug\MCP23008_I2CIO7R1.frmI2CIO7R1.resources
+E:\AnyI2C-may\AnyI2C\AnyI2C_windows\Plugins\MCP23008\I2CIO7R1G5V1\obj\Debug\I2CIO7R1.csproj.GenerateResource.Cache
+E:\AnyI2C-may\AnyI2C\AnyI2C_windows\Plugins\MCP23008\I2CIO7R1G5V1\obj\Debug\MCP23008_I2CIO7R1.dll
+E:\AnyI2C-may\AnyI2C\AnyI2C_windows\Plugins\MCP23008\I2CIO7R1G5V1\obj\Debug\MCP23008_I2CIO7R1.pdb

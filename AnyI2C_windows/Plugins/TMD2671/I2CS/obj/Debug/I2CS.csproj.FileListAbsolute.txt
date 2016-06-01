@@ -1,0 +1,5 @@
+E:\AnyI2C-may\AnyI2C\AnyI2C_windows\AnyI2C\bin\TMD2671_I2CS.dll
+E:\AnyI2C-may\AnyI2C\AnyI2C_windows\AnyI2C\bin\TMD2671_I2CS.pdb
+E:\AnyI2C-may\AnyI2C\AnyI2C_windows\Plugins\TMD2671\I2CS\obj\Debug\I2CS.csprojResolveAssemblyReference.cache
+E:\AnyI2C-may\AnyI2C\AnyI2C_windows\Plugins\TMD2671\I2CS\obj\Debug\TMD2671_I2CS.dll
+E:\AnyI2C-may\AnyI2C\AnyI2C_windows\Plugins\TMD2671\I2CS\obj\Debug\TMD2671_I2CS.pdb

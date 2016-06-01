@@ -1,0 +1,4 @@
+E:\AnyI2C-may\AnyI2C\AnyI2C_windows\AnyI2C\bin\TH02_I2CS.dll
+E:\AnyI2C-may\AnyI2C\AnyI2C_windows\AnyI2C\bin\TH02_I2CS.pdb
+E:\AnyI2C-may\AnyI2C\AnyI2C_windows\Plugins\TH02\I2CS\obj\Debug\TH02_I2CS.dll
+E:\AnyI2C-may\AnyI2C\AnyI2C_windows\Plugins\TH02\I2CS\obj\Debug\TH02_I2CS.pdb

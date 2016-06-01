@@ -1,0 +1,7 @@
+E:\AnyI2C-may\AnyI2C\AnyI2C_windows\AnyI2C\bin\KMA36_I2CS.dll
+E:\AnyI2C-may\AnyI2C\AnyI2C_windows\AnyI2C\bin\KMA36_I2CS.pdb
+E:\AnyI2C-may\AnyI2C\AnyI2C_windows\Plugins\KMA36\I2CS\obj\Debug\I2CS.csprojResolveAssemblyReference.cache
+E:\AnyI2C-may\AnyI2C\AnyI2C_windows\Plugins\KMA36\I2CS\obj\Debug\KMA36_I2CS.frmI2CS.resources
+E:\AnyI2C-may\AnyI2C\AnyI2C_windows\Plugins\KMA36\I2CS\obj\Debug\I2CS.csproj.GenerateResource.Cache
+E:\AnyI2C-may\AnyI2C\AnyI2C_windows\Plugins\KMA36\I2CS\obj\Debug\KMA36_I2CS.dll
+E:\AnyI2C-may\AnyI2C\AnyI2C_windows\Plugins\KMA36\I2CS\obj\Debug\KMA36_I2CS.pdb
