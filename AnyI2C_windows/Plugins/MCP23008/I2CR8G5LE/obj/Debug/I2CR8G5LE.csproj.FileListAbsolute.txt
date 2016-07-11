@@ -1,6 +1,0 @@
-E:\AnyI2C-may\AnyI2C\AnyI2C_windows\AnyI2C\bin\MCP23008_I2CR8G5LE.dll
-E:\AnyI2C-may\AnyI2C\AnyI2C_windows\AnyI2C\bin\MCP23008_I2CR8G5LE.pdb
-E:\AnyI2C-may\AnyI2C\AnyI2C_windows\Plugins\MCP23008\I2CR8G5LE\obj\Debug\MCP23008_I2CR8G5LE.frmI2CR8G5LE.resources
-E:\AnyI2C-may\AnyI2C\AnyI2C_windows\Plugins\MCP23008\I2CR8G5LE\obj\Debug\I2CR8G5LE.csproj.GenerateResource.Cache
-E:\AnyI2C-may\AnyI2C\AnyI2C_windows\Plugins\MCP23008\I2CR8G5LE\obj\Debug\MCP23008_I2CR8G5LE.dll
-E:\AnyI2C-may\AnyI2C\AnyI2C_windows\Plugins\MCP23008\I2CR8G5LE\obj\Debug\MCP23008_I2CR8G5LE.pdb

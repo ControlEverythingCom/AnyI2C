@@ -1,6 +1,0 @@
-E:\AnyI2C-may\AnyI2C\AnyI2C_windows\AnyI2C\bin\AD5693_I2CDAC.dll
-E:\AnyI2C-may\AnyI2C\AnyI2C_windows\AnyI2C\bin\AD5693_I2CDAC.pdb
-E:\AnyI2C-may\AnyI2C\AnyI2C_windows\Plugins\AD5693\I2CDAC\obj\Debug\AD5693_I2CDAC.frmI2CDAC.resources
-E:\AnyI2C-may\AnyI2C\AnyI2C_windows\Plugins\AD5693\I2CDAC\obj\Debug\I2CDAC.csproj.GenerateResource.Cache
-E:\AnyI2C-may\AnyI2C\AnyI2C_windows\Plugins\AD5693\I2CDAC\obj\Debug\AD5693_I2CDAC.dll
-E:\AnyI2C-may\AnyI2C\AnyI2C_windows\Plugins\AD5693\I2CDAC\obj\Debug\AD5693_I2CDAC.pdb

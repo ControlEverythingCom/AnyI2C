@@ -1,6 +1,0 @@
-E:\AnyI2C-may\AnyI2C\AnyI2C_windows\AnyI2C\bin\MS5611_01BXXX_I2CS.dll
-E:\AnyI2C-may\AnyI2C\AnyI2C_windows\AnyI2C\bin\MS5611_01BXXX_I2CS.pdb
-E:\AnyI2C-may\AnyI2C\AnyI2C_windows\Plugins\MS5611-01BXXX\I2CS\obj\Debug\MS5611_01BXXX_I2CS.frmI2CS.resources
-E:\AnyI2C-may\AnyI2C\AnyI2C_windows\Plugins\MS5611-01BXXX\I2CS\obj\Debug\I2CS.csproj.GenerateResource.Cache
-E:\AnyI2C-may\AnyI2C\AnyI2C_windows\Plugins\MS5611-01BXXX\I2CS\obj\Debug\MS5611_01BXXX_I2CS.dll
-E:\AnyI2C-may\AnyI2C\AnyI2C_windows\Plugins\MS5611-01BXXX\I2CS\obj\Debug\MS5611_01BXXX_I2CS.pdb

@@ -1,4 +1,0 @@
-E:\AnyI2C-may\AnyI2C\AnyI2C_windows\AnyI2C\bin\MQ3_I2CADC.dll
-E:\AnyI2C-may\AnyI2C\AnyI2C_windows\AnyI2C\bin\MQ3_I2CADC.pdb
-E:\AnyI2C-may\AnyI2C\AnyI2C_windows\Plugins\MQ3\I2CADC\obj\Debug\MQ3_I2CADC.dll
-E:\AnyI2C-may\AnyI2C\AnyI2C_windows\Plugins\MQ3\I2CADC\obj\Debug\MQ3_I2CADC.pdb

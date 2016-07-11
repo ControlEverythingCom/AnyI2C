@@ -1,6 +1,0 @@
-E:\AnyI2C-may\AnyI2C\AnyI2C_windows\AnyI2C\bin\ADS7830_I2CADC.dll
-E:\AnyI2C-may\AnyI2C\AnyI2C_windows\AnyI2C\bin\ADS7830_I2CADC.pdb
-E:\AnyI2C-may\AnyI2C\AnyI2C_windows\Plugins\ADS7830\I2CADC\obj\Debug\ADS7830_I2CADC.frmI2CADC.resources
-E:\AnyI2C-may\AnyI2C\AnyI2C_windows\Plugins\ADS7830\I2CADC\obj\Debug\I2CADC.csproj.GenerateResource.Cache
-E:\AnyI2C-may\AnyI2C\AnyI2C_windows\Plugins\ADS7830\I2CADC\obj\Debug\ADS7830_I2CADC.dll
-E:\AnyI2C-may\AnyI2C\AnyI2C_windows\Plugins\ADS7830\I2CADC\obj\Debug\ADS7830_I2CADC.pdb

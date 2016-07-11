@@ -1,6 +1,0 @@
-E:\AnyI2C-may\AnyI2C\AnyI2C_windows\AnyI2C\bin\AS1115_I2CL3E.dll
-E:\AnyI2C-may\AnyI2C\AnyI2C_windows\AnyI2C\bin\AS1115_I2CL3E.pdb
-E:\AnyI2C-may\AnyI2C\AnyI2C_windows\Plugins\AS1115\I2CL3CE\obj\Debug\AS1115_I2CL3E.frmI2CL3E.resources
-E:\AnyI2C-may\AnyI2C\AnyI2C_windows\Plugins\AS1115\I2CL3CE\obj\Debug\I2CL3E.csproj.GenerateResource.Cache
-E:\AnyI2C-may\AnyI2C\AnyI2C_windows\Plugins\AS1115\I2CL3CE\obj\Debug\AS1115_I2CL3E.dll
-E:\AnyI2C-may\AnyI2C\AnyI2C_windows\Plugins\AS1115\I2CL3CE\obj\Debug\AS1115_I2CL3E.pdb

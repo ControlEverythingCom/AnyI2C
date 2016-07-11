@@ -1,6 +1,0 @@
-E:\AnyI2C-may\AnyI2C\AnyI2C_windows\AnyI2C\bin\AD5252_I2CPOT.dll
-E:\AnyI2C-may\AnyI2C\AnyI2C_windows\AnyI2C\bin\AD5252_I2CPOT.pdb
-E:\AnyI2C-may\AnyI2C\AnyI2C_windows\Plugins\AD5252\I2CPOT\obj\Debug\AD5252_I2CPOT.frmI2CPOT.resources
-E:\AnyI2C-may\AnyI2C\AnyI2C_windows\Plugins\AD5252\I2CPOT\obj\Debug\I2CPOT.csproj.GenerateResource.Cache
-E:\AnyI2C-may\AnyI2C\AnyI2C_windows\Plugins\AD5252\I2CPOT\obj\Debug\AD5252_I2CPOT.dll
-E:\AnyI2C-may\AnyI2C\AnyI2C_windows\Plugins\AD5252\I2CPOT\obj\Debug\AD5252_I2CPOT.pdb
