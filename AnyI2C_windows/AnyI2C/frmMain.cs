@@ -607,10 +607,11 @@ namespace AnyI2C
                 }
                 else if (nd.Tag is DeviceGUICommand)
                 {
+                    string path = "";
                     try
                     {
                         DeviceGUICommand cmd = (DeviceGUICommand)nd.Tag;
-                        string path = System.IO.Directory.GetParent(Application.ExecutablePath) + "\\" + cmd.GUIPath;
+                        path = System.IO.Directory.GetParent(Application.ExecutablePath) + "\\" + cmd.GUIPath;
                         Assembly guiLib = Assembly.LoadFile(path);
                         //Type t = guiLib.GetType("I2CDIO8.MyGUI");
                         Type t = guiLib.GetType(cmd.TypeName);
@@ -619,9 +620,9 @@ namespace AnyI2C
 
                         gui.Show(obj);
                     }
-                    catch
+                    catch 
                     {
-                        MessageBox.Show("Fail to load GUI ");
+                        MessageBox.Show("Fail to load GUI " + path);
                     }
                 }
             }
