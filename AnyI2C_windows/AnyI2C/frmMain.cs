@@ -1063,6 +1063,19 @@ namespace AnyI2C
                 mForm.LogText(text);
             }
         }
+
+
+        // Get the last Receiving data
+        public byte[] GetLastReceivingData()
+        {
+            return null; // not implement yet
+        }
+
+        // Get the last Sending data
+        public byte[] GetLastTransmitData()
+        {
+            return null; // not implement yet
+        }
     }
 
 

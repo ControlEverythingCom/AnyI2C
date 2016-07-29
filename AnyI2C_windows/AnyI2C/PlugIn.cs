@@ -22,6 +22,12 @@ namespace AnyI2C
 
         // Log Text on main gui
         void LogText(string text);
+
+        // Get the last Receiving data
+        byte []GetLastReceivingData();
+
+        // Get the last Sending data
+        byte [] GetLastTransmitData();
     }
 
     public interface GuiInterface

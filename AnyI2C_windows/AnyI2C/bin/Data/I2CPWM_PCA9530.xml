@@ -1,7 +1,7 @@
 <DeviceConfig>
 	<Type>I/O Expander For LEDs</Type>
-	<path>I2CS_PCA9530.xml</path>
-	<Name>I2CS_PCA9530</Name>
+	<path>I2CPWM_PCA9530.xml</path>
+	<Name>I2CPWM_PCA9530</Name>
 	<Manufactory>NXP</Manufactory>
 	<Address>96</Address>
 	<AddressCollection>
@@ -42,8 +42,8 @@
 			<DeviceGUICommand>
 				<Name>GUI</Name>
 				<Description>GUI</Description>
-				<GUIPath>PCA9530_I2CS.dll</GUIPath>
-				<TypeName>PCA9530_I2CS.MyGUI</TypeName>
+				<GUIPath>PCA9530_I2CPWM.dll</GUIPath>
+				<TypeName>PCA9530_I2CPWM.MyGUI</TypeName>
 			</DeviceGUICommand>
 		</DeviceCommandsGroup>
 	</Commands>
