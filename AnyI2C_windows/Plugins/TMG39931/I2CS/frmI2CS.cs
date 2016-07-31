@@ -51,16 +51,18 @@ namespace TMG39931_I2CS
                 _ERROR.Visible = false;
                 byte addr = GetAddress(false);
                 // power on and measure
-                // Enable Register
-                byte[] value = CommObj.Send(new byte[] { addr, 0x80, 0x0F }, 0);
                 //RGBC time
+                byte[] value = CommObj.Send(new byte[] { addr, 0x80, 0x0F }, 0);
+
                 value = CommObj.Send(new byte[] { addr, 0x81, 0xFF }, 0);
                 //Wait time
                 value = CommObj.Send(new byte[] { addr, 0x83, 0xFF }, 0);
                 //Gain control registers
                 value = CommObj.Send(new byte[] { addr, 0x8F, 0x00 }, 0);
+                // Enable Register
+                // power on and measure
+                value = CommObj.Send(new byte[] { addr, 0x80, 0x0F }, 0);
 
-                value = CommObj.Send(new byte[] { addr, 0x94 }, 1);
                 double c = value[0];
                 value = CommObj.Send(new byte[] { addr, 0x95 }, 1);
                 c = value[0] * 256 + c;
