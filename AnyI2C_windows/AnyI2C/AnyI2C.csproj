@@ -37,6 +37,9 @@
   <PropertyGroup>
     <ApplicationIcon>anyi2c.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
