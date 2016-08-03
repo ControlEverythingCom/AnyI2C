@@ -1,7 +1,7 @@
 <DeviceConfig>
-	<Type>Current Sensor</Type>
-	<path>Current Monitor.xml</path>
-	<Name>Current Monitor</Name>
+	<Type>I2C_Current Monitor</Type>
+	<path>I2CCurrentMonitor.xml</path>
+	<Name>I2C Current Monitor</Name>
 	<Manufactory>CE</Manufactory>
 	<Address>42</Address>
 	<AddressCollection>
@@ -77,7 +77,7 @@
 <!-- 				<GUIPath>CurrentMonitor_I2CS.dll</GUIPath>
 				<TypeName>CurrentMonitor_I2CS.MyGUI</TypeName>
  -->		
- 				<GUIPath>CurrentMonitor.dll</GUIPath>
+ 				<GUIPath>CurrentMonitor_I2CS.dll</GUIPath>
 				<TypeName>CurrentMonitor.MyGUI</TypeName>
  
 			</DeviceGUICommand>
