@@ -7,7 +7,7 @@
     <ProjectGuid>{31CF5A2F-6319-4905-87DF-D9A07BB783F8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>CurrentMonitor</RootNamespace>
-    <AssemblyName>CurrentMonitor</AssemblyName>
+    <AssemblyName>CurrentMonitor_I2CS</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Windows</MyType>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
@@ -19,7 +19,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>..\..\..\..\AnyI2C\bin\</OutputPath>
-    <DocumentationFile>CurrentMonitor.xml</DocumentationFile>
+    <DocumentationFile>CurrentMonitor_I2CS.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -28,7 +28,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>..\..\..\..\AnyI2C\bin\</OutputPath>
-    <DocumentationFile>CurrentMonitor.xml</DocumentationFile>
+    <DocumentationFile>CurrentMonitor_I2CS.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
