@@ -192,11 +192,15 @@ namespace AnyI2C
 
         private void cmbI2CBridge_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (mBridge.IsOpen)
+            if (mBridge != null)
             {
-                mBridge.Close();
+                if (mBridge.IsOpen)
+                {
+                    mBridge.Close();
+                    OpenI2CAdapter();
+                }
             }
-            OpenI2CAdapter();
+            
         }
 
 
