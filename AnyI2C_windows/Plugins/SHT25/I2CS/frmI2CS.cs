@@ -55,13 +55,15 @@ namespace SHT25_I2CS
                 bool success = false;
                 while (!success && retry < 10)   // try 10 times
                 {
-                    byte[] value = CommObj.Send(new byte[] { addr, 0xE5 }, 2);
+                    byte[] value = CommObj.Send(new byte[] { addr, 0xf5 }, 0);
+                    Thread.Sleep(100);
+                    value = CommObj.Send(new byte[] { addr }, 3);
                     if (value != null)
                     {
-                        if (value.Length == 2)
+                        if (value.Length == 3)
                         {
                             success = true;
-                            double humidity = 125.0 * (value[0] * 256 + value[1]) / 65536.0 - 6.0;
+                            double humidity = 125.0 * (value[0] * 256 + value[1]) / (Math.Pow(2,16)) - 6.0;
                             lbH.Text = humidity.ToString("F2");
                             break;
                         }
@@ -76,13 +78,16 @@ namespace SHT25_I2CS
                 // read temperature
                 while (!success && retry < 10)   // try 10 times
                 {
-                    byte[] value = CommObj.Send(new byte[] { addr, 0xE3 }, 2);
+                    byte[] value = CommObj.Send(new byte[] { addr, 0xf3 }, 0);
+                    Thread.Sleep(100);
+                    value = CommObj.Send(new byte[] { addr }, 3);
+
                     if (value != null)
                     {
-                        if (value.Length == 2)
+                        if (value.Length == 3)
                         {
                             success = true;
-                            double temp = 175.72 * (value[0] * 256 + value[1]) / 65536.0 - 46.85;
+                            double temp = 175.72 * (value[0] * 256 + value[1]) / (Math.Pow(2, 16)) - 46.85;
                             lbT.Text = temp.ToString("F2");
                             break;
                         }
@@ -109,6 +114,7 @@ namespace SHT25_I2CS
 
         private void frmI2CS_FormClosing(object sender, FormClosingEventArgs e)
         {
+            timer1.Enabled = false;
             CommObj.LogText("GUI Closed");
         }
 
@@ -117,6 +123,16 @@ namespace SHT25_I2CS
             CommObj.SetPort((byte)numPort.Value);
         }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            ReadSensor();
+        }
+
+        private void chkAutoUpdate_CheckedChanged(object sender, EventArgs e)
+        {
+            timer1.Enabled = chkAutoUpdate.Checked;
+            btnReadCh.Enabled = !chkAutoUpdate.Checked;
+        }
     }
 
 
