@@ -36,7 +36,10 @@
             this.chkOutput3 = new System.Windows.Forms.CheckBox();
             this.chkOutput6 = new System.Windows.Forms.CheckBox();
             this.chkOutput2 = new System.Windows.Forms.CheckBox();
+            this.btnAllOff1 = new System.Windows.Forms.Button();
+            this.btnAllOn1 = new System.Windows.Forms.Button();
             this.chkOutput5 = new System.Windows.Forms.CheckBox();
+            this.btnRead1 = new System.Windows.Forms.Button();
             this.chkOutput4 = new System.Windows.Forms.CheckBox();
             this.chkOutput1 = new System.Windows.Forms.CheckBox();
             this.chkOutput0 = new System.Windows.Forms.CheckBox();
@@ -48,9 +51,6 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.btnAllOff1 = new System.Windows.Forms.Button();
-            this.btnAllOn1 = new System.Windows.Forms.Button();
-            this.btnRead1 = new System.Windows.Forms.Button();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
             this.GroupBox2 = new System.Windows.Forms.GroupBox();
             this.numAddress = new System.Windows.Forms.NumericUpDown();
@@ -67,12 +67,12 @@
             this.btnReadInput = new System.Windows.Forms.Button();
             this.lbInput2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.lbInput0 = new System.Windows.Forms.Label();
             this.lbInput1 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lbInput0 = new System.Windows.Forms.Label();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.groupBox4.SuspendLayout();
@@ -195,6 +195,26 @@
             this.chkOutput2.UseVisualStyleBackColor = true;
             this.chkOutput2.Click += new System.EventHandler(this.chkB1R3_Clicked);
             // 
+            // btnAllOff1
+            // 
+            this.btnAllOff1.Location = new System.Drawing.Point(305, 83);
+            this.btnAllOff1.Name = "btnAllOff1";
+            this.btnAllOff1.Size = new System.Drawing.Size(106, 23);
+            this.btnAllOff1.TabIndex = 513;
+            this.btnAllOff1.Text = "Turn All Low";
+            this.btnAllOff1.UseVisualStyleBackColor = true;
+            this.btnAllOff1.Click += new System.EventHandler(this.btnAllOff1_Click);
+            // 
+            // btnAllOn1
+            // 
+            this.btnAllOn1.Location = new System.Drawing.Point(152, 84);
+            this.btnAllOn1.Name = "btnAllOn1";
+            this.btnAllOn1.Size = new System.Drawing.Size(106, 23);
+            this.btnAllOn1.TabIndex = 515;
+            this.btnAllOn1.Text = "Turn All High";
+            this.btnAllOn1.UseVisualStyleBackColor = true;
+            this.btnAllOn1.Click += new System.EventHandler(this.btnAllOn1_Click);
+            // 
             // chkOutput5
             // 
             this.chkOutput5.AutoSize = true;
@@ -206,6 +226,16 @@
             this.chkOutput5.Text = "High";
             this.chkOutput5.UseVisualStyleBackColor = true;
             this.chkOutput5.Click += new System.EventHandler(this.chkB1R6_Clicked);
+            // 
+            // btnRead1
+            // 
+            this.btnRead1.Location = new System.Drawing.Point(54, 84);
+            this.btnRead1.Name = "btnRead1";
+            this.btnRead1.Size = new System.Drawing.Size(56, 23);
+            this.btnRead1.TabIndex = 514;
+            this.btnRead1.Text = "Read";
+            this.btnRead1.UseVisualStyleBackColor = true;
+            this.btnRead1.Click += new System.EventHandler(this.btnRead1_Click);
             // 
             // chkOutput4
             // 
@@ -322,36 +352,6 @@
             this.label23.Size = new System.Drawing.Size(25, 16);
             this.label23.TabIndex = 506;
             this.label23.Text = "R1";
-            // 
-            // btnAllOff1
-            // 
-            this.btnAllOff1.Location = new System.Drawing.Point(305, 83);
-            this.btnAllOff1.Name = "btnAllOff1";
-            this.btnAllOff1.Size = new System.Drawing.Size(106, 23);
-            this.btnAllOff1.TabIndex = 513;
-            this.btnAllOff1.Text = "Turn All Low";
-            this.btnAllOff1.UseVisualStyleBackColor = true;
-            this.btnAllOff1.Click += new System.EventHandler(this.btnAllOff1_Click);
-            // 
-            // btnAllOn1
-            // 
-            this.btnAllOn1.Location = new System.Drawing.Point(152, 84);
-            this.btnAllOn1.Name = "btnAllOn1";
-            this.btnAllOn1.Size = new System.Drawing.Size(106, 23);
-            this.btnAllOn1.TabIndex = 515;
-            this.btnAllOn1.Text = "Turn All High";
-            this.btnAllOn1.UseVisualStyleBackColor = true;
-            this.btnAllOn1.Click += new System.EventHandler(this.btnAllOn1_Click);
-            // 
-            // btnRead1
-            // 
-            this.btnRead1.Location = new System.Drawing.Point(54, 84);
-            this.btnRead1.Name = "btnRead1";
-            this.btnRead1.Size = new System.Drawing.Size(56, 23);
-            this.btnRead1.TabIndex = 514;
-            this.btnRead1.Text = "Read";
-            this.btnRead1.UseVisualStyleBackColor = true;
-            this.btnRead1.Click += new System.EventHandler(this.btnRead1_Click);
             // 
             // GroupBox1
             // 
@@ -511,6 +511,7 @@
             this.btnReadInput.TabIndex = 533;
             this.btnReadInput.Text = "Read";
             this.btnReadInput.UseVisualStyleBackColor = true;
+            this.btnReadInput.Click += new System.EventHandler(this.btnReadInput_Click);
             // 
             // lbInput2
             // 
@@ -529,6 +530,15 @@
             this.label4.Size = new System.Drawing.Size(15, 16);
             this.label4.TabIndex = 0;
             this.label4.Text = "4";
+            // 
+            // lbInput0
+            // 
+            this.lbInput0.AutoSize = true;
+            this.lbInput0.Location = new System.Drawing.Point(15, 52);
+            this.lbInput0.Name = "lbInput0";
+            this.lbInput0.Size = new System.Drawing.Size(32, 16);
+            this.lbInput0.TabIndex = 0;
+            this.lbInput0.Text = "Low";
             // 
             // lbInput1
             // 
@@ -575,15 +585,6 @@
             this.label1.Size = new System.Drawing.Size(15, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "1";
-            // 
-            // lbInput0
-            // 
-            this.lbInput0.AutoSize = true;
-            this.lbInput0.Location = new System.Drawing.Point(15, 52);
-            this.lbInput0.Name = "lbInput0";
-            this.lbInput0.Size = new System.Drawing.Size(32, 16);
-            this.lbInput0.TabIndex = 0;
-            this.lbInput0.Text = "Low";
             // 
             // radioButton1
             // 
