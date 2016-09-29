@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FFCF4AB8-21AA-41FB-ACFC-267C6A1B130A}</ProjectGuid>
+    <ProjectGuid>{7C5B0CE6-F062-4469-8541-481734D0161C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MCP23008_I2CDIO8</RootNamespace>
-    <AssemblyName>MCP23008_I2CDIO8</AssemblyName>
+    <RootNamespace>PCA9547_I2CMUX</RootNamespace>
+    <AssemblyName>PCA9547_I2CMUX</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -44,11 +44,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmI2CDIO8.cs">
+    <Compile Include="frmI2CMUX.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmI2CDIO8.Designer.cs">
-      <DependentUpon>frmI2CDIO8.cs</DependentUpon>
+    <Compile Include="frmI2CMUX.Designer.cs">
+      <DependentUpon>frmI2CMUX.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -59,8 +59,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="frmI2CDIO8.resx">
-      <DependentUpon>frmI2CDIO8.cs</DependentUpon>
+    <EmbeddedResource Include="frmI2CMUX.resx">
+      <DependentUpon>frmI2CMUX.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

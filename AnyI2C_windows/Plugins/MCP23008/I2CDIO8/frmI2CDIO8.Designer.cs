@@ -271,6 +271,7 @@
             this.chkOutput0.Tag = "1";
             this.chkOutput0.Text = "High";
             this.chkOutput0.UseVisualStyleBackColor = true;
+            this.chkOutput0.CheckedChanged += new System.EventHandler(this.chkOutput0_CheckedChanged);
             this.chkOutput0.Click += new System.EventHandler(this.chkB1R1_Clicked);
             // 
             // Label9
@@ -589,6 +590,7 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = true;
             this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton1.Location = new System.Drawing.Point(249, 12);
             this.radioButton1.Name = "radioButton1";

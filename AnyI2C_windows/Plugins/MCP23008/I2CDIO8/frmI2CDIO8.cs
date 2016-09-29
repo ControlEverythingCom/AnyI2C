@@ -358,6 +358,11 @@ namespace MCP23008_I2CDIO8
         {
             UpdateInputStatus();
         }
+
+        private void chkOutput0_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
     public class ByteLib
