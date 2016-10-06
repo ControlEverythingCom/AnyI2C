@@ -8,49 +8,222 @@
 		<Address>96</Address>
 	</AddressCollection>
 	<Commands>
+		<Name>Light Sensor</Name>
+		<Description>Light Sensor</Description>
+		<DeviceCommandsGroup>
+			<Name>Configure COEF</Name>
+			<Description>Configure COEF</Description>
+			<DeviceCommand>
+				<Name>Configure UCOEF0</Name>
+				<Description>Configure UCOEF0</Description>
+				<Data>
+					<Value>19</Value>
+					<Value>123</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>				
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>Configure UCOEF1</Name>
+				<Description>Configure UCOEF1</Description>
+				<Data>
+					<Value>20</Value>
+					<Value>107</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>				
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>Configure UCOEF2</Name>
+				<Description>Configure UCOEF2</Description>
+				<Data>
+					<Value>21</Value>
+					<Value>1</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>				
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>Configure UCOEF3</Name>
+				<Description>Configure UCOEF3</Description>
+				<Data>
+					<Value>22</Value>
+					<Value>0</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>				
+			</DeviceCommand>
+		</DeviceCommandsGroup>		
+		<DeviceCommandsGroup>
+			<Name>Config Params</Name>
+			<Description>Enable UV, IR, VIS, AUX</Description>
+			<DeviceCommand>
+				<Name>Set Value</Name>
+				<Description>Set Value</Description>
+				<Data>
+					<Value>23</Value>
+					<Value>240</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>				
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>Set Address</Name>
+				<Description>Set Address</Description>
+				<Data>
+					<Value>24</Value>
+					<Value>161</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>				
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>Read Result</Name>
+				<Description>Read Result</Description>
+				<Data>
+					<Value>46</Value>
+				</Data>
+				<ReadDataLength>1</ReadDataLength>				
+			</DeviceCommand>		
+		</DeviceCommandsGroup>
+		<DeviceCommandsGroup>
+			<Name>Config Params</Name>
+			<Description>ALS IR ADC MUX</Description>
+			<DeviceCommand>
+				<Name>Set Value</Name>
+				<Description>Set Value</Description>
+				<Data>
+					<Value>23</Value>
+					<Value>0</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>				
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>Set Address</Name>
+				<Description>Set Address</Description>
+				<Data>
+					<Value>24</Value>
+					<Value>174</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>				
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>Read Result</Name>
+				<Description>Read Result</Description>
+				<Data>
+					<Value>46</Value>
+				</Data>
+				<ReadDataLength>1</ReadDataLength>				
+			</DeviceCommand>		
+		</DeviceCommandsGroup>
+		
+		<DeviceCommandsGroup>
+			<Name>Config Params</Name>
+			<Description>IR ADC Gain</Description>
+			<DeviceCommand>
+				<Name>Set Value</Name>
+				<Description>Set Value</Description>
+				<Data>
+					<Value>23</Value>
+					<Value>0</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>				
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>Set Address</Name>
+				<Description>Set Address</Description>
+				<Data>
+					<Value>24</Value>
+					<Value>190</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>				
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>Read Result</Name>
+				<Description>Read Result</Description>
+				<Data>
+					<Value>46</Value>
+				</Data>
+				<ReadDataLength>1</ReadDataLength>				
+			</DeviceCommand>		
+		</DeviceCommandsGroup>		
+		
+		<DeviceCommandsGroup>
+			<Name>Config Params</Name>
+			<Description>IR Count</Description>
+			<DeviceCommand>
+				<Name>Set Value</Name>
+				<Description>Set Value</Description>
+				<Data>
+					<Value>23</Value>
+					<Value>112</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>				
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>Set Address</Name>
+				<Description>Set Address</Description>
+				<Data>
+					<Value>24</Value>
+					<Value>189</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>				
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>Read Result</Name>
+				<Description>Read Result</Description>
+				<Data>
+					<Value>46</Value>
+				</Data>
+				<ReadDataLength>1</ReadDataLength>				
+			</DeviceCommand>		
+		</DeviceCommandsGroup>
+		
+		<DeviceCommandsGroup>
+			<Name>Config Params</Name>
+			<Description>ALS IR Range</Description>
+			<DeviceCommand>
+				<Name>Set Value</Name>
+				<Description>Set Value</Description>
+				<Data>
+					<Value>23</Value>
+					<Value>32</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>				
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>Set Address</Name>
+				<Description>Set Address</Description>
+				<Data>
+					<Value>24</Value>
+					<Value>191</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>				
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>Read Result</Name>
+				<Description>Read Result</Description>
+				<Data>
+					<Value>46</Value>
+				</Data>
+				<ReadDataLength>1</ReadDataLength>				
+			</DeviceCommand>		
+		</DeviceCommandsGroup>		
+		
 		<DeviceCommand>
 			<Name>Configure</Name>
-			<Description>Configure</Description>
-			<Data>
-				<Value>23</Value>
-				<Value>177</Value>
-			</Data>
-			<ReadDataLength>0</ReadDataLength>				
-		</DeviceCommand>
-		<DeviceCommand>
-			<Name>Configure</Name>
-			<Description>Configure</Description>
-			<Data>
-				<Value>18</Value>
-				<Value>161</Value>
-			</Data>
-			<ReadDataLength>0</ReadDataLength>				
-		</DeviceCommand>
-		<DeviceCommand>
-			<Name>Configure</Name>
-			<Description>Configure</Description>
+			<Description>Master Rate</Description>
 			<Data>
 				<Value>8</Value>
 				<Value>255</Value>
 			</Data>
 			<ReadDataLength>0</ReadDataLength>				
 		</DeviceCommand>
+		
 		<DeviceCommand>
-			<Name>Read Sensor</Name>
-			<Description>Read Sensor</Description>
+			<Name>Set Mode</Name>
+			<Description>Auto Mode</Description>
 			<Data>
-				<Value>22</Value>
+				<Value>24</Value>
+				<Value>14</Value>
 			</Data>
-			<ReadDataLength>4</ReadDataLength>				
+			<ReadDataLength>0</ReadDataLength>				
 		</DeviceCommand>
-		<DeviceCommand>
-			<Name>Read Sensor</Name>
-			<Description>Read Sensor</Description>
-			<Data>
-				<Value>44</Value>
-			</Data>
-			<ReadDataLength>2</ReadDataLength>				
-		</DeviceCommand>
+
 		<DeviceCommandsGroup>
 			<Name>GUI</Name>
 			<Description>GUI</Description>
