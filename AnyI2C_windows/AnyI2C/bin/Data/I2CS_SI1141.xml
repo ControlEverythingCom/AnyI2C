@@ -1,11 +1,11 @@
 <DeviceConfig>
 	<Type>AMBIENT LIGHT SENSOR</Type>
-	<path>I2CS_SI1132.xml</path>
-	<Name>I2CS_SI1132</Name>
+	<path>I2CS_SI1141.xml</path>
+	<Name>I2CS_SI1141</Name>
 	<Manufactory>SILICON LABS</Manufactory>
-	<Address>96</Address>
+	<Address>90</Address>
 	<AddressCollection>
-		<Address>96</Address>
+		<Address>90</Address>
 	</AddressCollection>
 	<Commands>
 		<DeviceCommand>
@@ -57,8 +57,8 @@
 			<DeviceGUICommand>
 				<Name>GUI</Name>
 				<Description>GUI</Description>
-				<GUIPath>SI1132_I2CS.dll</GUIPath>
-				<TypeName>SI1132_I2CS.MyGUI</TypeName>
+				<GUIPath>SI1141_I2CS.dll</GUIPath>
+				<TypeName>SI1141_I2CS.MyGUI</TypeName>
 			</DeviceGUICommand>
 		</DeviceCommandsGroup>
 	</Commands>

@@ -143,8 +143,8 @@
 			<DeviceGUICommand>
 				<Name>GUI</Name>
 				<Description>GUI</Description>
-				<GUIPath>MCP23008_I2CDIO8.dll</GUIPath>
-				<TypeName>MCP23008_I2CDIO8.MyGUI</TypeName>
+				<GUIPath>I2CDIO8.dll</GUIPath>
+				<TypeName>I2CDIO8.MyGUI</TypeName>
 			</DeviceGUICommand>
 		</DeviceCommandsGroup>
 		

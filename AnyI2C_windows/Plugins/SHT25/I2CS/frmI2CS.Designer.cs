@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
             this.GroupBox2 = new System.Windows.Forms.GroupBox();
             this.numAddress = new System.Windows.Forms.NumericUpDown();
             this._ERROR = new System.Windows.Forms.Label();
-            this.btnReadCh = new System.Windows.Forms.Button();
+            this.btnReadCh0 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lbH = new System.Windows.Forms.Label();
             this.lbT = new System.Windows.Forms.Label();
@@ -41,8 +40,6 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.numPort = new System.Windows.Forms.NumericUpDown();
-            this.chkAutoUpdate = new System.Windows.Forms.CheckBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numAddress)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -102,14 +99,14 @@
             // 
             // btnReadCh0
             // 
-            this.btnReadCh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnReadCh.Location = new System.Drawing.Point(335, 24);
-            this.btnReadCh.Name = "btnReadCh0";
-            this.btnReadCh.Size = new System.Drawing.Size(249, 29);
-            this.btnReadCh.TabIndex = 517;
-            this.btnReadCh.Text = "Read ";
-            this.btnReadCh.UseVisualStyleBackColor = true;
-            this.btnReadCh.Click += new System.EventHandler(this.btnReadCh0_Click);
+            this.btnReadCh0.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnReadCh0.Location = new System.Drawing.Point(335, 24);
+            this.btnReadCh0.Name = "btnReadCh0";
+            this.btnReadCh0.Size = new System.Drawing.Size(249, 29);
+            this.btnReadCh0.TabIndex = 517;
+            this.btnReadCh0.Text = "Read ";
+            this.btnReadCh0.UseVisualStyleBackColor = true;
+            this.btnReadCh0.Click += new System.EventHandler(this.btnReadCh0_Click);
             // 
             // label1
             // 
@@ -187,28 +184,11 @@
             this.numPort.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numPort.ValueChanged += new System.EventHandler(this.numPort_ValueChanged);
             // 
-            // chkAutoUpdate
-            // 
-            this.chkAutoUpdate.AutoSize = true;
-            this.chkAutoUpdate.Location = new System.Drawing.Point(12, 210);
-            this.chkAutoUpdate.Name = "chkAutoUpdate";
-            this.chkAutoUpdate.Size = new System.Drawing.Size(86, 17);
-            this.chkAutoUpdate.TabIndex = 542;
-            this.chkAutoUpdate.Text = "Auto Update";
-            this.chkAutoUpdate.UseVisualStyleBackColor = true;
-            this.chkAutoUpdate.CheckedChanged += new System.EventHandler(this.chkAutoUpdate_CheckedChanged);
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 500;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // frmI2CS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 239);
-            this.Controls.Add(this.chkAutoUpdate);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
@@ -216,7 +196,7 @@
             this.Controls.Add(this.lbH);
             this.Controls.Add(this.GroupBox1);
             this.Controls.Add(this._ERROR);
-            this.Controls.Add(this.btnReadCh);
+            this.Controls.Add(this.btnReadCh0);
             this.Name = "frmI2CS";
             this.Text = "SHT25 Control Panel";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmI2CS_FormClosing);
@@ -236,7 +216,7 @@
         internal System.Windows.Forms.GroupBox GroupBox2;
         internal System.Windows.Forms.NumericUpDown numAddress;
         internal System.Windows.Forms.Label _ERROR;
-        internal System.Windows.Forms.Button btnReadCh;
+        internal System.Windows.Forms.Button btnReadCh0;
         internal System.Windows.Forms.Label label1;
         internal System.Windows.Forms.Label lbH;
         internal System.Windows.Forms.Label lbT;
@@ -244,7 +224,5 @@
         internal System.Windows.Forms.GroupBox groupBox3;
         internal System.Windows.Forms.GroupBox groupBox4;
         internal System.Windows.Forms.NumericUpDown numPort;
-        private System.Windows.Forms.CheckBox chkAutoUpdate;
-        private System.Windows.Forms.Timer timer1;
     }
 }
