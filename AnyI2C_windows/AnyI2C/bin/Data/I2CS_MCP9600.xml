@@ -1,0 +1,37 @@
+﻿<DeviceConfig>
+	<Type>Temperature Sensor</Type>
+	<path>I2CS_MCP9600.xml</path>
+	<Name>I2CS_MCP9600</Name>
+	<Manufactory>Microchip</Manufactory>
+	<Address>100</Address>
+	<AddressCollection>
+		<Address>96</Address>
+		<Address>97</Address>
+		<Address>98</Address>
+		<Address>99</Address>
+		<Address>100</Address>
+		<Address>101</Address>
+		<Address>102</Address>
+		<Address>103</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Read Temperature</Name>
+			<Description>Read Temperature</Description>
+			<Data>
+				<Value>0</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>MCP9600_I2CS.dll</GUIPath>
+				<TypeName>MCP9600_I2CS.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>
