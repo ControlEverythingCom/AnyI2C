@@ -78,7 +78,7 @@
             this.cmbI2CBridge.FormattingEnabled = true;
             this.cmbI2CBridge.Location = new System.Drawing.Point(84, 14);
             this.cmbI2CBridge.Name = "cmbI2CBridge";
-            this.cmbI2CBridge.Size = new System.Drawing.Size(160, 21);
+            this.cmbI2CBridge.Size = new System.Drawing.Size(197, 21);
             this.cmbI2CBridge.TabIndex = 6;
             this.cmbI2CBridge.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.cmbI2CBridge_DrawItem);
             this.cmbI2CBridge.SelectedIndexChanged += new System.EventHandler(this.cmbI2CBridge_SelectedIndexChanged);
@@ -94,7 +94,7 @@
             // 
             // btnOpen
             // 
-            this.btnOpen.Location = new System.Drawing.Point(250, 12);
+            this.btnOpen.Location = new System.Drawing.Point(287, 12);
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Size = new System.Drawing.Size(67, 23);
             this.btnOpen.TabIndex = 8;

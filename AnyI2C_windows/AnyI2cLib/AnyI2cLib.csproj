@@ -45,6 +45,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AnyI2cLib.cs" />
+    <Compile Include="CommunicationLayer\DeviceProxy.cs" />
+    <Compile Include="CommunicationLayer\HelpFunction.cs" />
+    <Compile Include="CommunicationLayer\ListPorts.cs" />
+    <Compile Include="CommunicationLayer\TcpWrapper.cs" />
+    <Compile Include="CommunicationLayer\UdpWrapper.cs" />
     <Compile Include="FT232HI2C.cs" />
     <Compile Include="FTD2XX_NET.cs" />
     <Compile Include="FTDILayer.cs" />
@@ -53,6 +58,7 @@
     <Compile Include="ListPorts.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
