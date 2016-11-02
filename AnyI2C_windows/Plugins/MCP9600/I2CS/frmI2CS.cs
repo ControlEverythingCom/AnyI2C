@@ -51,17 +51,29 @@ namespace MCP9600_I2CS
                 
                 _ERROR.Visible = false;
                 byte addr = GetAddress(false);
+                CommObj.Send(new byte[] { addr, 4, 0 }, 0);// clear status register
+
                 CommObj.Send(new byte[] { addr, 5, (byte)(cmbType.SelectedIndex * 16) }, 0);// configure the type
                 System.Threading.Thread.Sleep(100);
-                byte[] value = CommObj.Send(new byte[] { addr, 0}, 2);
-                if (value != null)
+                CommObj.Send(new byte[] { addr, 6, 0xfc}, 0);// configure the device
+                System.Threading.Thread.Sleep(100);
+                byte[] value = CommObj.Send(new byte[] { addr, 4 }, 1);
+                if (value!= null)
                 {
-                    if (value[0] > 128)
+                    if ((value[0] & 0x40) == 0x40) // complete conversion
                     {
-                        return (1024 - value[0] * 16 - value[1]/16.0).ToString("F2");
+                        value = CommObj.Send(new byte[] { addr, 0 }, 2);
+                        if (value != null)
+                        {
+                            if ((value[0] & 0x80) == 0x80)
+                            {
+                                return ((value[0] & 0x7f) * 16 + value[1] / 16.0 - 1024).ToString("F2");
+                            }
+                            return (value[0] * 16 + value[1] / 16.0).ToString("F2");
+                        }
                     }
-                    return (value[0] * 16 + value[1] / 16.0).ToString("F2");
                 }
+
             }
             catch
             {
