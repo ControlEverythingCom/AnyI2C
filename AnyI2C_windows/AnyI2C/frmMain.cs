@@ -162,10 +162,13 @@ namespace AnyI2C
         private void OpenI2CAdapter()
         {
             int id = cmbI2CBridge.SelectedIndex;
-            if (id != -1)
+            //if (id != -1)
             {
-                mBridge = i2cBridgeXs[id];
+               // mBridge = i2cBridgeXs[id];
+                mBridge = new I2CBridgeX();
+                mBridge.OpenSetting();
                 mBridge.Open();
+                //mBridge.Open();
                 mBridge.OnReadData += OnReadDataHandler;
                 mBridge.OnWriteData += OnSendDataHandler; 
                 if (mBridge.IsOpen)
@@ -187,6 +190,7 @@ namespace AnyI2C
 
         private void btnOpen_Click(object sender, EventArgs e)
         {
+
             OpenI2CAdapter();
         }
 
