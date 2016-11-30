@@ -31,6 +31,58 @@ namespace AnyI2cLib
              mCom.SettingPort();
         }
 
+        /// <summary>
+        /// return description of the bridge setting
+        /// </summary>
+        /// <returns></returns>
+        public string GetDescription()
+        {
+            string des = string.Empty;
+            if (mCom.UsingComPort)
+            {
+                return GetSerialPortConnectionDes();
+            }
+            else
+            {
+                return GetNetworkConnectionDes();
+            }
+            return des;
+        }
+
+        private string GetSerialPortConnectionDes()
+        {
+            if (mCom.UsingComPort)
+            {
+                if (mCom.IsOpen)
+                {
+                    return string.Format("{0}:{1} Opened", mCom.PortName, mCom.BaudRate);
+                }
+                else
+                {
+                    return string.Format("{0}:{1} Closed", mCom.PortName, mCom.BaudRate);
+                }
+            }
+            return string.Empty;
+        }
+
+        private string GetNetworkConnectionDes()
+        {
+            if (!mCom.UsingComPort)
+            {
+                if (mCom.IsOpen)
+                {
+                    return string.Format("{0}:{1} Opened", mCom.IPAddress, mCom.Port);
+                }
+                else
+                {
+                    return string.Format("{0}:{1} Closed", mCom.IPAddress, mCom.Port);
+                }
+            }
+            return string.Empty;
+        }
+
+
+
         public bool Open()
         {
             if (mCom.IsOpen)

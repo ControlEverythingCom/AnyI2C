@@ -183,6 +183,7 @@ namespace AnyI2C
                     btnScan.Enabled = false;
                     lbStatus.Text = "Fail to open selected I2C bridge.";
                 }
+                lbConnection.Text = mBridge.GetDescription();
                 Debug.Print(mBridge.IsOpen.ToString());
             }
 

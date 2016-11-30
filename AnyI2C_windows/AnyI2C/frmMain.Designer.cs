@@ -64,6 +64,7 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.lbInfo = new AnyI2C.NumLabel();
             this.ctlI2CAddress1 = new AnyI2C.Controls.I2C.ctlI2CAddress();
+            this.lbConnection = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numReadLength)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPort)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -76,10 +77,11 @@
             this.cmbI2CBridge.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbI2CBridge.DropDownWidth = 400;
             this.cmbI2CBridge.FormattingEnabled = true;
-            this.cmbI2CBridge.Location = new System.Drawing.Point(84, 14);
+            this.cmbI2CBridge.Location = new System.Drawing.Point(86, 40);
             this.cmbI2CBridge.Name = "cmbI2CBridge";
             this.cmbI2CBridge.Size = new System.Drawing.Size(197, 21);
             this.cmbI2CBridge.TabIndex = 6;
+            this.cmbI2CBridge.Visible = false;
             this.cmbI2CBridge.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.cmbI2CBridge_DrawItem);
             this.cmbI2CBridge.SelectedIndexChanged += new System.EventHandler(this.cmbI2CBridge_SelectedIndexChanged);
             // 
@@ -94,7 +96,7 @@
             // 
             // btnOpen
             // 
-            this.btnOpen.Location = new System.Drawing.Point(287, 12);
+            this.btnOpen.Location = new System.Drawing.Point(297, 12);
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Size = new System.Drawing.Size(67, 23);
             this.btnOpen.TabIndex = 8;
@@ -424,6 +426,16 @@
             this.ctlI2CAddress1.Size = new System.Drawing.Size(448, 67);
             this.ctlI2CAddress1.TabIndex = 12;
             // 
+            // lbConnection
+            // 
+            this.lbConnection.AutoSize = true;
+            this.lbConnection.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbConnection.Location = new System.Drawing.Point(83, 17);
+            this.lbConnection.Name = "lbConnection";
+            this.lbConnection.Size = new System.Drawing.Size(208, 13);
+            this.lbConnection.TabIndex = 7;
+            this.lbConnection.Text = "Click Open to Open the Connection";
+            // 
             // frmMain
             // 
             this.AutoSize = true;
@@ -456,6 +468,7 @@
             this.Controls.Add(this.btnOpen);
             this.Controls.Add(this.cmbI2CBridge);
             this.Controls.Add(this.label6);
+            this.Controls.Add(this.lbConnection);
             this.Controls.Add(this.label26);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -463,7 +476,7 @@
             this.MinimizeBox = false;
             this.Name = "frmMain";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.Text = "AnyI2C v1.1";
+            this.Text = "AnyI2C v1.2.0";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.Load += new System.EventHandler(this.frmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numReadLength)).EndInit();
@@ -513,6 +526,7 @@
         private System.Windows.Forms.ComboBox cmbLogDataType;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Label lbConnection;
     }
 }
 
