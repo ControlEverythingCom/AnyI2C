@@ -134,9 +134,9 @@ namespace AnyI2cLib
                 data[3] = (byte)(addr*2 + 1);
                 data[4] = dataLength;
                 WriteBytesAPI(data);
-                //OnMyWriteData(this, data);
+                OnMyWriteData(this, data);
                 data = ReadBytesApi();
-                //OnMyReadData(this, data);
+                OnMyReadData(this, data);
                 if (data != null)
                 {
                     return data;
@@ -166,9 +166,9 @@ namespace AnyI2cLib
                     data[4 + i] = buffer[i];
                 }
                 WriteBytesAPI(data);
-                //OnMyWriteData(this, data);
+                OnMyWriteData(this, data);
                 data = ReadBytesApi();
-                //OnMyReadData(this, data);
+                OnMyReadData(this, data);
                 if (data != null)
                 {
                     if (data[0] == 85)
@@ -302,9 +302,9 @@ namespace AnyI2cLib
                 checksum = checksum % 0x100;
                 ApiPackage.Add((byte)checksum);
                 byte[] apiData = (byte[])ApiPackage.ToArray(typeof(byte));
-                //WriteBytes(apiData);
+                WriteBytes(apiData);
                 //mCom.WriteBytes(data);
-                mCom.WriteBytesAPI(data);
+                //mCom.WriteBytesAPI(data);
             }
         }
 
@@ -360,7 +360,7 @@ namespace AnyI2cLib
 
         private void WriteBytes(byte[] data)
         {
-           // OnMyWriteData(this, data);
+            OnMyWriteData(this, data);
             mCom.WriteBytes(data);
         }
 
