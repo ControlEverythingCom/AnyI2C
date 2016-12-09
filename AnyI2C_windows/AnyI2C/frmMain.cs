@@ -991,7 +991,7 @@ namespace AnyI2C
                 ns.Add(String.Empty, String.Empty);
                 XmlSerializer serializer = new XmlSerializer(typeof(Configure));
                 serializer.Serialize(writer, this, ns); 
-                writer.Flush();
+                //writer.Flush();
                 writer.Close();
             }
             catch (Exception e)
