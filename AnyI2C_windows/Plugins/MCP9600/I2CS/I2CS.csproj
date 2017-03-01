@@ -4,12 +4,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7C11D238-8414-4723-85B3-5A02757DC26F}</ProjectGuid>
+    <ProjectGuid>{B166948D-B56D-46F5-8BF2-44A56519C89A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AnyI2cLib</RootNamespace>
-    <AssemblyName>AnyI2cLib</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <RootNamespace>MCP9600_I2CS</RootNamespace>
+    <AssemblyName>MCP9600_I2CS</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -17,7 +17,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\..\..\AnyI2C\bin\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -26,20 +26,16 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>..\..\..\AnyI2C\bin\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NCDComponent">
-      <HintPath>.\NCDComponent.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Management" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -48,27 +44,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AnyI2cLib.cs" />
-    <Compile Include="CommunicationLayer.cs" />
-    <Compile Include="FT232HI2C.cs" />
-    <Compile Include="FTD2XX_NET.cs" />
-    <Compile Include="FTDILayer.cs" />
-    <Compile Include="ftdiWrap.cs" />
-    <Compile Include="I2CBridgeX.cs" />
-    <Compile Include="ListPorts.cs" />
-    <Compile Include="PortSetting.cs">
+    <Compile Include="frmI2CS.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PortSetting.Designer.cs">
-      <DependentUpon>PortSetting.cs</DependentUpon>
+    <Compile Include="frmI2CS.Designer.cs">
+      <DependentUpon>frmI2CS.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TcpWrapper.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="PortSetting.resx">
-      <DependentUpon>PortSetting.cs</DependentUpon>
-      <SubType>Designer</SubType>
+    <ProjectReference Include="..\..\..\AnyI2C\AnyI2C.csproj">
+      <Project>{50179cea-902d-4086-8867-0819cec74c8b}</Project>
+      <Name>AnyI2C</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="frmI2CS.resx">
+      <DependentUpon>frmI2CS.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

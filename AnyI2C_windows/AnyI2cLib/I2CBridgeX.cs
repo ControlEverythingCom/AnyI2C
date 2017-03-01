@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO.Ports;
+using NCD;
 namespace AnyI2cLib
 {
     /// <summary>
@@ -19,31 +20,83 @@ namespace AnyI2cLib
         public OnReadDataHandler OnReadData;
         public OnWriteDataHandler OnWriteData;
 
-        //NCDComponent Component = new NCDComponent();
-        SerialPort mCom = new SerialPort();
+        NCDComponent mCom = new NCDComponent();
         public string PortName = string.Empty;
         public I2CBridgeX()
         {
         }
+
+        public void OpenSetting()
+        {
+             mCom.SettingPort();
+        }
+
+        /// <summary>
+        /// return description of the bridge setting
+        /// </summary>
+        /// <returns></returns>
+        public string GetDescription()
+        {
+            string des = string.Empty;
+            if (mCom.UsingComPort)
+            {
+                return GetSerialPortConnectionDes();
+            }
+            else
+            {
+                return GetNetworkConnectionDes();
+            }
+            return des;
+        }
+
+        private string GetSerialPortConnectionDes()
+        {
+            if (mCom.UsingComPort)
+            {
+                if (mCom.IsOpen)
+                {
+                    return string.Format("{0}:{1} Opened", mCom.PortName, mCom.BaudRate);
+                }
+                else
+                {
+                    return string.Format("{0}:{1} Closed", mCom.PortName, mCom.BaudRate);
+                }
+            }
+            return string.Empty;
+        }
+
+        private string GetNetworkConnectionDes()
+        {
+            if (!mCom.UsingComPort)
+            {
+                if (mCom.IsOpen)
+                {
+                    return string.Format("{0}:{1} Opened", mCom.IPAddress, mCom.Port);
+                }
+                else
+                {
+                    return string.Format("{0}:{1} Closed", mCom.IPAddress, mCom.Port);
+                }
+            }
+            return string.Empty;
+        }
+
 
 
         public bool Open()
         {
             if (mCom.IsOpen)
             {
-                mCom.Close();
+                mCom.ClosePort();
             }
-            mCom.PortName = PortName;
-            mCom.BaudRate = 115200;
-            mCom.ReadTimeout = 100;
-            mCom.Open();
+            mCom.OpenPort();
             return mCom.IsOpen;
 
         }
 
         public void Close()
         {
-            mCom.Close();
+            mCom.ClosePort();
         }
 
         public byte[] ScanDevices(byte port)
@@ -81,9 +134,9 @@ namespace AnyI2cLib
                 data[3] = (byte)(addr*2 + 1);
                 data[4] = dataLength;
                 WriteBytesAPI(data);
-                //OnMyWriteData(this, data);
+                OnMyWriteData(this, data);
                 data = ReadBytesApi();
-                //OnMyReadData(this, data);
+                OnMyReadData(this, data);
                 if (data != null)
                 {
                     return data;
@@ -113,9 +166,9 @@ namespace AnyI2cLib
                     data[4 + i] = buffer[i];
                 }
                 WriteBytesAPI(data);
-                //OnMyWriteData(this, data);
+                OnMyWriteData(this, data);
                 data = ReadBytesApi();
-                //OnMyReadData(this, data);
+                OnMyReadData(this, data);
                 if (data != null)
                 {
                     if (data[0] == 85)
@@ -250,31 +303,9 @@ namespace AnyI2cLib
                 ApiPackage.Add((byte)checksum);
                 byte[] apiData = (byte[])ApiPackage.ToArray(typeof(byte));
                 WriteBytes(apiData);
+                //mCom.WriteBytes(data);
+                //mCom.WriteBytesAPI(data);
             }
-        }
-
-
-        /// <summary>
-        /// Ready a byte from Com port
-        /// </summary>
-        /// <returns>0 - 255, the data read, -1 for failure</returns>
-        public int ReadByte()
-        {
-            int nRtn = -1;
-            try
-            {
-                byte data = 0;
-                if (_ReadByte(out data))
-                {
-                    nRtn = data;
-                }
-
-            }
-            catch
-            {
-
-            }
-            return nRtn;
         }
 
 
@@ -306,65 +337,7 @@ namespace AnyI2cLib
         /// <returns></returns>
         public byte[] ReadBytesApi()
         {
-            ArrayList ar = new ArrayList();
-            byte[] apiData = null;
-            int ack = ReadByte();
-            if (ack != 170)
-            {
-                mCom.ReadExisting();
-                return apiData;
-            }
-            ar.Add((byte)ack);
-            bool correctData = true;
-            int length = ReadByte();
-            if (length != -1)
-            {
-                ar.Add((byte)length);
-                apiData = new byte[length];
-                for (int i = 0; i < length; i++)
-                {
-                    int data = ReadByte();
-                    if (data != -1)
-                    {
-                        apiData[i] = (byte)data;
-                        ar.Add((byte)data);
-                    }
-                    else
-                    {
-                        correctData = false;
-                        break;
-                    }
-                }
-                if (correctData)
-                {
-                    int data = ReadByte();
-                    if (data != -1)
-                    {
-                        ar.Add((byte)data);
-                        int checksum = 170 + length + GetCheckSum(apiData);
-                        checksum = checksum % 0x100;
-                        if (data != checksum)
-                        {
-                            correctData = false;
-                        }
-                    }
-                    else
-                    {
-                        correctData = false;
-                    }
-
-                }
-            }
-            else
-            {
-                correctData = false;
-            }
-            OnMyReadData(this, (byte[])ar.ToArray(typeof(byte)));
-            if (correctData)
-            {
-                return apiData;
-            }
-            return null;
+            return mCom.ReadBytesApi();
 
         }
 
@@ -388,7 +361,7 @@ namespace AnyI2cLib
         private void WriteBytes(byte[] data)
         {
             OnMyWriteData(this, data);
-            mCom.Write(data, 0, data.Length);
+            mCom.WriteBytes(data);
         }
 
 
