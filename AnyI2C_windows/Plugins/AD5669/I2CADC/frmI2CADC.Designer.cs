@@ -357,7 +357,7 @@
             this.Controls.Add(this._ERROR);
             this.Controls.Add(this.btnReadCh0);
             this.Name = "frmI2CADC";
-            this.Text = "AD5669 Control Panel";
+            this.Text = "ADS7828 Control Panel";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmI2CADC_FormClosing);
             this.Load += new System.EventHandler(this.frmADS7828_Load);
             this.GroupBox1.ResumeLayout(false);
