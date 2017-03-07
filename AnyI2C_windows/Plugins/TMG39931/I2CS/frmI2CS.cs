@@ -63,6 +63,7 @@ namespace TMG39931_I2CS
                 // power on and measure
                 value = CommObj.Send(new byte[] { addr, 0x80, 0x0F }, 0);
 
+                value = CommObj.Send(new byte[] { addr, 0x94 }, 1);
                 double c = value[0];
                 value = CommObj.Send(new byte[] { addr, 0x95 }, 1);
                 c = value[0] * 256 + c;
@@ -84,6 +85,8 @@ namespace TMG39931_I2CS
 
                 value = CommObj.Send(new byte[] { addr, 0x9C }, 1);
                 double P = value[0];
+                value = CommObj.Send(new byte[] { addr, 0x9D }, 1);
+                P = value[0] * 256 + P;
 
                 lbC.Text = c.ToString("F0");
                 lbR.Text = R.ToString("F0");
