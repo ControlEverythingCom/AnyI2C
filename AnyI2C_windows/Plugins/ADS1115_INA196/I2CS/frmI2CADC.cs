@@ -43,13 +43,13 @@ namespace ADS1115_INA196_I2CADC
             return (byte)(numAddress.Value * 2);
         }
 
-        private string ReadCh()
+        private string ReadCh(int ch)
         {
             try
             {
                 _ERROR.Visible = false;
                 byte addr = GetAddress(false);
-                byte[] value = CommObj.Send(new byte[] { addr, 0x01, 0x84, 0x83 }, 0);
+                byte[] value = CommObj.Send(new byte[] { addr, 0x01, (byte)(0xC4 + ch * 16), 0x83 }, 0);
                 value = CommObj.Send(new byte[] { addr, 0x00 }, 2);
                 if (value != null)
                 {
@@ -66,12 +66,15 @@ namespace ADS1115_INA196_I2CADC
 
         private void btnReadCh0_Click(object sender, EventArgs e)
         {
-            lbCh0.Text = ReadCh();
+            lbCh0.Text = ReadCh(0);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            lbCh0.Text = ReadCh();
+            lbCh0.Text = ReadCh(0);
+            lbCh1.Text = ReadCh(1);
+            lbCh2.Text = ReadCh(2);
+            lbCh3.Text = ReadCh(3);
         }
 
         private void chkAutoUpdate_CheckedChanged(object sender, EventArgs e)
@@ -96,6 +99,21 @@ namespace ADS1115_INA196_I2CADC
         {
             timer1.Enabled = false;
             CommObj.LogText("GUI Closed");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            lbCh1.Text = ReadCh(1);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            lbCh2.Text = ReadCh(2);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            lbCh3.Text = ReadCh(3);
         }
     }
 

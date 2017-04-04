@@ -40,6 +40,12 @@
             this._ERROR = new System.Windows.Forms.Label();
             this.btnReadCh0 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.button1 = new System.Windows.Forms.Button();
+            this.lbCh1 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.lbCh2 = new System.Windows.Forms.Label();
+            this.lbCh3 = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPort)).BeginInit();
             this.GroupBox1.SuspendLayout();
@@ -85,7 +91,7 @@
             // chkAutoUpdate
             // 
             this.chkAutoUpdate.AutoSize = true;
-            this.chkAutoUpdate.Location = new System.Drawing.Point(384, 125);
+            this.chkAutoUpdate.Location = new System.Drawing.Point(384, 243);
             this.chkAutoUpdate.Name = "chkAutoUpdate";
             this.chkAutoUpdate.Size = new System.Drawing.Size(86, 17);
             this.chkAutoUpdate.TabIndex = 545;
@@ -137,7 +143,7 @@
             // 
             this.lbCh0.AutoSize = true;
             this.lbCh0.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lbCh0.Location = new System.Drawing.Point(454, 56);
+            this.lbCh0.Location = new System.Drawing.Point(447, 45);
             this.lbCh0.Name = "lbCh0";
             this.lbCh0.Size = new System.Drawing.Size(23, 16);
             this.lbCh0.TabIndex = 544;
@@ -147,7 +153,7 @@
             // 
             this._ERROR.BackColor = System.Drawing.Color.Red;
             this._ERROR.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._ERROR.Location = new System.Drawing.Point(9, 102);
+            this._ERROR.Location = new System.Drawing.Point(9, 197);
             this._ERROR.Name = "_ERROR";
             this._ERROR.Size = new System.Drawing.Size(290, 63);
             this._ERROR.TabIndex = 542;
@@ -170,16 +176,85 @@
             this.timer1.Interval = 500;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.button1.Location = new System.Drawing.Point(384, 67);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(169, 23);
+            this.button1.TabIndex = 543;
+            this.button1.Text = "Read Channel 1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // lbCh1
+            // 
+            this.lbCh1.AutoSize = true;
+            this.lbCh1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lbCh1.Location = new System.Drawing.Point(447, 100);
+            this.lbCh1.Name = "lbCh1";
+            this.lbCh1.Size = new System.Drawing.Size(23, 16);
+            this.lbCh1.TabIndex = 544;
+            this.lbCh1.Text = "---";
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.button2.Location = new System.Drawing.Point(384, 125);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(169, 23);
+            this.button2.TabIndex = 543;
+            this.button2.Text = "Read Channel 2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.button3.Location = new System.Drawing.Point(384, 180);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(169, 23);
+            this.button3.TabIndex = 543;
+            this.button3.Text = "Read Channel 3";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // lbCh2
+            // 
+            this.lbCh2.AutoSize = true;
+            this.lbCh2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lbCh2.Location = new System.Drawing.Point(447, 158);
+            this.lbCh2.Name = "lbCh2";
+            this.lbCh2.Size = new System.Drawing.Size(23, 16);
+            this.lbCh2.TabIndex = 544;
+            this.lbCh2.Text = "---";
+            // 
+            // lbCh3
+            // 
+            this.lbCh3.AutoSize = true;
+            this.lbCh3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lbCh3.Location = new System.Drawing.Point(447, 213);
+            this.lbCh3.Name = "lbCh3";
+            this.lbCh3.Size = new System.Drawing.Size(23, 16);
+            this.lbCh3.TabIndex = 544;
+            this.lbCh3.Text = "---";
+            // 
             // frmI2CADC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(599, 195);
+            this.ClientSize = new System.Drawing.Size(595, 269);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.chkAutoUpdate);
             this.Controls.Add(this.GroupBox1);
+            this.Controls.Add(this.lbCh3);
+            this.Controls.Add(this.lbCh1);
+            this.Controls.Add(this.lbCh2);
             this.Controls.Add(this.lbCh0);
             this.Controls.Add(this._ERROR);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.btnReadCh0);
             this.Name = "frmI2CADC";
             this.Text = "ADS1115 INA 196 Control Panel";
@@ -207,5 +282,11 @@
         internal System.Windows.Forms.Label _ERROR;
         internal System.Windows.Forms.Button btnReadCh0;
         private System.Windows.Forms.Timer timer1;
+        internal System.Windows.Forms.Button button1;
+        internal System.Windows.Forms.Label lbCh1;
+        internal System.Windows.Forms.Button button2;
+        internal System.Windows.Forms.Button button3;
+        internal System.Windows.Forms.Label lbCh2;
+        internal System.Windows.Forms.Label lbCh3;
     }
 }
