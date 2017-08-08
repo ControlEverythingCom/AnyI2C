@@ -49,17 +49,30 @@ namespace MCP3428_I2CADC
             {
                 _ERROR.Visible = false;
                 byte addr = GetAddress(false);
-                byte[] value = CommObj.Send(new byte[] { addr, ch}, 2);
-                if (value != null)
+                for (int i = 0; i < 8; i++)  // try 8 times
                 {
-                    if (value[0] < 128)
+                    byte[] value = CommObj.Send(new byte[] { addr, ch }, 3);
+                    if (value != null)
                     {
-                        return (value[0] * 256 + value[1]).ToString();
+                        if ((value[2] & 128) == 0)       // valid data with 7bit of third byte is 0
+                        {
+                            if (value[0] < 128)
+                            {
+                                int v = value[0] * 256 + value[1];
+                                return GetText(v);
+                            }
+                            else
+                            {
+                                int v = (value[0] * 256 + value[1] - 65535);
+                                return GetText(v);
+                            }
+                        }
+                        else
+                        {
+                            Debug.Print("Invalid data read");
+                        }
                     }
-                    else
-                    {
-                        return ((value[0] * 256 + value[1] - 65535)).ToString();
-                    }
+
                 }
             }
             catch
@@ -78,6 +91,22 @@ namespace MCP3428_I2CADC
         private void btnReadCh1_Click(object sender, EventArgs e)
         {
             lbCh1.Text = ReadCh(184);
+        }
+
+        /// <summary>
+        /// Get description text 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        private string GetText(int value)
+        {
+            double v = (double)value/ 32768.0;    // normalize to 0 - 10
+            double v5 = v * 5.0;
+            double v10 = v * 10.0;
+            double v20 = v * 20.0;
+            double v24 = v * 24.0;
+            string str = string.Format("{0}/32768  {1:F2}/5V   {2:F2}/10V   {3:F2}/20V   {4:F2}/24V", value, v5, v10, v20, v24);
+            return str;
         }
 
 
