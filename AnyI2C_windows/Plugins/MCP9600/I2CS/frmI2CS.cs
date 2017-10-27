@@ -46,6 +46,7 @@ namespace MCP9600_I2CS
 
         private string ReadTemperature()
         {
+            string str = string.Empty;
             try
             {
                 
@@ -67,10 +68,40 @@ namespace MCP9600_I2CS
                         {
                             if ((value[0] & 0x80) == 0x80)
                             {
-                                return ((value[0] & 0x7f) * 16 + value[1] / 16.0 - 1024).ToString("F2");
+                                str =  ((value[0] & 0x7f) * 16 + value[1] / 16.0 - 1024).ToString("F2");
                             }
-                            return (value[0] * 16 + value[1] / 16.0).ToString("F2");
+                            else
+                            {
+                                str = (value[0] * 16 + value[1] / 16.0).ToString("F2");
+                            }
                         }
+
+                        value = CommObj.Send(new byte[] { addr, 1 }, 2);
+                        if (value != null)
+                        {
+                            if ((value[0] & 0x80) == 0x80)
+                            {
+                                str = ((value[0] & 0x7f) * 16 + value[1] / 16.0 - 1024).ToString("F2");
+                            }
+                            else
+                            {
+                                str = (value[0] * 16 + value[1] / 16.0).ToString("F2");
+                            }
+                        }
+
+                        value = CommObj.Send(new byte[] { addr, 2 }, 2);
+                        if (value != null)
+                        {
+                            if ((value[0] & 0x80) == 0x80)
+                            {
+                                str =  ((value[0] & 0x7f) * 16 + value[1] / 16.0 - 1024).ToString("F2");
+                            }
+                            else
+                            {
+                                str = (value[0] * 16 + value[1] / 16.0).ToString("F2");
+                            }
+                        }
+
                     }
                 }
 
