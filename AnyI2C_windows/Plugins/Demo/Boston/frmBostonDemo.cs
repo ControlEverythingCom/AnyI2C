@@ -12,10 +12,10 @@ using AnyI2C;
 
 namespace BostonDemo
 {
-    public partial class frmI2CPWM : Form
+    public partial class frmBostonDemo : Form
     {
         CommInterface CommObj = null;
-        public frmI2CPWM()
+        public frmBostonDemo()
         {
             InitializeComponent();
         }
@@ -129,7 +129,7 @@ namespace BostonDemo
     {
         public void Show(CommInterface com)
         {
-            frmI2CPWM frm = new frmI2CPWM();
+            frmBostonDemo frm = new frmBostonDemo();
             frm.Attach(com);
             frm.ShowDialog();
         }
