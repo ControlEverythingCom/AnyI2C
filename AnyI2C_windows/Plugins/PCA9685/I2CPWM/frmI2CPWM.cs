@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Threading;
 using AnyI2C;
 
-namespace BostonDemo
+namespace PCA9685_I2CPWM
 {
     public partial class frmI2CPWM : Form
     {

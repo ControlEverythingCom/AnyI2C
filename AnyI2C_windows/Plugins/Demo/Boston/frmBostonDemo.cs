@@ -123,6 +123,39 @@ namespace BostonDemo
 
 
         }
+
+        private void scrollBarPCA9685_1PWM_Scroll(object sender, ScrollEventArgs e)
+        {
+            SetPWMFreq(scrollBarPCA9685_1PWM.Value);
+            lbPCA9685_1_PWM .Text = scrollBarPCA9685_1PWM.Value.ToString();
+        }
+
+        private void scrollBarPCA9685_1_C1_Scroll(object sender, ScrollEventArgs e)
+        {
+            byte off = (byte)scrollBarPCA9685_1_C1.Value;
+            byte led = 0;
+            byte addr = GetAddress(false);
+            CommObj.Send(new byte[] { addr, (byte)(6 + 4 * led), 0 }, 0);
+            CommObj.Send(new byte[] { addr, (byte)(7 + 4 * led), 0 }, 0);
+            CommObj.Send(new byte[] { addr, (byte)(8 + 4 * led), 0 }, 0);
+            CommObj.Send(new byte[] { addr, (byte)(9 + 4 * led), off}, 0);
+
+        }
+
+        private void scrollBarPCA9685_1_C2_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
+
+        private void scrollBarPCA9685_1_C3_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
+
+        private void scrollBarPCA9685_1_C4_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
     }
 
     public class MyGUI : GuiInterface

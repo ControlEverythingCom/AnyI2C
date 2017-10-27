@@ -34,7 +34,6 @@
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
             this.GroupBox2 = new System.Windows.Forms.GroupBox();
             this.numAddress = new System.Windows.Forms.NumericUpDown();
-            this._ERROR = new System.Windows.Forms.Label();
             this.scrollbarFreq = new System.Windows.Forms.HScrollBar();
             this.label1 = new System.Windows.Forms.Label();
             this.lbFreq = new System.Windows.Forms.Label();
@@ -46,11 +45,33 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.cmbLed = new System.Windows.Forms.ComboBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.scrollBarPCA9685_1_C1 = new System.Windows.Forms.HScrollBar();
+            this.lbPCA9685_1_C1 = new System.Windows.Forms.Label();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.lbPCA9685_1_PWM = new System.Windows.Forms.Label();
+            this.scrollBarPCA9685_1PWM = new System.Windows.Forms.HScrollBar();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.lbPCA9685_1_C2 = new System.Windows.Forms.Label();
+            this.scrollBarPCA9685_1_C2 = new System.Windows.Forms.HScrollBar();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.lbPCA9685_1_C3 = new System.Windows.Forms.Label();
+            this.scrollBarPCA9685_1_C3 = new System.Windows.Forms.HScrollBar();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.lbPCA9685_1_C4 = new System.Windows.Forms.Label();
+            this.scrollBarPCA9685_1_C4 = new System.Windows.Forms.HScrollBar();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPort)).BeginInit();
             this.GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numAddress)).BeginInit();
             this.groupPWM1.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            this.groupBox9.SuspendLayout();
+            this.groupBox10.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox3
@@ -128,17 +149,6 @@
             0,
             0,
             0});
-            // 
-            // _ERROR
-            // 
-            this._ERROR.BackColor = System.Drawing.Color.Red;
-            this._ERROR.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._ERROR.Location = new System.Drawing.Point(9, 180);
-            this._ERROR.Name = "_ERROR";
-            this._ERROR.Size = new System.Drawing.Size(290, 63);
-            this._ERROR.TabIndex = 647;
-            this._ERROR.Text = "ERROR: Device did Not Respond";
-            this._ERROR.Visible = false;
             // 
             // scrollbarFreq
             // 
@@ -271,11 +281,192 @@
             this.cmbLed.TabIndex = 657;
             this.cmbLed.SelectedIndexChanged += new System.EventHandler(this.cmbLed_SelectedIndexChanged);
             // 
-            // frmI2CPWM
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.groupBox10);
+            this.groupBox5.Controls.Add(this.groupBox9);
+            this.groupBox5.Controls.Add(this.groupBox8);
+            this.groupBox5.Controls.Add(this.groupBox6);
+            this.groupBox5.Controls.Add(this.groupBox7);
+            this.groupBox5.Location = new System.Drawing.Point(23, 204);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(382, 370);
+            this.groupBox5.TabIndex = 658;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "PCA 9685 PWM";
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.lbPCA9685_1_C1);
+            this.groupBox6.Controls.Add(this.scrollBarPCA9685_1_C1);
+            this.groupBox6.Location = new System.Drawing.Point(28, 87);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(327, 62);
+            this.groupBox6.TabIndex = 0;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Channel 1";
+            // 
+            // scrollBarPCA9685_1_C1
+            // 
+            this.scrollBarPCA9685_1_C1.LargeChange = 1;
+            this.scrollBarPCA9685_1_C1.Location = new System.Drawing.Point(15, 20);
+            this.scrollBarPCA9685_1_C1.Maximum = 255;
+            this.scrollBarPCA9685_1_C1.Minimum = 1;
+            this.scrollBarPCA9685_1_C1.Name = "scrollBarPCA9685_1_C1";
+            this.scrollBarPCA9685_1_C1.Size = new System.Drawing.Size(224, 27);
+            this.scrollBarPCA9685_1_C1.TabIndex = 652;
+            this.scrollBarPCA9685_1_C1.Value = 1;
+            this.scrollBarPCA9685_1_C1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.scrollBarPCA9685_1_C1_Scroll);
+            // 
+            // lbPCA9685_1_C1
+            // 
+            this.lbPCA9685_1_C1.AutoSize = true;
+            this.lbPCA9685_1_C1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPCA9685_1_C1.Location = new System.Drawing.Point(281, 30);
+            this.lbPCA9685_1_C1.Name = "lbPCA9685_1_C1";
+            this.lbPCA9685_1_C1.Size = new System.Drawing.Size(15, 15);
+            this.lbPCA9685_1_C1.TabIndex = 654;
+            this.lbPCA9685_1_C1.Text = "0";
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.lbPCA9685_1_PWM);
+            this.groupBox7.Controls.Add(this.scrollBarPCA9685_1PWM);
+            this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox7.Location = new System.Drawing.Point(28, 19);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(327, 66);
+            this.groupBox7.TabIndex = 656;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "PWM Freqence";
+            // 
+            // lbPCA9685_1_PWM
+            // 
+            this.lbPCA9685_1_PWM.AutoSize = true;
+            this.lbPCA9685_1_PWM.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPCA9685_1_PWM.Location = new System.Drawing.Point(281, 31);
+            this.lbPCA9685_1_PWM.Name = "lbPCA9685_1_PWM";
+            this.lbPCA9685_1_PWM.Size = new System.Drawing.Size(15, 15);
+            this.lbPCA9685_1_PWM.TabIndex = 654;
+            this.lbPCA9685_1_PWM.Text = "0";
+            // 
+            // scrollBarPCA9685_1PWM
+            // 
+            this.scrollBarPCA9685_1PWM.LargeChange = 1;
+            this.scrollBarPCA9685_1PWM.Location = new System.Drawing.Point(15, 17);
+            this.scrollBarPCA9685_1PWM.Maximum = 255;
+            this.scrollBarPCA9685_1PWM.Minimum = 1;
+            this.scrollBarPCA9685_1PWM.Name = "scrollBarPCA9685_1PWM";
+            this.scrollBarPCA9685_1PWM.Size = new System.Drawing.Size(224, 37);
+            this.scrollBarPCA9685_1PWM.TabIndex = 652;
+            this.scrollBarPCA9685_1PWM.Value = 1;
+            this.scrollBarPCA9685_1PWM.Scroll += new System.Windows.Forms.ScrollEventHandler(this.scrollBarPCA9685_1PWM_Scroll);
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.lbPCA9685_1_C2);
+            this.groupBox8.Controls.Add(this.scrollBarPCA9685_1_C2);
+            this.groupBox8.Location = new System.Drawing.Point(28, 155);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(327, 62);
+            this.groupBox8.TabIndex = 0;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Channel 2";
+            // 
+            // lbPCA9685_1_C2
+            // 
+            this.lbPCA9685_1_C2.AutoSize = true;
+            this.lbPCA9685_1_C2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPCA9685_1_C2.Location = new System.Drawing.Point(281, 30);
+            this.lbPCA9685_1_C2.Name = "lbPCA9685_1_C2";
+            this.lbPCA9685_1_C2.Size = new System.Drawing.Size(15, 15);
+            this.lbPCA9685_1_C2.TabIndex = 654;
+            this.lbPCA9685_1_C2.Text = "0";
+            // 
+            // scrollBarPCA9685_1_C2
+            // 
+            this.scrollBarPCA9685_1_C2.LargeChange = 1;
+            this.scrollBarPCA9685_1_C2.Location = new System.Drawing.Point(15, 20);
+            this.scrollBarPCA9685_1_C2.Maximum = 255;
+            this.scrollBarPCA9685_1_C2.Minimum = 1;
+            this.scrollBarPCA9685_1_C2.Name = "scrollBarPCA9685_1_C2";
+            this.scrollBarPCA9685_1_C2.Size = new System.Drawing.Size(224, 27);
+            this.scrollBarPCA9685_1_C2.TabIndex = 652;
+            this.scrollBarPCA9685_1_C2.Value = 1;
+            this.scrollBarPCA9685_1_C2.Scroll += new System.Windows.Forms.ScrollEventHandler(this.scrollBarPCA9685_1_C2_Scroll);
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.lbPCA9685_1_C3);
+            this.groupBox9.Controls.Add(this.scrollBarPCA9685_1_C3);
+            this.groupBox9.Location = new System.Drawing.Point(28, 223);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(327, 62);
+            this.groupBox9.TabIndex = 0;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Channel 3";
+            // 
+            // lbPCA9685_1_C3
+            // 
+            this.lbPCA9685_1_C3.AutoSize = true;
+            this.lbPCA9685_1_C3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPCA9685_1_C3.Location = new System.Drawing.Point(281, 30);
+            this.lbPCA9685_1_C3.Name = "lbPCA9685_1_C3";
+            this.lbPCA9685_1_C3.Size = new System.Drawing.Size(15, 15);
+            this.lbPCA9685_1_C3.TabIndex = 654;
+            this.lbPCA9685_1_C3.Text = "0";
+            // 
+            // scrollBarPCA9685_1_C3
+            // 
+            this.scrollBarPCA9685_1_C3.LargeChange = 1;
+            this.scrollBarPCA9685_1_C3.Location = new System.Drawing.Point(15, 20);
+            this.scrollBarPCA9685_1_C3.Maximum = 255;
+            this.scrollBarPCA9685_1_C3.Minimum = 1;
+            this.scrollBarPCA9685_1_C3.Name = "scrollBarPCA9685_1_C3";
+            this.scrollBarPCA9685_1_C3.Size = new System.Drawing.Size(224, 27);
+            this.scrollBarPCA9685_1_C3.TabIndex = 652;
+            this.scrollBarPCA9685_1_C3.Value = 1;
+            this.scrollBarPCA9685_1_C3.Scroll += new System.Windows.Forms.ScrollEventHandler(this.scrollBarPCA9685_1_C3_Scroll);
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.lbPCA9685_1_C4);
+            this.groupBox10.Controls.Add(this.scrollBarPCA9685_1_C4);
+            this.groupBox10.Location = new System.Drawing.Point(28, 293);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(327, 62);
+            this.groupBox10.TabIndex = 0;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "Channel 4";
+            // 
+            // lbPCA9685_1_C4
+            // 
+            this.lbPCA9685_1_C4.AutoSize = true;
+            this.lbPCA9685_1_C4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPCA9685_1_C4.Location = new System.Drawing.Point(281, 30);
+            this.lbPCA9685_1_C4.Name = "lbPCA9685_1_C4";
+            this.lbPCA9685_1_C4.Size = new System.Drawing.Size(15, 15);
+            this.lbPCA9685_1_C4.TabIndex = 654;
+            this.lbPCA9685_1_C4.Text = "0";
+            // 
+            // scrollBarPCA9685_1_C4
+            // 
+            this.scrollBarPCA9685_1_C4.LargeChange = 1;
+            this.scrollBarPCA9685_1_C4.Location = new System.Drawing.Point(15, 20);
+            this.scrollBarPCA9685_1_C4.Maximum = 255;
+            this.scrollBarPCA9685_1_C4.Minimum = 1;
+            this.scrollBarPCA9685_1_C4.Name = "scrollBarPCA9685_1_C4";
+            this.scrollBarPCA9685_1_C4.Size = new System.Drawing.Size(224, 27);
+            this.scrollBarPCA9685_1_C4.TabIndex = 652;
+            this.scrollBarPCA9685_1_C4.Value = 1;
+            this.scrollBarPCA9685_1_C4.Scroll += new System.Windows.Forms.ScrollEventHandler(this.scrollBarPCA9685_1_C4_Scroll);
+            // 
+            // frmBostonDemo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(599, 260);
+            this.ClientSize = new System.Drawing.Size(1664, 1103);
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.cmbLed);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.lbOff);
@@ -287,9 +478,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.GroupBox1);
-            this.Controls.Add(this._ERROR);
-            this.Name = "frmI2CPWM";
-            this.Text = "PCA9685 Control Panel";
+            this.Name = "frmBostonDemo";
+            this.Text = "Demo ";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmI2CS_FormClosing);
             this.Load += new System.EventHandler(this.frmI2CS_Load);
             this.groupBox3.ResumeLayout(false);
@@ -298,6 +489,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.numAddress)).EndInit();
             this.groupPWM1.ResumeLayout(false);
             this.groupPWM1.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox10.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -311,7 +513,6 @@
         internal System.Windows.Forms.GroupBox GroupBox1;
         internal System.Windows.Forms.GroupBox GroupBox2;
         internal System.Windows.Forms.NumericUpDown numAddress;
-        internal System.Windows.Forms.Label _ERROR;
         private System.Windows.Forms.HScrollBar scrollbarFreq;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbFreq;
@@ -323,5 +524,21 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cmbLed;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Label lbPCA9685_1_C1;
+        private System.Windows.Forms.HScrollBar scrollBarPCA9685_1_C1;
+        private System.Windows.Forms.GroupBox groupBox10;
+        private System.Windows.Forms.Label lbPCA9685_1_C4;
+        private System.Windows.Forms.HScrollBar scrollBarPCA9685_1_C4;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.Label lbPCA9685_1_C3;
+        private System.Windows.Forms.HScrollBar scrollBarPCA9685_1_C3;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.Label lbPCA9685_1_C2;
+        private System.Windows.Forms.HScrollBar scrollBarPCA9685_1_C2;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Label lbPCA9685_1_PWM;
+        private System.Windows.Forms.HScrollBar scrollBarPCA9685_1PWM;
     }
 }
