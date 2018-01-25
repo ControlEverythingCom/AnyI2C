@@ -49,18 +49,26 @@ namespace HYT939_I2CS
             try
             {
                 _ERROR.Visible = false;
-                byte addr = GetAddress(false);
-                byte[] value = CommObj.Send(new byte[] { addr, 0x80 }, 0);
-                value = CommObj.Send(new byte[] { addr, 0 }, 4);
-                if (value != null)
+                for (int i = 0; i < 10; i++)
                 {
-                    double t = ((value[2] * 256) + (value[3] & 0xFC)) / 4;
-                    double temp = ((165.0 / (16383.0)) * t) - 40;
-                    lbCh0.Text = temp.ToString("F2");
-                    double h = (((value[0] & 0x3F) * 256) + value[1]);
-                    double humidity = (100.0 / (16383.0)) * h;
-                    lbCh1.Text = humidity.ToString("F2");
+                    byte addr = GetAddress(false);
+                    byte[] value = CommObj.Send(new byte[] { addr, 0x80 }, 0);
+                    value = CommObj.Send(new byte[] { addr, 0 }, 4);
+                    if (value != null)
+                    {
+                        if (value[0] != 0x7f)
+                        {
+                            double t = ((value[2] * 256) + (value[3] & 0xFC)) / 4;
+                            double temp = ((165.0 / (16383.0)) * t) - 40;
+                            lbCh0.Text = temp.ToString("F2");
+                            double h = (((value[0] & 0x3F) * 256) + value[1]);
+                            double humidity = (100.0 / (16383.0)) * h;
+                            lbCh1.Text = humidity.ToString("F2");
+                            return "";
+                        }
+                    }
                 }
+                
             }
             catch
             {
