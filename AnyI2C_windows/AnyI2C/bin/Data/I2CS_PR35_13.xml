@@ -1,0 +1,22 @@
+<DeviceConfig>
+	<Type>POT</Type>
+	<path>I2CS_PR35_13.xml</path>
+	<Name>I2CS_PR35_13</Name>
+	<Manufactory>National Control Devices</Manufactory>
+	<Address>42</Address>
+	<AddressCollection>
+		<Address>42</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>PR35_13_I2CS.dll</GUIPath>
+				<TypeName>PR35_13_I2CS.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>
+	</Commands>
+</DeviceConfig>
