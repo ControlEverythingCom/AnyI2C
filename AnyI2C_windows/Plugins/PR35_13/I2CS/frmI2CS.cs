@@ -50,14 +50,16 @@ namespace PR35_13_I2CS
             {
                 _ERROR.Visible = false;
                 byte addr = GetAddress(false);
-                int data = 0;
                 //Power On
+
+                byte[] value = CommObj.Send(new byte[] { addr, 0x04, 1 }, 0); // set to mode 1,
+
                 // Read data of channel 1
-                byte[] value = CommObj.Send(new byte[] { addr, 0x06 }, 6);
+                value = CommObj.Send(new byte[] { addr, 0x06 }, 6);
                 if (value != null)
                 {
-                    int freq1 = value[0] * 100 + value[1];
-                    int Period1 = value[2] * 1000 + value[3];
+                    int freq1 = value[0] * 256 + value[1];
+                    double Period1 = (value[2] * 65536 + value[3] * 256 + value[4])/10000;
                     int dutyCycle1 = value[5];
                     lbCh0.Text = string.Format("{0}Hz {1}ms {2}%", freq1, Period1, dutyCycle1);
                 }
@@ -65,8 +67,8 @@ namespace PR35_13_I2CS
                 value = CommObj.Send(new byte[] { addr, 0x13 }, 6);
                 if (value != null)
                 {
-                    int freq1 = value[0] * 100 + value[1];
-                    int Period1 = value[2] * 1000 + value[3];
+                    int freq1 = value[0] * 256 + value[1];
+                    double Period1 = (value[2] * 65536 + value[3] * 256 + value[4]) / 10000;
                     int dutyCycle1 = value[5];
                     lbCh1.Text = string.Format("{0}Hz {1}ms {2}%", freq1, Period1, dutyCycle1);
                 }
