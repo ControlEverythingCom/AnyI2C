@@ -1,4 +1,4 @@
-﻿namespace MS5805_I2CS
+﻿namespace SM9541_I2CS
 {
     partial class frmI2CS
     {
@@ -33,13 +33,12 @@
             this.numAddress = new System.Windows.Forms.NumericUpDown();
             this._ERROR = new System.Windows.Forms.Label();
             this.btnReadCh0 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.lbP = new System.Windows.Forms.Label();
             this.lbT = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.numPort = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
             this.GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numAddress)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -108,16 +107,6 @@
             this.btnReadCh0.UseVisualStyleBackColor = true;
             this.btnReadCh0.Click += new System.EventHandler(this.btnReadCh0_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(476, 132);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 16);
-            this.label1.TabIndex = 520;
-            this.label1.Text = "mbar";
-            // 
             // lbP
             // 
             this.lbP.AutoSize = true;
@@ -137,16 +126,6 @@
             this.lbT.Size = new System.Drawing.Size(23, 16);
             this.lbT.TabIndex = 521;
             this.lbT.Text = "---";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(476, 163);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(18, 16);
-            this.label3.TabIndex = 520;
-            this.label3.Text = "C";
             // 
             // groupBox3
             // 
@@ -184,13 +163,22 @@
             this.numPort.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numPort.ValueChanged += new System.EventHandler(this.numPort_ValueChanged);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(361, 102);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(213, 16);
+            this.label1.TabIndex = 520;
+            this.label1.Text = "The value here are raw value!";
+            // 
             // frmI2CS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 239);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbT);
             this.Controls.Add(this.lbP);
@@ -198,7 +186,7 @@
             this.Controls.Add(this._ERROR);
             this.Controls.Add(this.btnReadCh0);
             this.Name = "frmI2CS";
-            this.Text = "MS5805 Control Panel";
+            this.Text = "SM9541 Control Panel";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmI2CS_FormClosing);
             this.Load += new System.EventHandler(this.frmADC081C_Load);
             this.GroupBox1.ResumeLayout(false);
@@ -217,12 +205,11 @@
         internal System.Windows.Forms.NumericUpDown numAddress;
         internal System.Windows.Forms.Label _ERROR;
         internal System.Windows.Forms.Button btnReadCh0;
-        internal System.Windows.Forms.Label label1;
         internal System.Windows.Forms.Label lbP;
         internal System.Windows.Forms.Label lbT;
-        internal System.Windows.Forms.Label label3;
         internal System.Windows.Forms.GroupBox groupBox3;
         internal System.Windows.Forms.GroupBox groupBox4;
         internal System.Windows.Forms.NumericUpDown numPort;
+        internal System.Windows.Forms.Label label1;
     }
 }
