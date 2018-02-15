@@ -49,14 +49,20 @@ namespace MCP9803_I2CS
             {
                 _ERROR.Visible = false;
                 byte addr = GetAddress(false);
-                byte[] value = CommObj.Send(new byte[] { addr, ch}, 2);
+                CommObj.Send(new byte[] { addr, 1, 60 }, 0);
+                CommObj.Send(new byte[] { addr, 0 }, 0);
+                byte[] value = CommObj.Send(new byte[] { addr }, 2);
                 if (value != null)
                 {
-                    if (value[0] > 128)
+                    // Convert the data to 12-bits
+                    int temp = ((value[0] * 256) + value[1]) / 16;
+                    if (temp > 2047)
                     {
-                        return (128 - value[0]).ToString();
+                        temp = temp - 4096;
                     }
-                    return value[0].ToString();
+                    double cTemp = temp * 0.0625;
+
+                    return cTemp.ToString("F2");
                 }
             }
             catch
