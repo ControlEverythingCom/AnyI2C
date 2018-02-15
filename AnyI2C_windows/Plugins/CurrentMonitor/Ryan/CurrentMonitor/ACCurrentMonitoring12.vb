@@ -1,8 +1,7 @@
-﻿
-Imports AnyI2C
+﻿Imports AnyI2C
 
 
-Public Class ACCurrentMonitoring
+Public Class ACCurrentMonitoring12
 
     Dim CommObj As CommInterface = Nothing
 
@@ -15,6 +14,14 @@ Public Class ACCurrentMonitoring
     Public WattHours4 As Decimal
     Public WattHours5 As Decimal
     Public WattHours6 As Decimal
+
+    Public WattHours7 As Decimal
+    Public WattHours8 As Decimal
+    Public WattHours9 As Decimal
+    Public WattHours10 As Decimal
+    Public WattHours11 As Decimal
+    Public WattHours12 As Decimal
+
     Public DeviceAddress As Integer = 84
     Public formloading As Boolean = True
 
@@ -22,7 +29,6 @@ Public Class ACCurrentMonitoring
     Public Sub Attach(com As CommInterface)
         CommObj = com
     End Sub
-
 
     Private Sub ACCurrentMonitoring_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -106,6 +112,12 @@ Ending:
         ACC4.Text = ""
         ACC5.Text = ""
         ACC6.Text = ""
+        ACC7.Text = ""
+        ACC8.Text = ""
+        ACC9.Text = ""
+        ACC10.Text = ""
+        ACC11.Text = ""
+        ACC12.Text = ""
 
         Watts1.Text = ""
         Watts2.Text = ""
@@ -113,6 +125,13 @@ Ending:
         Watts4.Text = ""
         Watts5.Text = ""
         Watts6.Text = ""
+        Watts7.Text = ""
+        Watts8.Text = ""
+        Watts9.Text = ""
+        Watts10.Text = ""
+        Watts11.Text = ""
+        Watts12.Text = ""
+
 
         KWH1.Text = ""
         KWH2.Text = ""
@@ -120,6 +139,12 @@ Ending:
         KWH4.Text = ""
         KWH5.Text = ""
         KWH6.Text = ""
+        KWH7.Text = ""
+        KWH8.Text = ""
+        KWH9.Text = ""
+        KWH10.Text = ""
+        KWH11.Text = ""
+        KWH12.Text = ""
 
         Cost1.Text = ""
         Cost2.Text = ""
@@ -127,6 +152,12 @@ Ending:
         Cost4.Text = ""
         Cost5.Text = ""
         Cost6.Text = ""
+        Cost7.Text = ""
+        Cost8.Text = ""
+        Cost9.Text = ""
+        Cost10.Text = ""
+        Cost11.Text = ""
+        Cost12.Text = ""
 
         TotalWatts.Text = ""
         TotalCost.Text = ""
@@ -135,8 +166,6 @@ Ending:
 
         Debug.Print("--------------------------------------------ADDRESS " + DeviceAddress.ToString)
         On Error GoTo Ending
-        'NCDLib.WriteBytesAPI(NCDComponent1, UsingAPI, 188, 50, 10, DeviceAddress, 146, 106, 2, 0, 0, 0, 0, 254, (DeviceAddress + 1), 7)
-        'Dim rData2 As Byte() = NCDLib.ReadBytesAPI(NCDComponent1, UsingAPI, 7)
         Dim rData2 As Byte() = CommObj.Send(New Byte() {DeviceAddress, 146, 106, 2, 0, 0, 0, 0, 254, (DeviceAddress + 1)}, 7)
 
         Debug.Print("Get Device Data")
@@ -173,6 +202,13 @@ Ending:
         'FWVersion.Text = "Version: 4." + frmBASE.FirmwareVersionLarge.ToString + "." + frmBASE.FirmwareVersionSmall.ToString + "." + rData2(3).ToString
 
         'Setup UI: Destruct Interface based on Channels available
+
+        If ACChannels < 12 Then AC12.Visible = False : Label23.Visible = False : ACC12.Visible = False : RefreshRate.Minimum = 14 '11 Channel
+        If ACChannels < 11 Then AC11.Visible = False : Label24.Visible = False : ACC11.Visible = False : RefreshRate.Minimum = 12 '10 Channel
+        If ACChannels < 10 Then AC10.Visible = False : Label25.Visible = False : ACC10.Visible = False : RefreshRate.Minimum = 11 '9 Channel
+        If ACChannels < 9 Then AC9.Visible = False : Label26.Visible = False : ACC9.Visible = False : RefreshRate.Minimum = 10 '8 Channel
+        If ACChannels < 8 Then AC8.Visible = False : Label27.Visible = False : ACC8.Visible = False : RefreshRate.Minimum = 9 '7 Channel
+        If ACChannels < 7 Then AC7.Visible = False : Label28.Visible = False : ACC7.Visible = False : RefreshRate.Minimum = 8 '6 Channel
         If ACChannels < 6 Then AC6.Visible = False : Label7.Visible = False : ACC6.Visible = False : RefreshRate.Minimum = 7 '5 Channel
         If ACChannels < 5 Then AC5.Visible = False : Label8.Visible = False : ACC5.Visible = False : RefreshRate.Minimum = 6 '4 Channel
         If ACChannels < 4 Then AC4.Visible = False : Label4.Visible = False : ACC4.Visible = False : RefreshRate.Minimum = 5 '3 Channel
@@ -188,6 +224,14 @@ Ending:
         AC5.Maximum = AC1.Maximum
         AC6.Maximum = AC1.Maximum
 
+        AC7.Maximum = AC1.Maximum
+        AC8.Maximum = AC1.Maximum
+        AC9.Maximum = AC1.Maximum
+        AC10.Maximum = AC1.Maximum
+        AC11.Maximum = AC1.Maximum
+        AC12.Maximum = AC1.Maximum
+
+
         '  Timer1.Interval = RefreshRate.Value * 100 'Change to 1000 before release
         '  Timer1.Start()
         '  kWhTimer.Start()
@@ -199,7 +243,6 @@ Ending:
         Exit Sub
 
     End Sub
-
 
     Private Sub frmAD8_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
         If UsingAPI = True Then
@@ -230,7 +273,6 @@ Ending:
     Private Function GetDataString(data As Byte())
 
     End Function
-
     Public Sub LinkTo(ByVal Address As String)
         Try
             System.Diagnostics.Process.Start(Address) ' start browser for that link
@@ -238,19 +280,11 @@ Ending:
         End Try
     End Sub
     Private Sub LinkLabel1_LinkClicked(sender As System.Object, e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
-        LinkTo("http://assets.controlanything.com/QSG/AD8_Quick_Start_Guide.pdf")
+        LinkTo("https://ncd.io/ad8-8-channel-analog-to-digital-converter-quick-start-guide/")
     End Sub
 
     Private Sub MORE_Click(sender As System.Object, e As System.EventArgs) Handles MORE.Click
-        'If MORE.Text = "MORE" Then
-        '    MORE.Text = "LESS"
-        '    ' Me.Height = 449 'TALL
-        '    Me.Height = GroupBox23.Top + GroupBox23.Height + frmBASE.OSOffset + 20
-        'Else
-        '    MORE.Text = "MORE"
-        '    ' Me.Height = 319 'SHORT
-        '    Me.Height = Res.Top + Res.Height + frmBASE.OSOffset
-        'End If
+
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
@@ -260,9 +294,6 @@ Ending:
 
         Dim ACChannelsCkSum As Byte = ((146 + 106 + 1 + 1 + ACChannels) And 255)
         Dim ACChannelsBytes As Byte = ((ACChannels * 3) + 1)
-        'NCDLib.WriteBytesAPI(NCDComponent1, UsingAPI, 188, 50, 10, DeviceAddress, 146, 106, 1, 1, ACChannels, 0, 0, ACChannelsCkSum, (DeviceAddress + 1), ACChannelsBytes)
-
-        'Dim CurrentReadings As Byte() = NCDLib.ReadBytesAPI(NCDComponent1, UsingAPI, ACChannelsBytes)
         Dim CurrentReadings As Byte() = CommObj.Send(New Byte() {DeviceAddress, 146, 106, 1, 1, ACChannels, 0, 0, ACChannelsCkSum, (DeviceAddress + 1)}, ACChannelsBytes)
         If CurrentReadings IsNot Nothing Then
 
@@ -314,7 +345,42 @@ Ending:
                     AC6.Value = Int(CalcACCurrent6 / 100)
                     Watts6.Text = ((CalcACCurrent6 / 1000) * SystemVolts.Value).ToString("0.00")
                 End If
-
+                If ACChannels >= 7 Then
+                    Dim CalcACCurrent7 As Integer = ((CurrentReadings(18) * 65536) + (CurrentReadings(19) * 256) + CurrentReadings(20))
+                    ACC7.Text = (CalcACCurrent7 / 1000).ToString + " Amps"
+                    AC7.Value = Int(CalcACCurrent7 / 100)
+                    Watts7.Text = ((CalcACCurrent7 / 1000) * SystemVolts.Value).ToString("0.00")
+                End If
+                If ACChannels >= 8 Then
+                    Dim CalcACCurrent As Integer = ((CurrentReadings(21) * 65536) + (CurrentReadings(22) * 256) + CurrentReadings(23))
+                    ACC8.Text = (CalcACCurrent / 1000).ToString + " Amps"
+                    AC8.Value = Int(CalcACCurrent / 100)
+                    Watts8.Text = ((CalcACCurrent / 1000) * SystemVolts.Value).ToString("0.00")
+                End If
+                If ACChannels >= 9 Then
+                    Dim CalcACCurrent As Integer = ((CurrentReadings(24) * 65536) + (CurrentReadings(25) * 256) + CurrentReadings(26))
+                    ACC9.Text = (CalcACCurrent / 1000).ToString + " Amps"
+                    AC9.Value = Int(CalcACCurrent / 100)
+                    Watts9.Text = ((CalcACCurrent / 1000) * SystemVolts.Value).ToString("0.00")
+                End If
+                If ACChannels >= 10 Then
+                    Dim CalcACCurrent As Integer = ((CurrentReadings(27) * 65536) + (CurrentReadings(28) * 256) + CurrentReadings(29))
+                    ACC10.Text = (CalcACCurrent / 1000).ToString + " Amps"
+                    AC10.Value = Int(CalcACCurrent / 100)
+                    Watts10.Text = ((CalcACCurrent / 1000) * SystemVolts.Value).ToString("0.00")
+                End If
+                If ACChannels >= 11 Then
+                    Dim CalcACCurrent As Integer = ((CurrentReadings(30) * 65536) + (CurrentReadings(31) * 256) + CurrentReadings(32))
+                    ACC11.Text = (CalcACCurrent / 1000).ToString + " Amps"
+                    AC11.Value = Int(CalcACCurrent / 100)
+                    Watts11.Text = ((CalcACCurrent / 1000) * SystemVolts.Value).ToString("0.00")
+                End If
+                If ACChannels >= 12 Then
+                    Dim CalcACCurrent As Integer = ((CurrentReadings(33) * 65536) + (CurrentReadings(34) * 256) + CurrentReadings(35))
+                    ACC12.Text = (CalcACCurrent / 1000).ToString + " Amps"
+                    AC12.Value = Int(CalcACCurrent / 100)
+                    Watts12.Text = ((CalcACCurrent / 1000) * SystemVolts.Value).ToString("0.00")
+                End If
             End If
         End If
 
@@ -338,6 +404,14 @@ ExitTimer:
         Dim KiloWattHours4 As Decimal
         Dim KiloWattHours5 As Decimal
         Dim KiloWattHours6 As Decimal
+
+        Dim KiloWattHours7 As Decimal
+        Dim KiloWattHours8 As Decimal
+        Dim KiloWattHours9 As Decimal
+        Dim KiloWattHours10 As Decimal
+        Dim KiloWattHours11 As Decimal
+        Dim KiloWattHours12 As Decimal
+
         Dim CallsPerHour As Decimal = 0.00277777777 '(360 calls per Hour = 1/360)
 
 
@@ -372,9 +446,43 @@ ExitTimer:
         KWH6.Text = KiloWattHours6.ToString("0.000")
         Cost6.Text = (Val(KWH6.Text) * Price.Value).ToString("0.00")
 
-        TotalWatts.Text = (Val(Watts1.Text) + Val(Watts2.Text) + Val(Watts3.Text) + Val(Watts4.Text) + Val(Watts5.Text) + Val(Watts6.Text)).ToString
-        TotalKWH.Text = (Val(KWH1.Text) + Val(KWH2.Text) + Val(KWH3.Text) + Val(KWH4.Text) + Val(KWH5.Text) + Val(KWH6.Text)).ToString
+        'Channel 7
+        WattHours7 = WattHours7 + (Val(Watts7.Text) + CallsPerHour)  '(360 calls per Hour = 1/360)
+        KiloWattHours7 = WattHours7 / 1000
+        KWH7.Text = KiloWattHours7.ToString("0.000")
+        Cost7.Text = (Val(KWH7.Text) * Price.Value).ToString("0.00")
+        'Channel 8
+        WattHours8 = WattHours8 + (Val(Watts8.Text) + CallsPerHour)  '(360 calls per Hour = 1/360)
+        KiloWattHours8 = WattHours8 / 1000
+        KWH8.Text = KiloWattHours8.ToString("0.000")
+        Cost8.Text = (Val(KWH8.Text) * Price.Value).ToString("0.00")
+        'Channel 9
+        WattHours9 = WattHours9 + (Val(Watts9.Text) + CallsPerHour)  '(360 calls per Hour = 1/360)
+        KiloWattHours9 = WattHours9 / 1000
+        KWH9.Text = KiloWattHours9.ToString("0.000")
+        Cost9.Text = (Val(KWH9.Text) * Price.Value).ToString("0.00")
+        'Channel 10
+        WattHours10 = WattHours10 + (Val(Watts10.Text) + CallsPerHour)  '(360 calls per Hour = 1/360)
+        KiloWattHours10 = WattHours10 / 1000
+        KWH10.Text = KiloWattHours10.ToString("0.000")
+        Cost10.Text = (Val(KWH10.Text) * Price.Value).ToString("0.00")
+        'Channel 11
+        WattHours11 = WattHours11 + (Val(Watts11.Text) + CallsPerHour)  '(360 calls per Hour = 1/360)
+        KiloWattHours11 = WattHours11 / 1000
+        KWH11.Text = KiloWattHours11.ToString("0.000")
+        Cost11.Text = (Val(KWH11.Text) * Price.Value).ToString("0.00")
+        'Channel 12
+        WattHours12 = WattHours12 + (Val(Watts12.Text) + CallsPerHour)  '(360 calls per Hour = 1/360)
+        KiloWattHours12 = WattHours12 / 1000
+        KWH12.Text = KiloWattHours12.ToString("0.000")
+        Cost12.Text = (Val(KWH12.Text) * Price.Value).ToString("0.00")
+
+
+        TotalWatts.Text = (Val(Watts1.Text) + Val(Watts2.Text) + Val(Watts3.Text) + Val(Watts4.Text) + Val(Watts5.Text) + Val(Watts6.Text)).ToString + (Val(Watts7.Text) + Val(Watts8.Text) + Val(Watts9.Text) + Val(Watts10.Text) + Val(Watts11.Text) + Val(Watts12.Text)).ToString
+        TotalKWH.Text = (Val(KWH1.Text) + Val(KWH2.Text) + Val(KWH3.Text) + Val(KWH4.Text) + Val(KWH5.Text) + Val(KWH6.Text)).ToString + (Val(KWH7.Text) + Val(KWH8.Text) + Val(KWH9.Text) + Val(KWH10.Text) + Val(KWH11.Text) + Val(KWH12.Text)).ToString
         TotalCost.Text = (Val(TotalKWH.Text) * Price.Value).ToString("0.00")
+        Me.Refresh()
+
 
     End Sub
 
@@ -423,24 +531,14 @@ ExitTimer:
 
 
     End Sub
-
-
-    Private Function GetAddress(read As Boolean) As Byte
-        'If (read) Then
-        '    Return numAddress.Value * 2 + 1
-        'End If
-        'Return numAddress.Value * 2
-    End Function
-
 End Class
 
-'Public Class MyGUI : Implements AnyI2C.GuiInterface
+Public Class MyGUI : Implements AnyI2C.GuiInterface
 
-'    Public Sub Show(com As CommInterface) Implements GuiInterface.Show
-'        Dim frm As ACCurrentMonitoring = New ACCurrentMonitoring()
-'        frm.Attach(com)
-'        frm.ShowDialog()
-'    End Sub
-'End Class
-
+    Public Sub Show(com As CommInterface) Implements GuiInterface.Show
+        Dim frm As ACCurrentMonitoring12 = New ACCurrentMonitoring12()
+        frm.Attach(com)
+        frm.ShowDialog()
+    End Sub
+End Class
 

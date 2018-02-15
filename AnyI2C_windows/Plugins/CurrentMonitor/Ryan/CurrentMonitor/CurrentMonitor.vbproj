@@ -72,6 +72,12 @@
     <Compile Include="ACCurrentMonitoring.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ACCurrentMonitoring12.Designer.vb">
+      <DependentUpon>ACCurrentMonitoring12.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ACCurrentMonitoring12.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -91,6 +97,9 @@
   <ItemGroup>
     <EmbeddedResource Include="ACCurrentMonitoring.resx">
       <DependentUpon>ACCurrentMonitoring.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ACCurrentMonitoring12.resx">
+      <DependentUpon>ACCurrentMonitoring12.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
