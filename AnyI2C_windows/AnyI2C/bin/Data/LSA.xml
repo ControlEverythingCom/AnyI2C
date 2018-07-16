@@ -1,0 +1,26 @@
+<DeviceConfig>
+	<Type>LSA</Type>
+	<path>LSA.xml</path>
+	<Name>LSA</Name>
+	<Manufactory>CE</Manufactory>
+	<Address>60</Address>
+	<AddressCollection>
+		<Address>60</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+<!-- 				<GUIPath>CurrentMonitor_I2CS.dll</GUIPath>
+				<TypeName>CurrentMonitor_I2CS.MyGUI</TypeName>
+ -->		
+ 				<GUIPath>LSA.dll</GUIPath>
+				<TypeName>LSA.MyGUI</TypeName>
+ 
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>
