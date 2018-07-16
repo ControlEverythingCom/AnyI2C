@@ -45,10 +45,10 @@ namespace AD5252_I2CPOT
         {
             byte addr = GetAddress(true);
             // update the pot value
-            CommObj.Send(new byte[] { addr, 1, (byte)scrollValue2.Value }, 1);
+            CommObj.Send(new byte[] { addr, 3, (byte)scrollValue2.Value }, 1);
 
             //  read data back
-            byte[] value = CommObj.Send(new byte[] { addr, 1 }, 1);
+            byte[] value = CommObj.Send(new byte[] { addr, 3 }, 1);
             if (value != null)
             {
                 Debug.Print("POT2 : " + value[0].ToString());

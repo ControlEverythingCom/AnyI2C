@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO.Ports;
-using NCD;
+using NCDEnterprise;
 namespace AnyI2cLib
 {
     /// <summary>
@@ -20,7 +20,7 @@ namespace AnyI2cLib
         public OnReadDataHandler OnReadData;
         public OnWriteDataHandler OnWriteData;
 
-        NCDComponent mCom = new NCDComponent();
+        NCDController   mCom = new NCDController();
         public string PortName = string.Empty;
         public I2CBridgeX()
         {
@@ -288,6 +288,7 @@ namespace AnyI2cLib
         {
             if (mCom.IsOpen)
             {
+                mCom.WriteBytesAPI(data);
                 ArrayList ApiPackage = new ArrayList();
                 ApiPackage.Add((byte)170);
                 ApiPackage.Add((byte)data.Length);
@@ -302,34 +303,13 @@ namespace AnyI2cLib
                 checksum = checksum % 0x100;
                 ApiPackage.Add((byte)checksum);
                 byte[] apiData = (byte[])ApiPackage.ToArray(typeof(byte));
-                WriteBytes(apiData);
+
+                OnMyWriteData(this, data);
                 //mCom.WriteBytes(data);
                 //mCom.WriteBytesAPI(data);
             }
         }
 
-
-        /// <summary>
-        /// Read a byte from Com Port
-        /// </summary>
-        /// <param name="data">data been read</param>
-        /// <returns>true for success</returns>
-        internal bool _ReadByte(out byte data)
-        {
-            bool bRtn = false;
-            data = 0;
-            try
-            {
-                data = (byte)mCom.ReadByte();
-                bRtn = true;
-
-            }
-            catch (TimeoutException ex)
-            {
-            }
-
-            return bRtn;
-        }
 
         /// <summary>
         /// Read data in api format, return null if read nothing
@@ -358,11 +338,6 @@ namespace AnyI2cLib
         }
 
 
-        private void WriteBytes(byte[] data)
-        {
-            OnMyWriteData(this, data);
-            mCom.WriteBytes(data);
-        }
 
 
     }
