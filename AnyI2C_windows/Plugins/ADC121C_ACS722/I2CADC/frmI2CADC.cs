@@ -104,7 +104,7 @@ namespace ADC121C_ACS722_I2CADC
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            ReadCh();
+            lbCh0.Text = ReadCh();
         }
     }
 

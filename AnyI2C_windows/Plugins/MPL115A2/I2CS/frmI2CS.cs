@@ -54,9 +54,9 @@ namespace MPL115A2_I2CS
                 byte[] value = CommObj.Send(new byte[] {addr, 0x0}, 4);
                 if (value != null)
                 {
-                    int p = value[1] * 4  + value[0] / 64;
+                    int p = value[0] * 4  + value[1] / 64;
                     double P1 = p * 0.25;
-                    double t = (value[3] * 4 + value[2] / 64);
+                    double t = (value[2] * 4 + value[3] / 64);
                     lbT.Text = (t/10).ToString("F2");
 
                     double a0 = 2009.75;

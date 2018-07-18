@@ -510,19 +510,23 @@ Public Class frmLSA
 
         value = CommObj.Send(New Byte() {addr, 0}, 4)
         If Not (value Is Nothing) Then
-            Dim p As Int16 = value(1) * 4 + value(0) / 64
-            Dim p1 = p * 0.25
-            Dim t = value(3) * 4 + value(2) / 64
-            lbT.Text = (t / 10).ToString("F2")
+            If (value.Length = 4) Then
+                Dim p As Int16 = (value(0) * 256 + value(1)) / 64
+                Dim p1 = p * 0.25
+                Dim t = (value(2) * 256 + value(3)) / 64
+                'lbT.Text = (t / 10).ToString("F2")
+                lbT.Text = ((t - 498.0) / 5.35 + 25).ToString("F2")
 
-            Dim a0 = 2009.75
-            Dim b1 = -2.37585
-            Dim b2 = -0.92047
-            Dim c12 = 0.00079
+                Dim a0 = 2009.75
+                Dim b1 = -2.37585
+                Dim b2 = -0.92047
+                Dim c12 = 0.00079
 
-            Dim Pcomp = a0 + (b1 + c12 * t) * p + b2 * t
-            p1 = Pcomp * (115 - 50) / 1023 + 50
-            lbP.Text = p1.ToString("F2")
+                Dim Pcomp = a0 + (b1 + c12 * t) * p + b2 * t
+                p1 = Pcomp * (115 - 50) / 1023 + 50
+                lbP.Text = p1.ToString("F2")
+
+            End If
         End If
 
     End Sub

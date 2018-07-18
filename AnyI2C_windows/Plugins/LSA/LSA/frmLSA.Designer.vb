@@ -111,6 +111,10 @@ Partial Class frmLSA
         Me.GroupBox6.Controls.Add(Me.GroupBox1)
         Me.GroupBox6.Controls.Add(Me.btnPic)
         Me.GroupBox6.Controls.Add(Me.Label2)
+        Me.GroupBox6.Controls.Add(Me.TextBox1)
+        Me.GroupBox6.Controls.Add(Me.btnClear)
+        Me.GroupBox6.Controls.Add(Me.btnText)
+        Me.GroupBox6.Controls.Add(Me.Label1)
         Me.GroupBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox6.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox6.Name = "GroupBox6"
@@ -176,7 +180,7 @@ Partial Class frmLSA
         '
         Me.Label2.Location = New System.Drawing.Point(14, 151)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(269, 36)
+        Me.Label2.Size = New System.Drawing.Size(222, 36)
         Me.Label2.TabIndex = 504
         Me.Label2.Text = "The Screen can show picture of 128x64 pixels"
         Me.Label2.Visible = False
@@ -195,7 +199,7 @@ Partial Class frmLSA
         'btnClear
         '
         Me.btnClear.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.btnClear.Location = New System.Drawing.Point(338, 29)
+        Me.btnClear.Location = New System.Drawing.Point(251, 19)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(120, 23)
         Me.btnClear.TabIndex = 500
@@ -204,7 +208,7 @@ Partial Class frmLSA
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(342, 60)
+        Me.TextBox1.Location = New System.Drawing.Point(251, 48)
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(272, 117)
@@ -215,7 +219,7 @@ Partial Class frmLSA
         'btnText
         '
         Me.btnText.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.btnText.Location = New System.Drawing.Point(483, 29)
+        Me.btnText.Location = New System.Drawing.Point(384, 19)
         Me.btnText.Name = "btnText"
         Me.btnText.Size = New System.Drawing.Size(131, 23)
         Me.btnText.TabIndex = 502
@@ -224,7 +228,7 @@ Partial Class frmLSA
         '
         'Label1
         '
-        Me.Label1.Location = New System.Drawing.Point(345, 180)
+        Me.Label1.Location = New System.Drawing.Point(254, 168)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(269, 36)
         Me.Label1.TabIndex = 503
@@ -249,9 +253,9 @@ Partial Class frmLSA
         Me.GroupBox8.Controls.Add(Me.Channel2)
         Me.GroupBox8.Controls.Add(Me.C1)
         Me.GroupBox8.Controls.Add(Me.Channel1)
-        Me.GroupBox8.Location = New System.Drawing.Point(242, 21)
+        Me.GroupBox8.Location = New System.Drawing.Point(251, 21)
         Me.GroupBox8.Name = "GroupBox8"
-        Me.GroupBox8.Size = New System.Drawing.Size(395, 164)
+        Me.GroupBox8.Size = New System.Drawing.Size(390, 164)
         Me.GroupBox8.TabIndex = 506
         Me.GroupBox8.TabStop = False
         Me.GroupBox8.Text = "Control Output Channels"
@@ -805,15 +809,12 @@ Partial Class frmLSA
         Me.Controls.Add(Me.GroupBox5)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.GroupBox3)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.btnText)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.btnClear)
         Me.Controls.Add(Me._ERROR)
         Me.Controls.Add(Me.GroupBox6)
         Me.Name = "frmLSA"
         Me.Text = "SSD1306 I2COLED Control Panel"
         Me.GroupBox6.ResumeLayout(False)
+        Me.GroupBox6.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.Address, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox8.ResumeLayout(False)
@@ -835,7 +836,6 @@ Partial Class frmLSA
         Me.GroupBox15.ResumeLayout(False)
         Me.GroupBox15.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents GroupBox6 As System.Windows.Forms.GroupBox
