@@ -516,7 +516,7 @@ Public Class frmLSA
                 Dim p1 = p * 0.25
                 Dim t = (value(2) * 256 + value(3)) / 64
                 'lbT.Text = (t / 10).ToString("F2")
-                lbT.Text = ((t - 498.0) / 5.35 + 25).ToString("F2")
+                lbT.Text = ((t - 498.0) / (-5.35) + 25).ToString("F2")
 
                 Dim a0 = 2009.75
                 Dim b1 = -2.37585

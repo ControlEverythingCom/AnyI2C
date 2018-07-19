@@ -56,15 +56,16 @@ namespace MPL115A2_I2CS
                 {
                     int p = value[0] * 4  + value[1] / 64;
                     double P1 = p * 0.25;
-                    double t = (value[2] * 4 + value[3] / 64);
-                    lbT.Text = (t/10).ToString("F2");
+                    double t1 = (value[2] * 4 + value[3] / 64);
+                    double t2 = (t1 - 498) / (-5.35) + 25.0;
+                    lbT.Text = t2.ToString("F2");
 
                     double a0 = 2009.75;
                     double b1 = -2.37585;
                     double b2 = -0.92047;
                     double c12 = 0.000790;
 
-                    double Pcomp = a0 + (b1 + c12 * t) * p + b2 * t;
+                    double Pcomp = a0 + (b1 + c12 * t1) * p + b2 * t1;
                     P1 = Pcomp * (115 - 50) / 1023 + 50;
                     lbP.Text = P1.ToString("F2");
 
