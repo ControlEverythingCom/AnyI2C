@@ -28,7 +28,9 @@ namespace AnyI2cLib
 
         public void OpenSetting()
         {
+            mCom.LoadLastSetting();
              mCom.SettingPort();
+            mCom.SaveLastSetting();
         }
 
         /// <summary>
@@ -105,7 +107,7 @@ namespace AnyI2cLib
 
             for (byte i = 0; i < 128; i++)
             {
-                bool exist = Write(port, i, null);
+                bool exist = Write2(port, i, null);
                 if(exist)
                 {
                     devices.Add(i);
@@ -121,6 +123,35 @@ namespace AnyI2cLib
                 return mCom.IsOpen;
             }
         }
+
+        /// <summary>
+        /// User Version 3 I2C new command
+        /// </summary>
+        /// <param name="port"></param>
+        /// <param name="addr"></param>
+        /// <param name="dataLength"></param>
+        /// <returns></returns>
+        public byte[] ReadData2(byte port, byte addr, byte dataLength)
+        {
+
+            if (mCom.IsOpen)
+            {
+                byte[] data = new byte[5];
+                data[0] = 191;
+                data[1] = addr;
+                data[2] = dataLength;
+                WriteBytesAPI(data);
+                OnMyWriteData(this, data);
+                data = ReadBytesApi();
+                OnMyReadData(this, data);
+                if (data != null)
+                {
+                    return data;
+                }
+            }
+            return null;
+        }
+
 
         public byte[] ReadData(byte port, byte addr, byte dataLength)
         {
@@ -143,6 +174,46 @@ namespace AnyI2cLib
                 }
             }
             return null;
+        }
+
+        /// <summary>
+        /// User Version 3 I2C command. Ignore the port.
+        /// </summary>
+        /// <param name="port"></param>
+        /// <param name="addr"></param>
+        /// <param name="buffer"></param>
+        /// <returns></returns>
+        public bool Write2(byte port, byte addr, params byte[] buffer)
+        {
+            bool bRtn = false;
+            if (mCom.IsOpen)
+            {
+                int bufferLength = 0;
+                if (buffer != null)
+                {
+                    bufferLength = buffer.Length;
+                }
+                byte[] data = new byte[bufferLength + 2];
+                data[0] = 190;
+                data[1] = addr;
+                for (int i = 0; i < bufferLength; i++)
+                {
+                    data[2 + i] = buffer[i];
+                }
+                WriteBytesAPI(data);
+                OnMyWriteData(this, data);
+                data = ReadBytesApi();
+                OnMyReadData(this, data);
+                if (data != null)
+                {
+                    if (data[0] == 85)
+                    {
+                        bRtn = true;
+                    }
+                }
+            }
+
+            return bRtn;
         }
 
         public bool Write(byte port, byte addr, params byte[] buffer)

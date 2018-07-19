@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-  <Product Id="508905D3-EAA0-401E-972B-F913AEE2884A" Name="AnyI2C" Language="1033" Version="1.3.0" Manufacturer="Control Everything" UpgradeCode="A99DCE60-3D32-4C80-8164-B38AFB59319D">
+  <Product Id="508905D3-EAA0-401E-972B-F913AEE2884A" Name="AnyI2C" Language="1033" Version="1.4.0" Manufacturer="Control Everything" UpgradeCode="A99DCE60-3D32-4C80-8164-B38AFB59319D">
     <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
     <MajorUpgrade Schedule="afterInstallInitialize"
       DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
@@ -30,7 +30,7 @@
     <Directory Id="TARGETDIR" Name="SourceDir">
       <Directory Id="ProgramFilesFolder">
         <Directory Id="ManufactureerFolder" Name="Control Everything">
-          <Directory Id="INSTALLFOLDER" Name="AnyI2C V1.3">
+          <Directory Id="INSTALLFOLDER" Name="AnyI2C V1.4">
             <Component Id="AnyI2CExe" Guid="*">
               <File Id="AnyI2CExe" Name="AnyI2C.exe" DiskId="1" Source="AnyI2C.exe" KeyPath="yes">
                 <Shortcut Id="startmenuAnyI2cQuick" Directory="ProgramMenuFolder" Name="AnyI2C" Icon="AnyI2c.ico" IconIndex="0" WorkingDirectory="INSTALLFOLDER" Advertise="yes" />
@@ -42,8 +42,8 @@
               <File Id="AnyI2cIcon" Name="anyi2c.ico" DiskId="1" Source="anyi2c.ico" KeyPath="yes">
               </File>
             </Component>
-            <Component Id="NcdComponentDll" Guid="*">
-            <File Id="NcdComponentDll" Name="NcdComponent.dll" DiskId="1" Source="NcdComponent.dll" KeyPath="yes"></File>
+            <Component Id="NCDEnterprise" Guid="*">
+            <File Id="NCDEnterprise" Name="NCDEnterprise.dll" DiskId="1" Source="NCDEnterprise.dll" KeyPath="yes"></File>
             </Component>
 
             <Component Id="A1332_I2CSdll" Guid="*">
@@ -400,8 +400,8 @@
             <Component Id="PCA9536_I2CSdll" Guid="*">
               <File Id="PCA9536_I2CSdll" Name="PCA9536_I2CS.dll" DiskId="1" Source="PCA9536_I2CS.dll" KeyPath="yes"></File>
             </Component>
-            <Component Id="PCA9633_I2CSdll" Guid="*">
-              <File Id="PCA9633_I2CSdll" Name="PCA9633_I2CS.dll" DiskId="1" Source="PCA9633_I2CS.dll" KeyPath="yes"></File>
+            <Component Id="PCA9633_I2CPWMdll" Guid="*">
+              <File Id="PCA9633_I2CPWMdll" Name="PCA9633_I2CPWM.dll" DiskId="1" Source="PCA9633_I2CPWM.dll" KeyPath="yes"></File>
             </Component>
             <Component Id="PCA9685_I2CPWMdll" Guid="*">
               <File Id="PCA9685_I2CPWMdll" Name="PCA9685_I2CPWM.dll" DiskId="1" Source="PCA9685_I2CPWM.dll" KeyPath="yes"></File>
@@ -504,6 +504,9 @@
             </Component>
             <Component Id="VEML6070_I2CSdll" Guid="*">
               <File Id="VEML6070_I2CSdll" Name="VEML6070_I2CS.dll" DiskId="1" Source="VEML6070_I2CS.dll" KeyPath="yes"></File>
+            </Component>
+            <Component Id="LSAdll" Guid="*">
+              <File Id="LSAdll" Name="LSA.dll" DiskId="1" Source="LSA.dll" KeyPath="yes"></File>
             </Component>
 
 
@@ -903,8 +906,8 @@
               <Component Id="I2CS_PCA9536xml" Guid="*">
                 <File Id="I2CS_PCA9536xml" Name="I2CS_PCA9536.xml" DiskId="1" Source="Data\I2CS_PCA9536.xml" KeyPath="yes"></File>
               </Component>
-              <Component Id="I2CS_PCA9633xml" Guid="*">
-                <File Id="I2CS_PCA9633xml" Name="I2CS_PCA9633.xml" DiskId="1" Source="Data\I2CS_PCA9633.xml" KeyPath="yes"></File>
+              <Component Id="I2CPWM_PCA9633xml" Guid="*">
+                <File Id="I2CPWM_PCA9633xml" Name="I2CPWM_PCA9633.xml" DiskId="1" Source="Data\I2CPWM_PCA9633.xml" KeyPath="yes"></File>
               </Component>
               <Component Id="I2CS_SHT25xml" Guid="*">
                 <File Id="I2CS_SHT25xml" Name="I2CS_SHT25.xml" DiskId="1" Source="Data\I2CS_SHT25.xml" KeyPath="yes"></File>
@@ -1008,6 +1011,9 @@
               <Component Id="I2CS_VEML6070xml" Guid="*">
                 <File Id="I2CS_VEML6070xml" Name="I2CS_VEML6070.xml" DiskId="1" Source="Data\I2CS_VEML6070.xml" KeyPath="yes"></File>
               </Component>
+              <Component Id="LSAxml" Guid="*">
+                <File Id="LSAxml" Name="LSA.xml" DiskId="1" Source="Data\LSA.xml" KeyPath="yes"></File>
+              </Component>
 
 
 
@@ -1030,7 +1036,7 @@
     <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
       <ComponentRef Id="AnyI2CExe" />
       <ComponentRef Id="AnyI2cIcon" />
-      <ComponentRef Id="NcdComponentDll" />
+      <ComponentRef Id="NCDEnterprise" />
 
       <ComponentRef Id="ProgramMenuDir" />
 
@@ -1152,7 +1158,7 @@
       <ComponentRef Id="PCA9530_I2CSdll" />
       <ComponentRef Id="PCA9531_I2CPWMdll" />
       <ComponentRef Id="PCA9536_I2CSdll" />
-      <ComponentRef Id="PCA9633_I2CSdll" />
+      <ComponentRef Id="PCA9633_I2CPWMdll" />
       <ComponentRef Id="PCA9685_I2CPWMdll" />
       <ComponentRef Id="SHT25_I2CSdll" />
       <ComponentRef Id="SHT3x_I2CSdll" />
@@ -1187,6 +1193,8 @@
       <ComponentRef Id="TSL45315_I2CSdll" />
       <ComponentRef Id="VCNL4010_I2CSdll" />
       <ComponentRef Id="VEML6070_I2CSdll" />
+      <ComponentRef Id="LSAdll" />
+
       <ComponentRef Id="I2CADC_AD5669xml" />
       <ComponentRef Id="I2CADC_AD7999xml" />
       <ComponentRef Id="I2CADC_ADC081Cxml" />
@@ -1318,7 +1326,7 @@
       <ComponentRef Id="I2CS_MXC6232xMxml" />
       <ComponentRef Id="I2CS_PCA9531xml" />
       <ComponentRef Id="I2CS_PCA9536xml" />
-      <ComponentRef Id="I2CS_PCA9633xml" />
+      <ComponentRef Id="I2CPWM_PCA9633xml" />
       <ComponentRef Id="I2CS_SHT25xml" />
       <ComponentRef Id="I2CS_SHT3xxml" />
       <ComponentRef Id="I2CS_SI1132xml" />
@@ -1353,6 +1361,8 @@
       <ComponentRef Id="I2CS_TSL27721xml" />
       <ComponentRef Id="I2CS_TSL45315xml" />
       <ComponentRef Id="I2CS_VEML6070xml" />
+
+      <ComponentRef Id="LSAxml" />
 
     </ComponentGroup>
   </Fragment>

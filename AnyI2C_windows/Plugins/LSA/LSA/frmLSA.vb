@@ -39,8 +39,9 @@ Public Class frmLSA
             Write_IIC_Command(&HB0 + i) 'page0-page1
             Write_IIC_Command(&H0)          'low column start address
             Write_IIC_Command(&H10) 'high column start address
-            For j = 1 To 16
-                WriteI2cData(0, 0, 0, 0, 0, 0, 0, 0) ' update 8 bytes one time to improve the speed
+            For j = 1 To 8
+                WriteI2cData(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0) '
+                '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0) ' update 8 bytes one time to improve the speed
             Next
         Next
     End Sub

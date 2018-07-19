@@ -266,7 +266,7 @@ namespace AnyI2C
                     {
                         LogText(sb.ToString());
                     }
-                    bool b = mBridge.Write((byte)numPort.Value, ctlI2CAddress1.Addr7, mData.Content);
+                    bool b = mBridge.Write2((byte)numPort.Value, ctlI2CAddress1.Addr7, mData.Content);
                     if(!b)
                     {
                         LogText("Write Data Fail");
@@ -276,7 +276,7 @@ namespace AnyI2C
 
                 if (chkRead.Checked)
                 {
-                    byte[] readData = mBridge.ReadData((byte)numPort.Value, ctlI2CAddress1.Addr7, (byte)numReadLength.Value);
+                    byte[] readData = mBridge.ReadData2((byte)numPort.Value, ctlI2CAddress1.Addr7, (byte)numReadLength.Value);
                     if (readData != null)
                     {
                         StringBuilder sb = new StringBuilder();
@@ -736,7 +736,7 @@ namespace AnyI2C
                     {
                         LogText(sb.ToString());
                     }
-                    if (!mBridge.Write((byte)numPort.Value, mData.Address, mData.Content))
+                    if (!mBridge.Write2((byte)numPort.Value, mData.Address, mData.Content))
                     {
                         //OnWriteDataError();
                         throw new Exception("On Write Data Error");
@@ -747,7 +747,7 @@ namespace AnyI2C
                 {
                     try
                     {
-                        byte[] readData = mBridge.ReadData((byte)numPort.Value, ctlI2CAddress1.Addr7, (byte)numReadLength.Value);
+                        byte[] readData = mBridge.ReadData2((byte)numPort.Value, ctlI2CAddress1.Addr7, (byte)numReadLength.Value);
                         if (IsFail(readData))
                         {
                             LogText("Read Data Fail");
