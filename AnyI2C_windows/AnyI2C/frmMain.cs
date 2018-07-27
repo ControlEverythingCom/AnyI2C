@@ -505,13 +505,17 @@ namespace AnyI2C
         private void LoadDevicesConfigure()
         {
             mDevices = new DevicesCollection();
-            lstDevices.Items.Clear();
+            listViewDevices.Items.Clear();
+            
             mDevices.LoadAllDevices();
             foreach (DeviceConfig dev in mDevices.Devices)
             {
-                lstDevices.Items.Add(dev.Name);
+                ListViewItem item = new ListViewItem();
+                item.Text = dev.Type;
+                item.SubItems.Add(dev.Name);
+                listViewDevices.Items.Add(item);
             }
-            lbDevices.Text = string.Format("Devices ({0})", lstDevices.Items.Count);
+            lbDevices.Text = string.Format("Devices ({0})", listViewDevices.Items.Count);
             if (mDevices.Devices.Length > 0)
             {
                 FillCommandsTree(mDevices.Devices[0]);
@@ -587,17 +591,6 @@ namespace AnyI2C
                 nd.Text = cmd.ToString();
             }
             return nd;
-        }
-
-        private void lstDevices_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int id = lstDevices.SelectedIndex;
-            if (id != -1)
-            {
-                DeviceConfig dev = (DeviceConfig)(mDevices.Devices[id]);
-                FillCommandsTree(dev);
-                FillProperties(dev);
-            }
         }
 
         private void tvCommands_DoubleClick(object sender, EventArgs e)
@@ -935,6 +928,25 @@ namespace AnyI2C
         public void SetPort(byte port)
         {
             numPort.Value = port;
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            // Apply the filter to list
+        }
+
+        private void listViewDevices_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(listViewDevices.SelectedIndices.Count > 0)
+            {
+                int id = listViewDevices.SelectedIndices[0];
+                if (id != -1)
+                {
+                    DeviceConfig dev = (DeviceConfig)(mDevices.Devices[id]);
+                    FillCommandsTree(dev);
+                    FillProperties(dev);
+                }
+            }
         }
     }
 

@@ -1,7 +1,7 @@
 ﻿<DeviceConfig>
-	<Type>I2CIO7R1_MCP23008</Type>
-	<path>I2CIO7R1_MCP23008.xml</path>
-	<Name>I2CIO7R1_MCP23008</Name>
+	<Type>PR1-12</Type>
+	<path>PR1-12.xml</path>
+	<Name>1-Channel General Purpose SPDT Relay Controller + 7 GPIO with I2C Interface</Name>
 	<Manufactory></Manufactory>
 	<Address>32</Address>
 	<AddressCollection>

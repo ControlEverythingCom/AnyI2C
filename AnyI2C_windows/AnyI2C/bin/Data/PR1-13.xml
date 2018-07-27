@@ -1,7 +1,7 @@
 <DeviceConfig>
-	<Type>8-Bit I/O Expander with Serial Interface</Type>
-	<path>I2CR8G5LE_MCP23008.xml</path>
-	<Name>I2CR8G5LE_MCP23008</Name>
+	<Type>PR1-13</Type>
+	<path>PR1-13.xml</path>
+	<Name>8-Channel General Purpose SPDT Relay Controller with I2C Interface</Name>
 	<Manufactory>Microchip</Manufactory>
 	<Address>32</Address>
 	<AddressCollection>

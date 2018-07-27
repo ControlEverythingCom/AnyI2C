@@ -32,7 +32,6 @@
             this.cmbI2CBridge = new System.Windows.Forms.ComboBox();
             this.label26 = new System.Windows.Forms.Label();
             this.btnOpen = new System.Windows.Forms.Button();
-            this.lstDevices = new System.Windows.Forms.ListBox();
             this.tvCommands = new System.Windows.Forms.TreeView();
             this.txtLog = new System.Windows.Forms.TextBox();
             this.cmbShowFormat = new System.Windows.Forms.ComboBox();
@@ -65,6 +64,12 @@
             this.lbInfo = new AnyI2C.NumLabel();
             this.ctlI2CAddress1 = new AnyI2C.Controls.I2C.ctlI2CAddress();
             this.lbConnection = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cmbFilter = new System.Windows.Forms.ComboBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.listViewDevices = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.numReadLength)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPort)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -104,20 +109,11 @@
             this.btnOpen.UseVisualStyleBackColor = true;
             this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
-            // lstDevices
-            // 
-            this.lstDevices.FormattingEnabled = true;
-            this.lstDevices.Location = new System.Drawing.Point(19, 66);
-            this.lstDevices.Name = "lstDevices";
-            this.lstDevices.Size = new System.Drawing.Size(433, 251);
-            this.lstDevices.TabIndex = 9;
-            this.lstDevices.SelectedIndexChanged += new System.EventHandler(this.lstDevices_SelectedIndexChanged);
-            // 
             // tvCommands
             // 
-            this.tvCommands.Location = new System.Drawing.Point(8, 17);
+            this.tvCommands.Location = new System.Drawing.Point(7, 19);
             this.tvCommands.Name = "tvCommands";
-            this.tvCommands.Size = new System.Drawing.Size(433, 253);
+            this.tvCommands.Size = new System.Drawing.Size(433, 187);
             this.tvCommands.TabIndex = 10;
             this.tvCommands.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvCommands_AfterSelect);
             this.tvCommands.DoubleClick += new System.EventHandler(this.tvCommands_DoubleClick);
@@ -219,7 +215,7 @@
             // lbDevices
             // 
             this.lbDevices.AutoSize = true;
-            this.lbDevices.Location = new System.Drawing.Point(16, 48);
+            this.lbDevices.Location = new System.Drawing.Point(18, 43);
             this.lbDevices.Name = "lbDevices";
             this.lbDevices.Size = new System.Drawing.Size(41, 13);
             this.lbDevices.TabIndex = 38;
@@ -364,9 +360,9 @@
             // 
             this.groupBox2.Controls.Add(this.lbCommandDes);
             this.groupBox2.Controls.Add(this.tvCommands);
-            this.groupBox2.Location = new System.Drawing.Point(11, 333);
+            this.groupBox2.Location = new System.Drawing.Point(12, 431);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(451, 315);
+            this.groupBox2.Size = new System.Drawing.Size(451, 217);
             this.groupBox2.TabIndex = 45;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Commands";
@@ -436,10 +432,74 @@
             this.lbConnection.TabIndex = 7;
             this.lbConnection.Text = "Click Open to Open the Connection";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(619, 17);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(29, 13);
+            this.label2.TabIndex = 48;
+            this.label2.Text = "Filter";
+            this.label2.Visible = false;
+            // 
+            // cmbFilter
+            // 
+            this.cmbFilter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cmbFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbFilter.DropDownWidth = 400;
+            this.cmbFilter.FormattingEnabled = true;
+            this.cmbFilter.Items.AddRange(new object[] {
+            "*"});
+            this.cmbFilter.Location = new System.Drawing.Point(686, 14);
+            this.cmbFilter.Name = "cmbFilter";
+            this.cmbFilter.Size = new System.Drawing.Size(197, 21);
+            this.cmbFilter.TabIndex = 47;
+            this.cmbFilter.Visible = false;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(897, 12);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(67, 23);
+            this.btnSearch.TabIndex = 49;
+            this.btnSearch.Text = "Search...";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Visible = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // listViewDevices
+            // 
+            this.listViewDevices.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2});
+            this.listViewDevices.FullRowSelect = true;
+            this.listViewDevices.HideSelection = false;
+            this.listViewDevices.Location = new System.Drawing.Point(19, 79);
+            this.listViewDevices.MultiSelect = false;
+            this.listViewDevices.Name = "listViewDevices";
+            this.listViewDevices.Size = new System.Drawing.Size(433, 346);
+            this.listViewDevices.TabIndex = 50;
+            this.listViewDevices.UseCompatibleStateImageBehavior = false;
+            this.listViewDevices.View = System.Windows.Forms.View.Details;
+            this.listViewDevices.SelectedIndexChanged += new System.EventHandler(this.listViewDevices_SelectedIndexChanged);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "SKU";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Title";
+            this.columnHeader2.Width = 409;
+            // 
             // frmMain
             // 
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(923, 774);
+            this.Controls.Add(this.listViewDevices);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.cmbFilter);
             this.Controls.Add(this.cmbLogDataType);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -463,7 +523,6 @@
             this.Controls.Add(this.txtQuickSend);
             this.Controls.Add(this.ctlI2CAddress1);
             this.Controls.Add(this.txtLog);
-            this.Controls.Add(this.lstDevices);
             this.Controls.Add(this.btnScan);
             this.Controls.Add(this.btnOpen);
             this.Controls.Add(this.cmbI2CBridge);
@@ -494,7 +553,6 @@
         private System.Windows.Forms.ComboBox cmbI2CBridge;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Button btnOpen;
-        private System.Windows.Forms.ListBox lstDevices;
         private System.Windows.Forms.TreeView tvCommands;
         private System.Windows.Forms.TextBox txtLog;
         private AnyI2C.Controls.I2C.ctlI2CAddress ctlI2CAddress1;
@@ -527,6 +585,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Label lbConnection;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cmbFilter;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.ListView listViewDevices;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
     }
 }
 

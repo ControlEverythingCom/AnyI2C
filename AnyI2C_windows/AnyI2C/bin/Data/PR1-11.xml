@@ -1,7 +1,7 @@
 ﻿<DeviceConfig>
-	<Type>I2CIO4R4_MCP23008</Type>
-	<path>I2CIO4R4_MCP23008.xml</path>
-	<Name>I2CIO4R4_MCP23008</Name>
+	<Type>PR1-11</Type>
+	<path>I2CIO6R2_MCP23008.xml</path>
+	<Name>2-Channel General Purpose SPDT Relay Controller + 6 GPIO with I2C Interface</Name>
 	<Manufactory></Manufactory>
 	<Address>32</Address>
 	<AddressCollection>
@@ -22,7 +22,7 @@
 			<Description>Init Device</Description>
 			<Data>
 				<Value>0</Value>
-				<Value>240</Value>
+				<Value>252</Value>
 			</Data>
 			<ReadDataLength>0</ReadDataLength>
 		</DeviceCommand>
@@ -65,42 +65,6 @@
 				</Data>
 				<ReadDataLength>0</ReadDataLength>
 			</DeviceCommand>
-			<DeviceCommand>
-				<Name>Turn On Relay 3</Name>
-				<Description>Turn On Relay 3</Description>
-				<Data>
-					<Value>9</Value>
-					<Value>4</Value>
-				</Data>
-				<ReadDataLength>0</ReadDataLength>
-			</DeviceCommand>
-			<DeviceCommand>
-				<Name>Turn Off Relay 3</Name>
-				<Description>Turn Off Relay 3</Description>
-				<Data>
-					<Value>9</Value>
-					<Value>0</Value>
-				</Data>
-				<ReadDataLength>0</ReadDataLength>
-			</DeviceCommand>
-			<DeviceCommand>
-				<Name>Turn On Relay 4</Name>
-				<Description>Turn On Relay 4</Description>
-				<Data>
-					<Value>9</Value>
-					<Value>8</Value>
-				</Data>
-				<ReadDataLength>0</ReadDataLength>
-			</DeviceCommand>
-			<DeviceCommand>
-				<Name>Turn Off Relay 4</Name>
-				<Description>Turn Off Relay 4</Description>
-				<Data>
-					<Value>9</Value>
-					<Value>0</Value>
-				</Data>
-				<ReadDataLength>0</ReadDataLength>
-			</DeviceCommand>
 		</DeviceCommandsGroup>
 	
 		<DeviceCommandsGroup>
@@ -121,8 +85,8 @@
 			<DeviceGUICommand>
 				<Name>GUI</Name>
 				<Description>GUI</Description>
-				<GUIPath>MCP23008_I2CIO4R4.dll</GUIPath>
-				<TypeName>MCP23008_I2CIO4R4.MyGUI</TypeName>
+				<GUIPath>MCP23008_I2CIO6R2.dll</GUIPath>
+				<TypeName>MCP23008_I2CIO6R2.MyGUI</TypeName>
 			</DeviceGUICommand>
 		</DeviceCommandsGroup>
 
