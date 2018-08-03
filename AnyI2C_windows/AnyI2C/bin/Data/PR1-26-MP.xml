@@ -1,0 +1,118 @@
+﻿<DeviceConfig>
+	<Type>PR1-26-MP</Type>
+	<path>PR1-26-MP.xml</path>
+	<Name>Analog Devices AD5254 Digital Potentiometer 4-Channel 256-Position I2C Mini Module</Name>
+	<Manufactory>Analog Devices</Manufactory>
+	<Address>44</Address>
+	<AddressCollection>
+		<Address>44</Address>
+		<Address>45</Address>
+		<Address>46</Address>
+		<Address>47</Address>
+	</AddressCollection>
+	<Commands>
+<!-- 		<Name>Init</Name>
+		<Description>Initial device</Description>
+		<DeviceCommand>
+			<Name>test</Name>
+			<Description>test des</Description>
+			<Data>
+				<Value>22</Value>
+				<Value>33</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>
+		</DeviceCommand>
+ -->		
+		<DeviceCommandsGroup>
+			<Name>Channel 1</Name>
+			<Description> Channel 1</Description>
+			<DeviceCommand>
+				<Name>Set To 0</Name>
+				<Description>Set To 0</Description>
+				<Data>
+					<Value>0</Value>
+					<Value>0</Value>
+				</Data>
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>Set To 255</Name>
+				<Description>Set To 255</Description>
+				<Data>
+					<Value>0</Value>
+					<Value>255</Value>
+				</Data>
+			</DeviceCommand>
+		</DeviceCommandsGroup>
+		<DeviceCommandsGroup>
+			<Name>Channel 2</Name>
+			<Description> Channel 2</Description>
+			<DeviceCommand>
+				<Name>Set To 0</Name>
+				<Description>Set To 0</Description>
+				<Data>
+					<Value>1</Value>
+					<Value>0</Value>
+				</Data>
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>Set To 255</Name>
+				<Description>Set To 255</Description>
+				<Data>
+					<Value>1</Value>
+					<Value>255</Value>
+				</Data>
+			</DeviceCommand>
+		</DeviceCommandsGroup>
+		<DeviceCommandsGroup>
+			<Name>Channel 3</Name>
+			<Description> Channel 3</Description>
+			<DeviceCommand>
+				<Name>Set To 0</Name>
+				<Description>Set To 0</Description>
+				<Data>
+					<Value>2</Value>
+					<Value>0</Value>
+				</Data>
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>Set To 255</Name>
+				<Description>Set To 255</Description>
+				<Data>
+					<Value>2</Value>
+					<Value>255</Value>
+				</Data>
+			</DeviceCommand>
+		</DeviceCommandsGroup>
+		<DeviceCommandsGroup>
+			<Name>Channel 4</Name>
+			<Description> Channel 4</Description>
+			<DeviceCommand>
+				<Name>Set To 0</Name>
+				<Description>Set To 0</Description>
+				<Data>
+					<Value>3</Value>
+					<Value>0</Value>
+				</Data>
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>Set To 255</Name>
+				<Description>Set To 255</Description>
+				<Data>
+					<Value>3</Value>
+					<Value>255</Value>
+				</Data>
+			</DeviceCommand>
+		</DeviceCommandsGroup>
+
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>AD5254_I2CPOT.dll</GUIPath>
+				<TypeName>AD5254_I2CPOT.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>
+	</Commands>
+</DeviceConfig>
