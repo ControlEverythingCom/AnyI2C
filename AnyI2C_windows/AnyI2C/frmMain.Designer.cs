@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.cmbI2CBridge = new System.Windows.Forms.ComboBox();
             this.label26 = new System.Windows.Forms.Label();
@@ -70,6 +71,7 @@
             this.listViewDevices = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ncdController1 = new NCDEnterprise.NCDController(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.numReadLength)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPort)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -492,6 +494,19 @@
             this.columnHeader2.Text = "Title";
             this.columnHeader2.Width = 409;
             // 
+            // ncdController1
+            // 
+            this.ncdController1.BaudRate = 115200;
+            this.ncdController1.IPAddress = "192.168.0.104";
+            this.ncdController1.IsTwoWay = true;
+            this.ncdController1.Port = 2101;
+            this.ncdController1.PortName = "COM3";
+            this.ncdController1.ReadTimeOut = 100;
+            this.ncdController1.RemoteWirelessNode = false;
+            this.ncdController1.UsingComPort = true;
+            this.ncdController1.WirelessDestHigh = 1286656;
+            this.ncdController1.WirelessDestLow = 1087253810;
+            // 
             // frmMain
             // 
             this.AutoSize = true;
@@ -591,6 +606,7 @@
         private System.Windows.Forms.ListView listViewDevices;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
+        private NCDEnterprise.NCDController ncdController1;
     }
 }
 

@@ -191,7 +191,6 @@ namespace AnyI2C
 
         private void btnOpen_Click(object sender, EventArgs e)
         {
-
             OpenI2CAdapter();
         }
 
