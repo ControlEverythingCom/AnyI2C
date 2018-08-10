@@ -1,14 +1,13 @@
 ﻿<DeviceConfig>
-	<Type>PR1-31-MP</Type>
-	<path>PR1-31-MP.xml</path>
-	<Name>Analog Devices AD5252 Digital Potentiometer 2-Channel 256-Position I2C Mini Module</Name>
-	<Manufactory></Manufactory>
-	<Address>44</Address>
+	<Type>PR1-41</Type>
+	<path>PR1-41.xml</path>
+	<Name>AD5667 16-Bit 2-Channel Digital to Analog Converter I2C Mini Module</Name>
+	<Manufactory>Analog Devices</Manufactory>
+	<Address>14</Address>
 	<AddressCollection>
-		<Address>44</Address>
-		<Address>45</Address>
-		<Address>46</Address>
-		<Address>47</Address>
+		<Address>14</Address>
+		<Address>15</Address>
+		<Address>16</Address>
 	</AddressCollection>
 	<Commands>
 <!-- 		<Name>Init</Name>
@@ -24,45 +23,50 @@
 		</DeviceCommand>
  -->		
 		<DeviceCommandsGroup>
-			<Name>Channel 1</Name>
-			<Description> Channel 1</Description>
+			<Name>DAC A</Name>
+			<Description>DAC A</Description>
 			<DeviceCommand>
 				<Name>Set To 0</Name>
 				<Description>Set To 0</Description>
 				<Data>
+					<Value>24</Value>
 					<Value>0</Value>
 					<Value>0</Value>
 				</Data>
 			</DeviceCommand>
 			<DeviceCommand>
-				<Name>Set To 255</Name>
-				<Description>Set To 255</Description>
+				<Name>Set To Max Value</Name>
+				<Description>Set To 65535</Description>
 				<Data>
-					<Value>0</Value>
+					<Value>24</Value>
+					<Value>255</Value>
 					<Value>255</Value>
 				</Data>
 			</DeviceCommand>
 		</DeviceCommandsGroup>
 		<DeviceCommandsGroup>
-			<Name>Channel 2</Name>
-			<Description> Channel 2</Description>
+			<Name>DAC B</Name>
+			<Description>DAC B</Description>
 			<DeviceCommand>
 				<Name>Set To 0</Name>
 				<Description>Set To 0</Description>
 				<Data>
-					<Value>1</Value>
+					<Value>25</Value>
+					<Value>0</Value>
 					<Value>0</Value>
 				</Data>
 			</DeviceCommand>
 			<DeviceCommand>
-				<Name>Set To 255</Name>
-				<Description>Set To 255</Description>
+				<Name>Set To Max Value</Name>
+				<Description>Set To 65535</Description>
 				<Data>
-					<Value>1</Value>
+					<Value>25</Value>
+					<Value>255</Value>
 					<Value>255</Value>
 				</Data>
 			</DeviceCommand>
 		</DeviceCommandsGroup>
+
 
 		<DeviceCommandsGroup>
 			<Name>GUI</Name>
@@ -70,8 +74,8 @@
 			<DeviceGUICommand>
 				<Name>GUI</Name>
 				<Description>GUI</Description>
-				<GUIPath>AD5252_I2CPOT.dll</GUIPath>
-				<TypeName>AD5252_I2CPOT.MyGUI</TypeName>
+				<GUIPath>AD5667_I2CDAC.dll</GUIPath>
+				<TypeName>AD5667_I2CDAC.MyGUI</TypeName>
 			</DeviceGUICommand>
 		</DeviceCommandsGroup>
 	</Commands>

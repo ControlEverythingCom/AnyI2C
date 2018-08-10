@@ -1,0 +1,43 @@
+﻿<DeviceConfig>
+	<Type>PR1-47</Type>
+	<path>PR1-47.xml</path>
+	<Name>MCP3427 16-Bit 2-Channel Analog to Digital Converter I2C Mini Module</Name>
+	<Manufactory></Manufactory>
+	<Address>104</Address>
+	<AddressCollection>
+		<Address>104</Address>
+		<Address>105</Address>
+		<Address>106</Address>
+		<Address>107</Address>
+		<Address>108</Address>
+		<Address>109</Address>
+		<Address>110</Address>
+		<Address>111</Address>
+	</AddressCollection>
+	<Commands>
+		<Name>AD Commands</Name>
+		<Description>AD Commands</Description>
+		<DeviceCommand>
+			<Name>Read Ch 0</Name>
+			<Description>Read Channel 0</Description>
+			<Data>
+				<Value>152</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Ch 1</Name>
+			<Description>Read Channel 1</Description>
+			<Data>
+				<Value>184</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>
+		</DeviceCommand>
+		<DeviceGUICommand>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<GUIPath>MCP3426_I2CADC.dll</GUIPath>
+			<TypeName>MCP3426_I2CADC.MyGUI</TypeName>
+		</DeviceGUICommand>
+	</Commands>
+</DeviceConfig>

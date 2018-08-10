@@ -1,7 +1,7 @@
 ﻿<DeviceConfig>
 	<Type>PR1-40</Type>
 	<path>PR1-40.xml</path>
-	<Name>I2CADC_AD5696</Name>
+	<Name>AD5696 16-Bit 4-Channel Digital to Analog Converter I2C Mini Module</Name>
 	<Manufactory>Analog Devices</Manufactory>
 	<Address>72</Address>
 	<AddressCollection>

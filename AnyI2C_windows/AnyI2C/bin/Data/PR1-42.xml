@@ -1,14 +1,14 @@
 ﻿<DeviceConfig>
-	<Type>PR1-38-MP</Type>
-	<path>PR1-38-MP.xml</path>
-	<Name>Analog Devices AD5259 Digital Potentiometer 1-Channel 256-Position I2C Mini Module</Name>
-	<Manufactory></Manufactory>
-	<Address>44</Address>
+	<Type>PR1-42</Type>
+	<path>PR1-42.xml</path>
+	<Name>AD5693 16-Bit 1-Channel Digital to Analog Converter I2C Mini Module</Name>
+	<Manufactory>Analog Devices</Manufactory>
+	<Address>76</Address>
 	<AddressCollection>
-		<Address>44</Address>
-		<Address>45</Address>
-		<Address>46</Address>
-		<Address>47</Address>
+		<Address>76</Address>
+		<Address>77</Address>
+		<Address>78</Address>
+		<Address>79</Address>
 	</AddressCollection>
 	<Commands>
 <!-- 		<Name>Init</Name>
@@ -24,25 +24,28 @@
 		</DeviceCommand>
  -->		
 		<DeviceCommandsGroup>
-			<Name>Channel 1</Name>
-			<Description> Channel 1</Description>
+			<Name>DAC</Name>
+			<Description> DAC</Description>
 			<DeviceCommand>
 				<Name>Set To 0</Name>
 				<Description>Set To 0</Description>
 				<Data>
+					<Value>48</Value>
 					<Value>0</Value>
 					<Value>0</Value>
 				</Data>
 			</DeviceCommand>
 			<DeviceCommand>
-				<Name>Set To 255</Name>
-				<Description>Set To 255</Description>
+				<Name>Set To Max Value</Name>
+				<Description>Set To 65535</Description>
 				<Data>
-					<Value>0</Value>
+					<Value>48</Value>
+					<Value>255</Value>
 					<Value>255</Value>
 				</Data>
 			</DeviceCommand>
 		</DeviceCommandsGroup>
+
 
 		<DeviceCommandsGroup>
 			<Name>GUI</Name>
@@ -50,8 +53,8 @@
 			<DeviceGUICommand>
 				<Name>GUI</Name>
 				<Description>GUI</Description>
-				<GUIPath>AD5259_I2CPOT.dll</GUIPath>
-				<TypeName>AD5259_I2CPOT.MyGUI</TypeName>
+				<GUIPath>AD5693_I2CDAC.dll</GUIPath>
+				<TypeName>AD5693_I2CDAC.MyGUI</TypeName>
 			</DeviceGUICommand>
 		</DeviceCommandsGroup>
 	</Commands>

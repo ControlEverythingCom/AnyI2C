@@ -1,0 +1,28 @@
+﻿<DeviceConfig>
+	<Type>PR1-49</Type>
+	<path>PR1-49.xml</path>
+	<Name>MCP3425 16-Bit 1-Channel Analog to Digital Converter I2C Mini Module</Name>
+	<Manufactory></Manufactory>
+	<Address>104</Address>
+	<AddressCollection>
+		<Address>104</Address>
+	</AddressCollection>
+	<Commands>
+		<Name>AD Commands</Name>
+		<Description>AD Commands</Description>
+		<DeviceCommand>
+			<Name>Read Input Value</Name>
+			<Description>Read Input Value</Description>
+			<Data>
+				<Value>152</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>
+		</DeviceCommand>
+		<DeviceGUICommand>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<GUIPath>MCP3425_I2CADC.dll</GUIPath>
+			<TypeName>MCP3425_I2CADC.MyGUI</TypeName>
+		</DeviceGUICommand>
+	</Commands>
+</DeviceConfig>

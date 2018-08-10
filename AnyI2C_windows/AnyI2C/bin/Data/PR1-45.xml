@@ -1,0 +1,35 @@
+﻿<DeviceConfig>
+	<Type>PR1-45</Type>
+	<path>PR1-45.xml</path>
+	<Name>ADC081C 8-Bit 1-Channel High-Speed Analog to Digital Converter I2C Mini Module</Name>
+	<Manufactory></Manufactory>
+	<Address>80</Address>
+	<AddressCollection>
+		<Address>80</Address>
+		<Address>81</Address>
+		<Address>82</Address>
+		<Address>83</Address>
+		<Address>84</Address>
+		<Address>85</Address>
+		<Address>86</Address>
+		<Address>87</Address>
+	</AddressCollection>
+	<Commands>
+		<Name>AD Commands</Name>
+		<Description>AD Commands</Description>
+		<DeviceCommand>
+			<Name>Read Ch </Name>
+			<Description>Read Channel </Description>
+			<Data>
+				<Value>0</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>
+		</DeviceCommand>
+		<DeviceGUICommand>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<GUIPath>ADC081C_I2CADC.dll</GUIPath>
+			<TypeName>ADC081C_I2CADC.MyGUI</TypeName>
+		</DeviceGUICommand>
+	</Commands>
+</DeviceConfig>
