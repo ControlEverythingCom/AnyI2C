@@ -1,0 +1,275 @@
+﻿<DeviceConfig>
+	<Type>PR2-7</Type>
+	<path>PR2-7.xml</path>
+	<Name>8-Channel Analog to Digital Converter 12-Bit + 8-Channel Digital IO + 8-Channel Open Collector with I2C Interface</Name>
+	<Manufactory>TI</Manufactory>
+	<Address>72</Address>
+	<AddressCollection>
+		<Address>72</Address>
+		<Address>73</Address>
+		<Address>74</Address>
+		<Address>75</Address>
+	</AddressCollection>
+	<Commands>
+		<Name>AD8 Commands</Name>
+		<Description>AD8 Commands</Description>
+		<DeviceCommand>
+			<Name>Read Ch 0</Name>
+			<Description>Read Channel 0</Description>
+			<Data>
+				<Value>128</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Ch 1</Name>
+			<Description>Read Channel 1</Description>
+			<Data>
+				<Value>192</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Ch 2</Name>
+			<Description>Read Channel 2</Description>
+			<Data>
+				<Value>144</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Ch 3</Name>
+			<Description>Read Channel 3</Description>
+			<Data>
+				<Value>208</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Ch 4</Name>
+			<Description>Read Channel 4</Description>
+			<Data>
+				<Value>160</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Ch 5</Name>
+			<Description>Read Channel 5</Description>
+			<Data>
+				<Value>224</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Ch 6</Name>
+			<Description>Read Channel 6</Description>
+			<Data>
+				<Value>176</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Ch 7</Name>
+			<Description>Read Channel 7</Description>
+			<Data>
+				<Value>240</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>
+		</DeviceCommand>
+
+		<DeviceCommand>
+			<Name>Init Bank 1</Name>
+			<Description>Init Bank 1</Description>
+			<Data>
+				<Value>0</Value>
+				<Value>00</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Initial Bank 2</Name>
+			<Description>Init Bank 2</Description>
+			<Data>
+				<Value>1</Value>
+				<Value>00</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>Test Relays in Bank 1</Name>
+			<Description>Test Relays in Bank 1</Description>
+
+			<DeviceCommand>
+				<Name>Turn On Relay 1 in Bank 1</Name>
+				<Description>Turn On Relay 1 in Bank 1</Description>
+				<Data>
+					<Value>18</Value>
+					<Value>1</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>Turn Off Relay 1 in Bank 1</Name>
+				<Description>Turn Off Relay 1 in Bank 1</Description>
+				<Data>
+					<Value>18</Value>
+					<Value>0</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>
+			</DeviceCommand>
+
+			<DeviceCommand>
+				<Name>Turn On Relay 2 in Bank 1</Name>
+				<Description>Turn On Relay 2 in Bank 1</Description>
+				<Data>
+					<Value>18</Value>
+					<Value>2</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>Turn Off Relay 2 in Bank 1</Name>
+				<Description>Turn Off Relay 2 in Bank 1</Description>
+				<Data>
+					<Value>18</Value>
+					<Value>0</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>
+			</DeviceCommand>
+
+			<DeviceCommand>
+				<Name>Turn On Relay 3 in Bank 1</Name>
+				<Description>Turn On Relay 3 in Bank 1</Description>
+				<Data>
+					<Value>18</Value>
+					<Value>4</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>Turn Off Relay 3 in Bank 1</Name>
+				<Description>Turn Off Relay 3 in Bank 1</Description>
+				<Data>
+					<Value>18</Value>
+					<Value>0</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>
+			</DeviceCommand>
+
+			<DeviceCommand>
+				<Name>Turn On Relay 4 in Bank 1</Name>
+				<Description>Turn On Relay 4 in Bank 1</Description>
+				<Data>
+					<Value>18</Value>
+					<Value>8</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>Turn Off Relay 4 in Bank 1</Name>
+				<Description>Turn Off Relay 4 in Bank 1</Description>
+				<Data>
+					<Value>18</Value>
+					<Value>0</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>
+			</DeviceCommand>
+
+			<DeviceCommand>
+				<Name>Turn On Relay 5 in Bank 1</Name>
+				<Description>Turn On Relay 5 in Bank 1</Description>
+				<Data>
+					<Value>18</Value>
+					<Value>16</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>Turn Off Relay 5 in Bank 1</Name>
+				<Description>Turn Off Relay 5 in Bank 1</Description>
+				<Data>
+					<Value>18</Value>
+					<Value>0</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>
+			</DeviceCommand>
+
+			<DeviceCommand>
+				<Name>Turn On Relay 6 in Bank 1</Name>
+				<Description>Turn On Relay 6 in Bank 1</Description>
+				<Data>
+					<Value>18</Value>
+					<Value>32</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>Turn Off Relay 6 in Bank 1</Name>
+				<Description>Turn Off Relay 6 in Bank 1</Description>
+				<Data>
+					<Value>18</Value>
+					<Value>0</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>
+			</DeviceCommand>
+
+			<DeviceCommand>
+				<Name>Turn On Relay 7 in Bank 1</Name>
+				<Description>Turn On Relay 7 in Bank 1</Description>
+				<Data>
+					<Value>18</Value>
+					<Value>64</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>Turn Off Relay 7 in Bank 1</Name>
+				<Description>Turn Off Relay 7 in Bank 1</Description>
+				<Data>
+					<Value>18</Value>
+					<Value>0</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>
+			</DeviceCommand>
+			
+			<DeviceCommand>
+				<Name>Turn On Relay 8 in Bank 1</Name>
+				<Description>Turn On Relay 8 in Bank 1</Description>
+				<Data>
+					<Value>18</Value>
+					<Value>128</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>Turn Off Relay 8 in Bank 1</Name>
+				<Description>Turn Off Relay 8 in Bank 1</Description>
+				<Data>
+					<Value>18</Value>
+					<Value>0</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>
+			</DeviceCommand>
+			
+			
+		</DeviceCommandsGroup>
+
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI for ADS7828</Description>
+				<GUIPath>ADS7828_I2CADC.dll</GUIPath>
+				<TypeName>ADS7828_I2CADC.MyGUI</TypeName>
+			</DeviceGUICommand>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI for MCP23017</Description>
+				<GUIPath>MCP23017_I2CR16.dll</GUIPath>
+				<TypeName>MCP23017_I2CR16.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>
+	</Commands>
+</DeviceConfig>

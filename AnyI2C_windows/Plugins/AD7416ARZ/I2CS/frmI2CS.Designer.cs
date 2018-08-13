@@ -1,4 +1,4 @@
-﻿namespace TMP100_I2CS
+﻿namespace AD7416ARZ_I2CS
 {
     partial class frmI2CS
     {

@@ -1,0 +1,32 @@
+﻿<DeviceConfig>
+	<Type>PR2-21</Type>
+	<path>PR2-21.xml</path>
+	<Name>SHT31 Humidity and Temperature Sensor ±3% RH ±0.3°C I2C Mini Module</Name>
+	<Manufactory>Sensirion</Manufactory>
+	<Address>68</Address>
+	<AddressCollection>
+		<Address>68</Address>
+		<Address>69</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Read Humidity and Temperature</Name>
+			<Description>Read Humidity and Temperature</Description>
+			<Data>
+				<Value>39</Value>
+				<Value>55</Value>
+			</Data>
+			<ReadDataLength>6</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>SHT3x_I2CS.dll</GUIPath>
+				<TypeName>SHT3x_I2CS.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>

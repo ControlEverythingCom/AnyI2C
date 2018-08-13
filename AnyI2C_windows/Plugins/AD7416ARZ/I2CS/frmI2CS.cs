@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Threading;
 using AnyI2C;
 
-namespace TMP100_I2CS
+namespace AD7416ARZ_I2CS
 {
     public partial class frmI2CS : Form
     {

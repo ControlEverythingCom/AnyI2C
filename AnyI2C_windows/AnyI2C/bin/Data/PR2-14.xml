@@ -1,0 +1,29 @@
+﻿<DeviceConfig>
+	<Type>PR2-14</Type>
+	<path>PR2-14.xml</path>
+	<Name>HIH6020 Humidity and Temperature Sensor ±4.5% RH ±1.0°C I2C Mini Module</Name>
+	<Manufactory>Honeywell</Manufactory>
+	<Address>39</Address>
+	<AddressCollection>
+		<Address>39</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Read Sensor</Name>
+			<Description>Read Sensor</Description>
+			<Data>
+			</Data>
+			<ReadDataLength>4</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>HIH7130_I2CS.dll</GUIPath>
+				<TypeName>HIH7130_I2CS.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>

@@ -1,0 +1,41 @@
+﻿<DeviceConfig>
+	<Type>PR2-13</Type>
+	<path>PR2-13.xml</path>
+	<Name>HDC1000 Humidity and Temperature Sensor ±3%RH ±0.2°C I2C Mini Module</Name>
+	<Manufactory>TI</Manufactory>
+	<Address>64</Address>
+	<AddressCollection>
+		<Address>64</Address>
+		<Address>65</Address>
+		<Address>66</Address>
+		<Address>67</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Read Temperature</Name>
+			<Description>Read Temperature</Description>
+			<Data>
+				<Value>0</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Humidty</Name>
+			<Description>Read Humidty</Description>
+			<Data>
+				<Value>1</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>HDC1000_I2CS.dll</GUIPath>
+				<TypeName>HDC1000_I2CS.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>

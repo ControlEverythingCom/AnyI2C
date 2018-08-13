@@ -1,0 +1,89 @@
+﻿<DeviceConfig>
+	<Type>PR2-5</Type>
+	<path>PR2-5.xml</path>
+	<Name>ADS7828 Analog to Digital Converter 16-Channel 12-Bit with I2C Interface</Name>
+	<Manufactory>TI</Manufactory>
+	<Address>72</Address>
+	<AddressCollection>
+		<Address>72</Address>
+		<Address>73</Address>
+		<Address>74</Address>
+		<Address>75</Address>
+	</AddressCollection>
+	<Commands>
+		<Name>AD8 Commands</Name>
+		<Description>AD8 Commands</Description>
+		<DeviceCommand>
+			<Name>Read Ch 0</Name>
+			<Description>Read Channel 0</Description>
+			<Data>
+				<Value>128</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Ch 1</Name>
+			<Description>Read Channel 1</Description>
+			<Data>
+				<Value>192</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Ch 2</Name>
+			<Description>Read Channel 2</Description>
+			<Data>
+				<Value>144</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Ch 3</Name>
+			<Description>Read Channel 3</Description>
+			<Data>
+				<Value>208</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Ch 4</Name>
+			<Description>Read Channel 4</Description>
+			<Data>
+				<Value>160</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Ch 5</Name>
+			<Description>Read Channel 5</Description>
+			<Data>
+				<Value>224</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Ch 6</Name>
+			<Description>Read Channel 6</Description>
+			<Data>
+				<Value>176</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Ch 7</Name>
+			<Description>Read Channel 7</Description>
+			<Data>
+				<Value>240</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>
+		</DeviceCommand>
+		<DeviceGUICommand>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<GUIPath>ADS7828_I2CADC.dll</GUIPath>
+			<TypeName>ADS7828_I2CADC.MyGUI</TypeName>
+		</DeviceGUICommand>
+		
+
+	</Commands>
+</DeviceConfig>
