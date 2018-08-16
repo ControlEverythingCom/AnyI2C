@@ -1,0 +1,38 @@
+﻿<DeviceConfig>
+	<Type>PR3-19 Sensor</Type>
+	<path>PR3-19.xml</path>
+	<Name>MXC6226XU Digital Thermal Orientation Accelerometer</Name>
+	<Manufactory>MEMSIC</Manufactory>
+	<Address>22</Address>
+	<AddressCollection>
+		<Address>22</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Read X</Name>
+			<Description>Read X</Description>
+			<Data>
+					<Value>0</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Y</Name>
+			<Description>Read Y</Description>
+			<Data>
+					<Value>0</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>MXC6226XU_I2CS.dll</GUIPath>
+				<TypeName>MXC6226XU_I2CS.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>

@@ -1,0 +1,29 @@
+﻿<DeviceConfig>
+	<Type>PR3-21</Type>
+	<path>PR3-21.xml</path>
+	<Name>CPS120 Digital Barometer Altimeter I2C Mini Module</Name>
+	<Manufactory>Sensirion</Manufactory>
+	<Address>40</Address>
+	<AddressCollection>
+		<Address>40</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Read Humidity and Temperature</Name>
+			<Description>Read Humidity and Temperature</Description>
+			<Data>
+			</Data>
+			<ReadDataLength>4</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>CPS120_I2CS.dll</GUIPath>
+				<TypeName>CPS120_I2CS.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>

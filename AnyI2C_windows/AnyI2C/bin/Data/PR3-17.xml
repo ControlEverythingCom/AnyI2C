@@ -1,0 +1,74 @@
+<DeviceConfig>
+	<Type>PR3-17</Type>
+	<path>PR3-17.xml</path>
+	<Name>M24512 512K Bit Serial EEPROM I2C Mini Module</Name>
+	<Manufactory>STMicroelectronics</Manufactory>
+	<Address>80</Address>
+	<AddressCollection>
+		<Address>80</Address>
+		<Address>81</Address>
+		<Address>82</Address>
+		<Address>83</Address>
+		<Address>84</Address>
+		<Address>85</Address>
+		<Address>86</Address>
+		<Address>87</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Write to Memory</Name>
+			<Description>Write to Memory</Description>
+			<Data>
+					<Value>0</Value>
+					<Value>0</Value>
+					<Value>1</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Write to Memory</Name>
+			<Description>Write to Memory</Description>
+			<Data>
+					<Value>0</Value>
+					<Value>1</Value>
+					<Value>2</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read from Memory</Name>
+			<Description>Read from Memory</Description>
+			<Data>
+					<Value>0</Value>
+					<Value>0</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read from Memory</Name>
+			<Description>Read from Memory</Description>
+			<Data>
+					<Value>0</Value>
+					<Value>1</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Next Address</Name>
+			<Description>Read Next Addre1ss</Description>
+			<Data>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>M24512_I2CM.dll</GUIPath>
+				<TypeName>M24512_I2CM.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>
