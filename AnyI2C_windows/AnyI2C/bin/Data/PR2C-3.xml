@@ -1,0 +1,40 @@
+﻿<DeviceConfig>
+	<Type>PR2C-3</Type>
+	<path>PR2C-3.xml</path>
+	<Name>ADS1100 16-Bit 1-Channel Analog to Digital Converter I2C Mini Module</Name>
+	<Manufactory>Texas Instruments</Manufactory>
+	<Address>72</Address>
+	<AddressCollection>
+		<Address>72</Address>
+		<Address>73</Address>
+		<Address>74</Address>
+		<Address>75</Address>
+	</AddressCollection>
+	<Commands>
+		<Name>AD8 Commands</Name>
+		<Description>AD8 Commands</Description>
+		<DeviceCommand>
+			<Name>Configure</Name>
+			<Description>Configure</Description>
+			<Data>
+				<Value>12</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Ch 0</Name>
+			<Description>Read Channel 0</Description>
+			<Data>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>
+		</DeviceCommand>
+		<DeviceGUICommand>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<GUIPath>ADS1100_I2CADC.dll</GUIPath>
+			<TypeName>ADS1100_I2CADC.MyGUI</TypeName>
+		</DeviceGUICommand>
+		
+
+	</Commands>
+</DeviceConfig>

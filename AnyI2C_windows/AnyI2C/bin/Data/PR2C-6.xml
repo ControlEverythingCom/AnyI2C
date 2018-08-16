@@ -1,0 +1,35 @@
+﻿<DeviceConfig>
+	<Type>PR2C-6</Type>
+	<path>PR2C-6.xml</path>
+	<Name>MQ-4 Methane Natural Gas Sensor ADC121C 12-Bit ADC I2C Mini Module</Name>
+	<Manufactory>Texas Instruments</Manufactory>
+	<Address>80</Address>
+	<AddressCollection>
+		<Address>80</Address>
+		<Address>81</Address>
+		<Address>82</Address>
+		<Address>83</Address>
+		<Address>84</Address>
+		<Address>85</Address>
+		<Address>86</Address>
+		<Address>87</Address>
+	</AddressCollection>
+	<Commands>
+		<Name>AD Commands</Name>
+		<Description>AD Commands</Description>
+		<DeviceCommand>
+			<Name>Read </Name>
+			<Description>Read </Description>
+			<Data>
+				<Value>0</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>
+		</DeviceCommand>
+		<DeviceGUICommand>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<GUIPath>ADC121C_I2CADC.dll</GUIPath>
+			<TypeName>ADC121C_I2CADC.MyGUI</TypeName>
+		</DeviceGUICommand>
+	</Commands>
+</DeviceConfig>
