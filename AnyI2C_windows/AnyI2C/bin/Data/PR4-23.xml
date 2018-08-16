@@ -1,0 +1,31 @@
+﻿<DeviceConfig>
+	<Type>PR4-23</Type>
+	<path>PR4-23.xml</path>
+	<Name>STS21 High Accuracy Temperature Sensor ±0.2°C I2C Mini Module</Name>
+	<Manufactory>Sensirion</Manufactory>
+	<GeneralCall>false</GeneralCall>	
+	<Address>74</Address>
+	<AddressCollection>
+		<Address>74</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Read Sensor</Name>
+			<Description>Read Sensor(No Hold Master)</Description>
+			<Data>
+				<Value>243</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>STS21_I2CS.dll</GUIPath>
+				<TypeName>STS21_I2CS.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>

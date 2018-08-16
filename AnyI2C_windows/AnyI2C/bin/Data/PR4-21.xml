@@ -1,0 +1,37 @@
+﻿<DeviceConfig>
+	<Type>PR4-21</Type>
+	<path>PR4-21.xml</path>
+	<Name>MCP9808 Maximum Accuracy Digital Temperature Sensor ±0.25 from -40°C to +125°C I2C Mini Module</Name>
+	<Manufactory>Microchip</Manufactory>
+	<Address>24</Address>
+	<AddressCollection>
+		<Address>24</Address>
+		<Address>25</Address>
+		<Address>26</Address>
+		<Address>27</Address>
+		<Address>28</Address>
+		<Address>29</Address>
+		<Address>30</Address>
+		<Address>31</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Read Temperature</Name>
+			<Description>Read Temperature</Description>
+			<Data>
+				<Value>5</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>MCP9808_I2CS.dll</GUIPath>
+				<TypeName>MCP9808_I2CS.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>

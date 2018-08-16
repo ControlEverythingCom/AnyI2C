@@ -1,0 +1,37 @@
+﻿<DeviceConfig>
+	<Type>PR4-19</Type>
+	<path>PR4-19.xml</path>
+	<Name>MCP9803 High Accuracy Temperature Sensor ±0.5°C at +25°C I2C Mini Module</Name>
+	<Manufactory>Microchip</Manufactory>
+	<Address>72</Address>
+	<AddressCollection>
+		<Address>72</Address>
+		<Address>73</Address>
+		<Address>74</Address>
+		<Address>75</Address>
+		<Address>76</Address>
+		<Address>77</Address>
+		<Address>78</Address>
+		<Address>79</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Read Temperature</Name>
+			<Description>Read Temperature</Description>
+			<Data>
+				<Value>0</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>MCP9803_I2CS.dll</GUIPath>
+				<TypeName>MCP9803_I2CS.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>
