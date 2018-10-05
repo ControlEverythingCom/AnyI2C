@@ -1,0 +1,48 @@
+<DeviceConfig>
+	<Type>PR5-14</Type>
+	<path>PR5-14.xml</path>
+	<Name>ISL29003 Light Sensor with Programmable Gain 0-64,000 lux 16-Bit I2C Mini Module</Name>
+	<Manufactory>Intersil</Manufactory>
+	<Address>68</Address>
+	<AddressCollection>
+		<Address>68</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Enable ADC</Name>
+			<Description>Enable ADC</Description>
+			<Data>
+				<Value>0</Value>
+				<Value>128</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Control</Name>
+			<Description>Control</Description>
+			<Data>
+				<Value>1</Value>
+				<Value>15</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Sensor</Name>
+			<Description>Read Sensor</Description>
+			<Data>
+				<Value>4</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>ISL29003_I2CS.dll</GUIPath>
+				<TypeName>ISL29003_I2CS.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>

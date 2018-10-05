@@ -1,0 +1,46 @@
+<DeviceConfig>
+	<Type>PR5-6</Type>
+	<path>PR5-6.xml</path>
+	<Name>HTU20D Humidity and Temperature Sensor ±3%RH ±0.3°C I2C Mini Module</Name>
+	<Manufactory>Measurement Specialties</Manufactory>
+	<Address>64</Address>
+	<AddressCollection>
+		<Address>64</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Reset Device</Name>
+			<Description>Reset Device</Description>
+			<Data>
+				<Value>254</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Measure Relative Humidity</Name>
+			<Description>Measure Relative Humidity, No Hold Master Mode</Description>
+			<Data>
+				<Value>245</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Measure Temperature</Name>
+			<Description>Measure Temperature, No Hold Master Mode</Description>
+			<Data>
+				<Value>243</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>HTU20D_I2CS.dll</GUIPath>
+				<TypeName>HTU20D_I2CS.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>

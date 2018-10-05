@@ -198,7 +198,7 @@
             this.Controls.Add(this._ERROR);
             this.Controls.Add(this.btnReadCh0);
             this.Name = "frmI2CS";
-            this.Text = "HTU20D Control Panel";
+            this.Text = "HTU20D/HTU21D Control Panel";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmI2CS_FormClosing);
             this.Load += new System.EventHandler(this.frmI2CS_Load);
             this.groupBox3.ResumeLayout(false);
