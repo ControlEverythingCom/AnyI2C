@@ -167,6 +167,7 @@
             this.lb8BitValue.Size = new System.Drawing.Size(103, 18);
             this.lb8BitValue.TabIndex = 492;
             this.lb8BitValue.Text = "0";
+            this.lb8BitValue.Visible = false;
             // 
             // a7
             // 
@@ -197,10 +198,9 @@
             this.Label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label1.Location = new System.Drawing.Point(17, 18);
             this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(386, 13);
+            this.Label1.Size = new System.Drawing.Size(310, 13);
             this.Label1.TabIndex = 487;
-            this.Label1.Text = "7-Bit Address       A6   A5   A4   A3   A2   A1   A0  R/W               Final Byt" +
-    "e Value\r\n";
+            this.Label1.Text = "7-Bit Address       A6   A5   A4   A3   A2   A1   A0  R/W               ";
             // 
             // ctlI2CAddress
             // 

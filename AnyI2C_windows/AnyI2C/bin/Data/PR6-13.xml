@@ -1,0 +1,31 @@
+<DeviceConfig>
+	<Type>PR6-13</Type>
+	<path>PR6-13.xml</path>
+	<Name>AMS5915-0010-D-B Amplified Ultra Low Pressure Sensor -10 to +10 mbar -0.145 to +0.145 PSI I2C Mini Module</Name>
+	<Manufactory>AMSYS</Manufactory>
+	<GeneralCall>false</GeneralCall>
+	<Address>40</Address>
+	<AddressCollection>
+		<Address>40</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Read Sensor</Name>
+			<Description>Read Sensor</Description>
+			<Data>
+				<Value>0</Value>
+			</Data>
+			<ReadDataLength>4</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>AMS5915_0100D_I2CS.dll</GUIPath>
+				<TypeName>AMS5915_0100D_I2CS.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>
+	</Commands>
+</DeviceConfig>

@@ -1,0 +1,39 @@
+﻿<DeviceConfig>
+	<Type>PR6-7</Type>
+	<path>PR6-7.xml</path>
+	<Name>TSL2571 Light-to-Digital Converter Programmable Analog Gain I2C Mini Module</Name>
+	<Manufactory>TAOS</Manufactory>
+	<Address>57</Address>
+	<AddressCollection>
+		<Address>57</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Start Measure</Name>
+			<Description>Start Measure</Description>
+			<Data>
+					<Value>128</Value>
+					<Value>11</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Sensor</Name>
+			<Description>Read Sensor</Description>
+			<Data>
+					<Value>148</Value>
+			</Data>
+			<ReadDataLength>4</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>TSL2571_I2CS.dll</GUIPath>
+				<TypeName>TSL2571_I2CS.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>

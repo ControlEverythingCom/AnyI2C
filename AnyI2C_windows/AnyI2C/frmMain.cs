@@ -256,7 +256,7 @@ namespace AnyI2C
                     StringBuilder sb = new StringBuilder();
                     sb.Append("W:");
                     string format = GetFormat() == emViewFormat.Hex ? "{0:X2} " : "{0:d} ";
-                    sb.AppendFormat(format, ctlI2CAddress1.Addr7 * 2);
+                    sb.AppendFormat(format, ctlI2CAddress1.Addr7 );
                     for (int i = 0; i < mData.Content.Length; i++)
                     {
                         sb.AppendFormat(format, mData.Content[i]);
@@ -281,7 +281,7 @@ namespace AnyI2C
                         StringBuilder sb = new StringBuilder();
                         string format = GetFormat() == emViewFormat.Hex ? "{0:X2} " : "{0:d} ";
                         sb.Append("W:");
-                        sb.AppendFormat(format, ctlI2CAddress1.Addr7 * 2 + 1);
+                        sb.AppendFormat(format, ctlI2CAddress1.Addr7 * 2);
                         sb.AppendLine();
                         sb.Append("R:");
                         for (int i = 0; i < readData.Length; i++)

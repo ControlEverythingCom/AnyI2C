@@ -1,0 +1,39 @@
+﻿<DeviceConfig>
+	<Type>PR6-9</Type>
+	<path>PR6-9.xml</path>
+	<Name>TSL45315 Ambient Light Sensor 3 Lux to 220K Lux I2C Mini Module</Name>
+	<Manufactory>TAOS</Manufactory>
+	<Address>41</Address>
+	<AddressCollection>
+		<Address>41</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Start Measure</Name>
+			<Description>Start Measure</Description>
+			<Data>
+					<Value>128</Value>
+					<Value>2</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Sensor</Name>
+			<Description>Read Sensor</Description>
+			<Data>
+					<Value>132</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>TSL45315_I2CS.dll</GUIPath>
+				<TypeName>TSL45315_I2CS.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>

@@ -1,0 +1,56 @@
+<DeviceConfig>
+	<Type>PR6-6</Type>
+	<path>PR6-6.xml</path>
+	<Name>TSL2561 Light-to-Digital Converter 16-Bit Programmable Gain I2C Mini Module</Name>
+	<Manufactory>TAOS</Manufactory>
+	<Address>57</Address>
+	<AddressCollection>
+		<Address>57</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Control basic functions</Name>
+			<Description>Control basic functions</Description>
+			<Data>
+					<Value>128</Value>
+					<Value>03</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Control Gain</Name>
+			<Description>Control Gain</Description>
+			<Data>
+					<Value>129</Value>
+					<Value>0</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Ch0</Name>
+			<Description>Read Ch0</Description>
+			<Data>
+					<Value>140</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Ch1</Name>
+			<Description>Read Ch1</Description>
+			<Data>
+					<Value>142</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>TSL2561_I2CS.dll</GUIPath>
+				<TypeName>TSL2561_I2CS.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>
