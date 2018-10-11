@@ -28,8 +28,8 @@ namespace AnyI2cLib
         public string PortName = string.Empty;
         public I2CBridgeX()
         {
-            mCom.OnReadData += OnReadData;
-            mCom.OnWriteData += OnWriteData;
+            //mCom.OnReadData += OnReadData;
+            //mCom.OnWriteData += OnWriteData;
         }
 
         public void OpenSetting()
@@ -147,9 +147,7 @@ namespace AnyI2cLib
                 data[1] = addr;
                 data[2] = dataLength;
                 WriteBytesAPI(data);
-                OnMyWriteData(this, data);
                 data = ReadBytesApi();
-                OnMyReadData(this, data);
                 if (data != null)
                 {
                     return data;
@@ -171,9 +169,7 @@ namespace AnyI2cLib
                 data[3] = (byte)(addr*2 + 1);
                 data[4] = dataLength;
                 WriteBytesAPI(data);
-                OnMyWriteData(this, data);
                 data = ReadBytesApi();
-                OnMyReadData(this, data);
                 if (data != null)
                 {
                     return data;
@@ -207,9 +203,8 @@ namespace AnyI2cLib
                     data[2 + i] = buffer[i];
                 }
                 WriteBytesAPI(data);
-                OnMyWriteData(this, data);
                 data = ReadBytesApi();
-                OnMyReadData(this, data);
+                //OnMyReadData(this, data);
                 if (data != null)
                 {
                     if (data[0] == 85)
@@ -381,9 +376,7 @@ namespace AnyI2cLib
                 ApiPackage.Add((byte)checksum);
                 byte[] apiData = (byte[])ApiPackage.ToArray(typeof(byte));
 
-                OnMyWriteData(this, data);
-                //mCom.WriteBytes(data);
-                //mCom.WriteBytesAPI(data);
+                OnMyWriteData(this, apiData);
             }
         }
 
@@ -394,8 +387,9 @@ namespace AnyI2cLib
         /// <returns></returns>
         public byte[] ReadBytesApi()
         {
-            return mCom.ReadBytesApi();
-
+            byte [] data = mCom.ReadBytesApi();
+            OnMyReadData(this, mCom.DataRead);
+            return data;
         }
 
         /// <summary>

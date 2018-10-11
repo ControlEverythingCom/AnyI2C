@@ -11,6 +11,7 @@ using System.Xml;
 using System.Xml.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Xml.Schema;
+using System.Collections;
 using System.Reflection;
 using NCDEnterprise;
 using AnyI2cLib;
@@ -245,6 +246,33 @@ namespace AnyI2C
             }
         }
 
+        public void LogSendData(byte port, byte addr, params byte[] buffer)
+        {
+            //StringBuilder sb = new StringBuilder();
+            //sb.Append("W:");
+            //string format = GetFormat() == emViewFormat.Hex ? "{0:X2} " : "{0:d} ";
+            //byte[] data = buffer;
+            //if(cmbLogDataType.SelectedIndex  == 0)  // i2c data
+            //{
+            //    data = GetSendI2CData(port, addr, buffer);
+            //}
+            //else if (cmbLogDataType.SelectedIndex == 1)  // command data
+            //{
+            //    data = GetSendCommandData(port, addr, buffer);
+
+            //}
+            //else if (cmbLogDataType.SelectedIndex == 2)  // api data
+            //{
+            //    data = GetSendAPIData(port, addr, buffer);
+            //}
+
+            //for (int i = 0; i < data.Length; i++)
+            //{
+            //    sb.AppendFormat(format, data[i]);
+            //}
+            //LogText(sb.ToString());
+        }
+
         public  void Send()
         {
             try
@@ -253,19 +281,10 @@ namespace AnyI2C
                 mData.Address = ctlI2CAddress1.Addr7;
                 if (chkWrite.Checked)
                 {
-                    StringBuilder sb = new StringBuilder();
-                    sb.Append("W:");
-                    string format = GetFormat() == emViewFormat.Hex ? "{0:X2} " : "{0:d} ";
-                    sb.AppendFormat(format, ctlI2CAddress1.Addr7 );
-                    for (int i = 0; i < mData.Content.Length; i++)
-                    {
-                        sb.AppendFormat(format, mData.Content[i]);
-                    }
-                    if(cmbLogDataType.SelectedIndex == 0)
-                    {
-                        LogText(sb.ToString());
-                    }
+
+                    LogSendData((byte)numPort.Value, ctlI2CAddress1.Addr7, mData.Content);
                     bool b = mBridge.Write2((byte)numPort.Value, ctlI2CAddress1.Addr7, mData.Content);
+                    
                     if(!b)
                     {
                         LogText("Write Data Fail");
@@ -320,6 +339,7 @@ namespace AnyI2C
             numReadLength.Value = mData.ReadDataLength;
             Send();
         }
+
 
         /// <summary>
         /// check if hte byte array is fail code
@@ -796,107 +816,108 @@ namespace AnyI2C
 
         public void OnReadDataHandler(object sender, ReadDataEventArgs e  )
         {
-            if (cmbLogDataType.SelectedIndex == 0)// I2C datga
-            {
-                return;
-            }
 
 
             StringBuilder sb = new StringBuilder();
             sb.Append("R: ");
-            if (cmbLogDataType.SelectedIndex == 1)  // command data
+            byte[] data = e.Data;
+            if (cmbLogDataType.SelectedIndex == 0)
             {
-                byte[] data = GetCommandData(e.Data);
-                if (data != null)
-                {
-                    for (int i = 0; i < data.Length; i++)
-                    {
-                        if (cmbShowFormat.SelectedIndex == 0)   //hex
-                        {
-                            sb.Append(string.Format("{0:X2} ", data[i]));
-                        }
-                        else
-                        {
-                            sb.Append(string.Format("{0} ", data[i]));
-                        }
-                    }
-
-                }
+                data = GetRecI2CData(e.Data);
+            }
+            else if (cmbLogDataType.SelectedIndex == 1)  // command data
+            {
+                data = GetRecCommandData(e.Data);
             }
             else if (cmbLogDataType.SelectedIndex == 2) // api data
             {
-                if (e.Data != null)
-                {
-                    for (int i = 0; i < e.Data.Length; i++)
-                    {
-                        if (cmbShowFormat.SelectedIndex == 0)   //hex
-                        {
-                            sb.Append(string.Format("{0:X2} ", e.Data[i]));
-                        }
-                        else
-                        {
-                            sb.Append(string.Format("{0} ", e.Data[i]));
-                        }
-                    }
-
-                }
+                data = e.Data;
             }
+            if (data != null)
+            {
+                for (int i = 0; i < data.Length; i++)
+                {
+                    if (cmbShowFormat.SelectedIndex == 0)   //hex
+                    {
+                        sb.Append(string.Format("{0:X2} ", data[i]));
+                    }
+                    else
+                    {
+                        sb.Append(string.Format("{0} ", data[i]));
+                    }
+                }
+
+            }
+
             LogText(sb.ToString());
+
 
         }
 
         public void OnSendDataHandler(object sender, WriteDataEventArgs e)
         {
-            if (cmbLogDataType.SelectedIndex == 0)// I2C datga
-            {
-                return;
-            }
-
             StringBuilder sb = new StringBuilder();
             sb.Append("W: ");
-
-            if (cmbLogDataType.SelectedIndex == 1)  // command data
+            byte []data = null;
+            if(cmbLogDataType.SelectedIndex == 0)
             {
-                byte[] data = GetCommandData(e.Data);
-                if (data != null)
-                {
-                    for (int i = 0; i < data.Length; i++)
-                    {
-                        if (cmbShowFormat.SelectedIndex == 0)   //hex
-                        {
-                            sb.Append(string.Format("{0:X2} ", data[i]));
-                        }
-                        else
-                        {
-                            sb.Append(string.Format("{0} ", data[i]));
-                        }
-                    }
-
-                }
+                data = GetSendI2cData(e.Data);
+            }
+            else if (cmbLogDataType.SelectedIndex == 1)  // command data
+            {
+                data = GetSendCommandData(e.Data);
             }
             else if (cmbLogDataType.SelectedIndex == 2) // api data
             {
-                if (e.Data != null)
+                data = e.Data;
+            }
+            if (data != null)
+            {
+                for (int i = 0; i < data.Length; i++)
                 {
-                    for (int i = 0; i < e.Data.Length; i++)
+                    if (cmbShowFormat.SelectedIndex == 0)   //hex
                     {
-                        if (cmbShowFormat.SelectedIndex == 0)   //hex
-                        {
-                            sb.Append(string.Format("{0:X2} ", e.Data[i]));
-                        }
-                        else
-                        {
-                            sb.Append(string.Format("{0} ", e.Data[i]));
-                        }
+                        sb.Append(string.Format("{0:X2} ", data[i]));
                     }
-
+                    else
+                    {
+                        sb.Append(string.Format("{0} ", data[i]));
+                    }
                 }
 
             }
+
             LogText(sb.ToString());
         }
 
-        public byte[] GetCommandData(byte [] apiData)
+        public byte[] GetSendI2cData(byte[] apiData)
+        {
+            if (apiData == null)
+            {
+                return null;
+            }
+            if (apiData.Length < 4)
+            {
+                return null;
+            }
+            byte[] data = null;
+            if (apiData[2] == 191) // i2c read
+            {
+                data = new byte[1] { apiData[3] }; // address
+            }
+            else if(apiData [2] == 190) // i2c write
+            {
+                data = new byte[apiData.Length - 4];
+                for (int i = 0; i < data.Length; i++)
+                {
+                    data[i] = apiData[i + 3];
+                }
+            }
+            return data;
+        }
+
+
+        public byte[] GetSendCommandData(byte [] apiData)
         {
             if (apiData == null)
             {
@@ -911,6 +932,30 @@ namespace AnyI2C
             {
                 data[i] = apiData[i + 2];
             }
+            return data;
+        }
+
+
+        public byte [] GetRecI2CData(byte[] apiData)
+        {
+            byte[] data = null;
+            if (apiData != null)
+            {
+                if(apiData.Length > 4)
+                {
+                    data = new byte[apiData.Length - 3];
+                    for(int i = 0; i < data.Length; i++)
+                    {
+                        data[i] = apiData[2 + i];
+                    }
+                }
+            }
+            return data;
+        }
+
+        public byte[] GetRecCommandData(byte[] apiData)
+        {
+            byte[] data = GetRecI2CData(apiData);
             return data;
         }
 
@@ -948,30 +993,6 @@ namespace AnyI2C
             }
         }
 
-        private void ncdController1_OnReadData(object sender, NCDEnterprise.ReadDataEventArgs e)
-        {
-
-
-        }
-
-        private void ncdController1_OnWriteData(object sender, NCDEnterprise.WriteDataEventArgs e)
-        {
-            StringBuilder sb = new StringBuilder();
-            sb.Append("W: ");
-           for (int i = 0; i < e.Data.Length; i++)
-            {
-                if (cmbShowFormat.SelectedIndex == 0)   //hex
-                {
-                    sb.Append(string.Format("{0:X2} ", e.Data[i]));
-                }
-                else
-                {
-                    sb.Append(string.Format("{0} ", e.Data[i]));
-                }
-            }
-
-            LogText(sb.ToString());
-        }
     }
 
     public enum enumLogDataType
