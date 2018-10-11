@@ -100,11 +100,7 @@ namespace MCP23008_I2CR8G5LE
         /// </summary>
         private byte GetAddress(bool Read)
         {
-            if (Read)
-            {
-                return (byte)(numAddress.Value * 2 + 1);
-            }
-            return (byte)(numAddress.Value * 2);
+            return (byte)(numAddress.Value);
         }
 
         /// <summary>

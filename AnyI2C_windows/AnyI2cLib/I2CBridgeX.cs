@@ -14,16 +14,22 @@ namespace AnyI2cLib
     public class I2CBridgeX
     {
 
-        public delegate void OnReadDataHandler(object sender, byte[]rData);
-        public delegate void OnWriteDataHandler(object sender, byte[] sData);
+        /// <summary>
+        /// Event raised when there is a byte written to serial port
+        /// </summary>
+        public event EventHandler<WriteDataEventArgs> OnWriteData;
+        /// <summary>
+        /// Eevent raised when there is a byte read from serial port
+        /// </summary>
+        public event EventHandler<ReadDataEventArgs> OnReadData;
 
-        public OnReadDataHandler OnReadData;
-        public OnWriteDataHandler OnWriteData;
 
         NCDController   mCom = new NCDController();
         public string PortName = string.Empty;
         public I2CBridgeX()
         {
+            mCom.OnReadData += OnReadData;
+            mCom.OnWriteData += OnWriteData;
         }
 
         public void OpenSetting()
@@ -339,7 +345,7 @@ namespace AnyI2cLib
         {
             if (OnReadData != null)
             {
-                OnReadData(sender, e);
+                OnReadData(sender, new ReadDataEventArgs(e, false));
             }
         }
 
@@ -347,7 +353,7 @@ namespace AnyI2cLib
         {
             if (OnWriteData != null)
             {
-                OnWriteData(sender, e);
+                OnWriteData(sender, new WriteDataEventArgs(e));
             }
         }
 

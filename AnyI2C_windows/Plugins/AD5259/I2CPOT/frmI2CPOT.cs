@@ -65,11 +65,7 @@ namespace AD5259_I2CPOT
         /// </summary>
         private byte GetAddress(bool Read)
         {
-            if (Read)
-            {
-                return (byte)(numAddress.Value * 2 + 1);
-            }
-            return (byte)(numAddress.Value * 2);
+            return (byte)(numAddress.Value);
         }
 
         private void frmI2CPOT_Load(object sender, EventArgs e)

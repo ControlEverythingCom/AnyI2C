@@ -134,11 +134,7 @@ namespace MCP23008_I2CIO7R1G5V1
         /// </summary>
         private byte GetAddress(bool Read)
         {
-            if (Read)
-            {
-                return (byte)(numAddress.Value * 2 + 1);
-            }
-            return (byte)(numAddress.Value * 2);
+            return (byte)(numAddress.Value);
         }
 
         private void CheckBox1_Click(object sender, EventArgs e)

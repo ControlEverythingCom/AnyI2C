@@ -191,11 +191,7 @@ namespace MCP23017_I2CR16
         /// </summary>
         private byte GetAddress(bool Read)
         {
-            if (Read)
-            {
-                return (byte)(numAddress.Value * 2 + 1);
-            }
-            return (byte)(numAddress.Value * 2);
+            return (byte)numAddress.Value;
         }
 
         private void chkB1R1_Clicked(object sender, EventArgs e)

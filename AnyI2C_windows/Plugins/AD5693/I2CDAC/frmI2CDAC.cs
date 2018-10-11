@@ -61,11 +61,7 @@ namespace AD5693_I2CDAC
         /// </summary>
         private byte GetAddress(bool Read)
         {
-            if (Read)
-            {
-                return (byte)(numAddress.Value * 2 + 1);
-            }
-            return (byte)(numAddress.Value * 2);
+            return (byte)(numAddress.Value);
         }
 
         /// <summary>

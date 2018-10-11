@@ -36,11 +36,7 @@ namespace ADC121C021_TA12_200_I2CADC
         /// </summary>
         private byte GetAddress(bool Read)
         {
-            if (Read)
-            {
-                return (byte)(numAddress.Value * 2 + 1);
-            }
-            return (byte)(numAddress.Value * 2);
+            return (byte)(numAddress.Value);
         }
 
         private string ReadCh()

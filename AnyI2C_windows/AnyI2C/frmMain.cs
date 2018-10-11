@@ -12,7 +12,7 @@ using System.Xml.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Xml.Schema;
 using System.Reflection;
-
+using NCDEnterprise;
 using AnyI2cLib;
 using FTD2XX_NET;
 using AnyI2C.Data;
@@ -705,7 +705,7 @@ namespace AnyI2C
                 data.Content = data2;
                 data.ReadDataLength = readLength;
                 data.IsRead = readLength > 0;
-                data.Address = (byte)(writedata[0] >> 1);
+                data.Address = (byte)(writedata[0]);
                 data.Format = GetFormat();
                 mData = data;
                 UpdateGUIFromData(mData.Content);
@@ -794,7 +794,7 @@ namespace AnyI2C
             mDevices.Devices[0].Save("test.xml");
         }
 
-        public void OnReadDataHandler(object sender, byte [] rData)
+        public void OnReadDataHandler(object sender, ReadDataEventArgs e  )
         {
             if (cmbLogDataType.SelectedIndex == 0)// I2C datga
             {
@@ -806,7 +806,7 @@ namespace AnyI2C
             sb.Append("R: ");
             if (cmbLogDataType.SelectedIndex == 1)  // command data
             {
-                byte[] data = GetCommandData(rData);
+                byte[] data = GetCommandData(e.Data);
                 if (data != null)
                 {
                     for (int i = 0; i < data.Length; i++)
@@ -825,17 +825,17 @@ namespace AnyI2C
             }
             else if (cmbLogDataType.SelectedIndex == 2) // api data
             {
-                if (rData != null)
+                if (e.Data != null)
                 {
-                    for (int i = 0; i < rData.Length; i++)
+                    for (int i = 0; i < e.Data.Length; i++)
                     {
                         if (cmbShowFormat.SelectedIndex == 0)   //hex
                         {
-                            sb.Append(string.Format("{0:X2} ", rData[i]));
+                            sb.Append(string.Format("{0:X2} ", e.Data[i]));
                         }
                         else
                         {
-                            sb.Append(string.Format("{0} ", rData[i]));
+                            sb.Append(string.Format("{0} ", e.Data[i]));
                         }
                     }
 
@@ -845,7 +845,7 @@ namespace AnyI2C
 
         }
 
-        public void OnSendDataHandler(object sender, byte [] sData)
+        public void OnSendDataHandler(object sender, WriteDataEventArgs e)
         {
             if (cmbLogDataType.SelectedIndex == 0)// I2C datga
             {
@@ -857,7 +857,7 @@ namespace AnyI2C
 
             if (cmbLogDataType.SelectedIndex == 1)  // command data
             {
-                byte[] data = GetCommandData(sData);
+                byte[] data = GetCommandData(e.Data);
                 if (data != null)
                 {
                     for (int i = 0; i < data.Length; i++)
@@ -876,17 +876,17 @@ namespace AnyI2C
             }
             else if (cmbLogDataType.SelectedIndex == 2) // api data
             {
-                if (sData != null)
+                if (e.Data != null)
                 {
-                    for (int i = 0; i < sData.Length; i++)
+                    for (int i = 0; i < e.Data.Length; i++)
                     {
                         if (cmbShowFormat.SelectedIndex == 0)   //hex
                         {
-                            sb.Append(string.Format("{0:X2} ", sData[i]));
+                            sb.Append(string.Format("{0:X2} ", e.Data[i]));
                         }
                         else
                         {
-                            sb.Append(string.Format("{0} ", sData[i]));
+                            sb.Append(string.Format("{0} ", e.Data[i]));
                         }
                     }
 
@@ -946,6 +946,31 @@ namespace AnyI2C
                     FillProperties(dev);
                 }
             }
+        }
+
+        private void ncdController1_OnReadData(object sender, NCDEnterprise.ReadDataEventArgs e)
+        {
+
+
+        }
+
+        private void ncdController1_OnWriteData(object sender, NCDEnterprise.WriteDataEventArgs e)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("W: ");
+           for (int i = 0; i < e.Data.Length; i++)
+            {
+                if (cmbShowFormat.SelectedIndex == 0)   //hex
+                {
+                    sb.Append(string.Format("{0:X2} ", e.Data[i]));
+                }
+                else
+                {
+                    sb.Append(string.Format("{0} ", e.Data[i]));
+                }
+            }
+
+            LogText(sb.ToString());
         }
     }
 
