@@ -246,32 +246,7 @@ namespace AnyI2C
             }
         }
 
-        public void LogSendData(byte port, byte addr, params byte[] buffer)
-        {
-            //StringBuilder sb = new StringBuilder();
-            //sb.Append("W:");
-            //string format = GetFormat() == emViewFormat.Hex ? "{0:X2} " : "{0:d} ";
-            //byte[] data = buffer;
-            //if(cmbLogDataType.SelectedIndex  == 0)  // i2c data
-            //{
-            //    data = GetSendI2CData(port, addr, buffer);
-            //}
-            //else if (cmbLogDataType.SelectedIndex == 1)  // command data
-            //{
-            //    data = GetSendCommandData(port, addr, buffer);
 
-            //}
-            //else if (cmbLogDataType.SelectedIndex == 2)  // api data
-            //{
-            //    data = GetSendAPIData(port, addr, buffer);
-            //}
-
-            //for (int i = 0; i < data.Length; i++)
-            //{
-            //    sb.AppendFormat(format, data[i]);
-            //}
-            //LogText(sb.ToString());
-        }
 
         public  byte [] Send()
         {
@@ -282,7 +257,6 @@ namespace AnyI2C
                 if (chkWrite.Checked)
                 {
 
-                    LogSendData((byte)numPort.Value, ctlI2CAddress1.Addr7, mData.Content);
                     bool b = mBridge.Write2((byte)numPort.Value, ctlI2CAddress1.Addr7, mData.Content);
                     
                     if(!b)
@@ -810,7 +784,7 @@ namespace AnyI2C
             {
                 data = e.Data;
             }
-            if (data != null)
+            if (data != null )
             {
                 for (int i = 0; i < data.Length; i++)
                 {
@@ -823,10 +797,10 @@ namespace AnyI2C
                         sb.Append(string.Format("{0} ", data[i]));
                     }
                 }
+                LogText(sb.ToString());
 
             }
 
-            LogText(sb.ToString());
         }
 
         public byte[] GetSendI2cData(byte[] apiData)
@@ -932,6 +906,13 @@ namespace AnyI2C
             }
         }
 
+        private void numPort_ValueChanged(object sender, EventArgs e)
+        {
+            if(mBridge.IsOpen)
+            {
+
+            }
+        }
     }
 
     public enum enumLogDataType

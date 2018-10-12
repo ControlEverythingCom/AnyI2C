@@ -294,13 +294,24 @@
             // 
             this.numPort.Location = new System.Drawing.Point(402, 15);
             this.numPort.Maximum = new decimal(new int[] {
-            4,
+            16,
+            0,
+            0,
+            0});
+            this.numPort.Minimum = new decimal(new int[] {
+            1,
             0,
             0,
             0});
             this.numPort.Name = "numPort";
             this.numPort.Size = new System.Drawing.Size(49, 20);
             this.numPort.TabIndex = 41;
+            this.numPort.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numPort.ValueChanged += new System.EventHandler(this.numPort_ValueChanged);
             // 
             // lbManufactory
             // 

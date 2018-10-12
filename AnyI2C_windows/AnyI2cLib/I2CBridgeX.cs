@@ -23,6 +23,7 @@ namespace AnyI2cLib
         /// </summary>
         public event EventHandler<ReadDataEventArgs> OnReadData;
 
+        public byte CurrentPort = 0;
 
         NCDController   mCom = new NCDController();
         public string PortName = string.Empty;
@@ -110,13 +111,13 @@ namespace AnyI2cLib
         public byte[] ScanDevices(byte port)
         {
             ArrayList devices = new ArrayList();
-
-            for (byte i = 0; i < 128; i++)
+            WriteBytesAPI(new byte[] { 189, port, 192, 0 });
+            byte[] data = ReadBytesApi();
+            if (data != null)
             {
-                bool exist = Write2(port, i, null);
-                if(exist)
+                for (int i = 0; i < data.Length; i ++)
                 {
-                    devices.Add(i);
+                    devices.Add(data[i]);
                 }
             }
             return (byte[])devices.ToArray(typeof(byte));
@@ -128,6 +129,28 @@ namespace AnyI2cLib
             {
                 return mCom.IsOpen;
             }
+        }
+
+        public bool SwitchPort(byte port)
+        {
+            bool bRtn = false;
+            if (mCom.IsOpen)
+            {
+                byte[] data = new byte[2];
+                data[0] = 189;
+                data[1] = port;
+                WriteBytesAPI(data);
+                data = ReadBytesApi();
+                if (data != null)
+                {
+                    if (data[0] == 85)
+                    {
+                        CurrentPort = port;
+                        bRtn = true;
+                    }
+                }
+            }
+            return bRtn;
         }
 
         /// <summary>
@@ -190,6 +213,10 @@ namespace AnyI2cLib
             bool bRtn = false;
             if (mCom.IsOpen)
             {
+                if(port != CurrentPort)
+                {
+                    SwitchPort(port);
+                }
                 int bufferLength = 0;
                 if (buffer != null)
                 {
