@@ -295,13 +295,11 @@ namespace AnyI2C
                 if (chkRead.Checked)
                 {
                     byte[] readData = mBridge.ReadData2((byte)numPort.Value, ctlI2CAddress1.Addr7, (byte)numReadLength.Value);
+
                     if (readData != null)
                     {
                         StringBuilder sb = new StringBuilder();
                         string format = GetFormat() == emViewFormat.Hex ? "{0:X2} " : "{0:d} ";
-                        sb.Append("W:");
-                        sb.AppendFormat(format, ctlI2CAddress1.Addr7 * 2);
-                        sb.AppendLine();
                         sb.Append("R:");
                         for (int i = 0; i < readData.Length; i++)
                         {
@@ -755,7 +753,7 @@ namespace AnyI2C
                     }
                 }
 
-                if (chkRead.Checked)
+                if (chkRead.Checked && numReadLength.Value > 0)
                 {
                     try
                     {
@@ -816,14 +814,13 @@ namespace AnyI2C
 
         public void OnReadDataHandler(object sender, ReadDataEventArgs e  )
         {
-
-
             StringBuilder sb = new StringBuilder();
             sb.Append("R: ");
             byte[] data = e.Data;
             if (cmbLogDataType.SelectedIndex == 0)
             {
-                data = GetRecI2CData(e.Data);
+                return; // show i2c received data in "send" route
+                //data = GetRecI2CData(e.Data);
             }
             else if (cmbLogDataType.SelectedIndex == 1)  // command data
             {
@@ -848,10 +845,11 @@ namespace AnyI2C
                 }
 
             }
+            if (data != null)
+            {
+                LogText(sb.ToString());
 
-            LogText(sb.ToString());
-
-
+            }
         }
 
         public void OnSendDataHandler(object sender, WriteDataEventArgs e)
