@@ -273,7 +273,7 @@ namespace AnyI2C
             //LogText(sb.ToString());
         }
 
-        public  void Send()
+        public  byte [] Send()
         {
             try
             {
@@ -292,31 +292,25 @@ namespace AnyI2C
                 }
 
 
-                if (chkRead.Checked)
+                if (chkRead.Checked && numReadLength.Value > 0)
                 {
                     byte[] readData = mBridge.ReadData2((byte)numPort.Value, ctlI2CAddress1.Addr7, (byte)numReadLength.Value);
 
-                    if (readData != null)
+                    if (IsFail(readData))
+                    {
+                        LogText("Read Data Fail");
+                    }else if (readData != null && cmbLogDataType.SelectedIndex == 0)
                     {
                         StringBuilder sb = new StringBuilder();
                         string format = GetFormat() == emViewFormat.Hex ? "{0:X2} " : "{0:d} ";
-                        sb.Append("R:");
+                        sb.Append("R: ");
                         for (int i = 0; i < readData.Length; i++)
                         {
                             sb.AppendFormat(format, readData[i]);
                         }
 
-                        if (IsFail(readData))
-                        {
-                            LogText("Read Data Fail");
-                        }
-                        else
-                        {
-                            if (cmbLogDataType.SelectedIndex == 0)
-                            {
-                                LogText(sb.ToString());
-                            }
-                        }
+                        LogText(sb.ToString());
+                        return readData;
                     }
                 }
 
@@ -325,9 +319,10 @@ namespace AnyI2C
             catch 
             {
             }
+            return null;
         }
 
-        public void Send(I2CData data)
+        public byte[] Send(I2CData data)
         {
             mData = data;
             UpdateGUIFromData(mData.Content);
@@ -335,7 +330,7 @@ namespace AnyI2C
             chkRead.Checked = mData.IsRead;
             chkWrite.Checked = mData.IsWrite;
             numReadLength.Value = mData.ReadDataLength;
-            Send();
+            return Send();
         }
 
 
@@ -731,62 +726,8 @@ namespace AnyI2C
                 chkRead.Checked = mData.IsRead;
                 chkWrite.Checked = mData.IsWrite;
                 numReadLength.Value = mData.ReadDataLength;
-                UpdateData();
-                if (chkWrite.Checked)
-                {
-                    StringBuilder sb = new StringBuilder();
-                    sb.Append("W:");
-                    string format = GetFormat() == emViewFormat.Hex ? "{0:X2} " : "{0:d} ";
-                    sb.AppendFormat(format, ctlI2CAddress1.Addr7 * 2);
-                    for (int i = 0; i < mData.Content.Length; i++)
-                    {
-                        sb.AppendFormat(format, mData.Content[i]);
-                    }
-                    if (cmbLogDataType.SelectedIndex == 0)
-                    {
-                        LogText(sb.ToString());
-                    }
-                    if (!mBridge.Write2((byte)numPort.Value, mData.Address, mData.Content))
-                    {
-                        //OnWriteDataError();
-                        throw new Exception("On Write Data Error");
-                    }
-                }
 
-                if (chkRead.Checked && numReadLength.Value > 0)
-                {
-                    try
-                    {
-                        byte[] readData = mBridge.ReadData2((byte)numPort.Value, ctlI2CAddress1.Addr7, (byte)numReadLength.Value);
-                        if (IsFail(readData))
-                        {
-                            LogText("Read Data Fail");
-                        }
-                        else if (readData != null && cmbLogDataType.SelectedIndex == 0)
-                        {
-                            StringBuilder sb = new StringBuilder();
-                            string format = GetFormat() == emViewFormat.Hex ? "{0:X2} " : "{0:d} ";
-                            sb.Append("W:");
-                            sb.AppendFormat(format, ctlI2CAddress1.Addr7 * 2 + 1);
-                            sb.AppendLine();
-                            sb.Append("R:");
-                            for (int i = 0; i < readData.Length; i++)
-                            {
-                                sb.AppendFormat(format, readData[i]);
-                            }
-                            LogText(sb.ToString());
-                            return readData;
-                        }
-
-                    }
-                    catch (Exception ex)
-                    {
-                        //OnReadDataError();
-                        throw new Exception("On Read Data Error");
-                    }
-                }
-                
-
+                return Send();
             }
             catch (Exception ex)
             {
@@ -939,7 +880,7 @@ namespace AnyI2C
             byte[] data = null;
             if (apiData != null)
             {
-                if(apiData.Length > 4)
+                if(apiData.Length >= 4)
                 {
                     data = new byte[apiData.Length - 3];
                     for(int i = 0; i < data.Length; i++)
