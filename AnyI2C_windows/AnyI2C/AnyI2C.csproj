@@ -57,6 +57,10 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NCDEnterprise, Version=2.0.6859.29554, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\NCDEnterprise.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
@@ -147,10 +151,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\VisualStudioSource\Enterprise_Administrator - Wireless New\NCDEnterprise\NCD.Enterprise.csproj">
-      <Project>{e33d29e2-fe75-4229-a8e9-946a454166f2}</Project>
-      <Name>NCD.Enterprise</Name>
-    </ProjectReference>
     <ProjectReference Include="..\AnyI2cLib\AnyI2cLib.csproj">
       <Project>{7c11d238-8414-4723-85b3-5a02757dc26f}</Project>
       <Name>AnyI2cLib</Name>
