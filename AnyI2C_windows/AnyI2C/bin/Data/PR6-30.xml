@@ -1,0 +1,41 @@
+﻿<DeviceConfig>
+	<Type>PR6-30</Type>
+	<path>PR6-30.xml</path>
+	<Name>BMP280 Digital Pressure Sensor 300-1100 hPa I2C Mini Module</Name>
+	<Manufactory>Bosch</Manufactory>
+	<Address>118</Address>
+	<AddressCollection>
+		<Address>118</Address>
+		<Address>119</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Start Measure</Name>
+			<Description>Start Measure</Description>
+			<Data>
+				<Value>244</Value>
+				<Value>147</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Data</Name>
+			<Description>Read Data</Description>
+			<Data>
+				<Value>247</Value>
+			</Data>
+			<ReadDataLength>6</ReadDataLength>				
+		</DeviceCommand>
+
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>BMP280_I2CS.dll</GUIPath>
+				<TypeName>BMP280_I2CS.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>

@@ -1,0 +1,47 @@
+﻿<DeviceConfig>
+	<Type>PR6-32</Type>
+	<path>PR6-32.xml</path>
+	<Name>HP206C Barometer and Altimeter with 24-Bit Analog to Digital Converter I2C Mini Module</Name>
+	<Manufactory>Hoperf Electronic</Manufactory>
+	<Address>119</Address>
+	<AddressCollection>
+		<Address>119</Address>
+		<Address>120</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Soft Reset</Name>
+			<Description>Soft Reset</Description>
+			<Data>
+				<Value>6</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Measure Temperature and Pressure</Name>
+			<Description>Measure Temperature and Pressure</Description>
+			<Data>
+				<Value>64</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Temperature and Pressure Value</Name>
+			<Description>Read Temperature and Pressure Value</Description>
+			<Data>
+				<Value>16</Value>
+			</Data>
+			<ReadDataLength>6</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>HP203B_I2CS.dll</GUIPath>
+				<TypeName>HP203B_I2CS.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>

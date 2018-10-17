@@ -1,0 +1,31 @@
+<DeviceConfig>
+	<Type>PR6-55</Type>
+	<path>PR6-55.xml</path>
+	<Name>SM9541-100C-D-C-3-S Calibrated Pressure Sensor -100 to 100 cmH₂O ±12 PSI Temperature Compensated I2C Mini Module</Name>
+	<Manufactory>Sillicon Microstructures</Manufactory>
+	<GeneralCall>false</GeneralCall>	
+	<Address>40</Address>
+	<AddressCollection>
+		<Address>40</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Read Data</Name>
+			<Description>Read Data</Description>
+			<Data>
+				<Value>0</Value>
+			</Data>
+			<ReadDataLength>4</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>SM9541_I2CS.dll</GUIPath>
+				<TypeName>SM9541_I2CS.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>
