@@ -1,0 +1,40 @@
+<DeviceConfig>
+	<Type>PR7-8</Type>
+	<path>PR7-8.xml</path>
+	<Name>MMA7660FC 3-Axis Orientation/Motion Detection Sensor ±1.5 g Accelerometer I2C Mini Module</Name>
+	<Manufactory>Freescale Semiconductor</Manufactory>
+	<Address>76</Address>
+	<AddressCollection>
+		<Address>76</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Active Device</Name>
+			<Description>Active Device</Description>
+			<Data>
+					<Value>7</Value>
+					<Value>1</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Data</Name>
+			<Description>Read Data</Description>
+			<Data>
+					<Value>0</Value>
+			</Data>
+			<ReadDataLength>3</ReadDataLength>				
+		</DeviceCommand>
+
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>MMA7660FC_I2CS.dll</GUIPath>
+				<TypeName>MMA7660FC_I2CS.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>

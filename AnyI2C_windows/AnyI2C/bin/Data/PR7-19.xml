@@ -1,0 +1,80 @@
+<DeviceConfig>
+	<Type>PR7-19</Type>
+	<path>PR7-19.xml</path>
+	<Name>MPU-6000 (aka MPU-6050) 6-Axis MotionTracking 3-Axis Gyroscope 3-Axis Accelerometer Digital Motion Processor I2C Mini Module</Name>
+	<Manufactory>ST</Manufactory>
+	<Address>104</Address>
+	<AddressCollection>
+		<Address>104</Address>
+		<Address>105</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Configure Power</Name>
+			<Description>Configure Power</Description>
+			<Data>
+					<Value>107</Value>
+					<Value>0</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read X High</Name>
+			<Description>Read X High</Description>
+			<Data>
+					<Value>67</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read X Low</Name>
+			<Description>Read X Low</Description>
+			<Data>
+					<Value>68</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Y High</Name>
+			<Description>Read Y High</Description>
+			<Data>
+					<Value>69</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Y Low</Name>
+			<Description>Read Y Low</Description>
+			<Data>
+					<Value>70</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Z High</Name>
+			<Description>Read Z High</Description>
+			<Data>
+					<Value>71</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Z Low</Name>
+			<Description>Read Z Low</Description>
+			<Data>
+					<Value>72</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>MPU6000_I2CS.dll</GUIPath>
+				<TypeName>MPU6000_I2CS.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>
