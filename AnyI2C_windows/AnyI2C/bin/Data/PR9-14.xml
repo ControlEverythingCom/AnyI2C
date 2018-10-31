@@ -1,0 +1,54 @@
+<DeviceConfig>
+	<Type>PR9-14</Type>
+	<path>PR9-14.xml</path>
+	<Name>LIS33DE Motion Sensor 3-Axis - ±2g/±8g Accelerometer I2C Mini Module</Name>
+	<Manufactory>ST</Manufactory>
+	<Address>28</Address>
+	<AddressCollection>
+		<Address>28</Address>
+		<Address>29</Address>
+	</AddressCollection>
+	<Commands>
+		<Name>Commands</Name>
+		<Description>Commands</Description>
+		<DeviceCommand>
+			<Name>Enable Axes</Name>
+			<Description>Enable Axes</Description>
+			<Data>
+				<Value>32</Value>
+				<Value>71</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read X</Name>
+			<Description>Read X</Description>
+			<Data>
+				<Value>41</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Y</Name>
+			<Description>Read Y</Description>
+			<Data>
+				<Value>43</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Z</Name>
+			<Description>Read Z</Description>
+			<Data>
+				<Value>45</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>
+		</DeviceCommand>
+		<DeviceGUICommand>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<GUIPath>LIS33DE_I2CS.dll</GUIPath>
+			<TypeName>LIS33DE_I2CS.MyGUI</TypeName>
+		</DeviceGUICommand>
+	</Commands>
+</DeviceConfig>

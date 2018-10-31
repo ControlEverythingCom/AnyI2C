@@ -1,0 +1,75 @@
+<DeviceConfig>
+	<Type>PR9-25</Type>
+	<path>PR9-25.xml</path>
+	<Name>TCS34903FN Color Light-to-Digital Converter I2C Mini Module</Name>
+	<Manufactory>TAOS</Manufactory>
+	<Address>57</Address>
+	<AddressCollection>
+		<Address>57</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Power On, ADC Enable</Name>
+			<Description>Power On, ADC Enable</Description>
+			<Data>
+					<Value>128</Value>
+					<Value>11</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Integration Time</Name>
+			<Description>Integration Time</Description>
+			<Data>
+					<Value>129</Value>
+					<Value>0</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Wait Time</Name>
+			<Description>Wait Time</Description>
+			<Data>
+					<Value>131</Value>
+					<Value>255</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Control Gain</Name>
+			<Description>Control Gain</Description>
+			<Data>
+					<Value>143</Value>
+					<Value>0</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>IR Channel</Name>
+			<Description>IR Channel</Description>
+			<Data>
+					<Value>192</Value>
+					<Value>128</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Sensor</Name>
+			<Description>Read Sensor</Description>
+			<Data>
+					<Value>148</Value>
+			</Data>
+			<ReadDataLength>8</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>TCS34903_I2CS.dll</GUIPath>
+				<TypeName>TCS34903_I2CS.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>
