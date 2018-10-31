@@ -1,0 +1,92 @@
+<DeviceConfig>
+	<Type>PR10-1</Type>
+	<path>PR10-1.xml</path>
+	<Name>H3LIS331DL 3-Axis Linear Accelerometer I²C Mini Module</Name>
+	<Manufactory>ST</Manufactory>
+	<Address>24</Address>
+	<AddressCollection>
+		<Address>24</Address>
+		<Address>25</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Configure Power</Name>
+			<Description>Configure Power</Description>
+			<Data>
+					<Value>32</Value>
+					<Value>39</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Configure Data Format</Name>
+			<Description>Configure Data Format</Description>
+			<Data>
+					<Value>35</Value>
+					<Value>0</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+
+		<DeviceCommand>
+			<Name>Read X Low</Name>
+			<Description>Read X Low</Description>
+			<Data>
+					<Value>40</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read X High</Name>
+			<Description>Read X High</Description>
+			<Data>
+					<Value>41</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		
+		<DeviceCommand>
+			<Name>Read Y Low</Name>
+			<Description>Read Y Low</Description>
+			<Data>
+					<Value>42</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Y High</Name>
+			<Description>Read Y High</Description>
+			<Data>
+					<Value>43</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		
+		<DeviceCommand>
+			<Name>Read Z Low</Name>
+			<Description>Read Z Low</Description>
+			<Data>
+					<Value>44</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Z High</Name>
+			<Description>Read Z High</Description>
+			<Data>
+					<Value>45</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>H3LIS331DL_I2CS.dll</GUIPath>
+				<TypeName>H3LIS331DL_I2CS.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>

@@ -1,0 +1,50 @@
+<DeviceConfig>
+	<Type>PR10-10</Type>
+	<path>PR10-10.xml</path>
+	<Name>TMP007 Infrared Thermopile Sensor with Integrated Math Engine I2C Mini Module</Name>
+	<Manufactory>Texas Instruments</Manufactory>
+	<Address>64</Address>
+	<AddressCollection>
+		<Address>64</Address>
+		<Address>65</Address>
+		<Address>66</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Configure</Name>
+			<Description>Configure</Description>
+			<Data>
+					<Value>2</Value>
+					<Value>148</Value>
+					<Value>64</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Local Temp</Name>
+			<Description>To Read Local Temperature</Description>
+			<Data>
+					<Value>1</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Object Temp</Name>
+			<Description>To Read Object Temperature</Description>
+			<Data>
+					<Value>3</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>TMP007_I2CS.dll</GUIPath>
+				<TypeName>TMP007_I2CS.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>
