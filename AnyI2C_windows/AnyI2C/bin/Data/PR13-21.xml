@@ -1,0 +1,22 @@
+<DeviceConfig>
+	<Type>PR13-21</Type>
+	<path>PR13-21.xml</path>
+	<Name>OLED 128x64 Graphic Display I2C Mini Module</Name>
+	<Manufactory></Manufactory>
+	<Address>60</Address>
+	<AddressCollection>
+		<Address>60</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+ 				<GUIPath>I2COLED.dll</GUIPath>
+				<TypeName>I2COLED.MyGUI</TypeName>
+ 			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>

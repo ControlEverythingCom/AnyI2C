@@ -1,0 +1,100 @@
+﻿<DeviceConfig>
+	<Type>PR13-45</Type>
+	<path>PR13-45.xml</path>
+	<Name>7-Segment 3-Character LED Display I2C Mini Module - 3-Character Amber LED Hexidecimal</Name>
+	<Manufactory>Austriamicrosystems AG</Manufactory>
+	<GeneralCall>false</GeneralCall>	
+	<Address>0</Address>
+	<AddressCollection>
+		<Address>0</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommandsGroup>
+			<Name>Setup</Name>
+			<Description>Setup</Description>
+			<DeviceCommand>
+				<Name>Enable Decode</Name>
+				<Description>Enable Decode</Description>
+				<Data>
+					<Value>09</Value>
+					<Value>07</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>				
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>Set Brightness</Name>
+				<Description>Set Brightness</Description>
+				<Data>
+					<Value>10</Value>
+					<Value>255</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>				
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>Set Shutdown Register</Name>
+				<Description>Shutdown Register</Description>
+				<Data>
+					<Value>12</Value>
+					<Value>01</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>				
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>Set Feature Register</Name>
+				<Description>Set Feature Register</Description>
+				<Data>
+					<Value>14</Value>
+					<Value>00</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>				
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>Set Scan limit Register</Name>
+				<Description>Set Scan limit Register</Description>
+				<Data>
+					<Value>11</Value>
+					<Value>3</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>				
+			</DeviceCommand>
+		</DeviceCommandsGroup>		
+		
+		<DeviceCommand>
+			<Name>Set the First Digital</Name>
+			<Description>Set the First Digital</Description>
+			<Data>
+				<Value>01</Value>
+				<Value>01</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Set the Second Digital</Name>
+			<Description>Set the Second Digital</Description>
+			<Data>
+				<Value>02</Value>
+				<Value>02</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Set the Third Digital</Name>
+			<Description>Set the Third Digital</Description>
+			<Data>
+				<Value>03</Value>
+				<Value>03</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>AS1115_I2CL3E.dll</GUIPath>
+				<TypeName>AS1115_I2CL3E.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>

@@ -1,5 +1,5 @@
 ﻿<DeviceConfig>
-	<Type>PR3-19 Sensor</Type>
+	<Type>PR3-19</Type>
 	<path>PR3-19.xml</path>
 	<Name>MXC6226XU Digital Thermal Orientation Accelerometer</Name>
 	<Manufactory>MEMSIC</Manufactory>

@@ -1,0 +1,98 @@
+﻿<DeviceConfig>
+	<Type>PR12-17</Type>
+	<path>PR12-17.xml</path>
+	<Name>PCA9547 8-Channel I2C-Bus Multiplexer with Reset with I2C Interface</Name>
+	<Manufactory></Manufactory>
+	<Address>112</Address>
+	<AddressCollection>
+		<Address>112</Address>
+		<Address>113</Address>
+		<Address>114</Address>
+		<Address>115</Address>
+		<Address>116</Address>
+		<Address>117</Address>
+		<Address>118</Address>
+		<Address>119</Address>
+	</AddressCollection>
+	<Commands>
+		<Name>Enable Channel 0</Name>
+		<Description>Enable Channel 0</Description>
+		<DeviceCommand>
+			<Name>Enable Channel 0</Name>
+			<Description>Enable Channel 0</Description>
+			<Data>
+				<Value>8</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Enable Channel 1</Name>
+			<Description>Enable Channel 1</Description>
+			<Data>
+				<Value>9</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Enable Channel 2</Name>
+			<Description>Enable Channel 2</Description>
+			<Data>
+				<Value>10</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Enable Channel 3</Name>
+			<Description>Enable Channel 3</Description>
+			<Data>
+				<Value>11</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Enable Channel 4</Name>
+			<Description>Enable Channel 4</Description>
+			<Data>
+				<Value>12</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Enable Channel 5</Name>
+			<Description>Enable Channel 5</Description>
+			<Data>
+				<Value>13</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Enable Channel 6</Name>
+			<Description>Enable Channel 6</Description>
+			<Data>
+				<Value>14</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Enable Channel 7</Name>
+			<Description>Enable Channel 7</Description>
+			<Data>
+				<Value>15</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>
+		</DeviceCommand>
+
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>PCA9547_I2CMUX.dll</GUIPath>
+				<TypeName>PCA9547_I2CMUX.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>
+		
+
+	</Commands>
+</DeviceConfig>
