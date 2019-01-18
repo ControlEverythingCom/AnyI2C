@@ -33,26 +33,26 @@
             this.GroupBox2 = new System.Windows.Forms.GroupBox();
             this.numAddress = new System.Windows.Forms.NumericUpDown();
             this.groupInput = new System.Windows.Forms.GroupBox();
-            this.lbInput8 = new System.Windows.Forms.Label();
-            this.lbInput7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.lbInput6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lbInput5 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.lbInput4 = new System.Windows.Forms.Label();
             this.btnReadInput = new System.Windows.Forms.Button();
-            this.lbInput3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.CheckBox1 = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.numPort = new System.Windows.Forms.NumericUpDown();
+            this.lbInput8 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lbInput7 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lbInput6 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lbInput5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lbInput4 = new System.Windows.Forms.Label();
+            this.lbInput3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numAddress)).BeginInit();
             this.groupInput.SuspendLayout();
@@ -137,78 +137,6 @@
             this.groupInput.TabIndex = 510;
             this.groupInput.TabStop = false;
             // 
-            // lbInput8
-            // 
-            this.lbInput8.AutoSize = true;
-            this.lbInput8.Location = new System.Drawing.Point(336, 121);
-            this.lbInput8.Name = "lbInput8";
-            this.lbInput8.Size = new System.Drawing.Size(32, 16);
-            this.lbInput8.TabIndex = 1;
-            this.lbInput8.Text = "Low";
-            // 
-            // lbInput7
-            // 
-            this.lbInput7.AutoSize = true;
-            this.lbInput7.Location = new System.Drawing.Point(334, 52);
-            this.lbInput7.Name = "lbInput7";
-            this.lbInput7.Size = new System.Drawing.Size(32, 16);
-            this.lbInput7.TabIndex = 2;
-            this.lbInput7.Text = "Low";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(347, 90);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(15, 16);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "7";
-            // 
-            // lbInput6
-            // 
-            this.lbInput6.AutoSize = true;
-            this.lbInput6.Location = new System.Drawing.Point(280, 52);
-            this.lbInput6.Name = "lbInput6";
-            this.lbInput6.Size = new System.Drawing.Size(32, 16);
-            this.lbInput6.TabIndex = 3;
-            this.lbInput6.Text = "Low";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(346, 21);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(15, 16);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "6";
-            // 
-            // lbInput5
-            // 
-            this.lbInput5.AutoSize = true;
-            this.lbInput5.Location = new System.Drawing.Point(226, 52);
-            this.lbInput5.Name = "lbInput5";
-            this.lbInput5.Size = new System.Drawing.Size(32, 16);
-            this.lbInput5.TabIndex = 4;
-            this.lbInput5.Text = "Low";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(293, 21);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(15, 16);
-            this.label8.TabIndex = 4;
-            this.label8.Text = "5";
-            // 
-            // lbInput4
-            // 
-            this.lbInput4.AutoSize = true;
-            this.lbInput4.Location = new System.Drawing.Point(172, 52);
-            this.lbInput4.Name = "lbInput4";
-            this.lbInput4.Size = new System.Drawing.Size(32, 16);
-            this.lbInput4.TabIndex = 0;
-            this.lbInput4.Text = "Low";
-            // 
             // btnReadInput
             // 
             this.btnReadInput.Location = new System.Drawing.Point(167, 105);
@@ -219,24 +147,6 @@
             this.btnReadInput.UseVisualStyleBackColor = true;
             this.btnReadInput.Click += new System.EventHandler(this.btnReadInput_Click);
             // 
-            // lbInput3
-            // 
-            this.lbInput3.AutoSize = true;
-            this.lbInput3.Location = new System.Drawing.Point(118, 52);
-            this.lbInput3.Name = "lbInput3";
-            this.lbInput3.Size = new System.Drawing.Size(32, 16);
-            this.lbInput3.TabIndex = 0;
-            this.lbInput3.Text = "Low";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(240, 21);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(15, 16);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "4";
-            // 
             // label24
             // 
             this.label24.AutoSize = true;
@@ -246,24 +156,6 @@
             this.label24.Size = new System.Drawing.Size(25, 16);
             this.label24.TabIndex = 525;
             this.label24.Text = "R1";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(187, 21);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(15, 16);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "3";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(134, 21);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(15, 16);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "2";
             // 
             // checkBox2
             // 
@@ -335,6 +227,114 @@
             this.numPort.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numPort.ValueChanged += new System.EventHandler(this.numericUpDown3_ValueChanged);
             // 
+            // lbInput8
+            // 
+            this.lbInput8.AutoSize = true;
+            this.lbInput8.Location = new System.Drawing.Point(336, 121);
+            this.lbInput8.Name = "lbInput8";
+            this.lbInput8.Size = new System.Drawing.Size(32, 16);
+            this.lbInput8.TabIndex = 1;
+            this.lbInput8.Text = "Low";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(347, 90);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(15, 16);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "7";
+            // 
+            // lbInput7
+            // 
+            this.lbInput7.AutoSize = true;
+            this.lbInput7.Location = new System.Drawing.Point(334, 52);
+            this.lbInput7.Name = "lbInput7";
+            this.lbInput7.Size = new System.Drawing.Size(32, 16);
+            this.lbInput7.TabIndex = 2;
+            this.lbInput7.Text = "Low";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(346, 21);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(15, 16);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "6";
+            // 
+            // lbInput6
+            // 
+            this.lbInput6.AutoSize = true;
+            this.lbInput6.Location = new System.Drawing.Point(280, 52);
+            this.lbInput6.Name = "lbInput6";
+            this.lbInput6.Size = new System.Drawing.Size(32, 16);
+            this.lbInput6.TabIndex = 3;
+            this.lbInput6.Text = "Low";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(293, 21);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(15, 16);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "5";
+            // 
+            // lbInput5
+            // 
+            this.lbInput5.AutoSize = true;
+            this.lbInput5.Location = new System.Drawing.Point(226, 52);
+            this.lbInput5.Name = "lbInput5";
+            this.lbInput5.Size = new System.Drawing.Size(32, 16);
+            this.lbInput5.TabIndex = 4;
+            this.lbInput5.Text = "Low";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(240, 21);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(15, 16);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "4";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(187, 21);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(15, 16);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "3";
+            // 
+            // lbInput4
+            // 
+            this.lbInput4.AutoSize = true;
+            this.lbInput4.Location = new System.Drawing.Point(172, 52);
+            this.lbInput4.Name = "lbInput4";
+            this.lbInput4.Size = new System.Drawing.Size(32, 16);
+            this.lbInput4.TabIndex = 0;
+            this.lbInput4.Text = "Low";
+            // 
+            // lbInput3
+            // 
+            this.lbInput3.AutoSize = true;
+            this.lbInput3.Location = new System.Drawing.Point(118, 52);
+            this.lbInput3.Name = "lbInput3";
+            this.lbInput3.Size = new System.Drawing.Size(32, 16);
+            this.lbInput3.TabIndex = 0;
+            this.lbInput3.Text = "Low";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(134, 21);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(15, 16);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "2";
+            // 
             // frmI2CIO6R2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -365,6 +365,14 @@
         internal System.Windows.Forms.GroupBox GroupBox2;
         internal System.Windows.Forms.NumericUpDown numAddress;
         private System.Windows.Forms.GroupBox groupInput;
+        private System.Windows.Forms.Label label1;
+        internal System.Windows.Forms.Label label24;
+        internal System.Windows.Forms.CheckBox CheckBox1;
+        internal System.Windows.Forms.Button btnReadInput;
+        internal System.Windows.Forms.CheckBox checkBox2;
+        internal System.Windows.Forms.GroupBox groupBox3;
+        internal System.Windows.Forms.GroupBox groupBox4;
+        internal System.Windows.Forms.NumericUpDown numPort;
         private System.Windows.Forms.Label lbInput8;
         private System.Windows.Forms.Label lbInput7;
         private System.Windows.Forms.Label label6;
@@ -377,13 +385,5 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        internal System.Windows.Forms.Label label24;
-        internal System.Windows.Forms.CheckBox CheckBox1;
-        internal System.Windows.Forms.Button btnReadInput;
-        internal System.Windows.Forms.CheckBox checkBox2;
-        internal System.Windows.Forms.GroupBox groupBox3;
-        internal System.Windows.Forms.GroupBox groupBox4;
-        internal System.Windows.Forms.NumericUpDown numPort;
     }
 }

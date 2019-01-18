@@ -69,7 +69,7 @@
             this.GroupBox1.Size = new System.Drawing.Size(172, 98);
             this.GroupBox1.TabIndex = 491;
             this.GroupBox1.TabStop = false;
-            this.GroupBox1.Text = "I2CIO6R2G5V1 Hardware Address";
+            this.GroupBox1.Text = "Hardware Address";
             // 
             // GroupBox2
             // 
@@ -94,7 +94,7 @@
             this.numAddress.TabIndex = 490;
             this.numAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numAddress.Value = new decimal(new int[] {
-            32,
+            118,
             0,
             0,
             0});
@@ -214,7 +214,7 @@
             this.Controls.Add(this.groupInput);
             this.Controls.Add(this._ERROR);
             this.Name = "frmI2CR2";
-            this.Text = "MCP23008 I2CIO6R2G5V1";
+            this.Text = "PCA9536";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmI2CS_FormClosing);
             this.Load += new System.EventHandler(this.frmI2CDIO8_Load);
             this.GroupBox1.ResumeLayout(false);
