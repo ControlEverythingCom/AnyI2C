@@ -1,0 +1,68 @@
+<DeviceConfig>
+	<Type>PR21-14</Type>
+	<path>PR21-14.xml</path>
+	<Name>PCA9685 8-Channel 8W 12V FET Driver Proportional Valve Controller with IoT Interface</Name>
+	<Manufactory>NXP</Manufactory>
+	<Address>64</Address>
+	<AddressCollection>
+		<Address>64</Address>
+		<Address>65</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Set Frequency</Name>
+			<Description>Set Frequency</Description>
+			<Data>
+				<Value>254</Value>
+				<Value>234</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Set LED 0 On Low Byte</Name>
+			<Description>Set LED 0 On Low Byte</Description>
+			<Data>
+				<Value>6</Value>
+				<Value>128</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Set LED 0 On High Byte</Name>
+			<Description>Set LED 0 On High Byte</Description>
+			<Data>
+				<Value>7</Value>
+				<Value>0</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Set LED 0 Off Low Byte</Name>
+			<Description>Set LED 0 Off Low Byte</Description>
+			<Data>
+				<Value>8</Value>
+				<Value>0</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Set LED 0 Off High</Name>
+			<Description>Set LED 0 Off High Byte</Description>
+			<Data>
+				<Value>9</Value>
+				<Value>10</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>PCA9685_I2CPWM.dll</GUIPath>
+				<TypeName>PCA9685_I2CPWM.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>
+	</Commands>
+</DeviceConfig>

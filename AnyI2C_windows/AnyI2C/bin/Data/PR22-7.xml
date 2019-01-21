@@ -1,0 +1,204 @@
+<DeviceConfig>
+	<Type>PR22-7</Type>
+	<path>PR22-7.xml</path>
+	<Name>PCA9633 4-Channel 8W Open Collector 8-Bit PWM FET Driver with I2C Interface</Name>
+	<Manufactory>NXP</Manufactory>
+	<Address>0</Address>
+	<AddressCollection>
+		<Address>0</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Power On</Name>
+			<Description>Power On</Description>
+			<Data>
+					<Value>0</Value>
+					<Value>0</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Enable All Channels For Group</Name>
+			<Description>Enable All Channels For Group</Description>
+			<Data>
+					<Value>8</Value>
+					<Value>255</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>Group Channel</Name>
+			<Description>Group Channel</Description>
+			<DeviceCommand>
+				<Name>Set To 0</Name>
+				<Description>Set To 0</Description>
+				<Data>
+					<Value>6</Value>
+					<Value>0</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>Set To 128</Name>
+				<Description>Set To 128</Description>
+				<Data>
+					<Value>6</Value>
+					<Value>128</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>Set To 255</Name>
+				<Description>Set To 255</Description>
+				<Data>
+					<Value>6</Value>
+					<Value>255</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>
+			</DeviceCommand>
+		</DeviceCommandsGroup>
+		<DeviceCommand>
+			<Name>Re-Enable All Channels</Name>
+			<Description>Re-Enable All Channels</Description>
+			<Data>
+					<Value>8</Value>
+					<Value>170</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>Channel 1</Name>
+			<Description> Channel 1</Description>
+			<DeviceCommand>
+				<Name>Set To 0</Name>
+				<Description>Set To 0</Description>
+				<Data>
+					<Value>2</Value>
+					<Value>0</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>Set To 128</Name>
+				<Description>Set To 128</Description>
+				<Data>
+					<Value>2</Value>
+					<Value>128</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>Set To 255</Name>
+				<Description>Set To 255</Description>
+				<Data>
+					<Value>2</Value>
+					<Value>255</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>
+			</DeviceCommand>
+		</DeviceCommandsGroup>
+		<DeviceCommandsGroup>
+			<Name>Channel 2</Name>
+			<Description> Channel 2</Description>
+			<DeviceCommand>
+				<Name>Set To 0</Name>
+				<Description>Set To 0</Description>
+				<Data>
+					<Value>3</Value>
+					<Value>0</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>Set To 128</Name>
+				<Description>Set To 128</Description>
+				<Data>
+					<Value>3</Value>
+					<Value>128</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>Set To 255</Name>
+				<Description>Set To 255</Description>
+				<Data>
+					<Value>3</Value>
+					<Value>255</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>
+			</DeviceCommand>
+		</DeviceCommandsGroup>
+		<DeviceCommandsGroup>
+			<Name>Channel 3</Name>
+			<Description> Channel 3</Description>
+			<DeviceCommand>
+				<Name>Set To 0</Name>
+				<Description>Set To 0</Description>
+				<Data>
+					<Value>4</Value>
+					<Value>0</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>Set To 128</Name>
+				<Description>Set To 128</Description>
+				<Data>
+					<Value>4</Value>
+					<Value>128</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>Set To 255</Name>
+				<Description>Set To 255</Description>
+				<Data>
+					<Value>4</Value>
+					<Value>255</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>
+			</DeviceCommand>
+		</DeviceCommandsGroup>
+		<DeviceCommandsGroup>
+			<Name>Channel 4</Name>
+			<Description> Channel 4</Description>
+			<DeviceCommand>
+				<Name>Set To 0</Name>
+				<Description>Set To 0</Description>
+				<Data>
+					<Value>5</Value>
+					<Value>0</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>Set To 128</Name>
+				<Description>Set To 128</Description>
+				<Data>
+					<Value>5</Value>
+					<Value>128</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>Set To 255</Name>
+				<Description>Set To 255</Description>
+				<Data>
+					<Value>5</Value>
+					<Value>255</Value>
+				</Data>
+				<ReadDataLength>0</ReadDataLength>
+			</DeviceCommand>
+		</DeviceCommandsGroup>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>PCA9633_I2CPWM.dll</GUIPath>
+				<TypeName>PCA9633_I2CPWM.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>
+	</Commands>
+</DeviceConfig>
