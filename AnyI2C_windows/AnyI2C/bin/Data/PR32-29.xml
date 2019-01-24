@@ -1,0 +1,66 @@
+﻿<DeviceConfig>
+	<Type>PR32-29</Type>
+	<path>PR32-29.xml</path>
+	<Name>TCA9546A 4-Channel I2C Bus Multiplexer</Name>
+	<Manufactory></Manufactory>
+	<Address>112</Address>
+	<AddressCollection>
+		<Address>112</Address>
+		<Address>113</Address>
+		<Address>114</Address>
+		<Address>115</Address>
+		<Address>116</Address>
+		<Address>117</Address>
+		<Address>118</Address>
+		<Address>119</Address>
+	</AddressCollection>
+	<Commands>
+		<Name>Enable Channel 0</Name>
+		<Description>Enable Channel 0</Description>
+		<DeviceCommand>
+			<Name>Enable Channel 0</Name>
+			<Description>Enable Channel 0</Description>
+			<Data>
+				<Value>1</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Enable Channel 1</Name>
+			<Description>Enable Channel 1</Description>
+			<Data>
+				<Value>2</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Enable Channel 2</Name>
+			<Description>Enable Channel 2</Description>
+			<Data>
+				<Value>4</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Enable Channel 3</Name>
+			<Description>Enable Channel 3</Description>
+			<Data>
+				<Value>8</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>
+		</DeviceCommand>
+
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>TCA9546_I2CMUX.dll</GUIPath>
+				<TypeName>TCA9546_I2CMUX.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>
+		
+
+	</Commands>
+</DeviceConfig>

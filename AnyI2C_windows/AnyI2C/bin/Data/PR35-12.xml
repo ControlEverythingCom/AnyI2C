@@ -1,0 +1,63 @@
+﻿<DeviceConfig>
+	<Type>PR35-12</Type>
+	<path>PR35-12.xml</path>
+	<Name>MCP9600 K-Type Thermocouple I2C Mini Module</Name>
+	<Manufactory>Microchip</Manufactory>
+	<Address>100</Address>
+	<AddressCollection>
+		<Address>96</Address>
+		<Address>97</Address>
+		<Address>98</Address>
+		<Address>99</Address>
+		<Address>100</Address>
+		<Address>101</Address>
+		<Address>102</Address>
+		<Address>103</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Configure Sensor</Name>
+			<Description>Configure Sensor</Description>
+			<Data>
+				<Value>5</Value>
+				<Value>0</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Configure Device</Name>
+			<Description>Configure Device</Description>
+			<Data>
+				<Value>6</Value>
+				<Value>252</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Query Status</Name>
+			<Description>Query Status</Description>
+			<Data>
+				<Value>4</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Temperature</Name>
+			<Description>Read Temperature</Description>
+			<Data>
+				<Value>0</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>MCP9600_I2CS.dll</GUIPath>
+				<TypeName>MCP9600_I2CS.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>

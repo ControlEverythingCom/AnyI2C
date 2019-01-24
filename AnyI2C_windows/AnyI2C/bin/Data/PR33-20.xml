@@ -1,0 +1,39 @@
+<DeviceConfig>
+	<Type>PR33-20</Type>
+	<path>PR33-20.xml</path>
+	<Name>4-Channel I2C PCA9536 Optical Isolated Digital Input with I2C Interface</Name>
+	<Manufactory>TEXAS INSTRUMENTS</Manufactory>
+	<Address>65</Address>
+	<AddressCollection>
+		<Address>65</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Power On</Name>
+			<Description>Power On</Description>
+			<Data>
+				<Value>3</Value>
+				<Value>255</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Sensor</Name>
+			<Description>Read Sensor</Description>
+			<Data>
+				<Value>0</Value>
+			</Data>
+			<ReadDataLength>1</ReadDataLength>				
+		</DeviceCommand>
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>PCA9536_I2CS.dll</GUIPath>
+				<TypeName>PCA9536_I2CS.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>
+	</Commands>
+</DeviceConfig>

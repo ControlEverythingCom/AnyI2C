@@ -1,0 +1,86 @@
+<DeviceConfig>
+	<Type>PR38-16_100A</Type>
+	<path>PR38-16_100A.xml</path>
+	<Name>2-Channel Off-Board 98% Accuracy AC Current Monitor with IoT Interface - 100 Amp</Name>
+	<Manufactory>CE</Manufactory>
+	<Address>42</Address>
+	<AddressCollection>
+		<Address>42</Address>
+	</AddressCollection>
+	<Commands>
+		<DeviceCommand>
+			<Name>Reading Current</Name>
+			<Description>Reading Current</Description>
+			<Data>
+				<Value>146</Value>
+				<Value>106</Value>
+				<Value>1</Value>
+				<Value>1</Value>
+				<Value>12</Value>
+				<Value>0</Value>
+				<Value>0</Value>
+				<Value>10</Value>
+			</Data>
+			<ReadDataLength>3</ReadDataLength>				
+		</DeviceCommand>	
+		<DeviceCommand>
+			<Name>Read Device Identification Data </Name>
+			<Description>Read Device Identification Data </Description>
+			<Data>
+				<Value>146</Value>
+				<Value>106</Value>
+				<Value>2</Value>
+				<Value>0</Value>
+				<Value>0</Value>
+				<Value>0</Value>
+				<Value>0</Value>
+				<Value>254</Value>
+			</Data>
+			<ReadDataLength>7</ReadDataLength>				
+		</DeviceCommand>	
+		<DeviceCommand>
+			<Name>Read Calibration Value</Name>
+			<Description>Read Calibration Value</Description>
+			<Data>
+				<Value>146</Value>
+				<Value>106</Value>
+				<Value>3</Value>
+				<Value>1</Value>
+				<Value>1</Value>
+				<Value>0</Value>
+				<Value>0</Value>
+				<Value>1</Value>
+			</Data>
+			<ReadDataLength>3</ReadDataLength>				
+		</DeviceCommand>	
+		<DeviceCommand>
+			<Name>Write Calibration Data</Name>
+			<Description>Write Calibration Data</Description>
+			<Data>
+				<Value>146</Value>
+				<Value>106</Value>
+				<Value>4</Value>
+				<Value>1</Value>
+				<Value>3</Value>
+				<Value>0</Value>
+				<Value>150</Value>
+				<Value>154</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>				
+		</DeviceCommand>	
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+<!-- 				<GUIPath>CurrentMonitor_I2CS.dll</GUIPath>
+				<TypeName>CurrentMonitor_I2CS.MyGUI</TypeName>
+ -->		
+ 				<GUIPath>CurrentMonitor_I2CS.dll</GUIPath>
+				<TypeName>CurrentMonitor.MyGUI</TypeName>
+ 
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>		
+	</Commands>
+</DeviceConfig>

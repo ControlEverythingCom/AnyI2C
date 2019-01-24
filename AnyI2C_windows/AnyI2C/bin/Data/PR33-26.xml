@@ -1,0 +1,58 @@
+﻿<DeviceConfig>
+	<Type>PR33-26</Type>
+	<path>PR33-26.xml</path>
+	<Name>1-Channel 4-20mA Current Loop Transmitter I2C Mini Module</Name>
+	<Manufactory>Analog Devices</Manufactory>
+	<Address>90</Address>
+	<AddressCollection>
+		<Address>90</Address>
+		<Address>91</Address>
+		<Address>92</Address>
+	</AddressCollection>
+	<Commands>
+<!-- 		<Name>Init</Name>
+		<Description>Initial device</Description>
+		<DeviceCommand>
+			<Name>test</Name>
+			<Description>test des</Description>
+			<Data>
+				<Value>22</Value>
+				<Value>33</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>
+		</DeviceCommand>
+ -->		
+		<DeviceCommandsGroup>
+			<Name>DAC A</Name>
+			<Description>DAC A</Description>
+			<DeviceCommand>
+				<Name>Set To 0</Name>
+				<Description>Set To 0</Description>
+				<Data>
+					<Value>0</Value>
+					<Value>0</Value>
+				</Data>
+			</DeviceCommand>
+			<DeviceCommand>
+				<Name>Set To Max Value</Name>
+				<Description>Set To 65535</Description>
+				<Data>
+					<Value>15</Value>
+					<Value>255</Value>
+				</Data>
+			</DeviceCommand>
+		</DeviceCommandsGroup>
+
+
+		<DeviceCommandsGroup>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<DeviceGUICommand>
+				<Name>GUI</Name>
+				<Description>GUI</Description>
+				<GUIPath>MCP4725_I2CDAC.dll</GUIPath>
+				<TypeName>MCP4725_I2CDAC.MyGUI</TypeName>
+			</DeviceGUICommand>
+		</DeviceCommandsGroup>
+	</Commands>
+</DeviceConfig>

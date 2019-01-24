@@ -1,0 +1,41 @@
+<DeviceConfig>
+	<Type>PR33-7</Type>
+	<path>PR33-7.xml</path>
+	<Name>1-Channel 4-20mA Current Loop Receiver 16-Bit ADS1115 I2C Mini Module</Name>
+	<Manufactory>Texas Instruments</Manufactory>
+	<Address>72</Address>
+	<AddressCollection>
+		<Address>72</Address>
+		<Address>73</Address>
+	</AddressCollection>
+	<Commands>
+		<Name>AD Commands</Name>
+		<Description>ADCommands</Description>
+		<DeviceCommand>
+			<Name>Configure Device</Name>
+			<Description>Configure Device</Description>
+			<Data>
+				<Value>1</Value>
+				<Value>132</Value>
+				<Value>83</Value>
+			</Data>
+			<ReadDataLength>0</ReadDataLength>
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Ch 0</Name>
+			<Description>Read Channel 0</Description>
+			<Data>
+				<Value>0</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>
+		</DeviceCommand>
+		<DeviceGUICommand>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<GUIPath>ADS1115_I2CADC.dll</GUIPath>
+			<TypeName>ADS1115_I2CADC.MyGUI</TypeName>
+		</DeviceGUICommand>
+		
+
+	</Commands>
+</DeviceConfig>

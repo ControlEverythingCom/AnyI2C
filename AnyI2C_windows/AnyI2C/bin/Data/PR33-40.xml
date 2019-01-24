@@ -1,0 +1,52 @@
+﻿<DeviceConfig>
+	<Type>PR33-40</Type>
+	<path>PR33-40.xml</path>
+	<Name>MCP3428 12-Channel 0-20V 16-Bit Analog To Digital Converter ADC with IoT Interface</Name>
+	<Manufactory></Manufactory>
+	<Address>104</Address>
+	<AddressCollection>
+		<Address>104</Address>
+	</AddressCollection>
+	<Commands>
+		<Name>AD Commands</Name>
+		<Description>AD Commands</Description>
+		<DeviceCommand>
+			<Name>Read Ch 0</Name>
+			<Description>Read Channel 0</Description>
+			<Data>
+				<Value>152</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Ch 1</Name>
+			<Description>Read Channel 1</Description>
+			<Data>
+				<Value>184</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Ch 2</Name>
+			<Description>Read Channel 2</Description>
+			<Data>
+				<Value>216</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>
+		</DeviceCommand>
+		<DeviceCommand>
+			<Name>Read Ch 3</Name>
+			<Description>Read Channel 3</Description>
+			<Data>
+				<Value>248</Value>
+			</Data>
+			<ReadDataLength>2</ReadDataLength>
+		</DeviceCommand>
+		<DeviceGUICommand>
+			<Name>GUI</Name>
+			<Description>GUI</Description>
+			<GUIPath>MCP3428_I2CADC.dll</GUIPath>
+			<TypeName>MCP3428_I2CADC.MyGUI</TypeName>
+		</DeviceGUICommand>
+	</Commands>
+</DeviceConfig>

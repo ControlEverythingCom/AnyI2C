@@ -1,7 +1,7 @@
 ﻿<DeviceConfig>
 	<Type>PR33-11</Type>
 	<path>PR33-11.xml</path>
-	<Name>I2CL3CE_AS1115</Name>
+	<Name>AS1115 34mm 3-Character Red 7-Segment Hexidecimal Display with I2C Interface</Name>
 	<Manufactory>AS1115 34mm 3-Character Red 7-Segment Hexidecimal Display with I2C Interface</Manufactory>
 	<GeneralCall>false</GeneralCall>	
 	<Address>0</Address>
